@@ -17,4 +17,5 @@ jobs:
         server: ftp.viedial.com
         username:  ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
+        protocol: ftps
         server-dir:  /test.viedial.com/
