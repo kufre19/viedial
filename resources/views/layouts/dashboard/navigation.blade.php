@@ -1,28 +1,7 @@
 <nav class="navbar navbar-static-top">
     <!-- Sidebar toggle button-->
     <div class="app-menu">
-      <ul class="header-megamenu nav">
-          <li class="btn-group nav-item d-md-none">
-              <a href="#" class="waves-effect waves-light nav-link push-btn" data-toggle="push-menu" role="button">
-                  <span class="icon-Align-left"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-              </a>
-          </li>
-          <li class="btn-group nav-item d-none d-xl-inline-block">
-              <a href="contact_app_chat.html" class="waves-effect waves-light nav-link svg-bt-icon" title="Chat">
-                  <i class="icon-Chat"><span class="path1"></span><span class="path2"></span></i>
-              </a>
-          </li>
-          <li class="btn-group nav-item d-none d-xl-inline-block">
-              <a href="mailbox.html" class="waves-effect waves-light nav-link svg-bt-icon" title="Mailbox">
-                  <i class="icon-Mailbox"><span class="path1"></span><span class="path2"></span></i>
-              </a>
-          </li>
-          <li class="btn-group nav-item d-none d-xl-inline-block">
-              <a href="extra_taskboard.html" class="waves-effect waves-light nav-link svg-bt-icon" title="Taskboard">
-                  <i class="icon-Clipboard-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
-              </a>
-          </li>
-      </ul> 
+      
     </div>
       
     <div class="navbar-custom-menu r-side">
@@ -68,7 +47,7 @@
 
             <li>
               <!-- inner menu: contains the actual data -->
-              <ul class="menu sm-scrol">
+              {{-- <ul class="menu sm-scrol">
                 <li>
                   <a href="#">
                     <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
@@ -104,7 +83,7 @@
                     <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
                   </a>
                 </li>
-              </ul>
+              </ul> --}}
             </li>
             <li class="footer">
                 <a href="#">View all</a>
@@ -120,7 +99,6 @@
           <ul class="dropdown-menu animated flipInX">
             <li class="user-body">
                <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
-               <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
                <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
                <div class="dropdown-divider"></div>
                <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
@@ -128,12 +106,7 @@
           </ul>
         </li>	
         
-        <!-- Control Sidebar Toggle Button -->
-        <li>
-            <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
-                <i class="icon-Settings"><span class="path1"></span><span class="path2"></span></i>
-            </a>
-        </li>
+       
           
       </ul>
     </div>
