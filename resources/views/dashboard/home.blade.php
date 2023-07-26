@@ -9,11 +9,11 @@
                 <div class="row">
                     <div class="col-lg-8 col-12">
                         <div class="box pull-up">
-                            <div class="box-body bg-img" style="background-image: url(../images/bg-5.png);"
+                            <div class="box-body bg-img" style="background-image: url({{asset('view_assets/images/bg-5.png')}});"
                                 data-overlay-light="9">
                                 <div class="d-lg-flex align-items-center justify-content-between">
                                     <div class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
-                                        <img src="../images/svg-icon/color-svg/custom-14.svg" class="img-fluid max-w-150"
+                                        <img src="{{asset('view_assets/images/svg-icon/color-svg/custom-14.svg')}}" class="img-fluid max-w-150"
                                             alt="" />
                                         <div class="ml-30">
                                             <h4 class="mb-10">Take Advance Courses to Achive Your Goal !</h4>

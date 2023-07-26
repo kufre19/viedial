@@ -4,4 +4,4 @@
 	  
 	<!-- Style-->  
 	<link rel="stylesheet" href="{{asset('view_assets/css/style.css')}}">
-	{{-- <link rel="stylesheet" href="{{asset('view_assets/css/skin_color.css')}}"> --}}
+	<link rel="stylesheet" href="{{asset('view_assets/css/skin_color.css')}}">
