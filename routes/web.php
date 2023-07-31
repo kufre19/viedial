@@ -23,3 +23,7 @@ Route::get('/module', function () {
 Route::get('/course-page', function () {
     return view('dashboard.course.course_index');
 });
+
+Route::get('/profile', function () {
+    return view('dashboard.profile');
+});
