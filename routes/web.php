@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('dashboard.home');
+});
 Route::get('/module', function () {
     return view('dashboard.course.module');
 });

@@ -22,29 +22,14 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <button type="button" class="waves-effect waves-light btn-block btn btn-primary"
+                                        <button type="button" class="waves-effect waves-light btn-block btn btn-dark"
                                             style="white-space: nowrap;">Start Now!</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-12">
-                        <a href="#" class="box bg-danger bg-hover-danger pull-up">
-                            <div class="box-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="w-80 h-80 l-h-100 rounded-circle b-1 border-white text-center">
-                                        <span class="text-white icon-Cart2 font-size-40"><span class="path1"></span><span
-                                                class="path2"></span></span>
-                                    </div>
-                                    <div class="ml-10">
-                                        <h4 class="text-white mb-0">+1 1234 456 789</h4>
-                                        <h5 class="text-white-50 mb-0">Toll Free</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                   
                     <div class="col-12">
                         <div class="box no-shadow mb-0 bg-transparent">
                             <div class="box-header no-border px-0">

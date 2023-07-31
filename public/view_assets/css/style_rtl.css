@@ -2577,7 +2577,7 @@ Margin property
   border-right: 0;
   border-radius: 5px 0px 0px 5px; }
 .rtl .form-control + .input-group-addon:not(:first-child) {
-  border-left: 1px solid #cf2e2e; }
+  border-left: 1px solid #800020; }
 .rtl .gap-items > *:last-child, .rtl .gap-items-3 > *:last-child, .rtl .gap-items-4 > *:last-child, .rtl .gap-items-5 > *:last-child {
   margin-left: 0;
   margin-right: inherit; }
