@@ -17,16 +17,7 @@
                         <ul class="treeview-menu">
                             <li><a href="index.html"><i class="icon-Commit"><span class="path1"></span><span
                                             class="path2"></span></i>Dashboard 1</a></li>
-                            <li><a href="index2.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Dashboard 2</a></li>
-                            <li><a href="index3.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Dashboard 3</a></li>
-                            <li><a href="index4.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Dashboard 4</a></li>
-                            <li><a href="index5.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Dashboard 5</a></li>
-                            <li><a href="index6.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Dashboard 6</a></li>
+                         
                         </ul>
                     </li>
                     <li class="treeview">
@@ -41,14 +32,7 @@
                         <ul class="treeview-menu">
                             <li><a href="extra_calendar.html"><i class="icon-Commit"><span class="path1"></span><span
                                             class="path2"></span></i>Calendar</a></li>
-                            <li><a href="contact_app.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Contact List</a></li>
-                            <li><a href="contact_app_chat.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Chat</a></li>
-                            <li><a href="extra_taskboard.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Todo</a></li>
-                            <li><a href="mailbox.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Mailbox</a></li>
+                          
                         </ul>
                     </li>
                    
