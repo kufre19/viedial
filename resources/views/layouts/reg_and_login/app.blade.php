@@ -18,7 +18,7 @@
 
 
 <body class="hold-transition theme-primary bg-img"
-    style="background-image: url({{ asset('view_assets/images/auth-bg/bg-1.jpg') }})">
+    style="background-image: linear-gradient(to right, #800020, #c24262);">
 
     <div class="container h-p100">
         <div class="row align-items-center justify-content-md-center h-p100">

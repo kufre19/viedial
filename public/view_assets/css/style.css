@@ -121,6 +121,15 @@ body {
   line-height: 1.5;
   background-color: #fafbfd; }
 
+  .btn-viedial {
+    color: #fff;
+    background-color: #800020;
+    border-color: #f50944; }
+    .btn-viedial:hover {
+      color: #fff;
+      background-color: #F35050;
+      border-color: #F35050; }
+
 @media (min-width: 992px) {
   .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
     padding: 0 25px; } }

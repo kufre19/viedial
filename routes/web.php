@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WebsiteContorller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,19 @@ Route::get('/course-page', function () {
 Route::get('/profile', function () {
     return view('dashboard.profile');
 });
+
+// Auth Routes
+Route::get("login",[WebsiteContorller::class,"login_page"])->name("login");
+Route::post("login",[WebsiteContorller::class,"login"]);
+Route::get("logout",[WebsiteContorller::class,"logout"]);
+
+
+// PROTECTED ROUTES
+Route::group(["middleware"=>"auth"], function()
+{
+    // DASHBOARD
+    Route::get('/', function () {
+        return view('dashboard.home');
+    });
+});
+

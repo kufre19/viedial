@@ -7,16 +7,17 @@
                 <div class="bg-white rounded30 shadow-lg">
                     <div class="content-top-agile p-20 pb-0">
                         <h2 class="text-primary">Let's Get Started</h2>
-                        <p class="mb-0">Sign in to continue to WebkitX.</p>
+                        <p class="mb-0">Sign in to continue your learning</p>
                     </div>
                     <div class="p-40">
-                        <form action="https://eduadmin-template.multipurposethemes.com/bs4/main/index.html" method="post">
+                        <form action="{{url('login')}}" method="post">
+                            @csrf
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control pl-15 bg-transparent" placeholder="Username">
+                                    <input type="email" name="email" class="form-control pl-15 bg-transparent" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -24,13 +25,13 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text  bg-transparent"><i class="ti-lock"></i></span>
                                     </div>
-                                    <input type="password" class="form-control pl-15 bg-transparent" placeholder="Password">
+                                    <input type="password" name="password" class="form-control pl-15 bg-transparent" placeholder="Password">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="checkbox">
-                                        <input type="checkbox" id="basic_checkbox_1">
+                                        <input type="checkbox" name="remember_me" id="basic_checkbox_1">
                                         <label for="basic_checkbox_1">Remember Me</label>
                                     </div>
                                 </div>
@@ -43,7 +44,7 @@
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-danger mt-10">SIGN IN</button>
+                                    <button type="submit" class="btn btn-viedial mt-10">SIGN IN</button>
                                 </div>
                                 <!-- /.col -->
                             </div>
