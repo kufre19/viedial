@@ -32,11 +32,9 @@
                     <div class="col-12">
                         <div class="box no-shadow mb-0 bg-transparent">
                             <div class="box-header no-border px-0">
-                                <h4 class="box-title">Cours Classes</h4>
+                                <h4 class="box-title">Subscribed Courses</h4>
                                 <ul class="box-controls pull-right d-md-flex d-none">
-                                    <li>
-                                        <button class="btn btn-primary-light px-10">View All</button>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -46,11 +44,11 @@
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="box pull-up">
                                 <div class="box-body d-flex align-items-center">
-                                    <img src="../images/front-end-img/courses/cor-logo-6.png" alt=""
+                                    <img src="" alt=""
                                         class="align-self-end h-80 w-80">
                                     <div class="d-flex flex-column flex-grow-1">
                                         <h5 class="box-title font-size-16 mb-2">Hypertention Education</h5>
-                                        <a href="#">Learn</a>
+                                        <a href="{{url("dashboard/courses/" . $subscription->course_id)}}">Learn</a>
                                     </div>
                                 </div>
                             </div>
