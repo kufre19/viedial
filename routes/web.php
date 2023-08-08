@@ -52,8 +52,8 @@ Route::group(["middleware"=>"auth"], function()
     Route::get("courses/{id}",[CourseController::class,"load_course"]);
     Route::get("course/module/{course_id}/{mod_id}",[CourseController::class,"load_module"]);
     Route::get('/download/{file}', function ($file) {
-        return Storage::disk('public')->download('pdf_folder/' . $file);
-    });
+        return Storage::disk('public')->download('course_assets/course_pdfs/' . $file);
+    })->name("download");
 
 });
 
