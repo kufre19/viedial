@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WebsiteContorller;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.home');
-});
+
 Route::get('/module', function () {
     return view('dashboard.course.module');
 });
@@ -39,8 +38,6 @@ Route::get("logout",[WebsiteContorller::class,"logout"]);
 Route::group(["middleware"=>"auth"], function()
 {
     // DASHBOARD
-    Route::get('/', function () {
-        return view('dashboard.home');
-    });
+    Route::get('/', [DashboardController::class,"dashboard"]);
 });
 
