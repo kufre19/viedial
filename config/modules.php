@@ -10,6 +10,8 @@ return [
                 "Pictures"
             ],
             "video_url"=>"https://www.youtube.com/embed/kN9SZtwP1ys",
+            "worksheets"=>"",
+            "ebook"=>"",
             "topics"=>[
                 "Moments when you become aware that you have type 2 diabetes for the first time",
                 "Common feelings that are associated with a new diagnosis of type 2 diagnosis? (include real life stories in the updates)",

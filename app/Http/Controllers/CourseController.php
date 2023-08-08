@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Storage;
+
 
 class CourseController extends Controller
 {
@@ -20,7 +22,7 @@ class CourseController extends Controller
         $course_info = Config::get("courses.$course_id");
         $module_info = Config::get("module_info.$course_id.$mod_id");
         $module = Config::get("modules.$mod_id");
-      
+        $pdfs = Storage::disk('public')->files('pdf_folder');
 
    
         return view("dashboard.course.module",compact("module_info","course_info","module"));

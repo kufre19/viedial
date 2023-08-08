@@ -4,6 +4,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WebsiteContorller;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+Route::get('/link-storage', function () {
+    $exitCode = Artisan::call('storage:link');
+    return 'Storage link has been created.';
+});
 
 
 Route::get('/module', function () {
@@ -42,6 +51,9 @@ Route::group(["middleware"=>"auth"], function()
     Route::get('/', [DashboardController::class,"dashboard"]);
     Route::get("courses/{id}",[CourseController::class,"load_course"]);
     Route::get("course/module/{course_id}/{mod_id}",[CourseController::class,"load_module"]);
+    Route::get('/download/{file}', function ($file) {
+        return Storage::disk('public')->download('pdf_folder/' . $file);
+    });
 
 });
 
