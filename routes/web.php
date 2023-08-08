@@ -51,10 +51,10 @@ Route::group(["middleware"=>"auth"], function()
     Route::get('/', [DashboardController::class,"dashboard"]);
     Route::get("courses/{id}",[CourseController::class,"load_course"]);
     Route::get("course/module/{course_id}/{mod_id}",[CourseController::class,"load_module"]);
-    Route::get('/download/{file}', function ($file) {
+    Route::get('/download/worksheet/{module}/{file}', function ($module,$file) {
         $file = urldecode($file);
-        return Storage::disk('public')->download('/course_assets/course_pdfs/' . $file);
-    })->where('file', '.*')->name("download");
+        return Storage::disk('public')->download("course_assets/course_pdfs/$module/" . $file);
+    })->where('file', '.*')->name("download.worksheet");
 
 });
 

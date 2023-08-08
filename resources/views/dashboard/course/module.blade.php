@@ -129,7 +129,7 @@
                                                                     class="fa fa-file-pdf-o"></i></span>
                                                         </div>
                                                         <span class="title font-weight-500 font-size-16">{{ basename($pdf) }}</span>
-                                                        <a class="font-size-18 text-gray hover-info" href="{{ route('download', ['file' => basename($pdf)]) }}">download</a>
+                                                        <a class="font-size-18 text-gray hover-info" href="{{ route('download.worksheet', ['module'=>$module_info['mod_id'],'file' => basename($pdf)]) }}">download</a>
                                                     </div>
         
                                             @endforeach
