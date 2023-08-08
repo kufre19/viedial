@@ -6,6 +6,7 @@ return[
 
     "4"=>[
         "title"=>"Diabetes Education",
+        "course_id"=>"4",
         "image"=>"https://test.viedial.com/public/course_image/course_4.png",
         "obj"=>[
             "How to cope with a diagnosis of type 2 diabetes.",

@@ -53,7 +53,7 @@
                                             </p>
 
                                             <p>
-                                                <a href="{{ url('course/module/') }}" class="btn btn-primary">Learn More</a>
+                                                <a href="{{ url('course/module'). "/".$course_info['course_id']."/".$module['mod_id'] }}" class="btn btn-primary">Learn More</a>
                                             </p>
                                         </div>
                                     @endforeach

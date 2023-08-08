@@ -3,6 +3,7 @@
 return [
 
     "4"=>[
+        "B4T9Z"=>
         [
             "title"=>"Moudle One",
             "mod_id"=>"B4T9Z",

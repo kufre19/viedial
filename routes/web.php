@@ -41,5 +41,7 @@ Route::group(["middleware"=>"auth"], function()
     // DASHBOARD
     Route::get('/', [DashboardController::class,"dashboard"]);
     Route::get("courses/{id}",[CourseController::class,"load_course"]);
+    Route::get("course/module/{course_id}/{mod_id}",[CourseController::class,"load_module"]);
+
 });
 
