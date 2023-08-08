@@ -48,7 +48,7 @@
                                         class="align-self-end h-80 w-80">
                                     <div class="d-flex flex-column flex-grow-1">
                                         <h5 class="box-title font-size-16 mb-2"> {{config("courses.$subscription->course_id.title")}}</h5>
-                                        <a href="{{url("dashboard/courses/" . $subscription->course_id)}}">Learn</a>
+                                        <a href="{{url("courses/" . $subscription->course_id)}}">Learn</a>
                                     </div>
                                 </div>
                             </div>

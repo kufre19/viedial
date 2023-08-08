@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WebsiteContorller;
 use Illuminate\Support\Facades\Route;
@@ -39,5 +40,6 @@ Route::group(["middleware"=>"auth"], function()
 {
     // DASHBOARD
     Route::get('/', [DashboardController::class,"dashboard"]);
+    Route::get("courses/{id}",[CourseController::class,"load_course"]);
 });
 

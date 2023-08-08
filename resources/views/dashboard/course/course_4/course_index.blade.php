@@ -11,8 +11,20 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Course Title
-                                    <p class="subtitle font-size-14 mb-0">Short course message</p>
+                                <h4 class="card-title"> Diabetes Education
+                                    <p class="subtitle font-size-14 mb-0">
+                                        From this course, you will learn:
+                                    </p>
+                                    <ul class="subtitle font-size-14 mb-0">
+                                        <li>How to cope with a diagnosis of type 2 diabetes.</li>
+                                        <li>What type 2 diabetes is and what causes it.</li>
+                                        <li>The type of medications used to treat type 2 diabetes.</li>
+                                        <li>How to use these medications correctly and consistently.</li>
+                                        <li>How to eat in a manner that keeps your blood sugar within normal levels.</li>
+                                        <li>How to exercise and keep your blood sugar within normal levels.</li>
+                                        <li>How diabetes affects your body and how to prevent the damage that type 2 diabetes causes to the body.</li>
+                                    </ul>
+                                    
                                 </h4>
                             </div>
                         </div>
@@ -28,8 +40,9 @@
                             <div class="card-body">
                                 <div class="row">
                                   <div class="col-12">
-                                    <h4 class=" b-0 px-0">Module title 1</h4>
-                                    <p>Module 1 navigation message and listing below</p>
+                                    <h4 class=" b-0 px-0">Module One</h4>
+                                    <p> <b>Learning objectives:</b> At the end of this module, you will be able to 
+                                    </p>
                                     <div class="box box-slided-up">
     
                                         <div class="box-header with-border">
