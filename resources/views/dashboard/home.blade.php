@@ -42,6 +42,7 @@
 
                     @foreach ($subscriptions as $subscription)
                         <div class="col-lg-3 col-md-6 col-12">
+                        <a href="{{url("courses/" . $subscription->course_id)}}">
                             <div class="box pull-up">
                                 <div class="box-body d-flex align-items-center">
                                     <img src="{{config("courses.$subscription->course_id.image")}}" alt=""
@@ -52,6 +53,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </a>
                         </div>
                     @endforeach
 
