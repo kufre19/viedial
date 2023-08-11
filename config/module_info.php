@@ -128,6 +128,19 @@ return [
             ]
             
         ],
+
+        "Z4gO5"=>
+        [
+            "title"=>"Module Ten",
+            "mod_id"=>"Z4gO5",
+            "obj"=>[
+              "Identify strategies to stay motivated and maintain lifestyle changes.",
+              "Understand how to avoid and manage the stress associated with managing type 2 diabetes.",
+              "Cope with unavoidable daily stressors.",
+              "Learn coping strategies to deal with stressful life events.",
+            ]
+            
+        ],
     ]
 
 

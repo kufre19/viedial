@@ -411,4 +411,41 @@ return [
         
         
     ],
+    "Z4gO5"=>[
+        "P6hR7"=>[
+            "id"=>"P6hR7",
+            "title"=>"Module 10.1",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/LLNNfGaEYMM"
+            
+        ],
+        "T8iU9"=>[
+            "id"=>"T8iU9",
+            "title"=>"Module 10.2",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/ZSQ9aam3DX4"
+            
+        ],
+        "C0jV1"=>[
+            "id"=>"C0jV1",
+            "title"=>"Module 10.3",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/ac5sSmIcQO8"
+            
+        ],
+        "W2kX3"=>[
+            "id"=>"W2kX3",
+            "title"=>"Module 10.4",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/nVfNvLk1gVU"
+            
+        ],
+
+        
+        
+    ],
 ];

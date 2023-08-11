@@ -387,4 +387,44 @@ return [
             
         ],
 
+    "Z4gO5"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"https://www.youtube.com/embed/-jz0ShHCTJQ",
+            "extra_videos"=>[
+                
+                
+            ],
+            "topics"=>[
+                [
+                    "title"=>"Good reasons for staying on the winning lane",
+                    "id"=>"P6hR7"
+                ],
+                [
+                    "title"=>"Navigating the rough and bumpy lane of managing type 2 diabetes",
+                    "id"=>"T8iU9"
+                ],
+                [
+                    "title"=>"Coping with the everyday turns and twists on the lane
+                    ",
+                    "id"=>"C0jV1"
+                ],
+                [
+                    "title"=>"Staying on the lane when life happens",
+                    "id"=>"W2kX3"
+                ],
+                
+                
+                
+                
+                    
+                
+            ]
+            
+        ],
+
 ];
