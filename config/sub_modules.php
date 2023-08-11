@@ -75,6 +75,74 @@ return [
             "video_url"=>"https://www.youtube.com/embed/_d61Q_1jS50"
             
         ]
+    ],
+
+    "X3fZ9"=>[
+        "A2dF4"=>[
+            "id"=>"A2dF4",
+            "title"=>"Module 2.1",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/ciX5_x195Ik"
+            
+        ],
+        "J7kP5"=>[
+            "id"=>"J7kP5",
+            "title"=>"Module 2.2",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/5smilmSY97Q"
+            
+        ],
+        "F8aT9"=>[
+            "id"=>"F8aT9",
+            "title"=>"Module 2.3",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/PupfTj98RO8"
+            
+        ],
+        "Z4yD0"=>[
+            "id"=>"Z4yD0",
+            "title"=>"Module 2.4",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/adk81eMH-YI"
+            
+        ],
+        "O2wV3"=>[
+            "id"=>"O2wV3",
+            "title"=>"Module 2.5",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/hHeKM3SJW4Y"
+            
+        ],
+        "I6eL8"=>[
+            "id"=>"I6eL8",
+            "title"=>"Module 2.6",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/uXHIT7a1pZQ"
+            
+        ],
+        "G1qS7"=>[
+            "id"=>"G1qS7",
+            "title"=>"Module 2.7",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/uB6m_e5_8nw"
+            
+        ],
+        "C3oN4"=>[
+            "id"=>"C3oN4",
+            "title"=>"Module 2.8",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/lFRf_F6by_E"
+            
+        ],
+        
     ]
 
 ];

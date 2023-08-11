@@ -58,22 +58,60 @@
                                         ways: </p>
 
                                     <p>
-                                        <ol>
-                                            @foreach ($module['topics'] as $topics)
-                                            <a href="{{ route('load.sub.module',['course_id'=>$course_info['course_id'],'mod_id'=>$module_info['mod_id'],'sub_mod_id'=>$topics['id']]) }}">
+                                    <ol>
+                                        @foreach ($module['topics'] as $topics)
+                                            <a
+                                                href="{{ route('load.sub.module', ['course_id' => $course_info['course_id'], 'mod_id' => $module_info['mod_id'], 'sub_mod_id' => $topics['id']]) }}">
                                                 <li>{{ $topics['title'] }}</li>
                                             </a>
-                                            @endforeach
-                                        </ol>
+                                        @endforeach
+                                    </ol>
                                     </p>
 
 
-                                  
+
                                 </h4>
                             </div>
                         </div>
                     </div>
 
+
+                    @if ($module['video_url'] != '')
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title"> Module Content
+                                    </h4>
+                                </div>
+
+                                <div class="card-body align-item-center">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="box">
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe width="560" height="315"
+                                                        src="{{ $module['video_url'] }}" title="YouTube video player"
+                                                        frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        allowfullscreen></iframe>
+                                                </div>
+
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    @endif
 
                     <div class="col-12">
                         <div class="card">

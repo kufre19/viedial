@@ -57,5 +57,53 @@ return [
                 
             ]
             
+        ],
+
+    "X3fZ9"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"https://www.youtube.com/embed/chFicUCPSXw",
+            "topics"=>[
+                [
+                    "title"=>"What is diabetes?",
+                    "id"=>"A2dF4"
+                ],
+                [
+                    "title"=>"Learning the different types of diabetes",
+                    "id"=>"J7kP5"
+                ],
+                [
+                    "title"=>"What is type 1 diabetes?",
+                    "id"=>"F8aT9"
+                ],
+                [
+                    "title"=>"What is type 2 diabetes?",
+                    "id"=>"Z4yD0"
+                ],
+                [
+                    "title"=>"The risk factors for type 2 diabetes",
+                    "id"=>"O2wV3"
+                ],
+                [
+                    "title"=>"The progress from risk factors to full blown type 2 diabetes",
+                    "id"=>"I6eL8"
+                ],
+                [
+                    "title"=>"The signs and symptoms of type 2 diabetes ",
+                    "id"=>"G1qS7"
+                ],
+                
+                [
+                    "title"=>"How to know that a person has type 2 diabetes",
+                    "id"=>"C3oN4"
+                ],
+            ]
+            
         ]
+
+
 ];
