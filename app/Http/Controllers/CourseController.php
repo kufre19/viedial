@@ -35,9 +35,19 @@ class CourseController extends Controller
         $module_info = Config::get("module_info.$course_id.$mod_id");
         $module = Config::get("modules.$mod_id");
         $sub_module = Config::get("sub_modules.$mod_id.$sub_mod_id");
+        $sub_title_name = $this->getSubModTitleName($module['topics'],$sub_mod_id);
         $pdfs = Storage::disk('public')->files("course_assets/course_pdfs/$mod_id/$sub_mod_id");
 
    
-        return view("dashboard.course.sub_module",compact("module_info","course_info","module","pdfs","sub_module"));
+        return view("dashboard.course.sub_module",compact("module_info","course_info","module","pdfs","sub_module","sub_title_name"));
+    }
+
+
+    public function getSubModTitleName($topics,$sub_mod_id)
+    {
+        foreach ($topics as $key => $topic) {
+            if($topic['id'] == $sub_mod_id);
+            return $topic['title'];
+        }
     }
 }
