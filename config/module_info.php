@@ -74,6 +74,20 @@ return [
             ]
             
         ],
+
+        "O4pL6"=>
+        [
+            "title"=>"Module Six",
+            "mod_id"=>"O4pL6",
+            "obj"=>[
+               "Understand the benefits of physical activity",
+               "Understand the relationship between physical activity and blood sugar",
+               "How to start and sustain physical activity",
+               "How to cope with events that may cause a sudden change in physical activity such as travels, holidays, festivals, and parties",
+              
+            ]
+            
+        ],
     ]
 
 

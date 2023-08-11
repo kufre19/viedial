@@ -215,5 +215,45 @@ return [
             
         ],
 
+    "O4pL6"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"https://www.youtube.com/embed/K4IZWJqbEXs",
+            "extra_videos"=>[
+                "https://www.youtube.com/embed/KTR709yGY_w",
+                
+            ],
+            "topics"=>[
+                [
+                    "title"=>"Types of physical activity ",
+                    "id"=>"V3iU4"
+                ],
+                [
+                    "title"=>"Benefits of physical activity ",
+                    "id"=>"D5kE6"
+                ],
+                [
+                    "title"=>"Relationship between physical activity and blood sugar and medications",
+                    "id"=>"M7nO8"
+                ],
+                [
+                    "title"=>"How to start and sustain a regular physical activity routine",
+                    "id"=>"C9oA0"
+                ],
+                [
+                    "title"=>"Overcoming factors that discourage physical activity",
+                    "id"=>"T1pW2"
+                ],
+                
+                    
+                
+            ]
+            
+        ],
+
 
 ];
