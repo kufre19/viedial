@@ -7,7 +7,7 @@ return[
     "4"=>[
         "title"=>"Diabetes Education",
         "course_id"=>"4",
-        "image"=>"https://test.viedial.com/public/course_image/course_4.png",
+        "image"=>"https://test.viedial.com/public/storage/course_assets/course_image/course_4.png",
         "obj"=>[
             "How to cope with a diagnosis of type 2 diabetes.",
             "The type of medications used to treat type 2 diabetes.",

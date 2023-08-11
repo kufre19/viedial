@@ -27,7 +27,7 @@
 			<span class="icon-Align-left"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
 		</a>	
 		<!-- Logo -->
-		<a href="index.html" class="logo">
+		<a href="{{url('/')}}" class="logo">
 		  <!-- logo-->
 		  <div class="logo-lg">
 			  <span class="light-logo"><img src="{{asset('view_assets/images/logo-light-text.png')}}" alt="logo"></span>
