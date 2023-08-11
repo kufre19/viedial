@@ -255,5 +255,48 @@ return [
             
         ],
 
+    "C5uV0"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"",
+            "extra_videos"=>[
+               
+                
+            ],
+            "topics"=>[
+                [
+                    "title"=>"Types of medications for treating type 2 diabetes",
+                    "id"=>"B3qX4"
+                ],
+                [
+                    "title"=>"Steps taken when treating type 2 diabetes ",
+                    "id"=>"Y5rF6"
+                ],
+                [
+                    "title"=>"Understanding medication adherence",
+                    "id"=>"G7sH8"
+                ],
+                [
+                    "title"=>"How to start and sustain a medication adherence routine",
+                    "id"=>"J9tK0"
+                ],
+                [
+                    "title"=>"Overcoming factors that prevent medication adherence 
+                    Intentional: cost, not aware of the risks because there are no physical cues, religious influences, cultural influences
+                    Non intentional: forgetfulness, change in schedule, travel 
+                    ",
+                    "id"=>"L1uZ2"
+                ],
+                
+                
+                    
+                
+            ]
+            
+        ],
 
 ];

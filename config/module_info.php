@@ -88,6 +88,22 @@ return [
             ]
             
         ],
+
+        "C5uV0"=>
+        [
+            "title"=>"Module Seven",
+            "mod_id"=>"C5uV0",
+            "obj"=>[
+               "The different types of medications used for treating type 2 diabetes 
+               ",
+               "When and how to use these medications",
+               "Common side effects of each medication",
+               "Strategies to achieve medication adherence ",
+
+              
+            ]
+            
+        ],
     ]
 
 
