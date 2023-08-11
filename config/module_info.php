@@ -47,6 +47,17 @@ return [
             ]
             
         ],
+        "F7hX8"=>
+        [
+            "title"=>"Module Four",
+            "mod_id"=>"F7hX8",
+            "obj"=>[
+               "The different groups of medications used to treat type 2 diabetes",
+               "How these medications work",
+               "Common side effects associated with using these medications ",
+            ]
+            
+        ],
     ]
 
 

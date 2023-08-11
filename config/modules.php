@@ -115,7 +115,7 @@ return [
             "video_url"=>"https://www.youtube.com/embed/5Ek6_m19OkU",
             "topics"=>[
                 [
-                    "title"=>"ow type 2 diabetes affects the different parts of the body",
+                    "title"=>"how type 2 diabetes affects the different parts of the body",
                     "id"=>"P1rE2"
                 ],
                 [
@@ -127,6 +127,42 @@ return [
                     "id"=>"W4yG7"
                 ],
                
+                
+            ]
+            
+        ],
+
+    "F7hX8"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"https://www.youtube.com/embed/I_3inL3tZkc",
+            "topics"=>[
+                [
+                    "title"=>"Overview of clinical treatment for type 2 diabetes",
+                    "id"=>"B2cD3"
+                ],
+                [
+                    "title"=>"Overview of blood glucose lowering medications for treating type 2 diabetes ",
+                    "id"=>"H4fG5"
+                ],
+                [
+                    "title"=>"Steps in treating type 2 diabetes",
+                    "id"=>"U6vI7"
+                ],
+                [
+                    "title"=>"Special considerations in treatment of type 2 diabetes (co-morbidities-renal, cvd,  HIV, weight gain/loss, budget)",
+                    "id"=>"Q8sT9"
+                ],
+                [
+                    "title"=>"Other non-clinical methods of treating type diabetes",
+                    "id"=>"A0jK1"
+                ],
+                
+                
                 
             ]
             
