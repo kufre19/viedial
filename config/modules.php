@@ -337,4 +337,54 @@ return [
             
         ],
 
+    "M9aY4"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"https://www.youtube.com/embed/Zpq3Eja6RQQ",
+            "extra_videos"=>[
+                
+                
+            ],
+            "topics"=>[
+                [
+                    "title"=>"What are chronic complications",
+                    "id"=>"A1zU2"
+                ],
+                [
+                    "title"=>"Understanding eye complications ",
+                    "id"=>"V3aI4"
+                ],
+                [
+                    "title"=>"Understanding kidney complications",
+                    "id"=>"D5bJ6"
+                ],
+                [
+                    "title"=>"Understanding cardiovascular disease complications",
+                    "id"=>"F7cK8"
+                ],
+                [
+                    "title"=>"Understanding oral complications ",
+                    "id"=>"H9dL0"
+                ],
+                [
+                    "title"=>"understanding nerve related complications ",
+                    "id"=>"X0eM1"
+                ],
+                [
+                    "title"=>"Understanding foot complications",
+                    "id"=>"Y2fN3"
+                ],
+                
+                
+                
+                    
+                
+            ]
+            
+        ],
+
 ];

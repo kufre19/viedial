@@ -347,4 +347,68 @@ return [
         
         
     ],
+    "M9aY4"=>[
+        "A1zU2"=>[
+            "id"=>"A1zU2",
+            "title"=>"Module 9.1",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/ImnbOBegp0g"
+            
+        ],
+        "V3aI4"=>[
+            "id"=>"V3aI4",
+            "title"=>"Module 9.2",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/iYDhv5USL8U"
+            
+        ],
+        "D5bJ6"=>[
+            "id"=>"D5bJ6",
+            "title"=>"Module 9.3",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/yzq_x5t24tw"
+            
+        ],
+        "F7cK8"=>[
+            "id"=>"F7cK8",
+            "title"=>"Module 9.4",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/Mr78-DgwRr8"
+            
+        ],
+
+        "H9dL0"=>[
+            "id"=>"H9dL0",
+            "title"=>"Module 9.5",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/UbdastF6wtM"
+            
+        ],
+        "X0eM1"=>[
+            "id"=>"X0eM1",
+            "title"=>"Module 9.6",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/mhlAMxuqDzc"
+            
+        ],
+        "Y2fN3"=>[
+            "id"=>"Y2fN3",
+            "title"=>"Module 9.7",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/Vi0tB8uAeqY"
+            
+        ],
+        
+        
+       
+        
+        
+    ],
 ];

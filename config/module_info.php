@@ -117,6 +117,17 @@ return [
             ]
             
         ],
+        "M9aY4"=>
+        [
+            "title"=>"Module Nine",
+            "mod_id"=>"M9aY4",
+            "obj"=>[
+              "Identify chronic complications",
+              "Prevent chronic complications",
+              "Respond to chronic complications",
+            ]
+            
+        ],
     ]
 
 
