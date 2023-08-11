@@ -309,47 +309,40 @@ return [
         
     ],
 
-    "C5uV0"=>[
-        "B3qX4"=>[
-            "id"=>"B3qX4",
-            "title"=>"Module 7.1",
+    "T1wZ3"=>[
+        "P2vM3"=>[
+            "id"=>"P2vM3",
+            "title"=>"Module 8.1",
             "worksheets_folder"=>"",
             "ebook"=>"",
-            "video_url"=>"https://www.youtube.com/embed/505RsV_PHcw"
+            "video_url"=>"https://www.youtube.com/embed/OJWNoaTT_YU"
             
         ],
-        "Y5rF6"=>[
-            "id"=>"Y5rF6",
-            "title"=>"Module 7.2",
+        "N4wO5"=>[
+            "id"=>"N4wO5",
+            "title"=>"Module 8.2",
             "worksheets_folder"=>"",
             "ebook"=>"",
-            "video_url"=>"https://www.youtube.com/embed/6ETkU2-Cu0Q"
+            "video_url"=>"https://www.youtube.com/embed/Qg2iYgl8nME"
             
         ],
-        "G7sH8"=>[
-            "id"=>"G7sH8",
-            "title"=>"Module 7.3",
+        "Q6xR7"=>[
+            "id"=>"Q6xR7",
+            "title"=>"Module 8.3",
             "worksheets_folder"=>"",
             "ebook"=>"",
-            "video_url"=>"https://www.youtube.com/embed/-8QqpuXOVZg"
+            "video_url"=>"https://www.youtube.com/embed/RewV7f2tRRI"
             
         ],
-        "J9tK0"=>[
-            "id"=>"J9tK0",
-            "title"=>"Module 7.4",
-            "worksheets_folder"=>"https://www.youtube.com/embed/wvVXZNBOnZQ",
+        "S8yT9"=>[
+            "id"=>"S8yT9",
+            "title"=>"Module 8.4",
+            "worksheets_folder"=>"https://www.youtube.com/embed/OdPLTqhhIT0",
             "ebook"=>"",
             "video_url"=>""
             
         ],
-        "L1uZ2"=>[
-            "id"=>"L1uZ2",
-            "title"=>"Module 7.5",
-            "worksheets_folder"=>"",
-            "ebook"=>"",
-            "video_url"=>""
-            
-        ],
+        
        
         
         

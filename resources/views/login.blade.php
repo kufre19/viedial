@@ -39,7 +39,7 @@
                                 <div class="col-6">
                                     <div class="fog-pwd text-right">
                                         <a href="javascript:void(0)" class="hover-warning"><i class="ion ion-locked"></i>
-                                            Forgot pwd?</a><br>
+                                            Forgot password?</a><br>
                                     </div>
                                 </div>
                                 <!-- /.col -->

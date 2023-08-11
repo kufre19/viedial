@@ -104,6 +104,19 @@ return [
             ]
             
         ],
+
+        "T1wZ3"=>
+        [
+            "title"=>"Module Eight",
+            "mod_id"=>"T1wZ3",
+            "obj"=>[
+              "Identify acute emergencies",
+              "Prevent acute emergencies",
+              "Respond to acute emergencies",
+
+            ]
+            
+        ],
     ]
 
 

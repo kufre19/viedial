@@ -298,5 +298,43 @@ return [
             ]
             
         ],
+    "T1wZ3"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"https://www.youtube.com/embed/276tcCCnLGo",
+            "extra_videos"=>[
+                
+                
+            ],
+            "topics"=>[
+                [
+                    "title"=>"What are acute emergencies",
+                    "id"=>"P2vM3"
+                ],
+                [
+                    "title"=>"Understanding hypoglycaemia",
+                    "id"=>"N4wO5
+                    "
+                ],
+                [
+                    "title"=>"Understanding Hyperosmolar hyperglycaemic states",
+                    "id"=>"Q6xR7"
+                ],
+                [
+                    "title"=>"Understanding diabetes keto-acidosis ",
+                    "id"=>"S8yT9"
+                ],
+                
+                
+                
+                    
+                
+            ]
+            
+        ],
 
 ];
