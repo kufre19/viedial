@@ -27,7 +27,7 @@ Route::get('/link-storage', function () {
 
 
 Route::get('/module', function () {
-    return view('dashboard.course.module');
+    return view('dashboard.course.extra_content');
 });
 
 Route::get('/course-page', function () {
@@ -51,6 +51,7 @@ Route::group(["middleware"=>"auth"], function()
     Route::get('/', [DashboardController::class,"dashboard"]);
     Route::get("courses/{id}",[CourseController::class,"load_course"]);
     Route::get("course/module/{course_id}/{mod_id}",[CourseController::class,"load_module"]);
+    Route::get("course/module/extra-content/{course_id}/{mod_id}",[CourseController::class,"load_extra_module_content"])->name("load.extra-content");
     Route::get("course/module/sub-module/{course_id}/{mod_id}/{sub_mod_id}",[CourseController::class,"load_sub_module"])->name("load.sub.module");
 
     Route::get('/download/worksheet/{module}/{file}', function ($module,$file) {

@@ -42,6 +42,16 @@ class CourseController extends Controller
         return view("dashboard.course.sub_module",compact("module_info","course_info","module","pdfs","sub_module","sub_title_name"));
     }
 
+    public function load_extra_module_content($course_id,$mod_id)
+    {
+        $course_info = Config::get("courses.$course_id");
+        $module_info = Config::get("module_info.$course_id.$mod_id");
+        $module = Config::get("modules.$mod_id");
+    
+   
+        return view("dashboard.course.extra_content",compact("module_info","course_info","module"));
+    }
+
 
     public function getSubModTitleName($topics,$sub_mod_id)
     {

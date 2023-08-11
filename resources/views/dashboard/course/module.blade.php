@@ -24,7 +24,10 @@
                                                 {{ $mod_obj }}
                                             </li>
                                         @endforeach
-                                    </ol>
+                                    </ol> <br>
+                                    @if (isset($module['extra_videos']) && $module['extra_videos'] != "")
+                                        <a href="{{route('load.extra-content',['course_id'=>$course_info['course_id'],'mod_id'=>$module_info['mod_id']])}}" class="btn btn-primary">More videos</a>
+                                    @endif
                                     </p>
                                 </h4>
                             </div>

@@ -168,5 +168,52 @@ return [
             
         ],
 
+    "J2iK9"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"https://www.youtube.com/embed/Jfhi0er1j7E",
+            "extra_videos"=>[
+                "https://www.youtube.com/embed/Zs03y8JCEvc",
+                "https://www.youtube.com/embed/ehg1V2lNVtk",
+                "https://www.youtube.com/embed/k8v-_slT03Q",
+                "https://www.youtube.com/embed/htp9pmwDK-w",
+                "https://www.youtube.com/embed/PER7zJ3Mtv4",
+               
+            ],
+            "topics"=>[
+                [
+                    "title"=>"Healthy and happy eating with type 2 diabetes (different eating patterns and how they affect glycaemic control and heart health)
+                    ",
+                    "id"=>"Z2mN3"
+                ],
+                [
+                    "title"=>"How to set healthy and happy eating goals",
+                    "id"=>"W4xO5"
+                ],
+                [
+                    "title"=>"Carbohydrates and type 2 diabetes: the myths and facts \nWhat are carbohydrates, starch, fiber and sugar\n
+                    Understanding carbohydrate counting\n
+                    Sources of carbohydrate and why it matters (unprocessed vs processed)
+                    ",
+                    "id"=>"L6yP7"
+                ],
+                [
+                    "title"=>"Making the right choices of proteins, fats and oils",
+                    "id"=>"F8gQ9"
+                ],
+                [
+                    "title"=>"Practical tips for starting and sustaining healthy eating",
+                    "id"=>"R0hS1"
+                ],
+                    
+                
+            ]
+            
+        ],
+
 
 ];

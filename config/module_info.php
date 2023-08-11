@@ -58,6 +58,22 @@ return [
             ]
             
         ],
+
+        "J2iK9"=>
+        [
+            "title"=>"Module Five",
+            "mod_id"=>"J2iK9",
+            "obj"=>[
+               "Set nutrition goals for type 2 diabetes care",
+               "Understand the relationship between carbohydrate intake and blood sugar",
+               "Food sources that will provide the amount of proteins and healthy fats",
+               "The role of micronutrients in regulating blood sugar and maintaining good heart health (potassium/sodium balance)",
+               "How to practice mindful eating",
+               "The benefits and harms associated with fasting",
+               "How to cope with events that may cause a sudden change in eating patterns such as travels, holidays, festivals and parties",
+            ]
+            
+        ],
     ]
 
 
