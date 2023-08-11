@@ -103,7 +103,34 @@ return [
                 ],
             ]
             
-        ]
+        ],
+
+    "L0uV9"=>
+        [
+            
+            "instructions_by"=>[
+                "video",
+                "Pictures"
+            ],
+            "video_url"=>"https://www.youtube.com/embed/5Ek6_m19OkU",
+            "topics"=>[
+                [
+                    "title"=>"ow type 2 diabetes affects the different parts of the body",
+                    "id"=>"P1rE2"
+                ],
+                [
+                    "title"=>"Acute complications of type 2 diabetes",
+                    "id"=>"S6tA3"
+                ],
+                [
+                    "title"=>"Chronic complications of type 2 diabetes",
+                    "id"=>"W4yG7"
+                ],
+               
+                
+            ]
+            
+        ],
 
 
 ];

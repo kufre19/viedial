@@ -143,6 +143,35 @@ return [
             
         ],
         
+    ],
+    "L0uV9"=>[
+        "P1rE2"=>[
+            "id"=>"P1rE2",
+            "title"=>"Module 3.1",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/1wo1SILstos"
+            
+        ],
+        "S6tA3"=>[
+            "id"=>"S6tA3",
+            "title"=>"Module 3.2",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/lRIStJLDSgw"
+            
+        ],
+        "W4yG7"=>[
+            "id"=>"W4yG7",
+            "title"=>"Module 3.3",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/9yK4B6VgkqI"
+            
+        ],
+       
+        
+        
     ]
 
 ];

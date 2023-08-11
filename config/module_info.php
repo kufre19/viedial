@@ -16,7 +16,7 @@ return [
                 and treatment.",
                 "Understand the strategies to win over type 2 diabetes and have a healthy
                 and blissful life with type 2 diabetes (VISAGE).",
-                ]
+            ]
             
         ],
         "X3fZ9"=>
@@ -32,7 +32,19 @@ return [
                 "Learn how to find out if you have type 2 diabetes ",
                 "The different ways that type 2 diabetes affects the different parts of the body 
                 ",
-                ]
+            ]
+            
+        ],
+        "L0uV9"=>
+        [
+            "title"=>"Module Three",
+            "mod_id"=>"L0uV9",
+            "obj"=>[
+                "The different ways that type 2 diabetes affects the different parts of the body",
+                "The acute complications of type 2 diabetes",
+                "The chronic complications of type 2 diabetes",
+                "The different ways that type 2 diabetes affects the different parts of the body ",
+            ]
             
         ],
     ]
