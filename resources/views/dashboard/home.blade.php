@@ -21,7 +21,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <a href="#" class="waves-effect waves-light btn-block btn btn-dark"
+                                        <a href="{{route('risk.assessment.start')}}" class="waves-effect waves-light btn-block btn btn-dark"
                                             style="white-space: nowrap;">Start Now!</a>
                                     </div>
                                 </div>
