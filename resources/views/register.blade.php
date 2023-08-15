@@ -8,15 +8,35 @@
                     <div class="content-top-agile p-20 pb-0">
                         <h2 class="text-primary">Get started with Us</h2>
                         <p class="mb-0">Register a new membership</p>
+
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     </div>
                     <div class="p-40">
-                        <form action="https://eduadmin-template.multipurposethemes.com/bs4/main/index.html" method="post">
+                        <form action="{{url('signup')}}" method="post">
+                        @csrf
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control pl-15 bg-transparent" placeholder="Full Name">
+                                    <input type="text" name="name" class="form-control pl-15 bg-transparent" placeholder="Full Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-transparent"><i class="fa fa-phone"></i></span>
+                                    </div>
+                                    <input type="text" name="whatsapp_number" class="form-control pl-15 bg-transparent" placeholder="Whatsapp Number" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -24,7 +44,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-transparent"><i class="ti-email"></i></span>
                                     </div>
-                                    <input type="email" class="form-control pl-15 bg-transparent" placeholder="Email">
+                                    <input type="email" name="email" class="form-control pl-15 bg-transparent" placeholder="Email" >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -32,7 +52,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
                                     </div>
-                                    <input type="password" class="form-control pl-15 bg-transparent" placeholder="Password">
+                                    <input type="password" name="password" class="form-control pl-15 bg-transparent" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -40,14 +60,14 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
                                     </div>
-                                    <input type="password" class="form-control pl-15 bg-transparent"
+                                    <input type="password" name="password_confirmation" class="form-control pl-15 bg-transparent"
                                         placeholder="Retype Password">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="checkbox">
-                                        <input type="checkbox" id="basic_checkbox_1">
+                                        <input type="checkbox" name="terms" value="1" id="basic_checkbox_1" required>
                                         <label for="basic_checkbox_1">I agree to the <a href="#"
                                                 class="text-warning"><b>Terms</b></a></label>
                                     </div>
@@ -60,7 +80,7 @@
                             </div>
                         </form>
                         <div class="text-center">
-                            <p class="mt-15 mb-0">Already have an account?<a href="auth_login.html"
+                            <p class="mt-15 mb-0">Already have an account?<a href="{{route('login')}}"
                                     class="text-danger ml-5"> Sign In</a></p>
                         </div>
                     </div>

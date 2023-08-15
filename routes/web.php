@@ -26,20 +26,16 @@ Route::get('/link-storage', function () {
 });
 
 
-Route::get('/module', function () {
-    return view('dashboard.course.extra_content');
-});
 
-Route::get('/course-page', function () {
-    return view('dashboard.course.course_index');
-});
 
-Route::get('/profile', function () {
-    return view('dashboard.profile');
+Route::get('/test-pages', function () {
+    return view('dashboard.risk-assessment.index');
 });
 
 // Auth Routes
 Route::get("login",[WebsiteContorller::class,"login_page"])->name("login");
+Route::get("signup",[WebsiteContorller::class,"signup_page"])->name("signup");
+Route::post("signup",[WebsiteContorller::class,"signup"]);
 Route::post("login",[WebsiteContorller::class,"login"]);
 Route::get("logout",[WebsiteContorller::class,"logout"]);
 
