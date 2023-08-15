@@ -318,8 +318,7 @@ return [
                 ],
                 [
                     "title"=>"Understanding hypoglycaemia",
-                    "id"=>"N4wO5
-                    "
+                    "id"=>"N4wO5"
                 ],
                 [
                     "title"=>"Understanding Hyperosmolar hyperglycaemic states",
