@@ -1044,6 +1044,12 @@ $('.demo-panel-bx').slimScroll({
       $(this).toggleClass('rotate-180').parents('.box').find('.box-content, .box-body').slideToggle();
     });
 
+        // Slide up/down
+    //
+    $(document).on('click', '.box-btn-slide-wordding', function(){
+      $(this).toggleClass('rotate-360').parents('.box').find('.box-content, .box-body').slideToggle();
+    });
+
 
 
     // Maximize

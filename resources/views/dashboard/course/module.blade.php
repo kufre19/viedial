@@ -128,7 +128,7 @@
                                 <div class="box box-slided-up">
 
                                     <div class="box-header with-border">
-                                        <h3 class="box-title"> Worksheets </h3>
+                                        <h3 class="box-title"> <a class="box-btn-slide-wordding" href="#">Worksheets</a>  </h3>
 
                                         <ul class="box-controls pull-right">
                                             <li><a class="box-btn-slide" href="#"></a></li>
