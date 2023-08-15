@@ -9,6 +9,7 @@ return [
                 "video",
                 "Pictures"
             ],
+            "video_url"=>"",
             "topics"=>[
                 [
                     "title"=>"Moments when you become aware that you have type 2 diabetes for the first time",
