@@ -1,39 +1,66 @@
-$(function(){
-    $("#form-total").steps({
-        headerTag: "h2",
+$(function () {
+    $("#wizard").steps({
+        headerTag: "h4",
         bodyTag: "section",
         transitionEffect: "fade",
         enableAllSteps: true,
-        autoFocus: true,
-        transitionEffectSpeed: 500,
-        titleTemplate : '<div class="title">#title#</div>',
+        transitionEffectSpeed: 300,
         labels: {
-            previous : 'Previous',
-            next : 'Next Step',
-            finish : 'Submit',
-            current : ''
+            next: "Next",
+            previous: "Back"
         },
-        onStepChanging: function (event, currentIndex, newIndex) { 
-            var fullname = $('#first_name').val() + ' ' + $('#last_name').val();
-            var email = $('#email').val();
-            var phone = $('#phone').val();
-            var username = $('#username').val();
-            var gender = $('form input[type=radio]:checked').val();
-            var address = $('#address').val();
+        onStepChanging: function (event, currentIndex, newIndex) {
+            // if ( newIndex === 1 ) {
+            //     $('.steps ul').addClass('step-2');
+            // } else {
 
-            $('#fullname-val').text(fullname);
-            $('#email-val').text(email);
-            $('#phone-val').text(phone);
-            $('#username-val').text(username);
-            $('#address-val').text(address);
-            $('#gender-val').text(gender);
+            //     $('.steps ul').removeClass('step-2');
+            // }
+            // if ( newIndex === 2 ) {
+            //     $('.steps ul').addClass('step-3');
+            //     $('.actions ul').addClass('mt-7');
+            // } else {
+            //     $('.steps ul').removeClass('step-3');
+            //     $('.actions ul').removeClass('mt-7');
+            // }
+            return true;
+        },
 
+        // when finishing
+        onFinishing: function (event, currentIndex) {
+            // This function is triggered when the "Finish" button is clicked
+
+            // You can manually submit the form:
+            $("#wizard").submit();
+
+            // Return true to move to the next step (although in this case, the form would be submitted and the page might redirect)
             return true;
         }
     });
-    $("#date").datepicker({
-        dateFormat: "MM - DD - yy",
-        showOn: "both",
-        buttonText : '<i class="zmdi zmdi-chevron-down"></i>',
-    });
-});
+    // Custom Button Jquery Steps
+    $('.forward').click(function () {
+        $("#wizard").steps('next');
+    })
+    $('.backward').click(function () {
+        $("#wizard").steps('previous');
+    })
+
+
+
+    // Grid 
+    $('.grid .grid-item').click(function () {
+        $('.grid .grid-item').removeClass('active');
+        $(this).addClass('active');
+    })
+    // Click to see password 
+    $('.password i').click(function () {
+        if ($('.password input').attr('type') === 'password') {
+            $(this).next().attr('type', 'text');
+        } else {
+            $('.password input').attr('type', 'password');
+        }
+    })
+    // Date Picker
+    var dp1 = $('#dp1').datepicker().data('datepicker');
+    dp1.selectDate(new Date());
+})

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RiskAssessmentController;
 use App\Http\Controllers\WebsiteContorller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -29,7 +30,7 @@ Route::get('/link-storage', function () {
 
 
 Route::get('/test-page', function () {
-    return view('dashboard.risk-assessment.index');
+    return view('dashboard.risk-assessment.scenario_one');
 });
 
 // Auth Routes
@@ -60,5 +61,6 @@ Route::group(["middleware" => "auth"], function () {
         Route::get("", function () {
             return view('dashboard.risk-assessment.index');
         })->name("risk.assessment.start");
+        Route::post("start",[RiskAssessmentController::class,"start"]);
     });
 });
