@@ -104,7 +104,7 @@ class RiskAssessmentController extends Controller
             Recommendation: Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.             
             ";
         }
-        dd($risk_message);
+        dd($risk_message,$risk_score);
     }
 
 
