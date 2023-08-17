@@ -75,7 +75,7 @@
                             <div class="input-group">
                                 <input type="number" class="form-control"  name="weight" id="weight" placeholder="">
                                 <div class="input-group-append">
-                                    <select class="form-control" id="weightUnit">
+                                    <select class="form-control" name="weightUnit" id="weightUnit">
                                         <option value="kg" selected>Kilograms (Kg) </option>
                                         <option value="lbs">Pounds (lbs)</option>
                                     </select>
