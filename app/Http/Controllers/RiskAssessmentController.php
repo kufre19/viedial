@@ -39,12 +39,12 @@ class RiskAssessmentController extends Controller
 
     public function scenario_one(Request $request)
     {
-        $request->validate([
-            'age' => 'required|integer',
-            'weight' => 'required|numeric',
-            'height' => 'required|numeric',
-            'waist_width' => 'required|numeric',
-        ]);
+        // $request->validate([
+        //     'age' => 'required|integer',
+        //     'weight' => 'required|numeric',
+        //     'height' => 'required|numeric',
+        //     'waist_width' => 'required|numeric',
+        // ]);
         $age = $request->input('age');
         $gender = $request->input('gender');
         $weight = $request->input('weight');
