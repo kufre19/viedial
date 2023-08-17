@@ -33,24 +33,25 @@
                             
                             <div class="form-holder">
                                 {{-- <i class="zmdi zmdi-account-o"></i> --}}
-                                <p>Are you living with hypertension?</p>
-                                <select name="" id="" class="form-control">
-                                    <option value="united states" class="option">Yes</option>
-                                    <option value="united kingdom" class="option">No</option>
+                                <label for="gender">
+                                    You identify as
+                                </label>
+                            
+                                <select name="gender" id="gender" class="form-control">
+                                    <option value="male" class="option">Male</option>
+                                    <option value="female" class="option">Female</option>
+                                    <option value="other" class="option">Other</option>
                                 </select>
                                 <i class="zmdi zmdi-chevron-down"></i>
                             </div>
                         </div>
                         <div class="form-col">
-                            
+                            <label for="age">
+                                how old are you in years only?
+                            </label>
                             <div class="form-holder">
-                                {{-- <i class="zmdi zmdi-account-o"></i> --}}
-                                <p>Are you living with Type 2 diabetes?</p>
-                                <select name="" id="" class="form-control">
-                                    <option value="united states" class="option">Yes</option>
-                                    <option value="united kingdom" class="option">No</option>
-                                </select>
-                                <i class="zmdi zmdi-chevron-down"></i>
+                                <i class="zmdi zmdi-baby"></i>
+                                <input type="number" id="age" class="form-control">
                             </div>
                         </div>
                     </div>

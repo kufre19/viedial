@@ -33,7 +33,7 @@
                             
                             <div class="form-holder">
                                 {{-- <i class="zmdi zmdi-account-o"></i> --}}
-                                <p>Are you living with hypertension?</p>
+                                <label for="qs_1">Are you living with hypertension?</label>
                                 <select name="start_qs_1" id="" class="form-control">
                                     <option value="yes" class="option">Yes</option>
                                     <option value="no" class="option">No</option>
@@ -45,8 +45,8 @@
                             
                             <div class="form-holder">
                                 {{-- <i class="zmdi zmdi-account-o"></i> --}}
-                                <p>Are you living with Type 2 diabetes?</p>
-                                <select name="start_qs_2" id="" class="form-control">
+                                <label for="qs_2">Are you living with hypertension?</label>
+                                <select name="start_qs_2" id="qs_2" class="form-control">
                                     <option value="yes" class="option">Yes</option>
                                     <option value="no" class="option">No</option>
                                 </select>
