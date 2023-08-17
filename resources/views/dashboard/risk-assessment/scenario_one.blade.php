@@ -51,7 +51,7 @@
                             </label>
                             <div class="form-holder">
                                 <i class="zmdi zmdi-baby"></i>
-                                <input type="number" id="age" class="form-control">
+                                <input type="number" name="age" id="age" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -62,73 +62,58 @@
                 <!-- SECTION 2 -->
                 <h4></h4>
                 <section>
-                	<h3>Residential address</h3>
+                	<h3>Let's Get Your BMI</h3>
                     <div class="form-row">
                         <div class="form-col">
-                            <label for="">
-                                Country
+                            <label for="weight">
+                                What is your weight in kg or pounds?
                             </label>
                             <div class="form-holder">
-                                <i class="zmdi zmdi-account-o"></i>
-                                <select name="" id="" class="form-control">
-                                    <option value="united states" class="option">United States</option>
-                                    <option value="united kingdom" class="option">United Kingdom</option>
-                                    <option value="viet nam" class="option">Viet Nam</option>
-                                </select>
-                                <i class="zmdi zmdi-chevron-down"></i>
+                                <i class="zmdi zmdi-baby"></i>
+                                <input type="number" name="weight" id="weight" class="form-control">
                             </div>
                         </div>
                         <div class="form-col">
-                            <label for="">
-                                Street Address
+                            <label for="height">
+                                What is your height in cm or meters?
                             </label>
                             <div class="form-holder">
-                                <i class="zmdi zmdi-pin"></i>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label for="">
-                                Apartment
-                            </label>
-                            <div class="form-holder">
-                                <i class="zmdi zmdi-home"></i>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-col">
-                            <label for="">
-                                Town / City
-                            </label>
-                            <div class="form-holder">
-                                <i class="zmdi zmdi-pin-drop"></i>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label for="">
-                                County
-                            </label>
-                            <div class="form-holder">
-                                <i class="zmdi zmdi-pin"></i>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-col">
-                            <label for="">
-                                Postcode / Zip
-                            </label>
-                            <div class="form-holder password">
-                                <i class="zmdi zmdi-eye"></i>
-                                <input type="password" class="form-control">
+                                <i class="zmdi zmdi-baby"></i>
+                                <input type="number" name="height" id="height" class="form-control">
                             </div>
                         </div>
                     </div>
                 </section>
+
+                  <!-- SECTION 3 -->
+                  <h4></h4>
+                  <section>
+                      <h3>Final Step</h3>
+                      <div class="form-row">
+                          <div class="form-col">
+                              <label for="waste_width">
+                                how wide is your waistline at the level of your navel?   
+                              </label>
+                              <div class="form-holder">
+                                  <i class="zmdi zmdi-baby"></i>
+                                  <input type="number" name="waste_width" id="waste_width" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-col">
+                              <label for="exercise">
+                                Do you exercise or move around for at least 30 minutes everyday?
+                              </label>
+                              <div class="form-holder">
+                                  {{-- <i class="zmdi zmdi-baby"></i> --}}
+                                  <select name="exercise" id="exercise" class="form-control">
+                                    <option value="yes" class="option">Yes</option>
+                                    <option value="no" class="option">No</option>
+                                   
+                                </select>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
               
 			
             </form>

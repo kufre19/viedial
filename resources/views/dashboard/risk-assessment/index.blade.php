@@ -45,7 +45,7 @@
                             
                             <div class="form-holder">
                                 {{-- <i class="zmdi zmdi-account-o"></i> --}}
-                                <label for="qs_2">Are you living with hypertension?</label>
+                                <label for="qs_2">Are you living with diabetes?</label>
                                 <select name="start_qs_2" id="qs_2" class="form-control">
                                     <option value="yes" class="option">Yes</option>
                                     <option value="no" class="option">No</option>
