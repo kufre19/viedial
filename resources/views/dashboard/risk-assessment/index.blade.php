@@ -20,6 +20,7 @@
 	<body>
 		<div class="wrapper">
             <form action="{{url('risk-assessment/start')}}" id="wizard" method="POST">
+                @csrf
         		<!-- SECTION 1 -->
                 <h4></h4>
                 <section>

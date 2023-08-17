@@ -61,6 +61,12 @@ Route::group(["middleware" => "auth"], function () {
         Route::get("", function () {
             return view('dashboard.risk-assessment.index');
         })->name("risk.assessment.start");
+
+        Route::get("/type-2-diabetes", function () {
+            return view('dashboard.risk-assessment.scenario_one');
+        });
         Route::post("start",[RiskAssessmentController::class,"start"]);
+        Route::post("type-2-diabetes",[RiskAssessmentController::class,"start"]);
+
     });
 });

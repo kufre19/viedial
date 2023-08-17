@@ -19,7 +19,8 @@
 	</head>
 	<body>
 		<div class="wrapper">
-            <form action="" id="wizard">
+            <form action="{{url('risk-assessment/type-2-diabetes')}}" id="wizard" method="POST">
+                @csrf
         		<!-- SECTION 1 -->
                 <h4></h4>
                 <section>
@@ -56,172 +57,78 @@
                     
                 </section>
 
+           
+                <!-- SECTION 2 -->
                 <h4></h4>
                 <section>
-                    <h3 style="margin-bottom: 37px;">What are you doing?</h3>
-                    <div class="grid">
-                        <div class="grid-item active">
-                            <div class="thumb">
-                                <img src="images/programming.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Programming
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/sports.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Sports
+                	<h3>Residential address</h3>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="">
+                                Country
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-account-o"></i>
+                                <select name="" id="" class="form-control">
+                                    <option value="united states" class="option">United States</option>
+                                    <option value="united kingdom" class="option">United Kingdom</option>
+                                    <option value="viet nam" class="option">Viet Nam</option>
+                                </select>
+                                <i class="zmdi zmdi-chevron-down"></i>
                             </div>
                         </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/business.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Business
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/tour-guide.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Tour Guide
+                        <div class="form-col">
+                            <label for="">
+                                Street Address
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin"></i>
+                                <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/art-design.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Art-Design
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="">
+                                Apartment
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-home"></i>
+                                <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/doctor.jpg" alt="">
+                        <div class="form-col">
+                            <label for="">
+                                Town / City
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin-drop"></i>
+                                <input type="text" class="form-control">
                             </div>
-                            <div class="heading">
-                                Doctor
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="">
+                                County
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin"></i>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label for="">
+                                Postcode / Zip
+                            </label>
+                            <div class="form-holder password">
+                                <i class="zmdi zmdi-eye"></i>
+                                <input type="password" class="form-control">
                             </div>
                         </div>
                     </div>
                 </section>
-                
-                <h4></h4>
-                <section>
-                    <h3 style="margin-bottom: 37px;">What are you doing?</h3>
-                    <div class="grid">
-                        <div class="grid-item active">
-                            <div class="thumb">
-                                <img src="images/programming.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Programming
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/sports.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Sports
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/business.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Business
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/tour-guide.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Tour Guide
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/art-design.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Art-Design
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/doctor.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Doctor
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-
-                <h4></h4>
-                <section>
-                    <h3 style="margin-bottom: 37px;">What are you doing?</h3>
-                    <div class="grid">
-                        <div class="grid-item active">
-                            <div class="thumb">
-                                <img src="images/programming.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Programming
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/sports.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Sports
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/business.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Business
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/tour-guide.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Tour Guide
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/art-design.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Art-Design
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="thumb">
-                                <img src="images/doctor.jpg" alt="">
-                            </div>
-                            <div class="heading">
-                                Doctor
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
+              
 			
             </form>
 		</div>

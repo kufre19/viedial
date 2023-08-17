@@ -17,22 +17,28 @@ class RiskAssessmentController extends Controller
 
         if($start_qs_1 == "yes" && $start_qs_2 == "yes")
         {
+            // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
 
         }
 
-        if($start_qs_1 == "yes" && $start_qs_2 == "no")
-        {
-            
-        }
-
+       
         if($start_qs_1 == "no" && $start_qs_2 == "yes")
         {
-            
+            // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+
         }
         if($start_qs_1 == "no" && $start_qs_2 == "no")
         {
+            // ACTION: SCREEN FOR RISK OF DEVELOPING TYPE 2 DIABETES
+            return redirect()->to("risk-assessment/type-2-diabetes");
             
         }
+
+         // if($start_qs_1 == "yes" && $start_qs_2 == "no")
+        // {
+        //     // 
+        // }
+
 
 
     }
