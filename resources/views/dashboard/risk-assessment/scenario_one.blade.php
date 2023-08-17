@@ -72,8 +72,17 @@
                             What is your weight in kg or pounds?
                         </label>
                         <div class="form-holder">
-                            <i class="zmdi zmdi-baby"></i>
-                            <input type="number" name="weight" id="weight" class="form-control">
+                            <div class="input-group">
+                                <input type="number" class="form-control"  name="weight" id="weight" placeholder="">
+                                <div class="input-group-append">
+                                    <select class="form-control" id="weightUnit">
+                                        <option value="kg" selected>Kilograms (Kg) </option>
+                                        <option value="lbs">Pounds (lbs)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {{-- <i class="zmdi zmdi-baby"></i> --}}
+                            {{-- <input type="number" name="weight" id="weight" class="form-control"> --}}
                         </div>
                     </div>
                     <div class="form-col">

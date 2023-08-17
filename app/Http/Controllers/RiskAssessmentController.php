@@ -39,7 +39,10 @@ class RiskAssessmentController extends Controller
         //     // 
         // }
 
+    }
 
-
+    public function scenario_one(Request $request)
+    {
+        dd($request);
     }
 }

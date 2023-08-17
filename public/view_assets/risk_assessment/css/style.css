@@ -384,6 +384,21 @@ h3 {
   }
 }
 
+.input-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group > * {
+  flex: 1 1 auto;
+}
+
+#weightUnit {
+  width: auto;
+}
+
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
