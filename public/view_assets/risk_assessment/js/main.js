@@ -10,20 +10,39 @@ $(function () {
             previous: "Back"
         },
         onStepChanging: function (event, currentIndex, newIndex) {
-            // if ( newIndex === 1 ) {
-            //     $('.steps ul').addClass('step-2');
-            // } else {
 
-            //     $('.steps ul').removeClass('step-2');
-            // }
-            // if ( newIndex === 2 ) {
-            //     $('.steps ul').addClass('step-3');
-            //     $('.actions ul').addClass('mt-7');
-            // } else {
-            //     $('.steps ul').removeClass('step-3');
-            //     $('.actions ul').removeClass('mt-7');
-            // }
-            return true;
+
+            // Get the current section (step)
+            var section = $(this).children('section').eq(currentIndex);
+          
+
+            // Check if all inputs are filled
+            var allFilled = true;
+            section.find('input').each(function () {
+                if ($(this).val() == "") {
+                    console.log("one foubd input");
+                    allFilled = false;
+                    return false; // Break out of the .each loop
+                }
+            });
+
+            section.find('select').each(function () {
+                if ($(this).val() == "") {
+                    console.log("one foubd select");
+
+                    allFilled = false;
+                    return false; // Break out of the .each loop
+                }
+            });
+
+            // If not all fields are filled, show an alert
+            if (!allFilled) {
+                alert('Please fill all the fields before proceeding.');
+            }
+
+            return allFilled;
+
+
         },
 
         // when finishing
@@ -36,6 +55,9 @@ $(function () {
             // Return true to move to the next step (although in this case, the form would be submitted and the page might redirect)
             return true;
         }
+
+
+
     });
     // Custom Button Jquery Steps
     $('.forward').click(function () {
