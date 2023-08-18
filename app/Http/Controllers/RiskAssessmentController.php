@@ -58,6 +58,11 @@ class RiskAssessmentController extends Controller
         $tested_hbp = $request->input('tested_hbp');
         $fam_diabetes = $request->input('fam_diabetes');
 
+        if($gender == "other")
+        {
+            $gender = "female";
+        }
+
 
 
 
@@ -71,11 +76,30 @@ class RiskAssessmentController extends Controller
 
         $extra_point = 0;
 
-        $fam_diabetes = ($fam_diabetes === 'yes') ? 5 : (($fam_diabetes === 'no') ? 0 : null);
+        // $fam_diabetes = ($fam_diabetes === 'yes') ? 5 : (($fam_diabetes === 'no') ? 0 : null);
+        // family with daibetes score
+        switch ($fam_diabetes) {
+            case 'yes_1':
+                $fam_diabetes = 3;
+                break; 
+            case 'yes_2':
+                $fam_diabetes = 5;
+                break; 
+               
+            case 'no':
+                $fam_diabetes = 0;
+                break; 
+               
+            default:
+                # code...
+                break;
+        }
+
+
         $tested_hbp = ($tested_hbp === 'yes') ? 5 : (($tested_hbp === 'no') ? 0 : null);
         $treatment = ($treatment === 'yes') ? 2 : (($treatment === 'no') ? 0 : null);
         $eat_vegie = ($eat_vegie === 'yes') ? 0 : (($eat_vegie === 'no') ? 1 : null);
-        $exercise = ($exercise === 'yes') ? 0 : (($exercise === 'no') ? 1 : null);
+        $exercise = ($exercise === 'yes') ? 0 : (($exercise === 'no') ? 2 : null);
 
 
         $extra_point = $fam_diabetes + $tested_hbp + $treatment +$eat_vegie;
@@ -113,13 +137,12 @@ class RiskAssessmentController extends Controller
 
         }elseif ($risk_score >= 21 ) {
             $risk_implication = "You have a very high risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 2 will develop type 2 diabetes.";
-            $risk_recommendation = "Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.             ";
-
+            $risk_recommendation = "Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.";
             $recommendation_link = "#";
 
         }
 
-        // dd($risk_message,$agecat,$bmi,$bmi_cat,$risk_score);
+        // dd($tested_hbp,$treatment,$eat_vegie,$fam_diabetes,$exercise);
 
         return view('dashboard.risk-assessment.results',compact("risk_score","risk_implication","recommendation_link","risk_recommendation"));
     }
