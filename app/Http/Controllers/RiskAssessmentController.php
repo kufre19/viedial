@@ -39,6 +39,7 @@ class RiskAssessmentController extends Controller
 
     public function scenario_one(Request $request)
     {
+        // dd($request);
         // $request->validate([
         //     'age' => 'required|integer',
         //     'weight' => 'required|numeric',
@@ -74,6 +75,8 @@ class RiskAssessmentController extends Controller
         $tested_hbp = ($tested_hbp === 'yes') ? 5 : (($tested_hbp === 'no') ? 0 : null);
         $treatment = ($treatment === 'yes') ? 2 : (($treatment === 'no') ? 0 : null);
         $eat_vegie = ($eat_vegie === 'yes') ? 0 : (($eat_vegie === 'no') ? 1 : null);
+        $exercise = ($exercise === 'yes') ? 0 : (($exercise === 'no') ? 1 : null);
+
 
         $extra_point = $fam_diabetes + $tested_hbp + $treatment +$eat_vegie;
 
@@ -81,30 +84,42 @@ class RiskAssessmentController extends Controller
 
         
         $risk_score = $agecat + $bmi_cat + $waist_cat + $extra_point;
-        $risk_message = "";
+        $risk_implication = "";
+        $risk_recommendation = "";
+        $recommendation_link= "";
 
         if ($risk_score <= 6) {
-            $risk_message = "Implication: You have very low risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 100 will develop type 2 diabetes. 
-            Recommendation: Sign up for our preventing pre-diabetes program. 
-            ";
+            $risk_implication = "You have very low risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 100 will develop type 2 diabetes.";
+            $risk_recommendation = "Sign up for our preventing pre-diabetes program.";
+            $recommendation_link = "#";
         } elseif ($risk_score > 6 || $risk_score <= 11) {
-            $risk_message = "Implication: You have low risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 25 will develop type 2 diabetes. 
-            Recommendation: Sign up for our preventing pre-diabetes program 
+            $risk_implication = "You have low risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 25 will develop type 2 diabetes. 
             ";
+            $risk_recommendation = "Sign up for our preventing pre-diabetes program ";
+            $recommendation_link = "#";
+
         } elseif ($risk_score > 11 || $risk_score <= 14) {
-            $risk_message = "Implication: You have moderate risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 6 will develop type 2 diabetes. 
-            Recommendation: Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.
+            $risk_implication = "You have moderate risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 6 will develop type 2 diabetes. 
             ";
+            $risk_recommendation = "Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.";
+            $recommendation_link = "#";
+
         }elseif ($risk_score > 14 || $risk_score <= 20) {
-            $risk_message = "Implication: You have a high risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 3 will develop type 2 diabetes. 
-            Recommendation: Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.             
-            ";
+            $risk_implication = "You have a high risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 3 will develop type 2 diabetes.";
+            $risk_recommendation = "Recommendation: Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.";
+            $recommendation_link = "#";
+
         }elseif ($risk_score > 20 ) {
-            $risk_message = "Implication: You have a very high risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 2 will develop type 2 diabetes. 
-            Recommendation: Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.             
-            ";
+            $risk_implication = "You have a very high risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 2 will develop type 2 diabetes.";
+            $risk_recommendation = "Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.             ";
+
+            $recommendation_link = "#";
+
         }
-        dd($risk_message,$risk_score);
+
+        // dd($risk_message,$agecat,$bmi,$bmi_cat,$risk_score);
+
+        return view('dashboard.risk-assessment.results',compact("risk_score","risk_implication","recommendation_link","risk_recommendation"));
     }
 
 

@@ -30,7 +30,7 @@ Route::get('/link-storage', function () {
 
 
 Route::get('/test-page', function () {
-    return view('dashboard.risk-assessment.scenario_one');
+    return view('dashboard.risk-assessment.results');
 });
 
 // Auth Routes
