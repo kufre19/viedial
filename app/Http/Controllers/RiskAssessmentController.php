@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\RiskAssessment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class RiskAssessmentController extends Controller
 {
+    use RiskAssessment;
     public function start(Request $request)
     {
         $start_qs_1 = $request->input("start_qs_1");
@@ -48,15 +50,15 @@ class RiskAssessmentController extends Controller
         // ]);
         $age = $request->input('age');
         $gender = $request->input('gender');
-        $weight = $request->input('weight');
-        $height = $request->input('height');
-        $weightUnit = $request->input('weightUnit');
-        $waist_width = $request->input('waist_width');
+        $weight =$this->convert_weight( $request->input('weight'), $request->input('weightUnit'));
+        $height = $this->convert_height($request->input('height_m'),$request->input('height_ft'),$request->input('height_in'));
+        $waist_width = $this->convert_waistWidth($request->input('waist_width'),$request->input('waist_width_unit'));
         $exercise = $request->input('exercise');
         $eat_vegie = $request->input('eat_vegie');
         $treatment = $request->input('treatment');
         $tested_hbp = $request->input('tested_hbp');
         $fam_diabetes = $request->input('fam_diabetes');
+
 
         if($gender == "other")
         {
@@ -70,7 +72,7 @@ class RiskAssessmentController extends Controller
 
 
         $agecat = $this->ageCat($age);
-        $bmi = $this->calculateBMI($weight, $weightUnit, $height);
+        $bmi = $this->calculateBMI($weight, $height);
         $bmi_cat = $this->categorizeBMI($bmi);
         $waist_cat = $this->categorizeWaist($waist_width, $gender);
 
@@ -166,12 +168,9 @@ class RiskAssessmentController extends Controller
         return $agecat;
     }
 
-    public function calculateBMI($weight, $weightUnit, $height)
+    public function calculateBMI($weight, $height)
     {
-        // Convert weight to kilograms if it's in pounds
-        if ($weightUnit === 'lbs') {
-            $weight = $this->poundsToKilograms($weight);
-        }
+       
         // Calculate BMI
         $bmi = $weight / ($height * $height);
 
@@ -179,16 +178,7 @@ class RiskAssessmentController extends Controller
         return $bmi;
     }
 
-    /**
-     * Convert pounds to kilograms.
-     *
-     * @param  mixed  $pounds
-     * @return float
-     */
-    private function poundsToKilograms($pounds): float
-    {
-        return $pounds * 0.45359237;
-    }
+
 
 
 
@@ -239,4 +229,7 @@ class RiskAssessmentController extends Controller
             throw new \InvalidArgumentException("Unknown sex: {$sex}");
         }
     }
+
+
+    
 }

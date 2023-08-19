@@ -21,7 +21,7 @@
                             <b>Recommendation:</b>
                            {{$risk_recommendation}} 
                             <hr class="mb-2">
-                                <a href="{{url($recommendation_link)}}" class="btn btn-primary" >Get Recommendation</a>
+                                <a href="{{url($recommendation_link)}}" class="btn btn-primary" >Get Our Recommendation</a>
                         </div>
 
                        </div>
