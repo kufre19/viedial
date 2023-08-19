@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Traits\RiskAssessment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 
 class RiskAssessmentController extends Controller
@@ -113,33 +114,33 @@ class RiskAssessmentController extends Controller
         $risk_implication = "";
         $risk_recommendation = "";
         $recommendation_link= "";
+        $result_messages = Config::get("result_msg_1");
+
 
 
 
         if ($risk_score <= 6) {
-            $risk_implication = "You have very low risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 100 will develop type 2 diabetes.";
-            $risk_recommendation = "Sign up for our preventing pre-diabetes program.";
+            $risk_implication = $result_messages[0]["risk_implication"];
+            $risk_recommendation = $result_messages[0]["risk_recommendation"];
             $recommendation_link = "#";
         } elseif ($risk_score >= 7 && $risk_score <= 11) {
-            $risk_implication = "You have low risk of developing type 2 diabetes within 10 years. It is estimated that 7 in 25 will develop type 2 diabetes. 
-            ";
-            $risk_recommendation = "Sign up for our preventing pre-diabetes program ";
+            $risk_implication = $result_messages[1]["risk_implication"];
+            $risk_recommendation = $result_messages[1]["risk_recommendation"];
             $recommendation_link = "#";
 
         } elseif ($risk_score >= 12 && $risk_score <= 14) {
-            $risk_implication = "You have moderate risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 6 will develop type 2 diabetes. 
-            ";
-            $risk_recommendation = "Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.";
+            $risk_implication = $result_messages[2]["risk_implication"];
+            $risk_recommendation = $result_messages[2]["risk_recommendation"];
             $recommendation_link = "#";
 
         }elseif ($risk_score >= 15 && $risk_score <= 20) {
-            $risk_implication = "You have a high risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 3 will develop type 2 diabetes.";
-            $risk_recommendation = "Recommendation: Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.";
+            $risk_implication = $result_messages[3]["risk_implication"];
+            $risk_recommendation = $result_messages[3]["risk_recommendation"];
             $recommendation_link = "#";
 
         }elseif ($risk_score >= 21 ) {
-            $risk_implication = "You have a very high risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 2 will develop type 2 diabetes.";
-            $risk_recommendation = "Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.";
+            $risk_implication = $result_messages[4]["risk_implication"];
+            $risk_recommendation = $result_messages[4]["risk_recommendation"];
             $recommendation_link = "#";
 
         }
