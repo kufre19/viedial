@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 class RiskAssessmentController extends Controller
 {
     use RiskAssessment;
+
     public function start(Request $request)
     {
         $start_qs_1 = $request->input("start_qs_1");
@@ -27,6 +28,7 @@ class RiskAssessmentController extends Controller
 
         if ($start_qs_1 == "no" && $start_qs_2 == "yes") {
             // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+            return redirect()->to("risk-assessment/cvd");
 
         }
         if ($start_qs_1 == "no" && $start_qs_2 == "no") {
@@ -34,10 +36,13 @@ class RiskAssessmentController extends Controller
             return redirect()->to("risk-assessment/type-2-diabetes");
         }
 
-        // if($start_qs_1 == "yes" && $start_qs_2 == "no")
-        // {
-        //     // 
-        // }
+        if($start_qs_1 == "yes" && $start_qs_2 == "no")
+        {
+            // ACTION SCREEN FOR RISK OF TWO THINGS
+            // RISK OF  HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE  
+            // RISK OF DEVELOPNG TYPE 2 DIABETES  
+
+        }
 
     }
 
@@ -72,8 +77,8 @@ class RiskAssessmentController extends Controller
 
 
 
-
-        $agecat = $this->ageCat($age);
+        // start collecting points
+        $agecat = $this->ageCatHbp($age);
         $bmi = $this->calculateBMI($weight, $height);
         $bmi_cat = $this->categorizeBMI($bmi);
         $waist_cat = $this->categorizeWaist($waist_width, $gender);
@@ -154,90 +159,62 @@ class RiskAssessmentController extends Controller
 
     public function scenario_two(Request $request)
     {
+         // dd($request);
+        // $request->validate([
+        //     'age' => 'required|integer',
+        //     'weight' => 'required|numeric',
+        //     'height' => 'required|numeric',
+        //     'waist_width' => 'required|numeric',
+        // ]);
+        $age = $request->input('age');
+        $gender = $request->input('gender');
+        $weight =$this->convert_weight( $request->input('weight'), $request->input('weightUnit'));
+        $height = $this->convert_height($request->input('height_m'),$request->input('height_ft'),$request->input('height_in'));
+        $treating_cvd = $request->input("treating_cvd");
+        $systolic_pressure = $request->input("systolic_pressure");
+        $smoking = $request->input("smoking");
+        $fam_cvd = $request->input("fam_cvd");
+        $bmi = $this->calculateBMI($weight,$height);
 
-    }
 
-
-    public function ageCat($age)
-    {
-        // Step Two: Create agecat variable
-        $agecat = 0;
-        // Step Three: Apply conditional logic to set agecat
-        if ($age >= 0 && $age <= 44) {
-            $agecat = 0;
-        } elseif ($age >= 45 && $age <= 54) {
-            $agecat = 2;
-        } elseif ($age >= 55 && $age <= 64) {
-            $agecat = 3;
-        } elseif ($age >= 65) {
-            $agecat = 4;
+        if($gender == "other")
+        {
+            $gender = "female";
         }
 
-        return $agecat;
+        $treating_cvd = ($treating_cvd === 'yes') ? 1 : (($treating_cvd === 'no') ? 0 : null);
+        $smoking = ($smoking === 'yes') ? 4 : (($smoking === 'no') ? 0 : null);
+        $fam_cvd = ($fam_cvd === 'yes') ? 2 : (($fam_cvd === 'no') ? 1 : null);
+
+
+
+
+
+
+        // start collecting points
+        $agecat = $this->ageCatCvd($age,$gender);
+        $bmi_cat = $this->categorizeBMI($bmi,"cvd");
+        $systolic_cat = $this->getSysCat($gender,$treating_cvd,$systolic_pressure);
+        $extra_point = 0 + $smoking;
+        
+        $risk_score = $agecat + $extra_point + $bmi_cat + $systolic_cat;
+
+
+
+
+        // return view('dashboard.risk-assessment.results',compact("risk_score","risk_implication","recommendation_link","risk_recommendation"));
+
+
     }
 
-    public function calculateBMI($weight, $height)
-    {
-       
-        // Calculate BMI
-        $bmi = $weight / ($height * $height);
 
-        // Return BMI (you can also return it as part of a view or JSON response)
-        return $bmi;
-    }
+   
+
+   
 
 
 
-
-
-    /**
-     * Categorize BMI into BMICAT.
-     *
-     * @param  mixed  $bmi
-     * @return int
-     */
-    private function categorizeBMI($bmi): int
-    {
-        if ($bmi < 25) {
-            return 0;
-        } elseif ($bmi >= 25 && $bmi < 30) {
-            return 1;
-        } else { // >= 30
-            return 3;
-        }
-    }
-
-    /**
-     * Categorize waist circumference into WAISTCAT based on sex.
-     *
-     * @param  mixed  $waistCircumference
-     * @param  string $sex ('male' or 'female')
-     * @return int
-     */
-    private function categorizeWaist($waistCircumference, string $sex): int
-    {
-        if ($sex === 'male') {
-            if ($waistCircumference < 94) {
-                return 0;
-            } elseif ($waistCircumference >= 94 && $waistCircumference < 103) {
-                return 3;
-            } else { // 103 and above
-                return 4;
-            }
-        } elseif ($sex === 'female') {
-            if ($waistCircumference < 80) {
-                return 0;
-            } elseif ($waistCircumference >= 80 && $waistCircumference < 89) {
-                return 3;
-            } else { // 89 and above
-                return 4;
-            }
-        } else {
-            // Unknown sex; handle accordingly, maybe throw an exception or default value.
-            throw new \InvalidArgumentException("Unknown sex: {$sex}");
-        }
-    }
-
+   
 
     
 }
