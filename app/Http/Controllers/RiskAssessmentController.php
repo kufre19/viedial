@@ -198,6 +198,9 @@ class RiskAssessmentController extends Controller
         $extra_point = 0 + $smoking;
         
         $risk_score = $agecat + $extra_point + $bmi_cat + $systolic_cat;
+        $risk_score_percentage = $this->getRiskPercentage($gender,$risk_score);
+
+      
 
 
 

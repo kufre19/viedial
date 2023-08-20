@@ -237,6 +237,119 @@ trait RiskAssessment
         return $SYSCAT;
     }
 
+    public function getRiskPercentage($gender,$risk_score)
+    {
+        $risk_score_percentage = 0 ;
+        if($gender == "male")
+        {
+            if ($risk_score <= -5) {
+                $risk_score_percentage = 0;
+            } elseif ($risk_score == -4) {
+                $risk_score_percentage = 1.1;
+            } elseif ($risk_score == -3) {
+                $risk_score_percentage = 1.4;
+            } elseif ($risk_score == -2) {
+                $risk_score_percentage = 1.6;
+            } elseif ($risk_score == -1) {
+                $risk_score_percentage = 1.9;
+            } elseif ($risk_score == 0) {
+                $risk_score_percentage = 2.3;
+            } elseif ($risk_score == 1) {
+                $risk_score_percentage = 2.8;
+            } elseif ($risk_score == 2) {
+                $risk_score_percentage = 3.3;
+            } elseif ($risk_score == 3) {
+                $risk_score_percentage = 4.0;
+            } elseif ($risk_score == 4) {
+                $risk_score_percentage = 4.7;
+            } elseif ($risk_score == 5) {
+                $risk_score_percentage = 5.6;
+            } elseif ($risk_score == 6) {
+                $risk_score_percentage = 6.7;
+            } elseif ($risk_score == 7) {
+                $risk_score_percentage = 8.0;
+            } elseif ($risk_score == 8) {
+                $risk_score_percentage = 9.5;
+            } elseif ($risk_score == 9) {
+                $risk_score_percentage = 11.2;
+            } elseif ($risk_score == 10) {
+                $risk_score_percentage = 13.3;
+            }elseif ($risk_score == 11) {
+                $risk_score_percentage = 15.7;
+            } elseif ($risk_score == 12) {
+                $risk_score_percentage = 18.5;
+            } elseif ($risk_score == 13) {
+                $risk_score_percentage = 21.7;
+            } elseif ($risk_score == 14) {
+                $risk_score_percentage = 25.4;
+            } elseif ($risk_score == 15) {
+                $risk_score_percentage = 29.6;
+            } elseif ($risk_score >= 16) {
+                $risk_score_percentage = 'Above 30%';
+            } else {
+                $risk_score_percentage = 1;
+
+            }            
+        }else {
+            if ($risk_score <= -2) {
+                $risk_score_percentage = 0;
+            } elseif ($risk_score == -1) {
+                $risk_score_percentage = 1.0;
+            } elseif ($risk_score == 0) {
+                $risk_score_percentage = 1.1;
+            } elseif ($risk_score == 1) {
+                $risk_score_percentage = 1.5;
+            } elseif ($risk_score == 2) {
+                $risk_score_percentage = 1.8;
+            } elseif ($risk_score == 3) {
+                $risk_score_percentage = 2.1;
+            } elseif ($risk_score == 4) {
+                $risk_score_percentage = 2.5;
+            } elseif ($risk_score == 5) {
+                $risk_score_percentage = 2.9;
+            } elseif ($risk_score == 6) {
+                $risk_score_percentage = 3.4;
+            } elseif ($risk_score == 7) {
+                $risk_score_percentage = 3.9;
+            } elseif ($risk_score == 8) {
+                $risk_score_percentage = 4.6;
+            } elseif ($risk_score == 9) {
+                $risk_score_percentage = 5.4;
+            } elseif ($risk_score == 10) {
+                $risk_score_percentage = 6.3;
+            } elseif ($risk_score == 11) {
+                $risk_score_percentage = 7.4;
+            } elseif ($risk_score == 12) {
+                $risk_score_percentage = 8.6;
+            } elseif ($risk_score == 13) {
+                $risk_score_percentage = 10.0;
+            }elseif ($risk_score == 14) {
+                $risk_score_percentage = 11.6;
+            } elseif ($risk_score == 15) {
+                $risk_score_percentage = 13.5;
+            } elseif ($risk_score == 16) {
+                $risk_score_percentage = 15.6;
+            } elseif ($risk_score == 17) {
+                $risk_score_percentage = 18.1;
+            } elseif ($risk_score == 18) {
+                $risk_score_percentage = 20.9;
+            } elseif ($risk_score == 19) {
+                $risk_score_percentage = 24.0;
+            } elseif ($risk_score == 20) {
+                $risk_score_percentage = 27.5;
+            } elseif ($risk_score >= 21) {
+                $risk_score_percentage = 'Above 30%';
+            } else {
+                // Handle cases where the risk score is not among the provided ones 
+                // You can choose to set a default value or take other actions
+                $risk_score_percentage = 1;
+
+            }
+            
+        }
+       return $risk_score_percentage;
+    }
+
 
 
 
