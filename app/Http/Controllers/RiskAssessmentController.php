@@ -150,7 +150,7 @@ class RiskAssessmentController extends Controller
             $recommendation_link = "#";
 
         }
-        dd($risk_recommendation);
+        // dd($risk_recommendation);
 
         // dd($tested_hbp,$treatment,$eat_vegie,$fam_diabetes,$exercise);
 
