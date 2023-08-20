@@ -150,6 +150,7 @@ class RiskAssessmentController extends Controller
             $recommendation_link = "#";
 
         }
+        dd($risk_recommendation);
 
         // dd($tested_hbp,$treatment,$eat_vegie,$fam_diabetes,$exercise);
 
@@ -199,13 +200,30 @@ class RiskAssessmentController extends Controller
         
         $risk_score = $agecat + $extra_point + $bmi_cat + $systolic_cat;
         $risk_score_percentage = $this->getRiskPercentage($gender,$risk_score);
+        $result_messages = Config::get("result_msg_2");
+
+
+        if($risk_score_percentage <= 9)
+        {
+            $risk_implication = $result_messages[0]["risk_implication"];
+            $risk_recommendation = $result_messages[0]["risk_recommendation"];
+            $recommendation_link = "#";
+        }elseif ($risk_score_percentage >= 10 && $risk_score_percentage <= 19) {
+            $risk_implication = $result_messages[1]["risk_implication"];
+            $risk_recommendation = $result_messages[1]["risk_recommendation"];
+            $recommendation_link = "#";
+        }else {
+            $risk_implication = $result_messages[2]["risk_implication"];
+            $risk_recommendation = $result_messages[2]["risk_recommendation"];
+            $recommendation_link = "#";
+        }
 
       
 
 
 
 
-        // return view('dashboard.risk-assessment.results',compact("risk_score","risk_implication","recommendation_link","risk_recommendation"));
+        return view('dashboard.risk-assessment.results',compact("risk_score","risk_implication","recommendation_link","risk_recommendation"));
 
 
     }

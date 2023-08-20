@@ -4,7 +4,7 @@
 return [
     [
         "risk_implication"=>"You have very low risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 100 will develop type 2 diabetes.",
-        "recommendation"=>"Sign up for our preventing pre-diabetes program.",
+        "risk_recommendation"=>"Sign up for our preventing pre-diabetes program.",
         "recommendation_link"=>"#"
     ],
     [
