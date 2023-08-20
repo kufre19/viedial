@@ -20,6 +20,7 @@ class RiskAssessmentController extends Controller
 
         if ($start_qs_1 == "yes" && $start_qs_2 == "yes") {
             // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+            return redirect()->to("risk-assessment/cvd");
 
         }
 
@@ -148,6 +149,12 @@ class RiskAssessmentController extends Controller
         // dd($tested_hbp,$treatment,$eat_vegie,$fam_diabetes,$exercise);
 
         return view('dashboard.risk-assessment.results',compact("risk_score","risk_implication","recommendation_link","risk_recommendation"));
+    }
+
+
+    public function scenario_two(Request $request)
+    {
+
     }
 
 
