@@ -3,15 +3,15 @@
 @section('main-content')
     <div class="col-12">
         <div class="row justify-content-center no-gutters">
-            <div class="col-lg-5 col-md-5 col-12">
+            <div class="col-lg-6 col-md-6 col-12">
                 <div class="bg-white rounded30 shadow-lg">
                     <div class="content-top-agile p-20 pb-0">
                         <h2 class="text-primary">Assessment Result</h2>
 
                     </div>
                     <div class="p-40">
-                       <div class="box-shadowed">
-                        @if (isset($risk_score_percentage))
+                        <div class="box-shadowed">
+                            {{-- @if (isset($risk_score_percentage))
                         <div class="box-title  d-flex justify-content-center align-items-center">
                             <h4 class="box-title"></h4>
                             <div class="text-center">
@@ -23,33 +23,40 @@
                                 </div>
                             </div>
                         </div>
-                        @endif
-                        
+                        @endif --}}
 
-                        <div class="box-body">
-                            <b>Risk Score: {{$risk_score}}</b>
-                            <br>
-                            <b>Risk Score Percentage: {{$risk_score_percentage}}%</b>
 
-                            
-                            <hr class="mb-2">
-                            {{$risk_implication}}
-                            <hr class="mb-2">
-                            <b>Recommendation:</b>
-                           {{$risk_recommendation}} 
-                            <hr class="mb-2">
-                                <a href="{{$recommendation_link}}" class="btn btn-primary" >Get Our Recommendation</a>
+                            <div class="box-body">
+                                <b>Risk Score: {{ $risk_score }}</b>
+                                <br>
+                                @if (isset($risk_score_percentage))
+                                    <b>Risk Score Percentage: {{ $risk_score_percentage }}%</b>
+                                @endif
+
+
+                                <hr class="mb-2">
+                                {{ $risk_implication }}
+                                <hr class="mb-2">
+                                <b>Recommendation:</b>
+                                {{ $risk_recommendation }}
+                                <hr class="mb-2">
+                                <a href="{{ $recommendation_link }}" class="btn btn-primary">Get Our Recommendation</a>
+                            </div>
+
                         </div>
-
-                       </div>
                         <div class="text-center">
-                          
+
                         </div>
                     </div>
                 </div>
 
+
+
+
             </div>
-           
+
+
+
         </div>
     </div>
 @endsection
