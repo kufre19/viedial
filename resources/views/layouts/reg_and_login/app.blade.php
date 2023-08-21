@@ -32,6 +32,10 @@
     <script src="{{ asset('view_assets/js/vendors.min.js') }}"></script>
     <script src="{{ asset('view_assets/js/pages/chat-popup.js') }}"></script>
     <script src="{{ asset('view_assets/assets/icons/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('view_assets/assets/vendor_components/jquery-knob/js/jquery.knob.js') }}"></script>
+    <script src="{{ asset('view_assets/js/pages/widget-inline-charts.js') }}"></script>
+
+
 
 </body>
 

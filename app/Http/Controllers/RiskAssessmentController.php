@@ -202,20 +202,25 @@ class RiskAssessmentController extends Controller
         $risk_score_percentage = $this->getRiskPercentage($gender,$risk_score);
         $result_messages = Config::get("result_msg_2");
 
-
+  
         if($risk_score_percentage <= 9)
         {
             $risk_implication = $result_messages[0]["risk_implication"];
             $risk_recommendation = $result_messages[0]["risk_recommendation"];
             $recommendation_link = "#";
+            $chart_color = "#1CCE00";
         }elseif ($risk_score_percentage >= 10 && $risk_score_percentage <= 19) {
             $risk_implication = $result_messages[1]["risk_implication"];
             $risk_recommendation = $result_messages[1]["risk_recommendation"];
             $recommendation_link = "#";
+            $chart_color = "#F34D00";
+
         }else {
             $risk_implication = $result_messages[2]["risk_implication"];
             $risk_recommendation = $result_messages[2]["risk_recommendation"];
             $recommendation_link = "#";
+            $chart_color = "#ea1f09";
+
         }
 
       
@@ -223,8 +228,13 @@ class RiskAssessmentController extends Controller
 
 
 
-        return view('dashboard.risk-assessment.results',compact("risk_score","risk_implication","recommendation_link","risk_recommendation"));
+        return view('dashboard.risk-assessment.results',compact("chart_color","risk_score","risk_implication","recommendation_link","risk_recommendation","risk_score_percentage"));
 
+
+    }
+
+    public function scenario_three(Request $request)
+    {
 
     }
 
