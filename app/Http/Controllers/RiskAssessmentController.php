@@ -189,6 +189,7 @@ class RiskAssessmentController extends Controller
         $extra_point = 0 + $smoking;
 
         $risk_score = $agecat + $extra_point + $bmi_cat + $systolic_cat;
+        $risk_score = $risk_score * $fam_cvd;
         $risk_score_percentage = $this->getRiskPercentage($gender, $risk_score);
         $result_messages = Config::get("result_msg_2");
 
