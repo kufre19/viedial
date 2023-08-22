@@ -64,7 +64,7 @@
                                 <hr class="mb-2">
                                 <a href="{{ $recommendation_link }}" class="btn btn-primary">Get Our Recommendation</a>
                                 <hr class="mb-2">
-                                @if (session()->has('second_results'))
+                                @if (isset($second_result))
                                     <a href="#" class="btn btn-viedial" id="hide-diabetes">See Next Result</a>
                                 @endif
 
@@ -77,7 +77,7 @@
                     </div>
                 </div>
 
-                @if (session()->has('second_results'))
+                @if (isset($second_result))
                     <div class="bg-white rounded30 shadow-lg" id="cvd" style="display: none">
                         <div class="content-top-agile p-20 pb-0">
                             <h2 class="text-primary">Assessment Result</h2>
@@ -116,7 +116,7 @@
                                     <a href="{{ $recommendation_link_cvd }}" class="btn btn-primary">Get Our
                                         Recommendation</a>
                                     <hr class="mb-2">
-                                    @if (session()->has('second_results'))
+                                    @if (isset($second_result))
                                         <a href="#" class="btn btn-viedial" id="hide-cvd">See Next Result</a>
                                     @endif
                                 </div>

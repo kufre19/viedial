@@ -354,9 +354,9 @@ class RiskAssessmentController extends Controller
 
         $risk_score_cvd = $risk_score;
         $risk_score_percentage_cvd = $risk_score_percentage;
-        session()->put("second_results","");
+        $second_result = true;
 
-        return view('dashboard.risk-assessment.results', compact("chart_color","risk_score_diabete","risk_score_cvd", "risk_implication","risk_implication_cvd", "recommendation_link", "risk_recommendation","risk_recommendation_cvd","recommendation_link_cvd", "risk_score_percentage_cvd"));
+        return view('dashboard.risk-assessment.results', compact("second_result","chart_color","risk_score_diabete","risk_score_cvd", "risk_implication","risk_implication_cvd", "recommendation_link", "risk_recommendation","risk_recommendation_cvd","recommendation_link_cvd", "risk_score_percentage_cvd"));
 
 
 
