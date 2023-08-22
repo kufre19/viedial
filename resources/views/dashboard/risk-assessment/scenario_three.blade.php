@@ -248,19 +248,19 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-col">
+                        {{-- <div class="form-col">
                             <label for="treatment">
                                 are you currently on treatment for high blood pressure?
                             </label>
                             <div class="form-holder">
-                                {{-- <i class="zmdi zmdi-baby"></i> --}}
+                          
                                 <select name="treatment" id="treatment" class="form-control">
                                     <option value="yes" class="option">Yes</option>
                                     <option value="no" class="option">No</option>
     
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
     
     
