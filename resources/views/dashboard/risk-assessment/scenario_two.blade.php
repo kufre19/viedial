@@ -185,7 +185,8 @@
                             {{-- <i class="zmdi zmdi-baby"></i> --}}
                             <select name="fam_cvd" id="fam_cvd" class="form-control">
                                
-                                <option value="yes" class="option">Yes
+                                <option value="yes" class="option">
+                                    Yes
                                 </option>
                                 <option value="no" class="option">No</option>
 

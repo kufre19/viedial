@@ -73,7 +73,7 @@
                         </label>
                         <div class="form-holder">
                             <div class="input-group">
-                                <input type="number" class="form-control"  name="weight" id="weight" placeholder="">
+                                <input type="number" class="form-control" name="weight" id="weight" placeholder="">
                                 <div class="input-group-append">
                                     <select class="form-control" name="weightUnit" id="weightUnit">
                                         <option value="kg" selected>Kilograms (Kg) </option>
@@ -87,18 +87,19 @@
                     </div>
                     <div class="form-col">
                         <label for="height_m">
-                            What is your height in  meters?
+                            What is your height in meters?
                         </label>
                         <div class="form-holder">
 
-                           
+
                             <i class="zmdi zmdi-baby"></i>
-                            <input type="number" name="height_m" id="height_m" class="form-control" placeholder="Height in meters">
+                            <input type="number" name="height_m" id="height_m" class="form-control"
+                                placeholder="Height in meters">
                         </div>
                     </div>
-                   
+
                 </div>
-                
+
                 <p>OR</p>
 
                 <div class="form-row">
@@ -107,18 +108,20 @@
                             What is your height in Feets and Inches?
                         </label>
                         <div class="form-holder">
-                            
+
                             {{-- <i class="zmdi zmdi-baby"></i> --}}
-                            <input type="number" name="height_ft" id="height_ft" class="form-control mb-1" placeholder="Feets">
-                            <input type="number" name="height_in" id="height_in" class="form-control" placeholder="Inches">
+                            <input type="number" name="height_ft" id="height_ft" class="form-control mb-1"
+                                placeholder="Feets">
+                            <input type="number" name="height_in" id="height_in" class="form-control"
+                                placeholder="Inches">
 
                         </div>
                     </div>
-                   
-                   
+
+
                 </div>
 
-                
+
             </section>
 
             <!-- SECTION 3 -->
@@ -132,7 +135,8 @@
                         </label>
                         <div class="form-holder">
                             <div class="input-group">
-                                <input type="number" class="form-control"  name="waist_width" id="waist_width" placeholder="">
+                                <input type="number" class="form-control" name="waist_width" id="waist_width"
+                                    placeholder="">
                                 <div class="input-group-append">
                                     <select class="form-control" name="waist_width_unit" id="measureUnit">
                                         <option value="cm" selected>Centimeters (cm) </option>
@@ -188,7 +192,7 @@
                     </div>
                 </div>
 
-               
+
             </section>
 
             <!-- SECTION 4 -->
@@ -216,8 +220,10 @@
                         <div class="form-holder">
                             {{-- <i class="zmdi zmdi-baby"></i> --}}
                             <select name="fam_diabetes" id="fam_diabetes" class="form-control">
-                                <option value="yes_1" class="option">Yes: grandparent, aunt, uncle or first cousin (but no own parent, brother, sister or child) </option>
-                                <option value="yes_2" class="option">Yes: parent, brother, sister or own child</option>
+                                <option value="yes_1" class="option">Yes: grandparent, aunt, uncle or first cousin
+                                    (but no own parent, brother, sister or child) </option>
+                                <option value="yes_2" class="option">Yes: parent, brother, sister or own child
+                                </option>
                                 <option value="no" class="option">No</option>
 
                             </select>

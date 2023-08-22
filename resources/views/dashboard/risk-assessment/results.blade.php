@@ -4,14 +4,49 @@
     <div class="col-12">
         <div class="row justify-content-center no-gutters">
             <div class="col-lg-6 col-md-6 col-12">
-                <div class="bg-white rounded30 shadow-lg">
+                <div class="bg-white rounded30 shadow-lg" style="display: block">
                     <div class="content-top-agile p-20 pb-0">
                         <h2 class="text-primary">Assessment Result</h2>
 
                     </div>
                     <div class="p-40">
                         <div class="box-shadowed">
-                            {{-- @if (isset($risk_score_percentage))
+
+                            <div class="box-body">
+                                <b>Risk Score: {{ $risk_score }}</b>
+
+
+
+                                <hr class="mb-2">
+                                {{ $risk_implication }}
+                                <hr class="mb-2">
+                                <b>Recommendation:</b>
+                                {{ $risk_recommendation }}
+                                <hr class="mb-2">
+                                <a href="{{ $recommendation_link }}" class="btn btn-primary">Get Our Recommendation</a>
+                                <hr class="mb-2">
+                                @if (session()->has('second_results'))
+                                    <a href="#" class="btn btn-viedial" id="hide-diabetes">See Next Result</a>
+                                @endif
+
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+
+                        </div>
+                    </div>
+                </div>
+
+                @if (session()->has('second_results'))
+                    <div class="bg-white rounded30 shadow-lg" style="display: none">
+                        <div class="content-top-agile p-20 pb-0">
+                            <h2 class="text-primary">Assessment Result</h2>
+
+                        </div>
+                        <div class="p-40">
+                            <div class="box-shadowed">
+                                {{-- @if (isset($risk_score_percentage))
                         <div class="box-title  d-flex justify-content-center align-items-center">
                             <h4 class="box-title"></h4>
                             <div class="text-center">
@@ -26,32 +61,35 @@
                         @endif --}}
 
 
-                            <div class="box-body">
-                                <b>Risk Score: {{ $risk_score }}</b>
-                                <br>
-                                @if (isset($risk_score_percentage))
-                                    <b>Risk Score Percentage: {{ $risk_score_percentage }}%</b>
-                                @endif
+                                <div class="box-body">
+                                    <b>Risk Score: {{ $risk_score_cvd }}</b>
+                                    <br>
+                                    @if (isset($risk_score_percentage_cvd))
+                                        <b>Risk Score Percentage: {{ $risk_score_percentage_cvd }}%</b>
+                                    @endif
 
 
-                                <hr class="mb-2">
-                                {{ $risk_implication }}
-                                <hr class="mb-2">
-                                <b>Recommendation:</b>
-                                {{ $risk_recommendation }}
-                                <hr class="mb-2">
-                                <a href="{{ $recommendation_link }}" class="btn btn-primary">Get Our Recommendation</a>
+                                    <hr class="mb-2">
+                                    {{ $risk_implication_cvd }}
+                                    <hr class="mb-2">
+                                    <b>Recommendation:</b>
+                                    {{ $risk_recommendation_cvd }}
+                                    <hr class="mb-2">
+                                    <a href="{{ $recommendation_link_cvd }}" class="btn btn-primary">Get Our
+                                        Recommendation</a>
+                                    <hr class="mb-2">
+                                    @if (session()->has('second_results'))
+                                        <a href="#" class="btn btn-viedial" id="hide-cvd">See Next Result</a>
+                                    @endif
+                                </div>
+
                             </div>
+                            <div class="text-center">
 
-                        </div>
-                        <div class="text-center">
-
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-
+                @endif
 
             </div>
 

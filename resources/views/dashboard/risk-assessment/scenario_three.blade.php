@@ -22,7 +22,7 @@
 
 <body>
     <div class="wrapper">
-        <form action="{{ url('risk-assessment/cvd') }}" id="wizard" method="POST">
+        <form action="{{ url('risk-assessment/diabetes-cvd') }}" id="wizard" method="POST">
             @csrf
             <!-- SECTION 1 -->
             <h4></h4>
@@ -194,6 +194,41 @@
                     </div>
                 </div>
             </section>
+
+             <!-- SECTION 5 -->
+             <h4></h4>
+             <section>
+                 <h3>Final Steps</h3>
+                 <div class="form-row">
+                     <div class="form-col">
+                         <label for="tested_hbp">
+                             Have you ever been found to have high blood sugar levels due to pregnancy or any ill-health?
+                         </label>
+                         <div class="form-holder">
+                             {{-- <i class="zmdi zmdi-baby"></i> --}}
+                             <select name="tested_hbp" id="tested_hbp" class="form-control">
+                                 <option value="yes" class="option">Yes</option>
+                                 <option value="no" class="option">No</option>
+ 
+                             </select>
+                         </div>
+                     </div>
+                     <div class="form-col">
+                         <label for="fam_diabetes">
+                             Have any of the members of your family ever been diagnosed with diabetes (type 1 or type 2)?
+                         </label>
+                         <div class="form-holder">
+                             {{-- <i class="zmdi zmdi-baby"></i> --}}
+                             <select name="fam_diabetes" id="fam_diabetes" class="form-control">
+                                 <option value="yes_1" class="option">Yes: grandparent, aunt, uncle or first cousin (but no own parent, brother, sister or child) </option>
+                                 <option value="yes_2" class="option">Yes: parent, brother, sister or own child</option>
+                                 <option value="no" class="option">No</option>
+ 
+                             </select>
+                         </div>
+                     </div>
+                 </div>
+             </section>
 
 
         </form>
