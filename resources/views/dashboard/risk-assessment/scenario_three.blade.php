@@ -138,7 +138,7 @@
                                 are you currently on treatment for high blood pressure?
                             </label>
 
-                            <select name="treating_cvd" id="treating_cvd" class="form-control">
+                            <select name="treatment" id="treating_cvd" class="form-control">
                                 <option value="yes" class="option">Yes</option>
                                 <option value="no" class="option">No</option>
 
