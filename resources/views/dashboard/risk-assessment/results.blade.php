@@ -75,9 +75,6 @@
                                
                                 <div class="box-body">
                                     <b>Risk Score: {{ $risk_score_cvd }}</b>
-                                    <br>
-                                   
-
 
                                     <hr class="mb-2">
                                     {{ $risk_implication_cvd }}
