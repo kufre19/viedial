@@ -342,7 +342,7 @@ class RiskAssessmentController extends Controller
         } elseif ($risk_score_percentage >= 10 && $risk_score_percentage <= 19) {
             $risk_implication_cvd = $result_messages[1]["risk_implication"];
             $risk_recommendation_cvd = $result_messages[1]["risk_recommendation"];
-            $recommendation_link = "#";
+            $recommendation_link_cvd = "#";
             $chart_color = "#F34D00";
         } else {
             $risk_implication_cvd = $result_messages[2]["risk_implication"];
