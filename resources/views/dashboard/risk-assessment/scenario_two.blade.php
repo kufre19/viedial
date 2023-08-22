@@ -45,7 +45,7 @@
                                 <option value="female" class="option">Female</option>
                                 <option value="other" class="option">Other</option>
                             </select>
-                            <i class="zmdi zmdi-chevron-down"></i>
+                            
                         </div>
                     </div>
                     <div class="form-col">
@@ -143,7 +143,7 @@
                                 <option value="no" class="option">No</option>
 
                             </select>
-                            <i class="zmdi zmdi-chevron-down"></i>
+                            
                         </div>
                     </div>
                     <div class="form-col">

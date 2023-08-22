@@ -38,7 +38,7 @@
                                     <option value="yes" class="option">Yes</option>
                                     <option value="no" class="option">No</option>
                                 </select>
-                                <i class="zmdi zmdi-chevron-down"></i>
+                                
                             </div>
                         </div>
                         <div class="form-col">
@@ -50,7 +50,7 @@
                                     <option value="yes" class="option">Yes</option>
                                     <option value="no" class="option">No</option>
                                 </select>
-                                <i class="zmdi zmdi-chevron-down"></i>
+                                
                             </div>
                         </div>
                     </div>

@@ -45,7 +45,7 @@
                                 <option value="female" class="option">Female</option>
                                 <option value="other" class="option">Other</option>
                             </select>
-                            <i class="zmdi zmdi-chevron-down"></i>
+
                         </div>
                     </div>
                     <div class="form-col">
@@ -53,7 +53,7 @@
                             how old are you in years only?
                         </label>
                         <div class="form-holder">
-                            <i class="zmdi zmdi-baby"></i>
+
                             <input type="number" name="age" id="age" class="form-control">
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                         <div class="form-holder">
 
 
-                            <i class="zmdi zmdi-baby"></i>
+
                             <input type="number" name="height_m" id="height_m" class="form-control"
                                 placeholder="Height in meters">
                         </div>
@@ -125,7 +125,7 @@
             <!-- SECTION 3 -->
             <h4></h4>
             <section>
-                <h3>Treatment History</h3>
+                <h3>Treatment History (CVD)</h3>
                 {{-- <textarea class="form-control" name="" readonly></textarea> --}}
 
 
@@ -143,7 +143,7 @@
                                 <option value="no" class="option">No</option>
 
                             </select>
-                            <i class="zmdi zmdi-chevron-down"></i>
+
                         </div>
                     </div>
                     <div class="form-col">
@@ -151,7 +151,7 @@
                             what was your systolic blood pressure in mmHg the last time you checked your blood pressure?
                         </label>
                         <div class="form-holder">
-                            <i class="zmdi zmdi-baby"></i>
+
                             <input type="number" name="systolic_pressure" id="systolic_pressure" class="form-control">
                         </div>
                     </div>
@@ -161,14 +161,14 @@
             <!-- SECTION 4 -->
             <h4></h4>
             <section>
-                <h3>Final Steps</h3>
+                <h3>HEALTH</h3>
                 <div class="form-row">
                     <div class="form-col">
                         <label for="smoking">
                             Do you currently smoke?
                         </label>
                         <div class="form-holder">
-                            {{-- <i class="zmdi zmdi-baby"></i> --}}
+
                             <select name="smoking" id="smoking" class="form-control">
                                 <option value="yes" class="option">Yes</option>
                                 <option value="no" class="option">No</option>
@@ -195,7 +195,78 @@
                 </div>
             </section>
 
-             <!-- SECTION 5 -->
+                <!-- SECTION 5 -->
+                <h4></h4>
+                <section>
+                    <h3>Your Body Size and health</h3>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="waste_width">
+                                how wide is your waistline at the level of your navel?
+                            </label>
+                            <div class="form-holder">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" name="waist_width" id="waist_width"
+                                        placeholder="">
+                                    <div class="input-group-append">
+                                        <select class="form-control" name="waist_width_unit" id="measureUnit">
+                                            <option value="cm" selected>Centimeters (cm) </option>
+                                            <option value="inches">Inches (in)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                {{-- <i class="zmdi zmdi-baby"></i> --}}
+                                {{-- <input type="number" name="waist_width" id="waste_width" class="form-control"> --}}
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label for="exercise">
+                                Do you exercise or move around for at least 30 minutes everyday?
+                            </label>
+                            <div class="form-holder">
+                                {{-- <i class="zmdi zmdi-baby"></i> --}}
+                                <select name="exercise" id="exercise" class="form-control">
+                                    <option value="yes" class="option">Yes</option>
+                                    <option value="no" class="option">No</option>
+    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="eat_vegie">
+                                Do you eat fruits and vegetables everyday?
+                            </label>
+                            <div class="form-holder">
+                                {{-- <i class="zmdi zmdi-baby"></i> --}}
+                                <select name="eat_vegie" id="eat_vegie" class="form-control">
+                                    <option value="yes" class="option">Yes</option>
+                                    <option value="no" class="option">No</option>
+    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label for="treatment">
+                                are you currently on treatment for high blood pressure?
+                            </label>
+                            <div class="form-holder">
+                                {{-- <i class="zmdi zmdi-baby"></i> --}}
+                                <select name="treatment" id="treatment" class="form-control">
+                                    <option value="yes" class="option">Yes</option>
+                                    <option value="no" class="option">No</option>
+    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </section>
+
+             <!-- SECTION 6 -->
              <h4></h4>
              <section>
                  <h3>Final Steps</h3>

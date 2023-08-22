@@ -335,26 +335,28 @@ class RiskAssessmentController extends Controller
 
 
         if ($risk_score_percentage <= 9) {
-            $risk_implication = $result_messages[0]["risk_implication"];
-            $risk_recommendation = $result_messages[0]["risk_recommendation"];
-            $recommendation_link = "#";
+            $risk_implication_cvd = $result_messages[0]["risk_implication"];
+            $risk_recommendation_cvd = $result_messages[0]["risk_recommendation"];
+            $recommendation_link_cvd = "#";
             $chart_color = "#1CCE00";
         } elseif ($risk_score_percentage >= 10 && $risk_score_percentage <= 19) {
-            $risk_implication = $result_messages[1]["risk_implication"];
-            $risk_recommendation = $result_messages[1]["risk_recommendation"];
+            $risk_implication_cvd = $result_messages[1]["risk_implication"];
+            $risk_recommendation_cvd = $result_messages[1]["risk_recommendation"];
             $recommendation_link = "#";
             $chart_color = "#F34D00";
         } else {
-            $risk_implication = $result_messages[2]["risk_implication"];
-            $risk_recommendation = $result_messages[2]["risk_recommendation"];
-            $recommendation_link = "#";
+            $risk_implication_cvd = $result_messages[2]["risk_implication"];
+            $risk_recommendation_cvd = $result_messages[2]["risk_recommendation"];
+            $recommendation_link_cvd = "#";
             $chart_color = "#ea1f09";
         }
         // end adding points and calculating scores diabetes
 
         $risk_score_cvd = $risk_score;
+        $risk_score_percentage_cvd = $risk_score_percentage;
+        session()->put("second_results","");
 
-        // return view('dashboard.risk-assessment.results', compact("chart_color", "risk_score", "risk_implication", "recommendation_link", "risk_recommendation", "risk_score_percentage"));
+        return view('dashboard.risk-assessment.results', compact("chart_color","risk_score_diabete","risk_score_cvd", "risk_implication","risk_implication_cvd", "recommendation_link", "risk_recommendation","risk_recommendation_cvd","recommendation_link_cvd", "risk_score_percentage_cvd"));
 
 
 

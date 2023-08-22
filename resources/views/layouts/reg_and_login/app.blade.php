@@ -36,6 +36,9 @@
     <script src="{{ asset('view_assets/js/pages/widget-inline-charts.js') }}"></script>
 
 
+    @yield('extra_js')
+
+
 
 </body>
 
