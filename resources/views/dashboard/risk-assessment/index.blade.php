@@ -24,7 +24,7 @@
         		<!-- SECTION 1 -->
                 <h4></h4>
                 <section>
-                    <h3>Let's Get Started</h3>
+                    <h3>Let' Get Started</h3>
                     {{-- <textarea class="form-control" name="" readonly></textarea> --}}
 
                 	
