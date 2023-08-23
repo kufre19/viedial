@@ -60,7 +60,7 @@
                             </div>
                         </form>
                         <div class="text-center">
-                            <p class="mt-15 mb-0">Don't have an account? <a href="auth_register.html"
+                            <p class="mt-15 mb-0">Don't have an account? <a href="{{url('signup')}}"
                                     class="text-warning ml-5">Sign Up</a></p>
                         </div>
                     </div>
