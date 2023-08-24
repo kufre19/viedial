@@ -16,8 +16,8 @@ class RiskAssessmentController extends Controller
         $start_qs_1 = $request->input("start_qs_1");
         $start_qs_2 = $request->input("start_qs_2");
 
-        Session::put("start_qs_1", $start_qs_1);
-        Session::put("start_qs_2", $start_qs_2);
+        Session::put("have_hypertension", $start_qs_1);
+        Session::put("have_diabetes", $start_qs_2);
 
         if ($start_qs_1 == "yes" && $start_qs_2 == "yes") {
             // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
@@ -67,9 +67,20 @@ class RiskAssessmentController extends Controller
             $gender = "female";
         }
 
-
-
-
+        $data = [
+            "gender"=> $gender,
+            "age"=> $age,
+            "weight"=> $weight,
+            "height"=> $height,
+            "treating_hbp"=> $tested_hbp,
+            "waistline"=>$waist_width,
+            "exercise"=>$exercise,
+            "eat_vegie"=>$eat_vegie,
+            "treated_sugar_hbp"=>$tested_hbp,
+            "fam_diabetes"=>$fam_diabetes,
+          
+        ];
+        $this->save_assessment_entry($data);
 
 
         // start collecting points
@@ -144,6 +155,7 @@ class RiskAssessmentController extends Controller
         // dd($risk_recommendation);
 
         // dd($tested_hbp,$treatment,$eat_vegie,$fam_diabetes,$exercise);
+       
 
         if($skip_view)
         {
@@ -182,6 +194,20 @@ class RiskAssessmentController extends Controller
         if ($gender == "other") {
             $gender = "female";
         }
+
+
+        $data = [
+            "gender"=> $gender,
+            "age"=> $age,
+            "weight"=> $weight,
+            "height"=> $height,
+            "treating_hbp"=> $treating_cvd,
+            "systolic_bp"=> $systolic_pressure,
+            "smoking"=> $smoking,
+            "fam_cvd"=> $fam_cvd,
+          
+        ];
+        $this->save_assessment_entry($data);
 
         $treating_cvd = ($treating_cvd === 'yes') ? 1 : (($treating_cvd === 'no') ? 0 : null);
         $smoking = ($smoking === 'yes') ? 4 : (($smoking === 'no') ? 0 : null);

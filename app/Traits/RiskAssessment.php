@@ -2,9 +2,35 @@
 
 namespace  App\Traits;
 
+use App\Models\RiskAssessment as ModelsRiskAssessment;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 
 trait RiskAssessment
 {
+
+
+    public function save_assessment_entry(array $data)
+    {
+        $risk_model = new ModelsRiskAssessment();
+        $risk_model->user_id = Auth::user()->id;
+        $risk_model->have_hypertension = session()->get("have_hypertension");
+        $risk_model->have_diabetes = session()->get("have_diabetes");
+        $risk_model->gender = $data['gender'] ?? "NA";
+        $risk_model->age = $data['age'] ?? "NA";
+        $risk_model->weight = $data['weight'] ?? "NA";
+        $risk_model->height = $data['height'] ?? "NA";
+        $risk_model->treating_hbp = $data['treating_hbp'] ?? "NA";
+        $risk_model->systolic_bp = $data['systolic_bp'] ?? "NA";
+        $risk_model->smoking = $data['smoking'] ?? "NA";
+        $risk_model->fam_cvd = $data['fam_cvd'] ?? "NA";
+        $risk_model->waistline = $data['waistline'] ?? "NA";
+        $risk_model->exercise = $data['exercise'] ?? "NA";
+        $risk_model->eat_vegie = $data['eat_vegie'] ?? "NA";
+        $risk_model->treated_sugar_hbp = $data['treated_sugar_hbp'] ?? "NA";
+        $risk_model->fam_diabetes = $data['fam_diabetes'] ?? "NA";
+        $risk_model->save();
+    }
     // to meters
     public function convert_height($height_m,$height_ft,$heigh_in)
     {
@@ -12,6 +38,7 @@ trait RiskAssessment
         $new_height = "";
         if($heigh_in != "" || $height_ft !="")
         {
+            
             $new_height = ($height_ft * 12 + $heigh_in) * 0.0254;
             return $new_height;
         }else{
@@ -20,8 +47,8 @@ trait RiskAssessment
        
     }
 
-    /* 
-        to KG 
+    /** 
+    * convert to KG 
     */
     public function convert_weight($weight,$unit)
     {
