@@ -23,11 +23,20 @@
 <body>
     <div class="wrapper">
         <form action="{{ url('risk-assessment/cvd') }}" id="wizard" method="POST">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             @csrf
             <!-- SECTION 1 -->
             <h4></h4>
             <section>
-                <h3>Risk Assessment For RISK OF CVD</h3>
+                <h3>Bio Data</h3>
                 {{-- <textarea class="form-control" name="" readonly></textarea> --}}
 
 
@@ -45,7 +54,7 @@
                                 <option value="female" class="option">Female</option>
                                 <option value="other" class="option">Other</option>
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="form-col">
@@ -143,7 +152,7 @@
                                 <option value="no" class="option">No</option>
 
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="form-col">
@@ -184,7 +193,7 @@
                         <div class="form-holder">
                             {{-- <i class="zmdi zmdi-baby"></i> --}}
                             <select name="fam_cvd" id="fam_cvd" class="form-control">
-                               
+
                                 <option value="yes" class="option">
                                     Yes
                                 </option>

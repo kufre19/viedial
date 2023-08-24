@@ -11,7 +11,7 @@
     <link rel="stylesheet"
         href="{{ asset('view_assets/risk_assessment/fonts/material-design-iconic-font/css/material-design-iconic-font.css') }}">
 
-    <!-- DATE-PICKER -->
+    {{-- DATE PICKER --}}
     <link rel="stylesheet" href="{{ asset('view_assets/risk_assessment/vendor/date-picker/css/datepicker.min.css') }}">
 
     <!-- STYLE CSS -->
@@ -22,12 +22,24 @@
 
 <body>
     <div class="wrapper">
+
+
         <form action="{{ url('risk-assessment/type-2-diabetes') }}" id="wizard" method="POST">
+            
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             @csrf
             <!-- SECTION 1 -->
             <h4></h4>
             <section>
-                <h3>Risk Assessment For RISK OF ONLY DEVELOPING TYPE 2 DIABETES</h3>
+                <h3>Bio Data</h3>
                 {{-- <textarea class="form-control" name="" readonly></textarea> --}}
 
 
@@ -45,7 +57,7 @@
                                 <option value="female" class="option">Female</option>
                                 <option value="other" class="option">Other</option>
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="form-col">
@@ -127,7 +139,7 @@
             <!-- SECTION 3 -->
             <h4></h4>
             <section>
-                <h3>Final Steps</h3>
+                <h3> Habbit and Health </h3>
                 <div class="form-row">
                     <div class="form-col">
                         <label for="waste_width">
@@ -246,6 +258,8 @@
     <script src="{{ asset('view_assets/risk_assessment/vendor/date-picker/js/datepicker.en.js') }}"></script>
 
     <script src="{{ asset('view_assets/risk_assessment/js/main.js') }}"></script>
+
+    
 
     <!-- Template created and distributed by Colorlib -->
 </body>

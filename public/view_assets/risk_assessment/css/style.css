@@ -409,4 +409,23 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.alert {
+  position: fixed;
+  top: 10px; /* Adjust this value if you want more/less spacing from the top */
+  right: 10px; /* Adjust this value if you want more/less spacing from the left */
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  z-index: 1000; /* This ensures that the alert stays on top of other content */
+  opacity: 1;
+  transition: opacity 0.5s; /* Fade effect */
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
 /*# sourceMappingURL=style.css.map */

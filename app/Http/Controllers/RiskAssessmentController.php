@@ -44,13 +44,37 @@ class RiskAssessmentController extends Controller
 
     public function scenario_one(Request $request, $skip_view=false)
     {
-        // dd($request);
-        // $request->validate([
-        //     'age' => 'required|integer',
-        //     'weight' => 'required|numeric',
-        //     'height' => 'required|numeric',
-        //     'waist_width' => 'required|numeric',
-        // ]);
+        // dd($request->all());
+        $messages = [
+            'age.required' => 'Age is required.',
+            'age.integer' => 'Age should be an integer value. i.e 50',
+            'age.min' => 'Age cannot be negative.',
+        
+            'weight.required' => 'Weight is mandatory.',
+            'weight.numeric' => 'Weight should be a number.',
+        
+            'height_m.numeric' => 'Height in meters should be a numeric value.',
+            'height_m.min' => 'Height in meters cannot be negative.',
+        
+            'height_ft.numeric' => 'Height in feet should be numeric.',
+            'height_ft.min' => 'Height in feet cannot be negative.',
+        
+            'height_in.numeric' => 'Height in inches should be numeric.',
+            'height_in.min' => 'Height in inches cannot be negative.',
+        
+            'waist_width.required' => 'Waist line width is required.',
+            'waist_width.numeric' => 'Waist line width should be numeric.',
+            'waist_width.min' => 'Waist line width cannot be negative.'
+        ];
+
+        $request->validate([
+            'age' => 'required|integer|min:0',
+            'weight' => 'required|numeric',
+            'height_m' => 'nullable|numeric|min:0',
+            'height_ft' => 'nullable|numeric|min:0',
+            'height_in' => 'nullable|numeric|min:0',
+            'waist_width' => 'required|numeric|min:0',
+        ]);
         $age = $request->input('age');
         $gender = $request->input('gender');
         $weight = $this->convert_weight($request->input('weight'), $request->input('weightUnit'));
@@ -173,13 +197,38 @@ class RiskAssessmentController extends Controller
 
     public function scenario_two(Request $request, $skip_view=false)
     {
-        // dd($request);
-        // $request->validate([
-        //     'age' => 'required|integer',
-        //     'weight' => 'required|numeric',
-        //     'height' => 'required|numeric',
-        //     'waist_width' => 'required|numeric',
-        // ]);
+        $messages = [
+            'age.required' => 'Age is required.',
+            'age.integer' => 'Age should be an integer value. i.e 50',
+            'age.min' => 'Age cannot be negative.',
+        
+            'weight.required' => 'Weight is mandatory.',
+            'weight.numeric' => 'Weight should be a number.',
+        
+            'height_m.numeric' => 'Height in meters should be a numeric value.',
+            'height_m.min' => 'Height in meters cannot be negative.',
+        
+            'height_ft.numeric' => 'Height in feet should be numeric.',
+            'height_ft.min' => 'Height in feet cannot be negative.',
+        
+            'height_in.numeric' => 'Height in inches should be numeric.',
+            'height_in.min' => 'Height in inches cannot be negative.',
+        
+            'systolic_pressure.required' => 'Systolic Blood Pressure is reqired',
+            'systolic_pressure.numeric' => 'Systolic Blood Pressure should be numeric.',
+            'systolic_pressure.min' => 'Systolic Blood Pressure cannot be negative.'
+        ];
+
+        $validation = $request->validate([
+            'age' => 'required|integer|min:0',
+            'weight' => 'required|numeric',
+            'height_m' => 'nullable|numeric|min:0',
+            'height_ft' => 'nullable|numeric|min:0',
+            'height_in' => 'nullable|numeric|min:0',
+            'systolic_pressure'=>'required|numeric|min:0'
+        ],$messages);
+
+       
         $age = $request->input('age');
         $gender = $request->input('gender');
         $weight = $this->convert_weight($request->input('weight'), $request->input('weightUnit'));
