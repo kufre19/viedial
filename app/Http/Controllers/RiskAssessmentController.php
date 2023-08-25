@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RiskAssessment as ModelsRiskAssessment;
 use App\Traits\RiskAssessment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 
@@ -42,26 +44,26 @@ class RiskAssessmentController extends Controller
         }
     }
 
-    public function scenario_one(Request $request, $skip_view=false)
+    public function scenario_one(Request $request, $skip_view = false)
     {
         // dd($request->all());
         $messages = [
             'age.required' => 'Age is required.',
             'age.integer' => 'Age should be an integer value. i.e 50',
             'age.min' => 'Age cannot be negative.',
-        
+
             'weight.required' => 'Weight is mandatory.',
             'weight.numeric' => 'Weight should be a number.',
-        
+
             'height_m.numeric' => 'Height in meters should be a numeric value.',
             'height_m.min' => 'Height in meters cannot be negative.',
-        
+
             'height_ft.numeric' => 'Height in feet should be numeric.',
             'height_ft.min' => 'Height in feet cannot be negative.',
-        
+
             'height_in.numeric' => 'Height in inches should be numeric.',
             'height_in.min' => 'Height in inches cannot be negative.',
-        
+
             'waist_width.required' => 'Waist line width is required.',
             'waist_width.numeric' => 'Waist line width should be numeric.',
             'waist_width.min' => 'Waist line width cannot be negative.'
@@ -75,6 +77,7 @@ class RiskAssessmentController extends Controller
             'height_in' => 'nullable|numeric|min:0',
             'waist_width' => 'required|numeric|min:0',
         ]);
+
         $age = $request->input('age');
         $gender = $request->input('gender');
         $weight = $this->convert_weight($request->input('weight'), $request->input('weightUnit'));
@@ -92,17 +95,17 @@ class RiskAssessmentController extends Controller
         }
 
         $data = [
-            "gender"=> $gender,
-            "age"=> $age,
-            "weight"=> $weight,
-            "height"=> $height,
-            "treating_hbp"=> $tested_hbp,
-            "waistline"=>$waist_width,
-            "exercise"=>$exercise,
-            "eat_vegie"=>$eat_vegie,
-            "treated_sugar_hbp"=>$tested_hbp,
-            "fam_diabetes"=>$fam_diabetes,
-          
+            "gender" => $gender,
+            "age" => $age,
+            "weight" => $weight,
+            "height" => $height,
+            "treating_hbp" => $tested_hbp,
+            "waistline" => $waist_width,
+            "exercise" => $exercise,
+            "eat_vegie" => $eat_vegie,
+            "treated_sugar_hbp" => $tested_hbp,
+            "fam_diabetes" => $fam_diabetes,
+
         ];
         $this->save_assessment_entry($data);
 
@@ -178,16 +181,16 @@ class RiskAssessmentController extends Controller
         }
         // dd($risk_recommendation);
 
+        $recommendation_link = "https://viedial.com/shop/";
         // dd($tested_hbp,$treatment,$eat_vegie,$fam_diabetes,$exercise);
-       
 
-        if($skip_view)
-        {
+
+        if ($skip_view) {
             return [
-                "risk_score"=>$risk_score,
-                "risk_implication"=>$risk_implication,
-                "recommendation_link"=>$recommendation_link,
-                "risk_recommendation"=>$risk_recommendation
+                "risk_score" => $risk_score,
+                "risk_implication" => $risk_implication,
+                "recommendation_link" => $recommendation_link,
+                "risk_recommendation" => $risk_recommendation
             ];
         }
 
@@ -195,25 +198,25 @@ class RiskAssessmentController extends Controller
     }
 
 
-    public function scenario_two(Request $request, $skip_view=false)
+    public function scenario_two(Request $request, $skip_view = false)
     {
         $messages = [
             'age.required' => 'Age is required.',
             'age.integer' => 'Age should be an integer value. i.e 50',
             'age.min' => 'Age cannot be negative.',
-        
+
             'weight.required' => 'Weight is mandatory.',
             'weight.numeric' => 'Weight should be a number.',
-        
+
             'height_m.numeric' => 'Height in meters should be a numeric value.',
             'height_m.min' => 'Height in meters cannot be negative.',
-        
+
             'height_ft.numeric' => 'Height in feet should be numeric.',
             'height_ft.min' => 'Height in feet cannot be negative.',
-        
+
             'height_in.numeric' => 'Height in inches should be numeric.',
             'height_in.min' => 'Height in inches cannot be negative.',
-        
+
             'systolic_pressure.required' => 'Systolic Blood Pressure is reqired',
             'systolic_pressure.numeric' => 'Systolic Blood Pressure should be numeric.',
             'systolic_pressure.min' => 'Systolic Blood Pressure cannot be negative.'
@@ -225,10 +228,10 @@ class RiskAssessmentController extends Controller
             'height_m' => 'nullable|numeric|min:0',
             'height_ft' => 'nullable|numeric|min:0',
             'height_in' => 'nullable|numeric|min:0',
-            'systolic_pressure'=>'required|numeric|min:0'
-        ],$messages);
+            'systolic_pressure' => 'required|numeric|min:0'
+        ], $messages);
 
-       
+
         $age = $request->input('age');
         $gender = $request->input('gender');
         $weight = $this->convert_weight($request->input('weight'), $request->input('weightUnit'));
@@ -246,15 +249,15 @@ class RiskAssessmentController extends Controller
 
 
         $data = [
-            "gender"=> $gender,
-            "age"=> $age,
-            "weight"=> $weight,
-            "height"=> $height,
-            "treating_hbp"=> $treating_cvd,
-            "systolic_bp"=> $systolic_pressure,
-            "smoking"=> $smoking,
-            "fam_cvd"=> $fam_cvd,
-          
+            "gender" => $gender,
+            "age" => $age,
+            "weight" => $weight,
+            "height" => $height,
+            "treating_hbp" => $treating_cvd,
+            "systolic_bp" => $systolic_pressure,
+            "smoking" => $smoking,
+            "fam_cvd" => $fam_cvd,
+
         ];
         $this->save_assessment_entry($data);
 
@@ -296,17 +299,18 @@ class RiskAssessmentController extends Controller
             $chart_color = "#ea1f09";
         }
 
+        $recommendation_link = "https://viedial.com/shop/";
 
 
 
 
-        if($skip_view)
-        {
+
+        if ($skip_view) {
             return [
-                "risk_score"=>$risk_score,
-                "risk_implication"=>$risk_implication,
-                "recommendation_link"=>$recommendation_link,
-                "risk_recommendation"=>$risk_recommendation
+                "risk_score" => $risk_score,
+                "risk_implication" => $risk_implication,
+                "recommendation_link" => $recommendation_link,
+                "risk_recommendation" => $risk_recommendation
             ];
         }
         return view('dashboard.risk-assessment.results', compact("chart_color", "risk_score", "risk_implication", "recommendation_link", "risk_recommendation"));
@@ -314,34 +318,63 @@ class RiskAssessmentController extends Controller
 
     public function scenario_three(Request $request)
     {
-        
-       
 
-        $load_score_diabetes = $this->scenario_one($request,true);
-        $load_score_cvd = $this->scenario_two($request,true);
+
+        $load_score_diabetes = $this->scenario_one($request, true);
+        $load_score_cvd = $this->scenario_two($request, true);
 
         $risk_recommendation = $load_score_diabetes['risk_recommendation'];
         $risk_implication = $load_score_diabetes['risk_implication'];
         $recommendation_link = $load_score_diabetes['recommendation_link'];
         $risk_score_diabete = $load_score_diabetes['risk_score'];
-        
+
         $risk_score_cvd = $load_score_cvd['risk_score'];
         $risk_implication_cvd = $load_score_cvd['risk_implication'];
         $recommendation_link_cvd = $load_score_cvd['recommendation_link'];
         $risk_recommendation_cvd = $load_score_cvd['risk_recommendation'];
-
         $second_result = true;
 
-        return view('dashboard.risk-assessment.results', compact("second_result","risk_score_diabete","risk_score_cvd", "risk_implication","risk_implication_cvd", "recommendation_link", "risk_recommendation","risk_recommendation_cvd","recommendation_link_cvd"));
-
-
-
+        return view('dashboard.risk-assessment.results', compact("second_result", "risk_score_diabete", "risk_score_cvd", "risk_implication", "risk_implication_cvd", "recommendation_link", "risk_recommendation", "risk_recommendation_cvd", "recommendation_link_cvd"));
     }
 
 
+    public function get_user_results()
+    {
+        $risk_model = new ModelsRiskAssessment();
+        $entires = $risk_model->where('user_id', Auth::user()->id)->get();
+        $result_list = [];
+        foreach ($entires as $key => $value) {
+            $start_qs_1 = $value['have_hypertension'];
+            $start_qs_2 = $value['have_diabetes'];
+
+            if ($start_qs_1 == "yes" && $start_qs_2 == "yes") {
+                // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+                $result = $this->result_cvd($value);
+            }
 
 
+            if ($start_qs_1 == "no" && $start_qs_2 == "yes") {
+                // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+                $result = $this->result_cvd($value);
+            }
+            if ($start_qs_1 == "no" && $start_qs_2 == "no") {
+                // ACTION: SCREEN FOR RISK OF DEVELOPING TYPE 2 DIABETES
+                $result = $this->result_diabetes($value);
 
+            }
 
+            if ($start_qs_1 == "yes" && $start_qs_2 == "no") {
+                // ACTION SCREEN FOR RISK OF TWO THINGS
+                // RISK OF  HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE  
+                // RISK OF DEVELOPNG TYPE 2 DIABETES
+                $result_1 = $this->result_cvd($value);
+                $result = $this->result_diabetes($value);
 
+            array_push($result_list,$result);
+                
+            }
+            array_push($result_list,$result);
+        }
+        return view("dashboard.assessment_results",compact("result_list"));
+    }
 }

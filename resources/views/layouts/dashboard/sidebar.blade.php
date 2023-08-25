@@ -15,11 +15,18 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{url("/")}}"><i class="icon-Commit"><span class="path1">
-                                </span><span class="path2"></span></i>
-                                Dashboard</a>
+                            <li><a href="{{ url('/') }}"><i class="icon-Commit"><span class="path1">
+                                        </span><span class="path2"></span></i>
+                                    Dashboard</a>
                             </li>
 
+                            <li>
+                                <a href="{{ url('risk-assessment/result') }}">
+                                    <i class="icon-Commit"><span class="path1">
+                                    </span><span class="path2"></span></i>
+                                    Heart Age
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     {{-- <li class="treeview">
@@ -47,7 +54,7 @@
             aria-describedby="tooltip92529"><span class="icon-Settings-2"></span></a>
         <a href="mailbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><span
                 class="icon-Mail"></span></a>
-        <a href="{{url('logout')}}" class="link" data-toggle="tooltip" title=""
+        <a href="{{ url('logout') }}" class="link" data-toggle="tooltip" title=""
             data-original-title="Logout"><span class="icon-Lock-overturning"><span class="path1"></span><span
                     class="path2"></span></span></a>
     </div>

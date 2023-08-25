@@ -50,7 +50,7 @@
                                 <b>Recommendation:</b>
                                 {{ $risk_recommendation }}
                                 <hr class="mb-2">
-                                <a href="{{ $recommendation_link }}" class="btn btn-primary">Get Our Recommendation</a>
+                                <a href="{{ $recommendation_link }}" target="_blank" class="btn btn-primary">Get Our Recommendation</a>
                                 <hr class="mb-2">
                                 @if (isset($second_result))
                                     <a href="#" class="btn btn-viedial" id="hide-diabetes">See Next Result</a>
@@ -82,7 +82,7 @@
                                     <b>Recommendation:</b>
                                     {{ $risk_recommendation_cvd }}
                                     <hr class="mb-2">
-                                    <a href="{{ $recommendation_link_cvd }}" class="btn btn-primary">Get Our
+                                    <a href="{{ $recommendation_link_cvd }}" target="_blank" class="btn btn-primary">Get Our
                                         Recommendation</a>
                                     <hr class="mb-2">
                                     @if (isset($second_result))

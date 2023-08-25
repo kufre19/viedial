@@ -4,6 +4,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RiskAssessmentController;
 use App\Http\Controllers\WebsiteContorller;
+use App\Models\RiskAssessment;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Artisan;
@@ -76,6 +77,8 @@ Route::group(["middleware" => "auth"], function () {
         Route::post("type-2-diabetes",[RiskAssessmentController::class,"scenario_one"]);
         Route::post("cvd",[RiskAssessmentController::class,"scenario_two"]);
         Route::post("diabetes-cvd",[RiskAssessmentController::class,"scenario_three"]);
+
+        Route::get("/result",[RiskAssessmentController::class,"get_user_results"])->name("risk.assessment.result");
 
 
     });
