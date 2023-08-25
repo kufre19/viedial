@@ -27,7 +27,7 @@
             <!-- SECTION 1 -->
             <h4></h4>
             <section>
-                <h3>Risk Assessment For RISK OF CVD AND DIABETES</h3>
+                <h3>Bio Data</h3>
                 {{-- <textarea class="form-control" name="" readonly></textarea> --}}
 
 

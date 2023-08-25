@@ -11,6 +11,8 @@ $(function () {
         },
         onStepChanging: function (event, currentIndex, newIndex) {
 
+           
+
 
             // Get the current section (step)
             var section = $(this).children('section').eq(currentIndex);
@@ -82,9 +84,37 @@ $(function () {
             $('.password input').attr('type', 'password');
         }
     })
-    // Date Picker
-    var dp1 = $('#dp1').datepicker().data('datepicker');
-    dp1.selectDate(new Date());
+ 
+
+
+     // Count the number of steps
+    var totalSteps = $('.steps ul li').length;
+
+    // Set the content for the before pseudo-element
+    $('.steps ul').attr('data-before-content', "1");
+
+    // Set the content for the after pseudo-element
+    $('.steps ul').attr('data-after-content', "/ " + totalSteps);
+
+    // Bind to the "show" event of jquery-steps to update the step number
+    $("#wizard").on("showStep", function(event, currentIndex, priorIndex) {
+        $('.steps ul').attr('data-before-content', (currentIndex + 1).toString());
+    });
+
+
+    var alertElem = $('.alert');
+
+    if (alertElem.length) {
+        setTimeout(function() {
+            alertElem.fadeOut(500, function() {
+                $(this).remove();
+            });
+        }, 5000); // Waits 5 seconds before starting the fade-out
+    }
+    
+
+  
+    
 
    
 })

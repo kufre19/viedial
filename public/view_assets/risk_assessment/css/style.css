@@ -119,14 +119,14 @@ img {
 }
 
 .steps ul:before {
-  content: "1";
+  content: attr(data-before-content);;
   font-size: 40px;
   color: #ccc;
   font-family: "Poppins-Medium";
 }
 
 .steps ul:after {
-  content: "/ 3";
+  content: attr(data-after-content);
   font-size: 15px;
   color: #ccc;
   font-family: "Poppins-Medium";
@@ -155,7 +155,7 @@ img {
 h3 {
   font-family: "Poppins-SemiBold";
   font-size: 35px;
-  color: #3377c0;
+  color: #800020;
   text-transform: uppercase;
   text-align: center;
   font-weight: 600;
