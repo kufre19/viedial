@@ -136,6 +136,14 @@ img {
   width: 22px;
 }
 
+/* .steps ul.step-counter:before {
+  content: attr(data-after-content);
+} */
+
+.steps ul.step-counter:after {
+  left: 31px;
+}
+
 .steps ul.step-2:before {
   content: "2";
 }

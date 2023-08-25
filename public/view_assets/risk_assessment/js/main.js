@@ -10,9 +10,13 @@ $(function () {
             previous: "Back"
         },
         onStepChanging: function (event, currentIndex, newIndex) {
+            console.log(currentIndex);
 
-           
+            $('.steps ul').attr('data-before-content', (newIndex + 1).toString());
+            $('.steps ul').addClass("step-counter");
+         
 
+        
 
             // Get the current section (step)
             var section = $(this).children('section').eq(currentIndex);
@@ -22,7 +26,7 @@ $(function () {
             var allFilled = true;
             section.find('input').each(function () {
                 if ($(this).val() == "") {
-                    console.log("one foubd input");
+                   
                     allFilled = false;
                     return false; // Break out of the .each loop
                 }
@@ -30,8 +34,7 @@ $(function () {
 
             section.find('select').each(function () {
                 if ($(this).val() == "") {
-                    console.log("one foubd select");
-
+                
                     allFilled = false;
                     return false; // Break out of the .each loop
                 }
@@ -87,7 +90,7 @@ $(function () {
  
 
 
-     // Count the number of steps
+    // Count the number of steps
     var totalSteps = $('.steps ul li').length;
 
     // Set the content for the before pseudo-element
@@ -96,10 +99,7 @@ $(function () {
     // Set the content for the after pseudo-element
     $('.steps ul').attr('data-after-content', "/ " + totalSteps);
 
-    // Bind to the "show" event of jquery-steps to update the step number
-    $("#wizard").on("showStep", function(event, currentIndex, priorIndex) {
-        $('.steps ul').attr('data-before-content', (currentIndex + 1).toString());
-    });
+
 
 
     var alertElem = $('.alert');
@@ -118,3 +118,5 @@ $(function () {
 
    
 })
+
+
