@@ -49,7 +49,7 @@ class WebsiteContorller extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'whatsapp_number' => [ 'string', 'regex:/^(\+234|0)[0-9]{10}$/'],
+            'whatsapp_number' => [ 'string'],
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'terms' => 'accepted',
