@@ -190,39 +190,51 @@ return [
                 "video",
                 "Pictures"
             ],
-            "video_url"=>"https://www.youtube.com/embed/Jfhi0er1j7E",
-            "extra_videos"=>[
-                "https://www.youtube.com/embed/Zs03y8JCEvc",
-                "https://www.youtube.com/embed/ehg1V2lNVtk",
-                "https://www.youtube.com/embed/k8v-_slT03Q",
-                "https://www.youtube.com/embed/htp9pmwDK-w",
-                "https://www.youtube.com/embed/PER7zJ3Mtv4",
-               
-            ],
+            "video_url"=>"",
             "topics"=>[
                 [
-                    "title"=>"Healthy and happy eating with type 2 diabetes (different eating patterns and how they affect glycaemic control and heart health)
-                    ",
+                    "title"=>"Introducing healthy and happy eating part 1",
+                    "id"=>"10RTd"
+                ],
+                [
+                    "title"=>"Introducing healthy and happy eating part 2",
                     "id"=>"Z2mN3"
                 ],
                 [
-                    "title"=>"How to set healthy and happy eating goals",
+                    "title"=>"Understanding energy",
                     "id"=>"W4xO5"
                 ],
                 [
-                    "title"=>"Carbohydrates and type 2 diabetes: the myths and facts \nWhat are carbohydrates, starch, fiber and sugar\n
-                    Understanding carbohydrate counting\n
-                    Sources of carbohydrate and why it matters (unprocessed vs processed)
-                    ",
+                    "title"=>"Set healthy and happy eating goals",
                     "id"=>"L6yP7"
                 ],
                 [
-                    "title"=>"Making the right choices of proteins, fats and oils",
+                    "title"=>"Clearing the hype about carbohydrates ",
                     "id"=>"F8gQ9"
                 ],
                 [
-                    "title"=>"Practical tips for starting and sustaining healthy eating",
+                    "title"=>"Clearing the hype about fats and oils",
                     "id"=>"R0hS1"
+                ],
+                [
+                    "title"=>"Clearing the hype about proteins",
+                    "id"=>"A3B5C"
+                ],
+                [
+                    "title"=>"Making the right food choices",
+                    "id"=>"1Z4Y6"
+                ],
+                [
+                    "title"=>"Drinking and type 2 diabetes ",
+                    "id"=>"W8R2Q"
+                ],
+                [
+                    "title"=>"Healthy eating outside the home",
+                    "id"=>"G6J9L"
+                ],
+                [
+                    "title"=>"Tips for sustaining healthy eating habits",
+                    "id"=>"0T5P7"
                 ],
                     
                 
@@ -237,31 +249,36 @@ return [
                 "video",
                 "Pictures"
             ],
-            "video_url"=>"https://www.youtube.com/embed/K4IZWJqbEXs",
-            "extra_videos"=>[
-                "https://www.youtube.com/embed/KTR709yGY_w",
-                
-            ],
+            "video_url"=>"",
+           
             "topics"=>[
                 [
-                    "title"=>"Types of physical activity ",
+                    "title"=>"Understanding physical activity",
+                    "id"=>"M3N1X"
+                ],
+                [
+                    "title"=>"What is physical activity ",
                     "id"=>"V3iU4"
                 ],
                 [
-                    "title"=>"Benefits of physical activity ",
+                    "title"=>"Types of physical activity ",
                     "id"=>"D5kE6"
                 ],
                 [
-                    "title"=>"Relationship between physical activity and blood sugar and medications",
+                    "title"=>"Benefits of physical activity",
                     "id"=>"M7nO8"
                 ],
                 [
-                    "title"=>"How to start and sustain a regular physical activity routine",
+                    "title"=>"How physical activity affects blood sugar",
                     "id"=>"C9oA0"
                 ],
                 [
-                    "title"=>"Overcoming factors that discourage physical activity",
+                    "title"=>"How to start and sustain a physical activity routine",
                     "id"=>"T1pW2"
+                ],
+                [
+                    "title"=>"Overcoming factors that hinder a regular physical activity routine",
+                    "id"=>"F2H4J"
                 ],
                 
                     
@@ -284,26 +301,19 @@ return [
             ],
             "topics"=>[
                 [
-                    "title"=>"Types of medications for treating type 2 diabetes",
+                    "title"=>"Understand how to use medications for treating type 2 diabetes",
                     "id"=>"B3qX4"
                 ],
                 [
-                    "title"=>"Steps taken when treating type 2 diabetes ",
+                    "title"=>"Important things to note when taking medications for type 2 diabetes",
                     "id"=>"Y5rF6"
                 ],
                 [
-                    "title"=>"Understanding medication adherence",
+                    "title"=>"Learn how to take your medications correctly and consistently",
                     "id"=>"G7sH8"
                 ],
                 [
-                    "title"=>"How to start and sustain a medication adherence routine",
-                    "id"=>"J9tK0"
-                ],
-                [
-                    "title"=>"Overcoming factors that prevent medication adherence 
-                    Intentional: cost, not aware of the risks because there are no physical cues, religious influences, cultural influences
-                    Non intentional: forgetfulness, change in schedule, travel 
-                    ",
+                    "title"=>"Start taking your medications correctly and consistently",
                     "id"=>"L1uZ2"
                 ],
                 
