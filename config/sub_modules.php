@@ -74,10 +74,26 @@ return [
             "ebook"=>"",
             "video_url"=>"https://www.youtube.com/embed/_d61Q_1jS50"
             
-        ]
+        ],
+        "ASF0L"=>[
+            "id"=>"ASF0L",
+            "title"=>"Module 1.10",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/bptcK35gy4k"
+            
+        ],
     ],
 
     "X3fZ9"=>[
+        "KLSD0"=>[
+            "id"=>"KLSD0",
+            "title"=>"Module 2.0",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/chFicUCPSXw"
+            
+        ],
         "A2dF4"=>[
             "id"=>"A2dF4",
             "title"=>"Module 2.1",
@@ -145,6 +161,14 @@ return [
         
     ],
     "L0uV9"=>[
+        "VNS2b"=>[
+            "id"=>"VNS2b",
+            "title"=>"Module 3.0",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/5Ek6_m19OkU"
+            
+        ],
         "P1rE2"=>[
             "id"=>"P1rE2",
             "title"=>"Module 3.1",
@@ -169,11 +193,35 @@ return [
             "video_url"=>"https://www.youtube.com/embed/9yK4B6VgkqI"
             
         ],
+        "34POx"=>[
+            "id"=>"34POx",
+            "title"=>"Module 3.4",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/olXeaobMQi4"
+            
+        ],
+        "Axc07"=>[
+            "id"=>"Axc07",
+            "title"=>"Module 3.5",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/j1mjNsCXkCQ"
+            
+        ],
        
         
         
     ],
     "F7hX8"=>[
+        "Loxa3"=>[
+            "id"=>"Loxa3",
+            "title"=>"Module 4.0",
+            "worksheets_folder"=>"",
+            "ebook"=>"",
+            "video_url"=>"https://www.youtube.com/embed/I_3inL3tZkc"
+            
+        ],
         "B2cD3"=>[
             "id"=>"B2cD3",
             "title"=>"Module 4.1",

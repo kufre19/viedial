@@ -61,14 +61,14 @@
                                         ways: </p>
 
                                     <p>
-                                    <ol>
+                                    <ul>
                                         @foreach ($module['topics'] as $topics)
                                             <a
                                                 href="{{ route('load.sub.module', ['course_id' => $course_info['course_id'], 'mod_id' => $module_info['mod_id'], 'sub_mod_id' => $topics['id']]) }}">
                                                 <li>{{ $topics['title'] }}</li>
                                             </a>
                                         @endforeach
-                                    </ol>
+                                    </ul>
                                     </p>
 
 

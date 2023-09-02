@@ -36,6 +36,7 @@ class CourseController extends Controller
         $module = Config::get("modules.$mod_id");
         $sub_module = Config::get("sub_modules.$mod_id.$sub_mod_id");
         $sub_title_name = $this->getSubModTitleName($module['topics'],$sub_mod_id);
+        // dd($sub_title_name);
         $pdfs = Storage::disk('public')->files("course_assets/course_pdfs/$mod_id/$sub_mod_id");
 
    
@@ -55,9 +56,14 @@ class CourseController extends Controller
 
     public function getSubModTitleName($topics,$sub_mod_id)
     {
+        // dd($topics);
         foreach ($topics as $key => $topic) {
-            if($topic['id'] == $sub_mod_id);
-            return $topic['title'];
+            
+            if($topic['id'] == $sub_mod_id){
+                
+                return $topic['title'];
+            }
+            
         }
     }
 }

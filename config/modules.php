@@ -47,14 +47,10 @@ return [
                     "title"=>"The four critical moments when it is important to re-position to win",
                     "id"=>"M5F7D"
                 ],
-                
-                
-                
-                
-               
-               
-               
-              
+                [
+                    "title"=>"End of Module one",
+                    "id"=>"ASF0L"
+                ],
                 
             ]
             
@@ -67,8 +63,12 @@ return [
                 "video",
                 "Pictures"
             ],
-            "video_url"=>"https://www.youtube.com/embed/chFicUCPSXw",
+            "video_url"=>"",
             "topics"=>[
+                [
+                    "title"=>"Understanding type 2 diabetes",
+                    "id"=>"KLSD0"
+                ],
                 [
                     "title"=>"What is diabetes?",
                     "id"=>"A2dF4"
@@ -113,10 +113,14 @@ return [
                 "video",
                 "Pictures"
             ],
-            "video_url"=>"https://www.youtube.com/embed/5Ek6_m19OkU",
+            "video_url"=>"",
             "topics"=>[
                 [
-                    "title"=>"how type 2 diabetes affects the different parts of the body",
+                    "title"=>"Introducing the effects of type 2 diabetes on the body",
+                    "id"=>"VNS2b"
+                ],
+                [
+                    "title"=>"What are the effects of type 2 diabetes on the body?",
                     "id"=>"P1rE2"
                 ],
                 [
@@ -127,7 +131,13 @@ return [
                     "title"=>"Chronic complications of type 2 diabetes",
                     "id"=>"W4yG7"
                 ],
-               
+                [
+                    "title"=>"Conditions that increase the risk of having complications",
+                    "id"=>"34POx"
+                ],[
+                    "title"=>"Preventing complications of type 2 diabetes",
+                    "id"=>"Axc07"
+                ],
                 
             ]
             
@@ -140,10 +150,14 @@ return [
                 "video",
                 "Pictures"
             ],
-            "video_url"=>"https://www.youtube.com/embed/I_3inL3tZkc",
+            "video_url"=>"",
             "topics"=>[
                 [
-                    "title"=>"Overview of clinical treatment for type 2 diabetes",
+                    "title"=>"Introduction to medications used for treating type 2 diabetes part 1",
+                    "id"=>"Loxa3"
+                ],
+                [
+                    "title"=>"Introduction to medications used for treating type 2 diabetes part 2",
                     "id"=>"B2cD3"
                 ],
                 [
@@ -155,11 +169,11 @@ return [
                     "id"=>"U6vI7"
                 ],
                 [
-                    "title"=>"Special considerations in treatment of type 2 diabetes (co-morbidities-renal, cvd,  HIV, weight gain/loss, budget)",
+                    "title"=>"Do supplements work?",
                     "id"=>"Q8sT9"
                 ],
                 [
-                    "title"=>"Other non-clinical methods of treating type diabetes",
+                    "title"=>"Treatment targets for achieving blood sugar control",
                     "id"=>"A0jK1"
                 ],
                 
