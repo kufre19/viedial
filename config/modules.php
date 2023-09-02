@@ -90,7 +90,7 @@ return [
                     "id"=>"O2wV3"
                 ],
                 [
-                    "title"=>"The progress from risk factors to full blown type 2 diabetes",
+                    "title"=>"The journey from risk factors to full blown type 2 diabetes",
                     "id"=>"I6eL8"
                 ],
                 [
@@ -99,7 +99,7 @@ return [
                 ],
                 
                 [
-                    "title"=>"How to know that a person has type 2 diabetes",
+                    "title"=>"How to know that a person has type 2 diabetes (diagnosis)",
                     "id"=>"C3oN4"
                 ],
             ]
