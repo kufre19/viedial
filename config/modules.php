@@ -337,19 +337,23 @@ return [
             ],
             "topics"=>[
                 [
+                    "title"=>"Introducing how to manage acute emergencies",
+                    "id"=>"V6Q9Z"
+                ],
+                [
                     "title"=>"What are acute emergencies",
                     "id"=>"P2vM3"
                 ],
                 [
-                    "title"=>"Understanding hypoglycaemia",
+                    "title"=>"How to manage hypoglycaemia",
                     "id"=>"N4wO5"
                 ],
                 [
-                    "title"=>"Understanding Hyperosmolar hyperglycaemic states",
+                    "title"=>"How to manage hyperglycaemic and hyperosmolar state",
                     "id"=>"Q6xR7"
                 ],
                 [
-                    "title"=>"Understanding diabetes keto-acidosis ",
+                    "title"=>"How to manage diabetes keto-acidosis (DKA)",
                     "id"=>"S8yT9"
                 ],
                 
@@ -368,38 +372,42 @@ return [
                 "video",
                 "Pictures"
             ],
-            "video_url"=>"https://www.youtube.com/embed/Zpq3Eja6RQQ",
+            "video_url"=>"",
             "extra_videos"=>[
                 
                 
             ],
             "topics"=>[
                 [
+                    "title"=>"Introducing how to manage chronic complications",
+                    "id"=>"K8L1M"
+                ],
+                [
                     "title"=>"What are chronic complications",
                     "id"=>"A1zU2"
                 ],
                 [
-                    "title"=>"Understanding eye complications ",
+                    "title"=>"Eye complications ",
                     "id"=>"V3aI4"
                 ],
                 [
-                    "title"=>"Understanding kidney complications",
+                    "title"=>"Kidney complications",
                     "id"=>"D5bJ6"
                 ],
                 [
-                    "title"=>"Understanding cardiovascular disease complications",
+                    "title"=>"Heart complications",
                     "id"=>"F7cK8"
                 ],
                 [
-                    "title"=>"Understanding oral complications ",
+                    "title"=>"Complications in the mouth",
                     "id"=>"H9dL0"
                 ],
                 [
-                    "title"=>"understanding nerve related complications ",
+                    "title"=>"Complications in the nerves",
                     "id"=>"X0eM1"
                 ],
                 [
-                    "title"=>"Understanding foot complications",
+                    "title"=>"Foot complications",
                     "id"=>"Y2fN3"
                 ],
                 
@@ -418,23 +426,26 @@ return [
                 "video",
                 "Pictures"
             ],
-            "video_url"=>"https://www.youtube.com/embed/-jz0ShHCTJQ",
+            "video_url"=>"",
             "extra_videos"=>[
                 
                 
             ],
             "topics"=>[
                 [
-                    "title"=>"Good reasons for staying on the winning lane",
+                    "title"=>"How to stay on the winning lane",
+                    "id"=>"S3T6W"
+                ],
+                [
+                    "title"=>"Reasons to stay on the winning lane",
                     "id"=>"P6hR7"
                 ],
                 [
-                    "title"=>"Navigating the rough and bumpy lane of managing type 2 diabetes",
+                    "title"=>"Navigating the rough and bumpy lane",
                     "id"=>"T8iU9"
                 ],
                 [
-                    "title"=>"Coping with the everyday turns and twists on the lane
-                    ",
+                    "title"=>"Coping with daily turns and twists",
                     "id"=>"C0jV1"
                 ],
                 [
