@@ -2,6 +2,7 @@ on:
   push:
     branches: 
       - main
+  
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -19,3 +20,4 @@ jobs:
         password: ${{ secrets.ftp_password }}
         protocol: ftps
         server-dir:  /app.viedial.com/
+
