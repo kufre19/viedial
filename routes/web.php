@@ -31,7 +31,7 @@ Route::get('/link-storage', function () {
 
 
 Route::get('/test-page', function () {
-    return view('dashboard.risk-assessment.results');
+    return view('dashboard.goal-settings.index');
 });
 
 // Auth Routes

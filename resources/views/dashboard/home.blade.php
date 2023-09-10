@@ -45,44 +45,29 @@
 
                     @foreach ($subscriptions as $subscription)
                         <div class="col-lg-3 col-md-6 col-12">
-                           
-                                <div class="box">
-                                    <div class="fx-card-item">
-                                        <div class="fx-card-avatar fx-overlay-1"> <img
-                                                src={{ config("courses.$subscription->course_id.image") }} alt="user"
-                                                class="bbrr-0 bblr-0">
-                                            <div class="fx-overlay">
-                                                <ul class="fx-info">
-                                                    <li><a class="btn btn-danger no-border" href="{{ url('courses/' . $subscription->course_id) }}">
+
+                            <div class="box">
+                                <div class="fx-card-item">
+                                    <div class="fx-card-avatar fx-overlay-1"> <img
+                                            src={{ config("courses.$subscription->course_id.image") }} alt="user"
+                                            class="bbrr-0 bblr-0">
+                                        <div class="fx-overlay">
+                                            <ul class="fx-info">
+                                                <li><a class="btn btn-danger no-border"
+                                                        href="{{ url('courses/' . $subscription->course_id) }}">
                                                         View More</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="fx-card-content">
-                                            <h4 class="box-title mb-0">
-                                                {{ config("courses.$subscription->course_id.title") }}</h4>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
+                                    <div class="fx-card-content">
+                                        <h4 class="box-title mb-0">
+                                            {{ config("courses.$subscription->course_id.title") }}</h4>
+                                    </div>
                                 </div>
-                          
+                            </div>
+
                         </div>
-                        
-                        {{-- <div class="col-lg-3 col-md-6 col-12">
-                            <a href="{{ url('courses/' . $subscription->course_id) }}">
-                                <div class="box pull-up">
-                                    <div class="box-body d-flex align-items-center">
-                                        <img src="{{ config("courses.$subscription->course_id.image") }}" alt=""
-                                            class="align-self-end h-80 w-80">
-                                        <div class="d-flex flex-column flex-grow-1">
-                                            <h5 class="box-title font-size-16 mb-2">
-                                                {{ config("courses.$subscription->course_id.title") }}</h5>
-                                            <a href="{{ url('courses/' . $subscription->course_id) }}">Learn</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div> --}}
                     @endforeach
 
 

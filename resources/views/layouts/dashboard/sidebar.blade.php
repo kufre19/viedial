@@ -9,42 +9,34 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
-                            <span>Dashboard</span>
+                            <span>Navigations</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/') }}"><i class="icon-Commit"><span class="path1">
+                            <li><a href="{{ url('/') }}"><i class="icon-Layout-4-blocks"><span class="path1">
                                         </span><span class="path2"></span></i>
                                     Dashboard</a>
                             </li>
 
                             <li>
                                 <a href="{{ url('risk-assessment/result') }}">
-                                    <i class="icon-Commit"><span class="path1">
+                                    <i class="icon-Heart"><span class="path1">
                                     </span><span class="path2"></span></i>
-                                    Heart Age
+                                    Heart Age(Rename)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('set-your-goals') }}">
+                                    <i class="fa fa-trophy"><span class="path1">
+                                    </span><span class="path2"></span></i>
+                                    Set Your Goals(Rename)
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    {{-- <li class="treeview">
-                        <a href="#">
-                            <i span class="icon-Layout-grid"><span class="path1"></span><span
-                                    class="path2"></span></i>
-                            <span>Apps</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="extra_calendar.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Calendar</a></li>
-                          
-                        </ul>
-                    </li> --}}
-
+                   
                 </ul>
             </div>
         </div>

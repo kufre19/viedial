@@ -52,6 +52,8 @@
                                 <hr class="mb-2">
                                 <a href="{{ $recommendation_link }}" target="_blank" class="btn btn-primary">Get Our Recommendation</a>
                                 <hr class="mb-2">
+                                <a href="#" class="btn btn-success">Set Your Goals</a>
+                                <hr class="mb-2">
                                 @if (isset($second_result))
                                     <a href="#" class="btn btn-viedial" id="hide-diabetes">See Next Result</a>
                                 @endif
