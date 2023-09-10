@@ -37,22 +37,22 @@
                     <div class="row">
                         {{-- history card --}}
                         <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Meal Type
+                            <a href="#" class="box pull-up">
+                                <div class="box-body">
+                                    <h4 class="box-title">Meal Type
                                         <p class="subtitle font-size-14 mb-0">Info on meal like date and time built </p>
                                     </h4>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Meal Type
+                            <a href="#" class="box pull-up">
+                                <div class="box-body">
+                                    <h4 class="box-title">Meal Type
                                         <p class="subtitle font-size-14 mb-0">Info on meal like date and time built </p>
                                     </h4>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                     </div>
@@ -61,7 +61,7 @@
                     {{-- build btn --}}
                     <div class="row" class=" d-flex justify-content-center">
                         <div class="col">
-                            <a href="#" class="btn btn-primary">Build Food</a>
+                            <a href="#" class="btn btn-primary pull-up">Build Food</a>
                         </div>
 
                     </div>
