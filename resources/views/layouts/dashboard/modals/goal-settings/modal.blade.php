@@ -3,7 +3,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Your Stats</h5>
+          <h5 class="modal-title">Your Stats(displays once and also once there's change in bmi gotten from entry of tele-monitoring)</h5>
           <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
           </button>

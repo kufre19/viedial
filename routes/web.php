@@ -82,4 +82,8 @@ Route::group(["middleware" => "auth"], function () {
 
 
     });
+    // RISK ASSESSMENT ENDS
+
+    // BUILDING FOOD
+    // Route::get();
 });

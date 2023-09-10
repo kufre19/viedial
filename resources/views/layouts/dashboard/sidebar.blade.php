@@ -34,6 +34,27 @@
                                     Set Your Goals(Rename)
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ url('build-food') }}">
+                                    <i class="fa fa-utensils"><span class="path1">
+                                    </span><span class="path2"></span></i>
+                                   Build Meals(Rename)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('set-your-goals') }}">
+                                    <i class="fa fa-trophy"><span class="path1">
+                                    </span><span class="path2"></span></i>
+                                    Tele-Monitoring(Rename)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('set-your-goals') }}">
+                                    <i class="fa fa-trophy"><span class="path1">
+                                    </span><span class="path2"></span></i>
+                                    Physical Activities(Rename)
+                                </a>
+                            </li>
                         </ul>
                     </li>
                    
