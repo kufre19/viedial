@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuildFoodController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RiskAssessmentController;
@@ -85,5 +86,5 @@ Route::group(["middleware" => "auth"], function () {
     // RISK ASSESSMENT ENDS
 
     // BUILDING FOOD
-    // Route::get();
+    Route::get("build-food",[BuildFoodController::class,"index"]);
 });

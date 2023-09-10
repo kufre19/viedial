@@ -6,58 +6,61 @@
                 <!-- sidebar menu-->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Dashboard & Apps</li>
+                    <li><a href="{{ url('/') }}"><i class="icon-Layout-4-blocks"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Dashboard</a>
+                    </li>
+
                     <li class="treeview">
                         <a href="#">
-                            <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
-                            <span>Navigations</span>
+                            <i class="fa fa-utensils"><span class="path1"></span><span class="path2"></span></i> Build
+                            Meals(Rename)
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/') }}"><i class="icon-Layout-4-blocks"><span class="path1">
-                                        </span><span class="path2"></span></i>
-                                    Dashboard</a>
-                            </li>
+                            <li><a href="{{ url('build-food') }}"><i class="icon-Commit"><span
+                                            class="path1"></span><span class="path2"></span></i> Build
+                                    Meals(Rename)</a></li>
+                            <li><a href="{{ url('build-food') }}"><i class="icon-Commit"><span
+                                            class="path1"></span><span class="path2"></span></i> Meal
+                                    History(Rename)</a></li>
 
-                            <li>
-                                <a href="{{ url('risk-assessment/result') }}">
-                                    <i class="icon-Heart"><span class="path1">
-                                    </span><span class="path2"></span></i>
-                                    Heart Age(Rename)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('set-your-goals') }}">
-                                    <i class="fa fa-trophy"><span class="path1">
-                                    </span><span class="path2"></span></i>
-                                    Set Your Goals(Rename)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('build-food') }}">
-                                    <i class="fa fa-utensils"><span class="path1">
-                                    </span><span class="path2"></span></i>
-                                   Build Meals(Rename)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('set-your-goals') }}">
-                                    <i class="fa fa-trophy"><span class="path1">
-                                    </span><span class="path2"></span></i>
-                                    Tele-Monitoring(Rename)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('set-your-goals') }}">
-                                    <i class="fa fa-trophy"><span class="path1">
-                                    </span><span class="path2"></span></i>
-                                    Physical Activities(Rename)
-                                </a>
-                            </li>
                         </ul>
                     </li>
-                   
+                    <li>
+                        <a href="{{ url('set-your-goals') }}">
+                            <i class="fa fa-trophy"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Set Your Goals(Rename)
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url('risk-assessment/result') }}">
+                            <i class="icon-Heart"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Heart Age(Rename)
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url('set-your-goals') }}">
+                            <i class="fa fa-tv"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Tele-Monitoring(Rename)
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url('set-your-goals') }}">
+                            <i class="fa fa-dumbbell"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Physical Activities(Rename)
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </div>
