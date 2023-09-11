@@ -17,7 +17,7 @@
          
         </div>
         <div class="modal-footer modal-footer-uniform">
-          <button type="button" class="btn btn-secondary float-right" id="show-seasons" data-toggle="modal" data-target="#modal-select-season">Next</button>
+          <button type="button" class="btn btn-secondary float-right" id="show-seasons" >Next</button>
         </div>
       </div>
     </div>
@@ -25,8 +25,8 @@
 <!-- /.modal -->
 
   <!-- Modal select season -->
-  <div class="modal center-modal fade" id="modal-select-season" tabindex="-1">
-    <div class="modal-dialog">
+  <div class="modal  center-modal fade" id="modal-select-season" tabindex="-1">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Select Season</h5>
@@ -37,17 +37,20 @@
         <div class="modal-body">
           <div class="row">
 
+            
+
             <div class="col-lg-3 col-md-6 col-12">
               <div class="box pull-up">
-                <div class="box-body d-flex align-items-center">
-                  <img src="{{asset('view_assets/images/food-seasons/season-tropical.jpeg')}}" alt="" class="align-self-end h-80 w-80">
-                  <div class="d-flex flex-column flex-grow-1">
-                    <h5 class="box-title font-size-16 mb-2">Tropical</h5>
-                    <a href="#">Learn more</a>
+                <div class="fx-card-item">
+                  <div class="fx-card-avatar fx-overlay-1"> <img src="{{asset('view_assets/images/food-seasons/season-tropical.jpeg')}}" alt="user" class="bbrr-0 bblr-0">
+                    
+                  </div>
+                  <div class="fx-card-content d-flex align-content-center">
+                    <h4 class="box-title mb-0">Season Tropical</h4>
                   </div>
                 </div>
               </div>
-            </div>
+            </div>	
             
           </div>
           
@@ -66,8 +69,9 @@
 <script>
 
   $("#show-seasons").click(function(){
-      $("#modal-select-season-notification").hide();
-      $("#modal-select-season").show();
+
+      $("#modal-select-season-notification").modal("hide");
+      $("#modal-select-season").modal("show");
       
   });
 
