@@ -176,7 +176,7 @@
 
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
-                    <a href="{{ url('build-food/start/select-food/tropical/vegetables') }}"
+                    <a href="{{ url('build-food/start/tropical') }}"
                         class="btn btn-primary pull-up">Back To Food Categories</a>
                 </div>
             </section>
@@ -226,6 +226,15 @@
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request
                         console.error('Ajax request error:', status, error);
+                        $.toast({
+                        heading: 'Food Cart',
+                        text: response.data,
+                        position: 'top-right',
+                        loaderBg: '#ff6849',
+                        icon: 'error',
+                        hideAfter: 3500,
+                        stack: 6
+                    });
                     }
                 });
             });

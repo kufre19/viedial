@@ -88,8 +88,10 @@ Route::group(["middleware" => "auth"], function () {
     // BUILDING FOOD
     Route::get("build-food",[BuildFoodController::class,"home"]);
     Route::get("build-food/start/{season}",[BuildFoodController::class,"building_home_page"]);
-    Route::post("build-food/food-cart/add",[BuildFoodController::class,"add_food_to_cart"]);
     Route::get("build-food/start/select-food/{season}/{food_cat}",[BuildFoodController::class,"food_selecting_page"]);
+    Route::post("build-food/food-cart/add",[BuildFoodController::class,"add_food_to_cart"]);
+    Route::get("build-food/food-cart/view",[BuildFoodController::class,"view_cart"]);
+
 
 
 });

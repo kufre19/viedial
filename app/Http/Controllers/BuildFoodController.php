@@ -30,4 +30,10 @@ class BuildFoodController extends Controller
     {
         return response()->json(["data"=>"Added to cart","alert_type"=>"success"]);
     }
+
+    public function view_cart()
+    {
+        return view("dashboard.food-building.cart");
+
+    }
 }
