@@ -34,11 +34,11 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
-              
+
               <div class="modal-body">
                   <div class="row">
 
-                      <div class="col-lg-4 col-md-6 col-12">
+                      <div class="col-lg-4 col-sm-6">
                           <a href="{{ url('build-food/start/tropical') }}">
                               <div class="card pull-up">
                                   <img class="card-img-top"
@@ -53,7 +53,7 @@
                           </a>
                       </div>
 
-                      <div class="col-lg-4 col-md-6 col-12">
+                      <div class="col-lg-4 col-sm-6">
                           <a href="#">
                               <div class="card pull-up">
                                   <img class="card-img-top"
@@ -67,7 +67,7 @@
                               </div>
                           </a>
                       </div>
-                      <div class="col-lg-4 col-md-6 col-12">
+                      <div class="col-lg-4 col-sm-6">
                           <a href="#">
                               <div class="card pull-up">
                                   <img class="card-img-top"

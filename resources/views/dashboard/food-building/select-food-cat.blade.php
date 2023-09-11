@@ -28,13 +28,13 @@
 
 
                     <div class="col-lg-3 col-md-6 col-12">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="{{ url('build-food/start/select-food/tropical/vegetables') }}">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food-cats/food-cat-vegetables.jpeg') }}"
                                     alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">Vegetables Season</h4>
+                                    <h4 class="card-title">Vegetables</h4>
 
                                 </div>
 
@@ -75,10 +75,10 @@
                         <a href="{{ url('build-food/start/tropical') }}">
                             <div class="card pull-up">
                                 <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food-cats/food-cat-tropical.jpeg') }}"
+                                    src="{{ asset('view_assets/images/food-cats/food-cat-grains-tubers.jpeg') }}"
                                     alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">Tropical Season</h4>
+                                    <h4 class="card-title">Grains </h4>
 
                                 </div>
 
@@ -86,6 +86,9 @@
                         </a>
                     </div>
 
+                </div>
+                <div class="row d-flex justify-content-center mt-5">
+                    <a href="#" class="btn btn-primary pull-up">Continue Building</a>
                 </div>
             </section>
             <!-- /.content -->

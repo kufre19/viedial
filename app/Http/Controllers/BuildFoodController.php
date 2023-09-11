@@ -16,4 +16,10 @@ class BuildFoodController extends Controller
         return view("dashboard.food-building.select-food-cat");
 
     }
+
+    public function food_selecting_page()
+    {
+        return view("dashboard.food-building.select-food");
+
+    }
 }

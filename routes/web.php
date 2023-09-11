@@ -88,5 +88,7 @@ Route::group(["middleware" => "auth"], function () {
     // BUILDING FOOD
     Route::get("build-food",[BuildFoodController::class,"home"]);
     Route::get("build-food/start/{season}",[BuildFoodController::class,"building_home_page"]);
+    Route::get("build-food/start/select-food/{season}/{food_cat}",[BuildFoodController::class,"food_selecting_page"]);
+
 
 });
