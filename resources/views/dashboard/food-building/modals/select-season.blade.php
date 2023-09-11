@@ -39,28 +39,21 @@
 
 
 
-                      <div class="col-lg-3 col-md-6 col-12">
-
-                          <div class="box pull-up">
-                              <div class="fx-card-item">
-                                  <div class="fx-card-avatar fx-overlay-1">
-                                      <a href="#">
-                                          <img src="{{ asset('view_assets/images/food-seasons/season-tropical.jpeg') }}"
-                                              alt="user" class="bbrr-0 bblr-0">
-
-                                      </a>
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#" >
+                              <div class="card pull-up">
+                                  <img class="card-img-top"
+                                      src="{{ asset('view_assets/images/food-seasons/season-tropical.jpeg') }}"
+                                      alt="Card image cap">
+                                  <div class="card-body">
+                                      <h4 class="card-title">Tropical Season</h4>
 
                                   </div>
-                                  <div class="fx-card-content d-flex align-content-center">
-                                      <h4 class="box-title mb-0">
-                                          <a href="#">
-                                              Season Tropical
-                                          </a>
-                                      </h4>
-                                  </div>
+
                               </div>
-                          </div>
                           </a>
+
+
                       </div>
 
                   </div>
