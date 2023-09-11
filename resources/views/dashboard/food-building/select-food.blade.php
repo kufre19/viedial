@@ -28,7 +28,7 @@
 
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="1">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/amaranth.jpeg') }}"
@@ -42,10 +42,9 @@
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="2">
                             <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/carrot.png') }}"
+                                <img class="card-img-top" src="{{ asset('view_assets/images/food/vegetables/carrot.png') }}"
                                     alt="Card image cap">
                                 <div class="card-body">
                                     <h4 class="card-title">Carrot </h4>
@@ -57,7 +56,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="3">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/bitter-leaf.png') }}"
@@ -72,7 +71,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="4">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/cauliflower.png') }}"
@@ -87,7 +86,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="4">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/cucumber.png') }}"
@@ -101,7 +100,7 @@
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="5">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/beetroot.png') }}"
@@ -115,7 +114,7 @@
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="6">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/green-bell-pepper.png') }}"
@@ -130,7 +129,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="7">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/greenwhite-cabbage.png') }}"
@@ -145,7 +144,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="8">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/purple-cabbage.png') }}"
@@ -160,7 +159,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="#">
+                        <a href="#" class="add-food-to-cart" data-food-id="9">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/red-bell-pepper.png') }}"
@@ -173,11 +172,12 @@
                             </div>
                         </a>
                     </div>
-                    
+
 
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
-                    <a href="#" class="btn btn-primary pull-up">Back To Food Categories</a>
+                    <a href="{{ url('build-food/start/select-food/tropical/vegetables') }}"
+                        class="btn btn-primary pull-up">Back To Food Categories</a>
                 </div>
             </section>
             <!-- /.content -->
@@ -188,4 +188,47 @@
 
 @section('modals')
     @include('dashboard.food-building.modals.select-season')
+@endsection
+
+@section('extra_js')
+    <script>
+        $(document).ready(function() {
+            // Add a click event handler to elements with the class 'add-food-to-cart'
+            $('.add-food-to-cart').on('click', function(event) {
+                // Prevent the default behavior of the anchor tag
+                event.preventDefault();
+
+                // Get the value of the 'data-food-id' attribute
+                var foodId = $(this).data('food-id');
+                var csrfToken = "{{csrf_token()}}";
+
+                // Make an Ajax request using the extracted 'foodId'
+                $.ajax({
+                    url: "{{url('build-food/food-cart/add')}}", // Replace with your actual URL
+                    type: 'POST', // Use 'POST' or 'GET' as needed
+                    data: {
+                        foodId: foodId,
+                        _token: csrfToken
+                    }, // Send the 'foodId' as data
+                    success: function(response) {
+                        // Handle the success response here
+                        console.log('Ajax request successful:', response.data);
+                        $.toast({
+                        heading: 'Food Cart',
+                        text: response.data,
+                        position: 'top-right',
+                        loaderBg: '#ff6849',
+                        icon: 'success',
+                        hideAfter: 3500,
+                        stack: 6
+                    });
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle any errors that occur during the Ajax request
+                        console.error('Ajax request error:', status, error);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
