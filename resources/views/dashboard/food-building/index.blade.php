@@ -61,13 +61,10 @@
                     {{-- build btn --}}
                     <div class="row" class=" d-flex justify-content-center">
                         <div class="col">
-                            <a href="{{url('build-food/start')}}" class="btn btn-primary pull-up" data-toggle="modal" data-target="#modal-select-season-notification">Build Food</a>
+                            <a href="#" class="btn btn-primary pull-up" data-toggle="modal" data-target="#modal-select-season-notification">Build Food</a>
                         </div>
 
                     </div>
-
-
-
 
                 </div>
 

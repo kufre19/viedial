@@ -34,13 +34,12 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
+              
               <div class="modal-body">
                   <div class="row">
 
-
-
                       <div class="col-lg-4 col-md-6 col-12">
-                          <a href="#" >
+                          <a href="{{ url('build-food/start/tropical') }}">
                               <div class="card pull-up">
                                   <img class="card-img-top"
                                       src="{{ asset('view_assets/images/food-seasons/season-tropical.jpeg') }}"
@@ -52,14 +51,39 @@
 
                               </div>
                           </a>
-
-
                       </div>
 
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#">
+                              <div class="card pull-up">
+                                  <img class="card-img-top"
+                                      src="{{ asset('view_assets/images/food-seasons/season-fall.jpeg') }}"
+                                      alt="Card image cap">
+                                  <div class="card-body">
+                                      <h4 class="card-title">Fall Season</h4>
+
+                                  </div>
+
+                              </div>
+                          </a>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <a href="#">
+                              <div class="card pull-up">
+                                  <img class="card-img-top"
+                                      src="{{ asset('view_assets/images/food-seasons/season-summer.jpeg') }}"
+                                      alt="Card image cap">
+                                  <div class="card-body">
+                                      <h4 class="card-title">Summer Season</h4>
+
+                                  </div>
+
+                              </div>
+                          </a>
+                      </div>
                   </div>
-
-
               </div>
+
               <div class="modal-footer modal-footer-uniform">
                   <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Cancel</button>
               </div>

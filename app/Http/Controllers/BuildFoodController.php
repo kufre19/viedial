@@ -13,7 +13,7 @@ class BuildFoodController extends Controller
 
     public function building_home_page()
     {
-        return view("dashboard.food-building.index");
+        return view("dashboard.food-building.select-food-cat");
 
     }
 }
