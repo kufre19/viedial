@@ -63,7 +63,7 @@
                                         					
                                       </tbody>
                                   </table>
-                                  <a href="#" class="btn btn-success pull-right pull-up"><i class="fa fa fa-pot-food"></i> Build this Meal Now</a>
+                                  <a href="#" class="btn btn-success pull-right pull-up"><i class="fa fa fa-pot-food"></i> Build With This Now</a>
                                   <a href="{{ url('build-food/start/tropical') }}" class="btn btn-info pull-up"><i class="fa fa-arrow-left"></i> Keep Adding To Shopping List</a>
                               </div>
           
