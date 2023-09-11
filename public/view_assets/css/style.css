@@ -121,6 +121,11 @@ body {
   line-height: 1.5;
   background-color: #fafbfd; }
 
+  .bg-viedial-theme{
+    color: #fff;
+    background-color: #800020;
+  }
+
   .btn-viedial {
     color: #fff;
     background-color: #800020;
