@@ -8,7 +8,7 @@
             <div class="content-header">
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
-                        <h3 class="page-title">Build Meal (Tropical)</h3>
+                        <h3 class="page-title">Add Food To Shopping List (Vegetables)</h3>
                         {{-- <div class="d-inline-block align-items-center">
                             <nav>
                                 <ol class="breadcrumb">
@@ -28,7 +28,7 @@
 
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/amaranth.jpeg') }}"
@@ -42,7 +42,7 @@
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/carrot.png') }}"
@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/cauliflower.png') }}"
@@ -87,7 +87,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/cucumber.png') }}"
@@ -101,7 +101,7 @@
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/beetroot.png') }}"
@@ -115,7 +115,7 @@
                         </a>
                     </div>
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/green-bell-pepper.png') }}"
@@ -130,7 +130,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/greenwhite-cabbage.png') }}"
@@ -145,7 +145,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/purple-cabbage.png') }}"
@@ -160,7 +160,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
-                        <a href="{{ url('build-food/start/tropical') }}">
+                        <a href="#">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food/vegetables/red-bell-pepper.png') }}"
