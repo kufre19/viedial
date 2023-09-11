@@ -8,7 +8,7 @@
             <div class="content-header">
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
-                        <h3 class="page-title">Food Building</h3>
+                        <h3 class="page-title">Happy And Healthy Eating</h3>
                         {{-- <div class="d-inline-block align-items-center">
                             <nav>
                                 <ol class="breadcrumb">
@@ -61,7 +61,7 @@
                     {{-- build btn --}}
                     <div class="row" class=" d-flex justify-content-center">
                         <div class="col">
-                            <a href="#" class="btn btn-primary pull-up">Build Food</a>
+                            <a href="{{url('build-food/start')}}" class="btn btn-primary pull-up" data-toggle="modal" data-target="#modal-select-season-notification">Build Food</a>
                         </div>
 
                     </div>
@@ -80,5 +80,5 @@
 
 
 @section('modals')
-    {{-- @include('layouts.dashboard.modals.goal-settings.modal') --}}
+    @include('dashboard.food-building.modals.select-season')
 @endsection

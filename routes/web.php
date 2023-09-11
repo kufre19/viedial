@@ -86,5 +86,7 @@ Route::group(["middleware" => "auth"], function () {
     // RISK ASSESSMENT ENDS
 
     // BUILDING FOOD
-    Route::get("build-food",[BuildFoodController::class,"index"]);
+    Route::get("build-food",[BuildFoodController::class,"home"]);
+    Route::get("build-food/start",[BuildFoodController::class,"building_home_page"]);
+
 });
