@@ -42,6 +42,22 @@
                             </div>
                      
                     </div>
+
+                    <div class="col-lg-3 col-md-6 col-12">
+                       
+                        <div class="card pull-up">
+                            <img class="card-img-top"
+                                src="{{ asset('view_assets/images/food/vegetables/cauliflower.png') }}"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Cauli Flower</h4>
+                                <a href="#" class="card-title remove-food-from-cart" data-food-id="1"><i class="fa fa-trash"></i></a>
+
+                            </div>
+
+                        </div>
+                 
+                </div>
                    
               
 
@@ -56,8 +72,8 @@
                     </div>
                     
                     <div class="col-12 mt-2 d-flex justify-content-center">
-                        <a href="{{ url('build-food/start/tropical') }}"
-                        class="btn btn-viedial pull-up"> <i class="fa fa-save"></i> Save this Shopping List</a>
+                        <a href="#"
+                        class="btn btn-viedial pull-up" data-toggle="modal" data-target="#modal-save-shopping-list"> <i class="fa fa-save"></i> Save this Shopping List</a>
                     </div>
                 
                 </div>
@@ -69,7 +85,7 @@
 
 
 @section('modals')
-    @include('dashboard.food-building.modals.select-season')
+    @include('dashboard.food-building.modals.save-shopping-list')
 @endsection
 
 @section('extra_js')

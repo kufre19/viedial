@@ -23,6 +23,9 @@
                             <li><a href="{{ url('build-food') }}"><i class="icon-Commit"><span
                                             class="path1"></span><span class="path2"></span></i> Build
                                     Meals(Rename)</a></li>
+                                    <li><a href="{{ url('build-food') }}"><i class="fa fa-shopping-cart"><span
+                                        class="path1"></span><span class="path2"></span></i>My Shopping
+                                List(Rename)</a></li>
                             <li><a href="{{ url('build-food') }}"><i class="icon-Commit"><span
                                             class="path1"></span><span class="path2"></span></i> Meal
                                     History(Rename)</a></li>
