@@ -32,7 +32,7 @@ Route::get('/link-storage', function () {
 
 
 Route::get('/test-page', function () {
-    return view('dashboard.goal-settings.index');
+    return view('dashboard.food-building.select-food-to-cook');
 });
 
 // Auth Routes
@@ -92,6 +92,10 @@ Route::group(["middleware" => "auth"], function () {
     Route::post("build-food/food-cart/add",[BuildFoodController::class,"add_food_to_cart"]);
     Route::post("build-food/food-cart/remove",[BuildFoodController::class,"remove_food_from_cart"]);
     Route::get("build-food/food-cart/view",[BuildFoodController::class,"view_cart"]);
+    Route::get("build-food/use-shopping-list/",[BuildFoodController::class,"use_shopping_list"]);
+    Route::get("build-food/food-to-cook/",[BuildFoodController::class,"select_food_to_cook"]);
+
+
 
 
 

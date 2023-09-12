@@ -17,7 +17,7 @@
             </div>
             <div class="modal-footer modal-footer-uniform">
                 <button type="button" class="btn btn-secondary float-right">Come Back Later</button>
-                <a href="{{url('build-food/build-now')}}" class="btn btn-secondary float-right" id="show-seasons">Build With This Now</a>
+                <a href="{{url('build-food/use-shopping-list')}}" class="btn btn-secondary float-right" id="show-seasons">Build With This Now</a>
             </div>
         </div>
     </div>

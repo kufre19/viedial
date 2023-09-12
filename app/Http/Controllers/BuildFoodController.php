@@ -42,4 +42,16 @@ class BuildFoodController extends Controller
         return view("dashboard.food-building.cart");
 
     }
+
+    public function use_shopping_list()
+    {
+        return view("dashboard.food-building.use-shopping-list");
+
+    }
+
+    public function select_food_to_cook()
+    {
+        return view('dashboard.food-building.select-food-to-cook');
+
+    }
 }
