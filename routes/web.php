@@ -90,6 +90,7 @@ Route::group(["middleware" => "auth"], function () {
     Route::get("build-food/start/{season}",[BuildFoodController::class,"building_home_page"]);
     Route::get("build-food/start/select-food/{season}/{food_cat}",[BuildFoodController::class,"food_selecting_page"]);
     Route::post("build-food/food-cart/add",[BuildFoodController::class,"add_food_to_cart"]);
+    Route::post("build-food/food-cart/remove",[BuildFoodController::class,"remove_food_from_cart"]);
     Route::get("build-food/food-cart/view",[BuildFoodController::class,"view_cart"]);
 
 

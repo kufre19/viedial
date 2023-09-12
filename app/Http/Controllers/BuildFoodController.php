@@ -31,6 +31,12 @@ class BuildFoodController extends Controller
         return response()->json(["data"=>"Added to cart","alert_type"=>"success"]);
     }
 
+    public function remove_food_from_cart()
+    {
+        return response()->json(["data"=>"Removed from cart","alert_type"=>"danger"]);
+
+    }
+
     public function view_cart()
     {
         return view("dashboard.food-building.cart");

@@ -25,58 +25,42 @@
             <!-- Main content -->
             <section class="content">
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
-                
-                        <div class="col-12 col-lg-8">
-                          <div class="box">
-                            <div class="box-header bg-viedial-theme">
-                              <h4 class="box-title text-white"><strong>Your Shopping List</strong></h4>
-                            </div>
-          
-                            <div class="box-body">
-                              <div class="table-responsive">
-                                  <table class="table product-overview">
-                                      <thead>
-                                          <tr>
-                                              <th>Food Item</th>
-                                              <th>Serving Info</th>
-                                              {{-- <th>Number Of Serving </th> --}}
-									          {{-- <th style="text-align:center">Total Calories</th> --}}
-                                              <th style="text-align:center">Action</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                          <tr>
-                                              <td><img src="{{ asset('view_assets/images/food/vegetables/greenwhite-cabbage.png') }}" alt="" width="50%"></td>
-                                              <td>
-                                                  <h5>Food Item Name</h5>
-                                                  <p>maybe some info here</p>
-                                              </td>
-                                             
-                                              {{-- <td width="70">
-                                                  <input type="number" class="form-control" placeholder="1" min="0" max="5">
-                                              </td> --}}
-									          {{-- <td width="100" align="center" class="font-weight-900">20 calories</td> --}}
-                                            
-                                              <td align="center"><a href="javascript:void(0)" class="btn btn-circle btn-danger btn-xs" title="" data-toggle="tooltip" data-original-title="Delete"><i class="ti-trash"></i></a></td>
-                                          </tr>
-                        
-                                        					
-                                      </tbody>
-                                  </table>
-                                  <a href="#" class="btn btn-success pull-right pull-up"><i class="fa fa fa-pot-food"></i> Save this list</a>
-                                  <a href="{{ url('build-food/start/tropical') }}" class="btn btn-info pull-up"><i class="fa fa-arrow-left"></i> Keep Adding To Shopping List</a>
-                              </div>
-          
-                            </div>
-                          </div>
-                        </div>
-          
+
+
+                    <div class="col-lg-3 col-md-6 col-12">
                        
-                  
-          
+                            <div class="card pull-up">
+                                <img class="card-img-top"
+                                    src="{{ asset('view_assets/images/food/vegetables/amaranth.jpeg') }}"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Amaranth</h4>
+                                    <a href="#" class="card-title remove-food-from-cart" data-food-id="1"><i class="fa fa-trash"></i></a>
+
+                                </div>
+
+                            </div>
+                     
+                    </div>
+                   
+              
+
+
+
 
                 </div>
-               
+                <div class="row  mt-5">
+                    <div class="col-12 d-flex justify-content-center">
+                        <a href="{{ url('build-food/start/tropical') }}"
+                        class="btn btn-primary pull-up">Keep Adding To List</a>
+                    </div>
+                    
+                    <div class="col-12 mt-2 d-flex justify-content-center">
+                        <a href="{{ url('build-food/start/tropical') }}"
+                        class="btn btn-viedial pull-up"> <i class="fa fa-save"></i> Save this Shopping List</a>
+                    </div>
+                
+                </div>
             </section>
             <!-- /.content -->
         </div>
@@ -89,5 +73,53 @@
 @endsection
 
 @section('extra_js')
-   
+    <script>
+        $(document).ready(function() {
+            // Add a click event handler to elements with the class 'add-food-to-cart'
+            $('.remove-food-from-cart').on('click', function(event) {
+                // Prevent the default behavior of the anchor tag
+                event.preventDefault();
+
+                // Get the value of the 'data-food-id' attribute
+                var foodId = $(this).data('food-id');
+                var csrfToken = "{{csrf_token()}}";
+
+                // Make an Ajax request using the extracted 'foodId'
+                $.ajax({
+                    url: "{{url('build-food/food-cart/remove')}}", // Replace with your actual URL
+                    type: 'POST', // Use 'POST' or 'GET' as needed
+                    data: {
+                        foodId: foodId,
+                        _token: csrfToken
+                    }, // Send the 'foodId' as data
+                    success: function(response) {
+                        // Handle the success response here
+                        console.log('Ajax request successful:', response.data);
+                        $.toast({
+                        heading: 'Food Cart',
+                        text: response.data,
+                        position: 'top-right',
+                        loaderBg: '#ff6849',
+                        icon: 'warning',
+                        hideAfter: 3500,
+                        stack: 6
+                    });
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle any errors that occur during the Ajax request
+                        console.error('Ajax request error:', status, error);
+                        $.toast({
+                        heading: 'Food Cart',
+                        text: response.data,
+                        position: 'top-right',
+                        loaderBg: '#ff6849',
+                        icon: 'error',
+                        hideAfter: 3500,
+                        stack: 6
+                    });
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
