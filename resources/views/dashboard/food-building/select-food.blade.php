@@ -27,7 +27,7 @@
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
 
 
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="1">
                             <div class="card pull-up">
                                 <img class="card-img-top"
@@ -41,7 +41,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="2">
                             <div class="card pull-up">
                                 <img class="card-img-top" src="{{ asset('view_assets/images/food/vegetables/carrot.png') }}"
@@ -55,7 +55,7 @@
                         </a>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="3">
                             <div class="card pull-up">
                                 <img class="card-img-top"
@@ -70,7 +70,7 @@
                         </a>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="4">
                             <div class="card pull-up">
                                 <img class="card-img-top"
@@ -85,7 +85,7 @@
                         </a>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="4">
                             <div class="card pull-up">
                                 <img class="card-img-top"
@@ -99,7 +99,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="5">
                             <div class="card pull-up">
                                 <img class="card-img-top"
@@ -113,7 +113,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="6">
                             <div class="card pull-up">
                                 <img class="card-img-top"
@@ -128,7 +128,7 @@
                         </a>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="7">
                             <div class="card pull-up">
                                 <img class="card-img-top"
@@ -143,7 +143,7 @@
                         </a>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="8">
                             <div class="card pull-up">
                                 <img class="card-img-top"
@@ -158,7 +158,7 @@
                         </a>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-12">
                         <a href="#" class="add-food-to-cart" data-food-id="9">
                             <div class="card pull-up">
                                 <img class="card-img-top"
