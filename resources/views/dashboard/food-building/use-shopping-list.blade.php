@@ -35,6 +35,11 @@
                                     alt="Card image cap">
                                 <div class="card-body">
                                     <h4 class="card-title">Amaranth</h4>
+                                    <p>
+                                        Cabs: 10 <br>
+                                        Protein: 20 <br>
+                                        Calories: 60 cal <br>
+                                    </p>
                                     
                                 </div>
 
@@ -63,6 +68,11 @@
                                 alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title">Cauli Flower</h4>
+                                <p>
+                                    Cabs: 10 <br>
+                                    Protein: 20 <br>
+                                    Calories: 60 cal <br>
+                                </p>
 
                             </div>
 
