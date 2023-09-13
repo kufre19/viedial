@@ -95,8 +95,8 @@
                 </div>
                 <div class="row  mt-5">
                     <div class="col-12 d-flex justify-content-center">
-                        <a href="{{ url('build-food/use-shopping-list') }}"
-                        class="btn btn-viedial pull-up">Complete Build</a>
+                        <a href="#"
+                        class="btn btn-viedial pull-up" data-toggle="modal" data-target="#modal-complete-build">Complete Build</a>
                     </div>
                     
                    
@@ -111,6 +111,8 @@
 
 @section('modals')
     @include('dashboard.food-building.modals.save-shopping-list')
+    @include('dashboard.food-building.modals.complete-build')
+
 @endsection
 
 @section('extra_js')
