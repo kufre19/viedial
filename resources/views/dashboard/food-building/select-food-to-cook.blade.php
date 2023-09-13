@@ -28,7 +28,7 @@
 
 
                     <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="" data-food-id="1">
+                        <a href="{{url('build-food/use-shopping-list/jellof-rice')}}" class="" >
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food-to-cook/Jollof and porridges.png') }}"

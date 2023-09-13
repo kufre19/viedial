@@ -44,12 +44,9 @@
                                 </div>
 
                                 <div class="card-footer">
+                                   
                                     <div width="70">
-                                        <label for="serving-size">Serving Size</label>
-                                        <input type="decimal" class="form-control"  placeholder="1" min="0" >
-                                    </div>
-                                    <div width="70">
-                                        <label for="serving-number">Serving Number</label>
+                                        <label for="serving-number">Number of Serving</label>
                                         <input type="number" class="form-control"  placeholder="1" min="0" max="5">
                                     </div>
 										
@@ -77,12 +74,9 @@
                             </div>
 
                             <div class="card-footer">
+                                
                                 <div width="70">
-                                    <label for="serving-size">Serving Size</label>
-                                    <input type="decimal" class="form-control"  placeholder="1" min="0" >
-                                </div>
-                                <div width="70">
-                                    <label for="serving-number">Serving Number</label>
+                                    <label for="serving-number">Number of Serving </label>
                                     <input type="number" class="form-control"  placeholder="1" min="0" max="5">
                                 </div>
                                     
@@ -101,8 +95,8 @@
                 </div>
                 <div class="row  mt-5">
                     <div class="col-12 d-flex justify-content-center">
-                        <a href="{{ url('build-food/food-to-cook') }}"
-                        class="btn btn-primary pull-up">Build</a>
+                        <a href="{{ url('build-food/use-shopping-list') }}"
+                        class="btn btn-viedial pull-up">Complete Build</a>
                     </div>
                     
                    
