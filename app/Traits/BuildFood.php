@@ -8,6 +8,7 @@ use App\Models\FoodSeason;
 use App\Models\MealBuilt;
 use App\Models\ShoppingList;
 use App\Models\ShoppingListItem;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -90,7 +91,8 @@ trait BuildFood {
         $shopping_list = $data['shopping_list'];
 
         $shopping_list_model = new ShoppingList();
-        $shopping_list_model->name = "List ". $shopping_list_model->id;
+        $currentDate = Carbon::now()->toDateString();
+        $shopping_list_model->name = "List ". $currentDate ;
         $shopping_list_model->user_id = Auth::user()->id;
         $shopping_list_model->save();
 

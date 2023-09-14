@@ -87,6 +87,8 @@
 
 @section('modals')
     @include('dashboard.food-building.modals.select-season')
+    @include('dashboard.food-building.modals.shopping-cart-saved')
+
 @endsection
 
 
