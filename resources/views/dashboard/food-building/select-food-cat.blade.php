@@ -27,28 +27,16 @@
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
 
 
+                   
+                    @foreach ($food_categories as $food_category)
                     <div class="col-lg-3 col-md-6 col-12">
-                        <a href="{{ url('build-food/start/select-food/tropical/vegetables') }}">
+                        <a href="{{ route('list.food-items',['food_cat'=>$food_category->id])  }}">
                             <div class="card pull-up">
                                 <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food-cats/food-cat-vegetables.jpeg') }}"
+                                    src="{{ asset('view_assets/images/food-cats/') ."/". $food_category->image }}"
                                     alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">Vegetables</h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="{{ url('build-food/start/tropical') }}">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food-cats/food-cat-fruits.jpeg') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Fruits </h4>
+                                    <h4 class="card-title">{{$food_category->name}}</h4>
 
                                 </div>
 
@@ -56,35 +44,9 @@
                         </a>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="{{ url('build-food/start/tropical') }}">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food-cats/food-cat-legumes.jpeg') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Legumes </h4>
+                    @endforeach
+                
 
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="{{ url('build-food/start/tropical') }}">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food-cats/food-cat-grains-tubers.jpeg') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Grains </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
 
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
@@ -98,5 +60,5 @@
 
 
 @section('modals')
-    @include('dashboard.food-building.modals.select-season')
+    {{-- @include('dashboard.food-building.modals.select-season') --}}
 @endsection

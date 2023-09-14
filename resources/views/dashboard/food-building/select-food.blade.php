@@ -8,7 +8,7 @@
             <div class="content-header">
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
-                        <h3 class="page-title">Add Food To Shopping List (Vegetables)</h3>
+                        <h3 class="page-title">Add Food To Shopping List ({{$food_category->name}})</h3>
                         {{-- <div class="d-inline-block align-items-center">
                             <nav>
                                 <ol class="breadcrumb">
@@ -27,153 +27,22 @@
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
 
 
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="1">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/amaranth.jpeg') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Amaranth</h4>
+                    @foreach ($food_items as $food_item)
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <a href="#" class="add-food-to-cart" data-food-id={{$food_item->id}}>
+                                <div class="card pull-up">
+                                    <img class="card-img-top" src="{{ asset('view_assets/images/food') . "/" . $food_item->image }}"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{$food_item->name}} </h4>
+
+                                    </div>
 
                                 </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="2">
-                            <div class="card pull-up">
-                                <img class="card-img-top" src="{{ asset('view_assets/images/food/vegetables/carrot.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Carrot </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="3">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/bitter-leaf.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Bitter Leaf </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="4">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/cauliflower.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Cauli Flowers </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="4">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/cucumber.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Cucumber </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="5">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/beetroot.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Beet Root </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="6">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/green-bell-pepper.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Green Bell Pepper </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="7">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/greenwhite-cabbage.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Green White Cabbage </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="8">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/purple-cabbage.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Purple Cabbage </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="add-food-to-cart" data-food-id="9">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/red-bell-pepper.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Red Bell Pepper </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-
+                            </a>
+                        </div>
+                    @endforeach
+            
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
                     <a href="{{ url('build-food/start/tropical') }}"
@@ -187,7 +56,7 @@
 
 
 @section('modals')
-    @include('dashboard.food-building.modals.select-season')
+    {{-- @include('dashboard.food-building.modals.select-season') --}}
 @endsection
 
 @section('extra_js')

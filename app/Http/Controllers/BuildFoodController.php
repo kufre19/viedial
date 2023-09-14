@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FoodCategories;
+use App\Models\FoodItems;
+use App\Models\FoodSeason;
 use App\Traits\BuildFood;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BuildFoodController extends Controller
 {
@@ -12,18 +16,38 @@ class BuildFoodController extends Controller
     public function home()
     {
         $meals = $this->fetchHistoryHome();
-        return view("dashboard.food-building.index",compact("meals"));
+        $seasons = $this->getSeasons();
+        return view("dashboard.food-building.index",compact("meals","seasons"));
     }
 
-    public function building_home_page()
+    public function store_food_build_season($season_id)
     {
-        return view("dashboard.food-building.select-food-cat");
+        //  code to store selected session after validating and getting food cats by the season id
+        $this->setFoodBuildSession();
+        $season = FoodSeason::find($season_id);
+
+        if(!$season)
+        {
+            // return with error of something went wrong
+        }else{
+           $this->updateFoodBuildSession("season_id",$season_id);
+        }
+        return redirect()->to(route("list.food.cat"));
+    }
+
+    public function select_food_cat()
+    {
+
+        $food_categories = FoodCategories::get();
+        return view("dashboard.food-building.select-food-cat",compact("food_categories"));
 
     }
 
-    public function food_selecting_page()
+    public function food_selecting_page($food_cat)
     {
-        return view("dashboard.food-building.select-food");
+        $food_items = FoodItems::where("food_category_id",$food_cat)->get();
+        $food_category = FoodCategories::find($food_cat);
+        return view("dashboard.food-building.select-food",compact("food_items","food_category"));
 
     }
 

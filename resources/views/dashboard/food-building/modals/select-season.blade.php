@@ -37,50 +37,22 @@
 
               <div class="modal-body">
                   <div class="row">
+                      @foreach ($seasons as $season)
+                          <div class="col-lg-4 col-sm-6 food-season">
+                              <a href="{{ url('build-food/start/food-seasons') . "/". $season->id }}">
+                                  <div class="card pull-up">
+                                      <img class="card-img-top"
+                                          src="{{ asset('view_assets/images/food-seasons') ."/".$season->image }}"
+                                          alt="Card image cap">
+                                      <div class="card-body">
+                                          <h4 class="card-title"> {{$season->name}}</h4>
 
-                      <div class="col-lg-4 col-sm-6">
-                          <a href="{{ url('build-food/start/tropical') }}">
-                              <div class="card pull-up">
-                                  <img class="card-img-top"
-                                      src="{{ asset('view_assets/images/food-seasons/season-tropical.jpeg') }}"
-                                      alt="Card image cap">
-                                  <div class="card-body">
-                                      <h4 class="card-title">Tropical Season</h4>
-
-                                  </div>
-
-                              </div>
-                          </a>
-                      </div>
-
-                      <div class="col-lg-4 col-sm-6">
-                          <a href="#">
-                              <div class="card pull-up">
-                                  <img class="card-img-top"
-                                      src="{{ asset('view_assets/images/food-seasons/season-fall.jpeg') }}"
-                                      alt="Card image cap">
-                                  <div class="card-body">
-                                      <h4 class="card-title">Fall Season</h4>
+                                      </div>
 
                                   </div>
-
-                              </div>
-                          </a>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <a href="#">
-                              <div class="card pull-up">
-                                  <img class="card-img-top"
-                                      src="{{ asset('view_assets/images/food-seasons/season-summer.jpeg') }}"
-                                      alt="Card image cap">
-                                  <div class="card-body">
-                                      <h4 class="card-title">Summer Season</h4>
-
-                                  </div>
-
-                              </div>
-                          </a>
-                      </div>
+                              </a>
+                          </div>
+                      @endforeach
                   </div>
               </div>
 
