@@ -117,6 +117,7 @@
 
 @section('extra_js')
     <script>
+        // write script to check for decimal entry in serving number
         $(document).ready(function() {
             // Add a click event handler to elements with the class 'add-food-to-cart'
             $('.remove-food-from-cart').on('click', function(event) {
