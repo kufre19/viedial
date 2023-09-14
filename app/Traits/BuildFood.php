@@ -42,7 +42,10 @@ trait BuildFood {
     }
 
 
-    public func
+    public function add_food_to_shopping_list($food_item_id)
+    {
+        
+    }
 
 
     
