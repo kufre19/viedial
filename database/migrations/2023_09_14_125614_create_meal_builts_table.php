@@ -15,7 +15,7 @@ class CreateMealBuiltsTable extends Migration
     {
         Schema::create('meal_built', function (Blueprint $table) {
             $table->id();
-            $table->string("user");
+            $table->string("user_id");
             $table->string("shopping_list_id");
             $table->string("season_id")->nullable();
             $table->string("name")->nullable();

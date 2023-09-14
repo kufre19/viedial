@@ -11,7 +11,8 @@ class BuildFoodController extends Controller
 
     public function home()
     {
-        return view("dashboard.food-building.index");
+        $meals = $this->fetchHistoryHome();
+        return view("dashboard.food-building.index",compact("meals"));
     }
 
     public function building_home_page()

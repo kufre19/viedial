@@ -29,31 +29,39 @@
                         <div class="box-header no-border px-0">
                             <h4 class="box-title">Your Build History</h4>
                             <div class="box-controls pull-right d-md-flex d-none">
-                                <a href="#">View all</a>
+                                <a href="{{url('build-food/history')}}">View all</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         {{-- history card --}}
-                        <div class="col-12">
-                            <a href="#" class="box pull-up">
-                                <div class="box-body">
-                                    <h4 class="box-title">Meal Type
-                                        <p class="subtitle font-size-14 mb-0">Info on meal like date and time built </p>
-                                    </h4>
+                        @if (count($meals) > 0)
+                            @foreach ($meals as $meal)
+                                <div class="col-12">
+                                    <a href="#" class="box pull-up">
+                                        <div class="box-body">
+                                            <h4 class="box-title">{{$meal->name}}
+                                                <p class="subtitle font-size-14 mb-0">
+                                                    Date: {{$meal->created_at->diffForHumans}} <br>
+                                                    Calories: {{$meal->calories}} <br>
+                                                    Meal Type: {{$meal->meal_type}}
+                                                </p>
+                                            </h4>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-12">
-                            <a href="#" class="box pull-up">
-                                <div class="box-body">
-                                    <h4 class="box-title">Meal Type
-                                        <p class="subtitle font-size-14 mb-0">Info on meal like date and time built </p>
-                                    </h4>
-                                </div>
-                            </a>
-                        </div>
+                            @endforeach
+                        @else
+                            <div class="col-12 d-flex justify-content-center">
+                                <p>You have no build history, 😃 you can get started by clicking the Build button below.
+                                </p>
+                            </div>
+                        @endif
+
+
+
+
 
                     </div>
 
@@ -61,7 +69,8 @@
                     {{-- build btn --}}
                     <div class="row" class=" d-flex justify-content-center">
                         <div class="col">
-                            <a href="#" class="btn btn-primary pull-up" data-toggle="modal" data-target="#modal-select-season-notification">Build Food</a>
+                            <a href="#" class="btn btn-primary pull-up" data-toggle="modal"
+                                data-target="#modal-select-season-notification">Build Food</a>
                         </div>
 
                     </div>
