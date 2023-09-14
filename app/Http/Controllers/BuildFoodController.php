@@ -79,6 +79,20 @@ class BuildFoodController extends Controller
 
     }
 
+    public function buildNow()
+    {
+        $this->saveShoppingList();
+    }
+
+    public function buildLater()
+    {
+        $this->saveShoppingList();
+        $alert_txt = "Wonderful 🎉 You shopping List has been saved you can use it later to build your meals🎉";
+        // this should be change to redirect to a shopping list history page 
+        return redirect()->to("build-food")->with("success",$alert_txt);
+
+    }
+
     public function use_shopping_list()
     {
         return view("dashboard.food-building.use-shopping-list");

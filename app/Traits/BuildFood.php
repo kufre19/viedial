@@ -6,6 +6,8 @@ use App\Models\FoodCategories;
 use App\Models\FoodItems;
 use App\Models\FoodSeason;
 use App\Models\MealBuilt;
+use App\Models\ShoppingList;
+use App\Models\ShoppingListItem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -80,6 +82,31 @@ trait BuildFood {
         $food_items = FoodItems::whereIn('id',$list)->get();
 
         return $food_items;
+    }
+
+    public function saveShoppingList()
+    {
+        $data = Session::get($this->food_build_session);
+        $shopping_list = $data['shopping_list'];
+
+        $shopping_list_model = new ShoppingList();
+        $shopping_list_model->name = "List ". $shopping_list_model->id;
+        $shopping_list_model->user_id = Auth::user()->id;
+        $shopping_list_model->save();
+
+        $shopping_list_items_model = new ShoppingListItem();
+        foreach ($shopping_list as $key => $item) {
+            $shopping_list_items_model->shopping_list_id = $shopping_list_model->id;
+            $shopping_list_items_model->food_item_id = $item;
+            $shopping_list_items_model->save();
+        }
+        return $shopping_list_model->id;
+       
+    }
+
+    public function loadShoppingList($shopping_list_id)
+    {
+
     }
 
 

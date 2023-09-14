@@ -73,7 +73,7 @@
 
 
 @section('modals')
-    @include('dashboard.food-building.modals.select-season')
+    {{-- @include('dashboard.food-building.modals.select-season') --}}
 @endsection
 
 @section('extra_js')
