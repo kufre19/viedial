@@ -83,7 +83,7 @@
                         // Handle the success response here
                         console.log('Ajax request successful:', response.data);
                         $.toast({
-                        heading: 'Food Cart',
+                        heading: 'Shopping List',
                         text: response.data,
                         position: 'top-right',
                         loaderBg: '#ff6849',
@@ -96,7 +96,7 @@
                         // Handle any errors that occur during the Ajax request
                         console.error('Ajax request error:', status, error);
                         $.toast({
-                        heading: 'Food Cart',
+                        heading: 'Shopping List',
                         text: response.data,
                         position: 'top-right',
                         loaderBg: '#ff6849',

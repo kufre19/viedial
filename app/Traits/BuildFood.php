@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use App\Models\FoodCategories;
+use App\Models\FoodItems;
 use App\Models\FoodSeason;
 use App\Models\MealBuilt;
 use Illuminate\Support\Facades\Auth;
@@ -70,8 +71,15 @@ trait BuildFood {
     {
         $data = Session::get($this->food_build_session);
         $shopping_list = $data['shopping_list'];
-
         return $shopping_list;
+    }
+
+    public function getShoppingListItems()
+    {
+        $list = $this->getShoppingList();
+        $food_items = FoodItems::whereIn('id',$list)->get();
+
+        return $food_items;
     }
 
 

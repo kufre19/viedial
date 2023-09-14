@@ -61,4 +61,5 @@
 
 @section('modals')
     {{-- @include('dashboard.food-building.modals.select-season') --}}
+    @include('dashboard.food-building.alerts.no-items-in-cart')
 @endsection

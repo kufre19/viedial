@@ -56,19 +56,26 @@ class BuildFoodController extends Controller
     {
         $food_item_id = $request->input("foodId");
         $this->add_food_to_shopping_list($food_item_id);
-        return response()->json(["data"=>"Added to cart","alert_type"=>"success"]);
+        return response()->json(["data"=>"Added to shopping list","alert_type"=>"success"]);
     }
 
     public function remove_food_from_cart(Request $request)
     {
         $food_item_id = $request->input("foodId");
         $this->remove_food_from_shopping_list($food_item_id);
-        return response()->json(["data"=>"Removed from cart","alert_type"=>"danger"]);
+        return response()->json(["data"=>"Removed from shopping list","alert_type"=>"danger"]);
     }
 
     public function view_cart()
     {
-        return view("dashboard.food-building.cart");
+        $shopping_list = $this->getShoppingList();
+        if(count($shopping_list) < 1)
+        {
+            // return with warning alert that the list is empty and user should add fodd items
+            return redirect()->back()->with("warning","Your shopping list is empty please go ahead and add to it!");
+        }
+        $shopping_list_items = $this->getShoppingListItems();
+        return view("dashboard.food-building.cart",compact("shopping_list_items"));
 
     }
 
