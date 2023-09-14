@@ -50,7 +50,7 @@
 
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
-                    <a href="{{url('build-food/food-cart/view')}}" class="btn btn-primary pull-up">Continue Building</a>
+                    <a href="{{url('build-food/shopping-list/view')}}" class="btn btn-primary pull-up">Continue Building</a>
                 </div>
             </section>
             <!-- /.content -->
