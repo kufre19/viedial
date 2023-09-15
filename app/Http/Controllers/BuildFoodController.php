@@ -19,6 +19,7 @@ class BuildFoodController extends Controller
         $meals = $this->fetchHistoryHome();
         $seasons = $this->getSeasons();
         $continue_building = $this->continue_building_btn();
+        
         return view("dashboard.food-building.index",compact("meals","seasons","continue_building"));
     }
 

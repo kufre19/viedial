@@ -26,12 +26,14 @@ trait BuildFood {
     public function continue_building_btn()
     {
         $last_shopping_list = ShoppingList::latest()->first();
+        // dd($last_shopping_list);
         if($last_shopping_list->used == "no")
         {
             return $last_shopping_list->id;
-        }elseif (count($last_shopping_list) < 1) {
-            return false;
         }
+        // elseif (count($last_shopping_list) < 1) {
+        //     return false;
+        // }
         return false;
     }
 
@@ -146,8 +148,9 @@ trait BuildFood {
         $meal_built_model->shopping_list_id = $build_session['shopping_list_id'];
         $meal_built_model->save();
 
+      
         ShoppingList::where("id",$build_session['shopping_list_id'])->update([
-            'used',"yes"
+            'used'=>"yes"
         ]);
     }
 

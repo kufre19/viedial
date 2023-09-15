@@ -72,12 +72,14 @@
                             <a href="#" class="btn btn-viedial pull-up" data-toggle="modal"
                                 data-target="#modal-select-season-notification">Start Building Food</a>
                         </div>
+                        @if ($continue_building != false)             
+                            <div class="col">
+                                <a href="{{route('continue-building',['shopping_list_id'=>$continue_building])}}" class="btn btn-primary pull-up">
+                                    Continue Build Food
+                                </a>
+                            </div>
+                        @endif
 
-                        <div class="col">
-                            <a href="{{route('continue-building',['shopping_list_id'=>$continue_building])}}" class="btn btn-primary pull-up">
-                                Continue Build Food
-                            </a>
-                        </div>
 
                     </div>
 
