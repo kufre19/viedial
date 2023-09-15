@@ -96,7 +96,9 @@ class BuildFoodController extends Controller
 
     public function buildNow()
     {
-        $this->saveShoppingList();
+        $shopping_list_id =  $this->saveShoppingList();
+        return redirect()->to(route('continue-building',['shopping_list_id'=>$shopping_list_id]));
+
 
     }
 
