@@ -5,6 +5,7 @@ namespace App\Traits;
 use App\Models\FoodCategories;
 use App\Models\FoodItems;
 use App\Models\FoodSeason;
+use App\Models\FoodToBeCooked;
 use App\Models\MealBuilt;
 use App\Models\ShoppingList;
 use App\Models\ShoppingListItem;
@@ -136,7 +137,18 @@ trait BuildFood {
     public function saveBuild()
     {
         $build_session = Session::get($this->food_build_session);
-        
+        $food_cooked = FoodToBeCooked::find($build_session['food_to_cook']);
+        $meal_built_model = new MealBuilt();
+        $meal_built_model->user_id = Auth::user()->id;
+        $meal_built_model->name = $food_cooked->name;
+        $meal_built_model->meal_type = $build_session['meal_type'];
+        $meal_built_model->food_to_be_cooked_id = $build_session['food_to_cook'];
+        $meal_built_model->shopping_list_id = $build_session['shopping_list_id'];
+        $meal_built_model->save();
+
+        ShoppingList::where("id",$build_session['shopping_list_id'])->update([
+            'used',"yes"
+        ]);
     }
 
 

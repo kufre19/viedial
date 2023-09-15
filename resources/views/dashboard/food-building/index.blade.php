@@ -43,8 +43,8 @@
                                         <div class="box-body">
                                             <h4 class="box-title">{{$meal->name}}
                                                 <p class="subtitle font-size-14 mb-0">
-                                                    Date: {{$meal->created_at->diffForHumans}} <br>
-                                                    Calories: {{$meal->calories}} <br>
+                                                    Built: {{$meal->created_at->diffForHumans()}} <br>
+                                                    {{-- Calories: {{$meal->calories}} <br> --}}
                                                     Meal Type: {{$meal->meal_type}}
                                                 </p>
                                             </h4>
@@ -94,6 +94,7 @@
 @section('modals')
     @include('dashboard.food-building.modals.select-season')
     @include('dashboard.food-building.modals.shopping-cart-saved')
+    @include('dashboard.food-building.modals.meal-built')
 
 @endsection
 

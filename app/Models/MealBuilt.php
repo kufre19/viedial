@@ -13,6 +13,10 @@ class MealBuilt extends Model
 
     protected $table = "meal_built";
 
+    protected $casts = [
+        'created_at' => 'datetime', // Replace 'date_attribute' with your actual attribute name
+    ];
+
     public function MealsBuiltBy(): BelongsTo
     {
         return $this->belongsTo(User::class,"user_id");

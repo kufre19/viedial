@@ -138,12 +138,16 @@ class BuildFoodController extends Controller
 
     public function completeBuild()
     {
+        $this->saveBuild();
+        $alert_txt = "Wonderful 🤩, You've taken the right step to healthy eating";
+        return redirect()->to("build-food")->with("meal-built",$alert_txt);
         
     }
 
     public function select_food_to_cook()
     {
         return view('dashboard.food-building.select-food-to-cook');
+        // return redirect()->to("build-food")->with("shopping-list-saved",$alert_txt);
 
     }
 }
