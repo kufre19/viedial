@@ -46,8 +46,8 @@
 
                                     <div width="70">
                                         <label for="serving-number">Number of Serving</label>
-                                        <input type="number" class="form-control" placeholder="1" min="0"
-                                            max="5">
+                                        <input type="text" class="form-control food-serving-number" placeholder="1" min="0"
+                                            max="5" data-food-id="{{$item->id}}" data-food-name="{{$item->name}}" >
                                     </div>
 
 
@@ -85,34 +85,69 @@
 
 @section('extra_js')
     <script>
-        // write script to check for decimal entry in serving number
         $(document).ready(function() {
-            // Add a click event handler to elements with the class 'add-food-to-cart'
-            $('.remove-food-from-cart').on('click', function(event) {
-                // Prevent the default behavior of the anchor tag
-                event.preventDefault();
 
-                // Get the value of the 'data-food-id' attribute
-                var foodId = $(this).data('food-id');
+            // update meal type and show complete btn
+            $('#meal_type_select').on("change", function(event){
+                var mealType = $(this).val();
                 var csrfToken = "{{ csrf_token() }}";
 
-                // Make an Ajax request using the extracted 'foodId'
                 $.ajax({
-                    url: "{{ url('build-food/food-cart/remove') }}", // Replace with your actual URL
-                    type: 'POST', // Use 'POST' or 'GET' as needed
+                    url: "{{ route('use-shopping-list.enter-meal-type') }}", 
+                    type: 'POST',
                     data: {
-                        foodId: foodId,
+                        mealType: mealType,
+                        _token: csrfToken
+                    }, // Send the 'foodId' as data
+                    success: function(response) {
+                        // Handle the success response here
+                        console.log('Ajax request successful:', response.data);
+                        $("#complete-build").show();
+
+                        
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle any errors that occur during the Ajax request
+                        console.error('Ajax request error:', status, error);
+                        $.toast({
+                            heading: 'Food Cart',
+                            text: response.data,
+                            position: 'top-right',
+                            loaderBg: '#ff6849',
+                            icon: 'error',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
+                    }
+                });
+            });
+
+
+        // write script to check for decimal entry in serving number
+            $('.food-serving-number').on("change", function(event){
+                var num_of_serving = $(this).val();
+                var food_id = $(this).data('food-id');
+                var food_name = $(this).data('food-name');
+                var csrfToken = "{{ csrf_token() }}";
+
+                $.ajax({
+                    url: "{{ route('use-shopping-list.enter-serving-number') }}", 
+                    type: 'POST',
+                    data: {
+                        num_of_serving: num_of_serving,
+                        food_id:food_id,
+                        food_name:food_name,
                         _token: csrfToken
                     }, // Send the 'foodId' as data
                     success: function(response) {
                         // Handle the success response here
                         console.log('Ajax request successful:', response.data);
                         $.toast({
-                            heading: 'Food Cart',
+                            heading: 'Shopping List',
                             text: response.data,
                             position: 'top-right',
                             loaderBg: '#ff6849',
-                            icon: 'warning',
+                            icon: 'success',
                             hideAfter: 3500,
                             stack: 6
                         });
@@ -132,6 +167,7 @@
                     }
                 });
             });
+
         });
     </script>
 @endsection

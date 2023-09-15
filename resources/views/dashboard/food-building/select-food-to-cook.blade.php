@@ -62,52 +62,6 @@
 
 @section('extra_js')
     <script>
-        $(document).ready(function() {
-            // Add a click event handler to elements with the class 'add-food-to-cart'
-            $('.add-food-to-cart').on('click', function(event) {
-                // Prevent the default behavior of the anchor tag
-                event.preventDefault();
-
-                // Get the value of the 'data-food-id' attribute
-                var foodId = $(this).data('food-id');
-                var csrfToken = "{{ csrf_token() }}";
-
-                // Make an Ajax request using the extracted 'foodId'
-                $.ajax({
-                    url: "{{ url('build-food/food-cart/add') }}", // Replace with your actual URL
-                    type: 'POST', // Use 'POST' or 'GET' as needed
-                    data: {
-                        foodId: foodId,
-                        _token: csrfToken
-                    }, // Send the 'foodId' as data
-                    success: function(response) {
-                        // Handle the success response here
-                        console.log('Ajax request successful:', response.data);
-                        $.toast({
-                            heading: 'Food Cart',
-                            text: response.data,
-                            position: 'top-right',
-                            loaderBg: '#ff6849',
-                            icon: 'success',
-                            hideAfter: 3500,
-                            stack: 6
-                        });
-                    },
-                    error: function(xhr, status, error) {
-                        // Handle any errors that occur during the Ajax request
-                        console.error('Ajax request error:', status, error);
-                        $.toast({
-                            heading: 'Food Cart',
-                            text: response.data,
-                            position: 'top-right',
-                            loaderBg: '#ff6849',
-                            icon: 'error',
-                            hideAfter: 3500,
-                            stack: 6
-                        });
-                    }
-                });
-            });
-        });
+    
     </script>
 @endsection

@@ -14,16 +14,17 @@
                    click complete to save your meal built this can be used to track your caloric intake.
                 </p>
                 <h5 class="my-10">Select Meal Type</h5>
-                <select class="selectpicker">
-                    <option selected>BreakFast</option>
-                    <option>Launch</option>
-                    <option>Dinner</option>
+                <select class="selectpicker" id="meal_type_select">
+                    <option value="Breakfast">Select Meal Type</option>
+                    <option value="BreakFast">BreakFast</option>
+                    <option value="Launch">Launch</option>
+                    <option value="Dinner">Dinner</option>
                 </select>
 
             </div>
             <div class="modal-footer modal-footer-uniform">
                 {{-- <button type="button" class="btn btn-secondary float-right">Come Back Later</button> --}}
-                <a href="{{url('build-food/complete-build')}}" class="btn btn-secondary float-right" id="show-seasons">Complete</a>
+                <a href="{{url('build-food/complete-build')}}" style="display: none" class="btn btn-secondary float-right" id="complete-build">Complete</a>
             </div>
         </div>
     </div>

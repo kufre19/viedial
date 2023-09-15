@@ -122,6 +122,25 @@ class BuildFoodController extends Controller
         return view("dashboard.food-building.use-shopping-list",compact("shopping_list_items"));
     }
 
+    public function enter_serving_number(Request $request)
+    {
+        $num_of_serving = $request->input("num_of_serving");
+        $food_name = $request->input("food_name");
+        return response()->json(["data"=>"added $num_of_serving servings to $food_name"]);
+    }
+
+    public function saveMealType(Request $request)
+    {
+        $mealType = $request->input("mealType");
+        $this->updateFoodBuildSession("meal_type",$mealType);
+        return response()->json(["data"=>"ok",200]);
+    }
+
+    public function completeBuild()
+    {
+        
+    }
+
     public function select_food_to_cook()
     {
         return view('dashboard.food-building.select-food-to-cook');
