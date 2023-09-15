@@ -22,6 +22,18 @@ trait BuildFood {
         return $meals;
     }
 
+    public function continue_building_btn()
+    {
+        $last_shopping_list = ShoppingList::latest()->first();
+        if($last_shopping_list->used == "no")
+        {
+            return $last_shopping_list->id;
+        }elseif (count($last_shopping_list) < 1) {
+            return false;
+        }
+        return false;
+    }
+
     public function getSeasons()
     {
         return FoodSeason::get();

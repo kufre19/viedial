@@ -69,8 +69,14 @@
                     {{-- build btn --}}
                     <div class="row" class=" d-flex justify-content-center">
                         <div class="col">
-                            <a href="#" class="btn btn-primary pull-up" data-toggle="modal"
-                                data-target="#modal-select-season-notification">Build Food</a>
+                            <a href="#" class="btn btn-viedial pull-up" data-toggle="modal"
+                                data-target="#modal-select-season-notification">Start Building Food</a>
+                        </div>
+
+                        <div class="col">
+                            <a href="{{route('continue-building',['shopping_list_id'=>$continue_building])}}" class="btn btn-primary pull-up">
+                                Continue Build Food
+                            </a>
                         </div>
 
                     </div>
