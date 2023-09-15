@@ -26,68 +26,37 @@
             <section class="content">
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
 
+                    @foreach ($shopping_list_items as $item)
+                        <div class="col-lg-3 col-md-6 col-12">
 
-                    <div class="col-lg-3 col-md-6 col-12">
-                       
                             <div class="card pull-up">
                                 <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food/vegetables/amaranth.jpeg') }}"
+                                    src="{{ asset('view_assets/images/food'). "/". $item->image }}"
                                     alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">Amaranth</h4>
+                                    <h4 class="card-title">{{$item->name}}</h4>
                                     <p>
-                                        Cabs: 10 <br>
-                                        Protein: 20 <br>
-                                        Calories: 60 cal <br>
+                                        Cabs: {{$item->carbs}} <br>
+                                        Calories: {{$item->calories}} <br>
                                     </p>
-                                    
+
                                 </div>
 
                                 <div class="card-footer">
-                                   
+
                                     <div width="70">
                                         <label for="serving-number">Number of Serving</label>
-                                        <input type="number" class="form-control"  placeholder="1" min="0" max="5">
+                                        <input type="number" class="form-control" placeholder="1" min="0"
+                                            max="5">
                                     </div>
-										
+
 
                                 </div>
-
-                            </div>
-                     
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                       
-                        <div class="card pull-up">
-                            <img class="card-img-top"
-                                src="{{ asset('view_assets/images/food/vegetables/cauliflower.png') }}"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h4 class="card-title">Cauli Flower</h4>
-                                <p>
-                                    Cabs: 10 <br>
-                                    Protein: 20 <br>
-                                    Calories: 60 cal <br>
-                                </p>
-
-                            </div>
-
-                            <div class="card-footer">
-                                
-                                <div width="70">
-                                    <label for="serving-number">Number of Serving </label>
-                                    <input type="number" class="form-control"  placeholder="1" min="0" max="5">
-                                </div>
-                                    
 
                             </div>
 
                         </div>
-                 
-                </div>
-                   
-              
+                    @endforeach
 
 
 
@@ -95,12 +64,12 @@
                 </div>
                 <div class="row  mt-5">
                     <div class="col-12 d-flex justify-content-center">
-                        <a href="#"
-                        class="btn btn-viedial pull-up" data-toggle="modal" data-target="#modal-complete-build">Complete Build</a>
+                        <a href="#" class="btn btn-viedial pull-up" data-toggle="modal"
+                            data-target="#modal-complete-build">Complete Build</a>
                     </div>
-                    
-                   
-                
+
+
+
                 </div>
             </section>
             <!-- /.content -->
@@ -112,7 +81,6 @@
 @section('modals')
     @include('dashboard.food-building.modals.save-shopping-list')
     @include('dashboard.food-building.modals.complete-build')
-
 @endsection
 
 @section('extra_js')
@@ -126,11 +94,11 @@
 
                 // Get the value of the 'data-food-id' attribute
                 var foodId = $(this).data('food-id');
-                var csrfToken = "{{csrf_token()}}";
+                var csrfToken = "{{ csrf_token() }}";
 
                 // Make an Ajax request using the extracted 'foodId'
                 $.ajax({
-                    url: "{{url('build-food/food-cart/remove')}}", // Replace with your actual URL
+                    url: "{{ url('build-food/food-cart/remove') }}", // Replace with your actual URL
                     type: 'POST', // Use 'POST' or 'GET' as needed
                     data: {
                         foodId: foodId,
@@ -140,27 +108,27 @@
                         // Handle the success response here
                         console.log('Ajax request successful:', response.data);
                         $.toast({
-                        heading: 'Food Cart',
-                        text: response.data,
-                        position: 'top-right',
-                        loaderBg: '#ff6849',
-                        icon: 'warning',
-                        hideAfter: 3500,
-                        stack: 6
-                    });
+                            heading: 'Food Cart',
+                            text: response.data,
+                            position: 'top-right',
+                            loaderBg: '#ff6849',
+                            icon: 'warning',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request
                         console.error('Ajax request error:', status, error);
                         $.toast({
-                        heading: 'Food Cart',
-                        text: response.data,
-                        position: 'top-right',
-                        loaderBg: '#ff6849',
-                        icon: 'error',
-                        hideAfter: 3500,
-                        stack: 6
-                    });
+                            heading: 'Food Cart',
+                            text: response.data,
+                            position: 'top-right',
+                            loaderBg: '#ff6849',
+                            icon: 'error',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
                     }
                 });
             });

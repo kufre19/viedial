@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\FoodCategories;
 use App\Models\FoodItems;
 use App\Models\FoodSeason;
+use App\Models\FoodToBeCooked;
 use App\Traits\BuildFood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -21,8 +22,15 @@ class BuildFoodController extends Controller
         return view("dashboard.food-building.index",compact("meals","seasons","continue_building"));
     }
 
-    public function continue_building($shopping_list_id)
+    public function continue_building($shopping_list_id="")
     {
+
+        if($shopping_list_id != "")
+        {
+            $this->loadShoppingList($shopping_list_id);
+        }
+        $food_to_be_cooked = FoodToBeCooked::get();
+        return view('dashboard.food-building.select-food-to-cook',compact("food_to_be_cooked"));
 
     }
 
@@ -88,6 +96,7 @@ class BuildFoodController extends Controller
     public function buildNow()
     {
         $this->saveShoppingList();
+
     }
 
     public function buildLater()
@@ -99,10 +108,18 @@ class BuildFoodController extends Controller
 
     }
 
-    public function use_shopping_list()
+    public function use_shopping_list($food_to_cook_id)
     {
-        return view("dashboard.food-building.use-shopping-list");
+        $this->updateFoodBuildSession("food_to_cook",$food_to_cook_id);
+        $shopping_list = $this->getShoppingList();
+        if(count($shopping_list) < 1)
+        {
+            // return with warning alert that the list is empty and user should add fodd items
+            return redirect()->back()->with("warning","Your shopping list is empty please go ahead and add to it!");
+        }
+        $shopping_list_items = $this->getShoppingListItems();
 
+        return view("dashboard.food-building.use-shopping-list",compact("shopping_list_items"));
     }
 
     public function select_food_to_cook()

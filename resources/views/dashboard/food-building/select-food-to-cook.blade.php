@@ -27,38 +27,22 @@
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
 
 
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="{{url('build-food/use-shopping-list/jellof-rice')}}" class="" >
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food-to-cook/Jollof and porridges.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Jollof and porridges</h4>
+                    @foreach ($food_to_be_cooked as $food)
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <a href="{{ route("use-shopping-list",["food_to_cook_id"=>$food->id]) }}" class="">
+                                <div class="card pull-up">
+                                    <img class="card-img-top"
+                                        src="{{ asset('view_assets/images/food-to-cook') ."/". $food->image  }}"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{$food->name}}</h4>
+
+                                    </div>
 
                                 </div>
-
-                            </div>
-                        </a>
-                    </div>
-                 
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <a href="#" class="" data-food-id="7">
-                            <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food-to-cook/Meat-and-vegetable-soups.png') }}"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Meat and vegetable soups </h4>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-
-               
+                            </a>
+                        </div>
+                    @endforeach
 
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
@@ -86,11 +70,11 @@
 
                 // Get the value of the 'data-food-id' attribute
                 var foodId = $(this).data('food-id');
-                var csrfToken = "{{csrf_token()}}";
+                var csrfToken = "{{ csrf_token() }}";
 
                 // Make an Ajax request using the extracted 'foodId'
                 $.ajax({
-                    url: "{{url('build-food/food-cart/add')}}", // Replace with your actual URL
+                    url: "{{ url('build-food/food-cart/add') }}", // Replace with your actual URL
                     type: 'POST', // Use 'POST' or 'GET' as needed
                     data: {
                         foodId: foodId,
@@ -100,27 +84,27 @@
                         // Handle the success response here
                         console.log('Ajax request successful:', response.data);
                         $.toast({
-                        heading: 'Food Cart',
-                        text: response.data,
-                        position: 'top-right',
-                        loaderBg: '#ff6849',
-                        icon: 'success',
-                        hideAfter: 3500,
-                        stack: 6
-                    });
+                            heading: 'Food Cart',
+                            text: response.data,
+                            position: 'top-right',
+                            loaderBg: '#ff6849',
+                            icon: 'success',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request
                         console.error('Ajax request error:', status, error);
                         $.toast({
-                        heading: 'Food Cart',
-                        text: response.data,
-                        position: 'top-right',
-                        loaderBg: '#ff6849',
-                        icon: 'error',
-                        hideAfter: 3500,
-                        stack: 6
-                    });
+                            heading: 'Food Cart',
+                            text: response.data,
+                            position: 'top-right',
+                            loaderBg: '#ff6849',
+                            icon: 'error',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
                     }
                 });
             });

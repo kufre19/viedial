@@ -88,13 +88,13 @@ Route::group(["middleware" => "auth"], function () {
     // BUILDING FOOD
     Route::get("build-food",[BuildFoodController::class,"home"]);
     Route::get("build-food/start/food-seasons/{season_id}",[BuildFoodController::class,"store_food_build_season"]);
-    Route::get("build-food/continue/shopping-list/{shopping_list_id}",[BuildFoodController::class,"continue_building"])->name("continue-building");
+    Route::get("build-food/continue/shopping-list/{shopping_list_id?}",[BuildFoodController::class,"continue_building"])->name("continue-building");
     Route::get("build-food/start/shopping-list/food-categories/",[BuildFoodController::class,"select_food_cat"])->name("list.food-cat");
     Route::get("build-food/start/shopping-list/select-food/{food_cat}",[BuildFoodController::class,"food_selecting_page"])->name("list.food-items");
     Route::post("build-food/food-cart/add",[BuildFoodController::class,"add_food_to_cart"]);
     Route::post("build-food/food-cart/remove",[BuildFoodController::class,"remove_food_from_cart"]);
     Route::get("build-food/shopping-list/view",[BuildFoodController::class,"view_cart"]);
-    Route::get("build-food/use-shopping-list/{food_to_cook}",[BuildFoodController::class,"use_shopping_list"]);
+    Route::get("build-food/use-shopping-list/{food_to_cook_id}",[BuildFoodController::class,"use_shopping_list"])->name("use-shopping-list");
     Route::get("build-food/build-now/",[BuildFoodController::class,"buildNow"])->name("build-now");
     Route::get("build-food/build-later/",[BuildFoodController::class,"buildLater"])->name("build-later");
 

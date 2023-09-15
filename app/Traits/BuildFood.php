@@ -46,7 +46,7 @@ trait BuildFood {
 
     public function setFoodBuildSession()
     {
-        $data = ["season"=>"","shopping_list"=>[]];
+        $data = ["season"=>"","shopping_list"=>[],"shopping_list_id"=>"","food_to_cook"=>""];
         Session::put($this->food_build_session,$data);
     }
 
@@ -120,7 +120,13 @@ trait BuildFood {
 
     public function loadShoppingList($shopping_list_id)
     {
+        $shopping_list = ShoppingList::where("id",$shopping_list_id)->with("ShoppingListItems")->first();
+        $this->updateFoodBuildSession("shopping_list_id",$shopping_list_id);
 
+        $this->updateFoodBuildSession("shopping_list",[]);
+        foreach ($shopping_list->ShoppingListItems as $key => $shopping_items) {
+            $this->add_food_to_shopping_list($shopping_items->food_item_id);
+        }
     }
 
 

@@ -10,7 +10,7 @@ class ShoppingList extends Model
 {
     use HasFactory;
 
-    public function ShoppingItems(): HasMany
+    public function ShoppingListItems(): HasMany
     {
         return $this->hasMany(ShoppingListItem::class,"shopping_list_id");
     }
