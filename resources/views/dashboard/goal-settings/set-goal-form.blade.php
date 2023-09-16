@@ -64,9 +64,9 @@
                                 <!-- /.box-body -->
                                 <div class="box-footer">
 
-                                    <button type="submit" class="btn btn-rounded btn-primary btn-outline">
-                                        <i class="ti-cup-alt"></i> Set Your Goal Now
-                                    </button>
+                                    {{-- <button type="submit" class="btn btn-rounded btn-primary btn-outline">
+                                        <i class="ti-cup-alt"></i> Set Your Goal
+                                    </button> --}}
                                 </div>
                             </form>
                         </div>
@@ -95,6 +95,9 @@
             var weight = $(this).val();
             if (weight < 0.1 || weight > 1.5) {
                 $('#modal-weight-goal-error').modal("show");
+
+            }else{
+                $('#modal-weight-goal-notice').modal("show");
 
             }
         });
