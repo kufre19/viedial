@@ -3,6 +3,7 @@
 use App\Http\Controllers\BuildFoodController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GoalSettingController;
 use App\Http\Controllers\RiskAssessmentController;
 use App\Http\Controllers\WebsiteContorller;
 use App\Models\RiskAssessment;
@@ -103,9 +104,8 @@ Route::group(["middleware" => "auth"], function () {
     Route::get("build-food/complete-build",[BuildFoodController::class,"completeBuild"]);
 
 
-
-
-
+    // GOAL SETTING
+    Route::get("set-your-goals",[GoalSettingController::class,"home"]);
 
 
 });
