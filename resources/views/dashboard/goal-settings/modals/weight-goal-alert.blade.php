@@ -9,16 +9,14 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Your BMI is 25 </p>
           <p>
-            <ul>
-                <li>Eat at least 5 servings of vegetables</li>
-                <li>Do moderate exercise for at least 30 minutes every day. Learn more about moderate exercise from here ( I will insert a link of a blog that talks about different exercise intensity)
-                </li>
-                <li>Sleep for at least 7 to 8 hours a night 
-                </li>
-            </ul>
-          </p>
+            We recommend that you set a realistic weight loss goal. Don’t make it too low and don’t 
+            make it too high. We recommend that you should not exceed more than 1.5 kg/week. This is because 
+            there are lot of factors that affect your ability to lose weight as planned. Setting a very high target for 
+            weight loss may put your body under undue stress. It also makes it difficult for you to build 
+            healthy habits that will enable you sustain this weight loss for the rest of your life.  
+        </p>
+          
         </div>
         <div class="modal-footer modal-footer-uniform">
           <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Change</button>

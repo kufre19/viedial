@@ -40,7 +40,7 @@
                                     <div class="form-group">
                                         <label>How much weight You want to loose(per week)</label>
                                         <input type="text" class="form-control"
-                                            placeholder="Enter Weight in KG between 0.1 to 1.5">
+                                            placeholder="Enter Weight in KG between 0.1 to 1.5" id="weight_goal_input">
                                         {{-- <label>Left group button</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -83,16 +83,25 @@
 
 
 @section('modals')
-    @include('dashboard.goal-settings.modal.weight-goal-alert')
+    @include('dashboard.goal-settings.modals.weight-goal-alert')
 @endsection
 
 
 
+@section('extra_js')
 <script>
     $(document).ready(function() {
-        // Show the modal when the page is loaded
-        $('#modal-weight-goal').modal("show");
+        $("#weight_goal_input").on("change", function() {
+            var weight = $(this).val();
+            if (weight < 0.1 || weight > 1.5) {
+                $('#modal-weight-goal').modal("show");
+
+            }
+        });
+
+        // $('#modal-weight-goal').modal("show");
 
 
     });
 </script>
+@endsection
