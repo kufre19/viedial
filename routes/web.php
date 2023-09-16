@@ -106,6 +106,8 @@ Route::group(["middleware" => "auth"], function () {
 
     // GOAL SETTING
     Route::get("set-your-goals",[GoalSettingController::class,"home"]);
+    Route::get("set-your-goals/start",[GoalSettingController::class,"set_goal_form"]);
+
 
 
 });

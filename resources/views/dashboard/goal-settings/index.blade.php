@@ -41,7 +41,7 @@
                                         At Current Weight of 78 KG
                                     </p>
 
-                                    <a href="#" class="btn btn-info-light">Set Your Goals</a>
+                                    <a href="{{url('set-your-goals/start')}}" class="btn btn-info-light">Set Your Goals</a>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="col">
-                      <a href="#" class="btn btn-viedial">Set Your Goals</a>
+                      <a href="{{url('set-your-goals/start')}}" class="btn btn-viedial">Set Your Goals</a>
 
                     </div>
 

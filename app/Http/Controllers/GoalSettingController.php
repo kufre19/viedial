@@ -10,4 +10,9 @@ class GoalSettingController extends Controller
     {
         return view("dashboard.goal-settings.index");
     }
+
+    public function set_goal_form()
+    {
+        return view("dashboard.goal-settings.set-goal-form");
+    }
 }
