@@ -25,9 +25,9 @@
             <!-- Main content -->
             <section class="content">
                 <div class="row d-flex justify-content-center">
-                 
+
                     <div class="col-lg-7">
-                      
+
                         <div class="box pull-up">
                             <div class="box-body d-flex p-0">
                                 <div class="flex-grow-1 bg-viedial-theme px-30 pt-50 pb-100 flex-grow-1 bg-img min-h-350"
@@ -41,17 +41,55 @@
                                         At Current Weight of 78 KG
                                     </p>
 
-                                    {{-- <a href="#" class="btn btn-info-light">Join Now</a> --}}
+                                    <a href="#" class="btn btn-info-light">Set Your Goals</a>
                                 </div>
                             </div>
                         </div>
 
                     </div>
 
-                    
+
                 </div>
 
                 <div class="row">
+
+                    <div class="col-12">
+                        <div class="card bg-viedial-theme">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Our Recommedations
+                                </h4>
+                            </div>
+                            <div class="card-body">
+
+
+                                <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Physical
+                                            <p class="subtitle font-size-14 mb-0">
+                                                You Should do
+                                            </p>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <div class="box pull-up ">
+                                  <div class="box-body ">
+                                      <h4 class="box-title">Diet
+                                          <p class="subtitle font-size-14 mb-0">
+                                              You Should do
+                                          </p>
+                                      </h4>
+                                  </div>
+                              </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col">
+                      <a href="#" class="btn btn-viedial">Set Your Goals</a>
+
+                    </div>
 
                 </div>
             </section>
