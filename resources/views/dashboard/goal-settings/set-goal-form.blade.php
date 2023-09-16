@@ -94,7 +94,7 @@
         $("#weight_goal_input").on("change", function() {
             var weight = $(this).val();
             if (weight < 0.1 || weight > 1.5) {
-                $('#modal-weight-goal').modal("show");
+                $('#modal-weight-goal-error').modal("show");
 
             }
         });

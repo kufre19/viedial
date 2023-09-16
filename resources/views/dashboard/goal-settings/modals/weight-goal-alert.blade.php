@@ -1,5 +1,5 @@
   <!-- Modal -->
-  <div class="modal center-modal fade" id="modal-weight-goal" tabindex="-1">
+  <div class="modal center-modal fade" id="modal-weight-goal-error" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
