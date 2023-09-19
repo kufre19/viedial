@@ -5,6 +5,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoalSettingController;
 use App\Http\Controllers\RiskAssessmentController;
+use App\Http\Controllers\TeleMonitoringController;
 use App\Http\Controllers\WebsiteContorller;
 use App\Models\RiskAssessment;
 use Illuminate\Support\Facades\Route;
@@ -107,6 +108,10 @@ Route::group(["middleware" => "auth"], function () {
     // GOAL SETTING
     Route::get("set-your-goals",[GoalSettingController::class,"home"]);
     Route::get("set-your-goals/start",[GoalSettingController::class,"set_goal_form"]);
+
+
+    // TELE MONITORING
+    Route::get("tele-monitoring", [TeleMonitoringController::class,"index"]);
 
 
 

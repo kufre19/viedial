@@ -49,7 +49,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url('set-your-goals') }}">
+                        <a href="{{ url('tele-monitoring') }}">
                             <i class="fa fa-tv"><span class="path1">
                                 </span><span class="path2"></span></i>
                             Tele-Monitoring(Rename)
