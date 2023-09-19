@@ -31,7 +31,8 @@
                                 <h4 class="box-title">Enter Your Numbers</h4>
                             </div>
                             <!-- /.box-header -->
-                            <form class="form" id="monitoring">
+                            <form action="{{route('tele-monitoring.save')}}" class="form" id="monitoring" method="POST">
+                                @csrf
                                 <div class="box-body">
 
                                     <div class="form-group">

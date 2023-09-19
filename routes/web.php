@@ -111,7 +111,9 @@ Route::group(["middleware" => "auth"], function () {
 
 
     // TELE MONITORING
-    Route::get("tele-monitoring", [TeleMonitoringController::class,"index"]);
+    Route::get("tele-monitoring", [TeleMonitoringController::class,"index"])->name("tele-monitoring.index");
+    Route::post("tele-monitoring/save", [TeleMonitoringController::class,"save_numbers"])->name("tele-monitoring.save");
+
 
 
 
