@@ -31,7 +31,7 @@
                                 <h4 class="box-title">Enter Your Numbers</h4>
                             </div>
                             <!-- /.box-header -->
-                            <form class="form">
+                            <form class="form" id="monitoring">
                                 <div class="box-body">
 
                                     <div class="form-group">
@@ -59,8 +59,13 @@
                                 <!-- /.box-body -->
                                 <div class="box-footer">
 
-                                    <button type="submit" class="btn btn-rounded btn-viedial">
-                                        Save <i class="fa fa-arrow-right"></i> 
+                                    <button type="button" id="submit-numbers" class="btn btn-rounded btn-viedial">
+                                        Save <i class="fa fa-arrow-right"></i>
+                                    </button>
+
+                                    <button type="button" id="loading-button" style="display: none" class="btn btn-rounded btn-viedial">
+                                        <span class="spinner-grow spinner-grow-sm"  role="status" aria-hidden="true"></span>
+                                        Loading...
                                     </button>
                                 </div>
                             </form>
@@ -78,4 +83,31 @@
 
 
 @section('modals')
+@include('dashboard.tele-monitoring.modals.numbers-entered')
+@endsection
+
+@section('extra_js')
+<script>
+    $(document).ready(function() {
+        $("#submit-numbers").on("click", function(event) {
+
+            $("#submit-numbers").hide();
+            $("#loading-button").show();
+
+            setTimeout(() => {
+
+                $("#monitoring").submit();
+                
+            }, 3000);
+
+            // $("#modal-numbers-entered").show();
+            
+            
+        });
+
+     
+
+
+    });
+</script>
 @endsection
