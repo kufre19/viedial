@@ -5,6 +5,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoalSettingController;
 use App\Http\Controllers\RiskAssessmentController;
+use App\Http\Controllers\SecreteAdminController;
 use App\Http\Controllers\TeleMonitoringController;
 use App\Http\Controllers\WebsiteContorller;
 use App\Models\RiskAssessment;
@@ -29,6 +30,10 @@ Route::get('/link-storage', function () {
     $exitCode = Artisan::call('storage:link');
     return 'Storage link has been created.';
 });
+
+Route::get("unknown/upload/path",[SecreteAdminController::class,"upload_food_page"]);
+Route::post("unknown/upload/path",[SecreteAdminController::class,"upload_food"]);
+
 
 
 
