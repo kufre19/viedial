@@ -62,7 +62,7 @@
                     </div>
                     <div class="form-col">
                         <label for="age">
-                            how old are you in years only?
+                            How old are you in years only?
                         </label>
                         <div class="form-holder">
                             <i class="zmdi zmdi-baby"></i>
@@ -143,7 +143,7 @@
                 <div class="form-row">
                     <div class="form-col">
                         <label for="waste_width">
-                            how wide is your waistline at the level of your navel?
+                            How wide is your waistline at the level of your navel?
                         </label>
                         <div class="form-holder">
                             <div class="input-group">
@@ -191,7 +191,7 @@
                     </div>
                     <div class="form-col">
                         <label for="treatment">
-                            are you currently on treatment for high blood pressure?
+                            Are you currently on treatment for high blood pressure?
                         </label>
                         <div class="form-holder">
                             {{-- <i class="zmdi zmdi-baby"></i> --}}

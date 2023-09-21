@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-col">
                         <label for="age">
-                            how old are you in years only?
+                            How old are you in years only?
                         </label>
                         <div class="form-holder">
                             <i class="zmdi zmdi-baby"></i>
@@ -144,7 +144,7 @@
                         <div class="form-holder">
                             {{-- <i class="zmdi zmdi-account-o"></i> --}}
                             <label for="treating_cvd">
-                                are you currently on treatment for high blood pressure?
+                                Are you currently on treatment for high blood pressure?
                             </label>
 
                             <select name="treatment" id="treating_cvd" class="form-control">
