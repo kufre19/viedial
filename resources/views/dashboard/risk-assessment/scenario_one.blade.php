@@ -39,7 +39,7 @@
             <!-- SECTION 1 -->
             <h4></h4>
             <section>
-                <h3>Bio Data</h3>
+                <h3>About You</h3>
                 {{-- <textarea class="form-control" name="" readonly></textarea> --}}
 
 
@@ -139,7 +139,7 @@
             <!-- SECTION 3 -->
             <h4></h4>
             <section>
-                <h3> Habbit and Health </h3>
+                <h3> Habit and Health </h3>
                 <div class="form-row">
                     <div class="form-col">
                         <label for="waste_width">

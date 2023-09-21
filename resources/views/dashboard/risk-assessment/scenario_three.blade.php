@@ -27,7 +27,7 @@
             <!-- SECTION 1 -->
             <h4></h4>
             <section>
-                <h3>Bio Data</h3>
+                <h3>About You</h3>
                 {{-- <textarea class="form-control" name="" readonly></textarea> --}}
 
 

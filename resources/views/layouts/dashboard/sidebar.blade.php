@@ -44,7 +44,7 @@
                         <a href="{{ url('risk-assessment/result') }}">
                             <i class="fa fa-heart"><span class="path1">
                                 </span><span class="path2"></span></i>
-                            Your Risk Score
+                            Your Scores
                         </a>
                     </li>
 
