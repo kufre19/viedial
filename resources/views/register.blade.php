@@ -5,8 +5,8 @@
         <div class="row justify-content-center no-gutters">
             <div class="col-lg-5 col-md-5 col-12">
                 <div class="bg-white rounded30 shadow-lg">
-                    <img src="{{asset('view_assets/images/logos/Logo File - Main-02.png')}}" sizes="5%" alt="">
                     <div class="content-top-agile p-20 pb-0">
+                        <img src="{{asset('view_assets/images/logos/Logo File - Main-02.png')}}" width="20%" height="20%" alt="">
 
                         <h2 class="text-viedial">Get started with Us</h2>
                         <p class="mb-0">Register a new membership</p>
