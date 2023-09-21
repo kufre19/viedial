@@ -33,14 +33,14 @@
                                     <input type="text" name="name" class="form-control pl-15 bg-transparent" placeholder="Full Name" required>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-transparent"><i class="fa fa-phone"></i></span>
                                     </div>
                                     <input type="text" name="whatsapp_number" class="form-control pl-15 bg-transparent" placeholder="Whatsapp Number" required>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">

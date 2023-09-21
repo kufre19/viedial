@@ -49,7 +49,7 @@ class WebsiteContorller extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'whatsapp_number' => 'string',
+            // 'whatsapp_number' => 'string',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'terms' => 'accepted',
@@ -61,7 +61,7 @@ class WebsiteContorller extends Controller
     
         $user = new User([
             'name' => $request->name,
-            'whatsapp_number' => $request->whatsapp_number, 
+            // 'whatsapp_number' => $request->whatsapp_number, 
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

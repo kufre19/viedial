@@ -14,10 +14,10 @@
                                 data-overlay-light="9">
                                 <div class="d-lg-flex align-items-center justify-content-between">
                                     <div class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
-                                        <img src="{{ asset('view_assets/images/svg-icon/color-svg/custom-14.svg') }}"
+                                        <img src="{{ asset('view_assets/images/svg-icon/color-svg/risk-assessment.svg') }}"
                                             class="img-fluid max-w-150" alt="" />
                                         <div class="ml-30">
-                                            <h4 class="mb-10">Take Our Advance Risk Assesment Test !</h4>
+                                            <h4 class="mb-10">First take our advance risk assesment!</h4>
                                             <p class="mb-0 text-fade">Check if you are at risk of having a heart attack,
                                                 stroke, kidney failure etc. </p>
                                         </div>
