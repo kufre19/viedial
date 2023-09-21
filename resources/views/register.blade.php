@@ -5,8 +5,10 @@
         <div class="row justify-content-center no-gutters">
             <div class="col-lg-5 col-md-5 col-12">
                 <div class="bg-white rounded30 shadow-lg">
+                    <img src="{{asset('view_assets/images/logos/Logo File - Main-02.png')}}" sizes="5%" alt="">
                     <div class="content-top-agile p-20 pb-0">
-                        <h2 class="text-primary">Get started with Us</h2>
+
+                        <h2 class="text-viedial">Get started with Us</h2>
                         <p class="mb-0">Register a new membership</p>
 
                         @if ($errors->any())
@@ -68,13 +70,13 @@
                                 <div class="col-12">
                                     <div class="checkbox">
                                         <input type="checkbox" name="terms" value="1" id="basic_checkbox_1" required>
-                                        <label for="basic_checkbox_1">I agree to the <a href="#"
-                                                class="text-warning"><b>Terms</b></a></label>
+                                        <label for="basic_checkbox_1">I agree to the <a href="https://viedial.com/privacy-policy-2/"
+                                                class="text-warning"><b>Terms of use and Privacy Policy</b></a></label>
                                     </div>
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-info margin-top-10">SIGN IN</button>
+                                    <button type="submit" class="btn btn-viedial margin-top-10">SIGN UP</button>
                                 </div>
                                 <!-- /.col -->
                             </div>

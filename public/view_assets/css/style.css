@@ -126,6 +126,9 @@ body {
     background-color: #800020;
   }
 
+  .text-viedial {
+    color: #800020 !important; }
+
   .btn-viedial {
     color: #fff;
     background-color: #800020;

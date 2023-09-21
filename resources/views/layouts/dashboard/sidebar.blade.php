@@ -14,21 +14,21 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-utensils"><span class="path1"></span><span class="path2"></span></i> Build
-                            Meals(Rename)
+                            Meals
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('build-food') }}"><i class="icon-Commit"><span
+                            <li><a href="{{ url('build-food') }}"><i class="fa fa-utensils"><span
                                             class="path1"></span><span class="path2"></span></i> Build
-                                    Meals(Rename)</a></li>
+                                    Meals</a></li>
                                     <li><a href="{{ url('build-food') }}"><i class="fa fa-shopping-cart"><span
                                         class="path1"></span><span class="path2"></span></i>My Shopping
-                                List(Rename)</a></li>
-                            <li><a href="{{ url('build-food') }}"><i class="icon-Commit"><span
+                                List</a></li>
+                            <li><a href="{{ url('build-food') }}"><i class="fa fa-plate-wheat"><span
                                             class="path1"></span><span class="path2"></span></i> Meal
-                                    History(Rename)</a></li>
+                                    History</a></li>
 
                         </ul>
                     </li>
@@ -36,15 +36,15 @@
                         <a href="{{ url('set-your-goals') }}">
                             <i class="fa fa-trophy"><span class="path1">
                                 </span><span class="path2"></span></i>
-                            Set Your Goals(Rename)
+                            Set Your Goals
                         </a>
                     </li>
 
                     <li>
                         <a href="{{ url('risk-assessment/result') }}">
-                            <i class="icon-Heart"><span class="path1">
+                            <i class="fa fa-heart"><span class="path1">
                                 </span><span class="path2"></span></i>
-                            Heart Age(Rename)
+                            Your Risk Score
                         </a>
                     </li>
 
@@ -52,7 +52,7 @@
                         <a href="{{ url('tele-monitoring') }}">
                             <i class="fa fa-tv"><span class="path1">
                                 </span><span class="path2"></span></i>
-                            Tele-Monitoring(Rename)
+                            Tele-Monitoring
                         </a>
                     </li>
 
@@ -60,7 +60,7 @@
                         <a href="{{ url('set-your-goals') }}">
                             <i class="fa fa-dumbbell"><span class="path1">
                                 </span><span class="path2"></span></i>
-                            Physical Activities(Rename)
+                            Physical Activities
                         </a>
                     </li>
 

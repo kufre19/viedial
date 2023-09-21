@@ -6,7 +6,7 @@
             <div class="col-lg-5 col-md-5 col-12">
                 <div class="bg-white rounded30 shadow-lg">
                     <div class="content-top-agile p-20 pb-0">
-                        <h2 class="text-primary">Let's Get Started</h2>
+                        <h2 class="text-viedial">Let's Get Started</h2>
                         <p class="mb-0">Sign in to continue your learning</p>
                         @if ($errors->any())
                             <div class="alert alert-danger">
