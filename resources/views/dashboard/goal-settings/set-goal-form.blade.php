@@ -89,22 +89,22 @@
 
 
 @section('extra_js')
-<script>
-    $(document).ready(function() {
-        $("#weight_goal_input").on("change", function() {
-            var weight = $(this).val();
-            if (weight < 0.1 || weight > 1.5) {
-                $('#modal-weight-goal-error').modal("show");
+    <script>
+        $(document).ready(function() {
+            $("#weight_goal_input").on("change", function() {
+                var weight = $(this).val();
+                if (weight < 0.1 || weight > 1.5) {
+                    $('#modal-weight-goal-error').modal("show");
 
-            }else{
-                $('#modal-weight-goal-notice').modal("show");
+                } else {
+                    $('#modal-weight-goal-notice').modal("show");
 
-            }
+                }
+            });
+
+            // $('#modal-weight-goal').modal("show");
+
+
         });
-
-        // $('#modal-weight-goal').modal("show");
-
-
-    });
-</script>
+    </script>
 @endsection

@@ -26,22 +26,31 @@
             <section class="content">
                 <div class="row d-flex justify-content-center">
 
-                    <div class="col-lg-7">
+                    <div class="col">
 
                         <div class="box pull-up">
                             <div class="box-body d-flex p-0">
-                                <div class="flex-grow-1 bg-viedial-theme px-30 pt-50 pb-100 flex-grow-1 bg-img min-h-350"
-                                    style="background-position: right bottom; background-size: 40% auto; background-image: url({{ asset('view_assets/images/bmi-icon.svg') }})">
+                                <div class="flex-grow-1 bg-viedial-theme px-30 pt-50 pb-100 bg-img min-h-350"
+                                    style="background-position: right bottom; background-size: 30% auto; background-image: url({{ asset('view_assets/images/bmi-icon.svg') }})">
                                     <h3 class="font-weight-400">Your BMI</h3>
 
                                     <p class="my-10 font-size-16 font-weight-bold">
                                         Your Current BMI is 25
                                     </p>
-                                    <p class=" font-size-16 ">
-                                        At Current Weight of 78 KG
+                                    <p class="my-10 font-size-16 font-weight-bold">
+                                        Set your weight loss goal
                                     </p>
 
-                                    <a href="{{url('set-your-goals/start')}}" class="btn btn-info-light">Set Your Goals</a>
+                                    <form action="" class="form" id="form-set-goals">
+                                        <div class="form-group col-lg-4 col-sm-12 ">
+                                            <label>How much weight you want to lose per week</label>
+                                            <input type="text" class="form-control"
+                                                placeholder="Enter between 0.1 to 1.5 KG" size="10"
+                                                id="weight_goal_input">
+
+                                        </div>
+
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -74,22 +83,19 @@
                                 </div>
 
                                 <div class="box pull-up ">
-                                  <div class="box-body ">
-                                      <h4 class="box-title">Diet
-                                          <p class="subtitle font-size-14 mb-0">
-                                              You Should do
-                                          </p>
-                                      </h4>
-                                  </div>
-                              </div>
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Diet
+                                            <p class="subtitle font-size-14 mb-0">
+                                                You Should do
+                                            </p>
+                                        </h4>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col">
-                      <a href="{{url('set-your-goals/start')}}" class="btn btn-viedial">Set Your Goals</a>
-
-                    </div>
+                  
 
                 </div>
             </section>
@@ -100,4 +106,27 @@
 
 
 @section('modals')
+@include('dashboard.goal-settings.modals.weight-goal-alert')
+@endsection
+
+@section('extra_js')
+<script>
+    $(document).ready(function() {
+        $("#form-set-goals").on("submit", function(event){
+            event.preventDefault();
+        });
+        $("#weight_goal_input").on("change", function() {
+            var weight = $(this).val();
+            if (weight < 0.1 || weight > 1.5) {
+                $('#modal-weight-goal-error').modal("show");
+            }else{
+                $('#modal-weight-goal-notice').modal("show");
+            }
+        });
+
+        // $('#modal-weight-goal').modal("show");
+
+
+    });
+</script>
 @endsection

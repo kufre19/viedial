@@ -42,7 +42,6 @@ class SecreteAdminController extends Controller
 
         // Save the model to the database
         $foodItem->save();
-
         return redirect()->back();
 
     }

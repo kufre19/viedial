@@ -4,6 +4,25 @@
 @section('main-content')
     <div class="content-wrapper">
         <div class="container-full">
+
+
+            <div class="content-header">
+                <div class="d-flex align-items-center">
+                    <div class="mr-auto">
+                        <h3 class="page-title"> Your Risk Scores</h3>
+                        {{-- <div class="d-inline-block align-items-center">
+                            <nav>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+                                    <li class="breadcrumb-item" aria-current="page">e-Commerce</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Products</li>
+                                </ol>
+                            </nav>
+                        </div> --}}
+                    </div>
+
+                </div>
+            </div>
             <!-- Main content -->
             <section class="content">
                 <div class="row">
@@ -11,7 +30,7 @@
                     <div class="col-12">
                         @if (count($result_list) > 0)
                             @foreach ($result_list as $result)
-                                <div class="card">
+                                <div class="card pull-up">
                                     <div class="card-body">
                                         <h4 class="card-title">Assesment {{ $result['score_for'] }}</h4>
                                         <p class="card-text">

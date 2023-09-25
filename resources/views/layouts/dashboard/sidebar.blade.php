@@ -55,14 +55,14 @@
                             Tele-Monitoring
                         </a>
                     </li>
-
+{{-- 
                     <li>
                         <a href="{{ url('set-your-goals') }}">
                             <i class="fa fa-dumbbell"><span class="path1">
                                 </span><span class="path2"></span></i>
                             Physical Activities
                         </a>
-                    </li>
+                    </li> --}}
 
                 </ul>
             </div>
