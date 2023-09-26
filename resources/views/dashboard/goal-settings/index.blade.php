@@ -52,6 +52,8 @@
                                             </div>
 
                                         </form>
+                                        @else
+                                        <p class="my-10 font-size-16 font-weight-bold"> Awesome You're currently at moderate BMI let's help you maintain this</p>
                                     @endif
                                     
                                 </div>
