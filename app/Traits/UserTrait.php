@@ -10,7 +10,7 @@ trait  UserTrait {
     {
 
         $user = Auth::user()->id;
-        session()->put("bmi",25);
+        session()->put("bmi",27);
         
     }
 

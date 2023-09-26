@@ -37,7 +37,7 @@
                                     <p class="my-10 font-size-16 font-weight-bold">
                                         Your Current BMI is 25
                                     </p>
-                                    @if (session()->get("bmi") > 25 )
+                                    @if (session()->get('bmi') > 25)
                                         <p class="my-10 font-size-16 font-weight-bold">
                                             Set your weight loss goal
                                         </p>
@@ -52,10 +52,11 @@
                                             </div>
 
                                         </form>
-                                        @else
-                                        <p class="my-10 font-size-16 font-weight-bold"> Awesome You're currently at moderate BMI let's help you maintain this</p>
+                                    @else
+                                        <p class="my-10 font-size-16 font-weight-bold"> Awesome You're currently at moderate
+                                            BMI let's help you maintain this</p>
                                     @endif
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -65,7 +66,7 @@
 
                 </div>
 
-               @include('dashboard.goal-settings.recommendation')
+                @include('dashboard.goal-settings.recommendation')
             </section>
             <!-- /.content -->
         </div>
@@ -74,27 +75,30 @@
 
 
 @section('modals')
-@include('dashboard.goal-settings.modals.weight-goal-alert')
+    @include('dashboard.goal-settings.modals.weight-goal-alert')
+    @if (session()->get("bmi") > 25)
+        @include('dashboard.goal-settings.modals.goal-setting-warning')
+    @endif
 @endsection
 
 @section('extra_js')
-<script>
-    $(document).ready(function() {
-        $("#form-set-goals").on("submit", function(event){
-            event.preventDefault();
+    <script>
+        $(document).ready(function() {
+            $("#form-set-goals").on("submit", function(event) {
+                event.preventDefault();
+            });
+            $("#weight_goal_input").on("change", function() {
+                var weight = $(this).val();
+                if (weight < 0.1 || weight > 1.5) {
+                    $('#modal-weight-goal-error').modal("show");
+                } else {
+                    $('#modal-weight-goal-notice').modal("show");
+                }
+            });
+
+            // $('#modal-weight-goal').modal("show");
+
+
         });
-        $("#weight_goal_input").on("change", function() {
-            var weight = $(this).val();
-            if (weight < 0.1 || weight > 1.5) {
-                $('#modal-weight-goal-error').modal("show");
-            }else{
-                $('#modal-weight-goal-notice').modal("show");
-            }
-        });
-
-        // $('#modal-weight-goal').modal("show");
-
-
-    });
-</script>
+    </script>
 @endsection
