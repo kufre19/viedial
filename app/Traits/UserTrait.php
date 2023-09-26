@@ -14,4 +14,9 @@ trait  UserTrait {
         
     }
 
+    public function getGoalSet()
+    {
+        session()->put("goal-set",false);   
+    }
+
 }
