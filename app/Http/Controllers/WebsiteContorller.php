@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Traits\UserTrait;
+use Carbon\Traits\Units;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -10,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class WebsiteContorller extends Controller
 {
+    use UserTrait;
     public function login_page()
     {
         return view("login");
@@ -23,6 +26,7 @@ class WebsiteContorller extends Controller
 
         if($login)
         {
+           $this->getUserBmi();
            return redirect()->intended("/");
         }
 

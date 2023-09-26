@@ -8,7 +8,9 @@ trait  UserTrait {
 
     public function getUserBmi()
     {
+
         $user = Auth::user()->id;
+        session()->put("bmi",25);
         
     }
 

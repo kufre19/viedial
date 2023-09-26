@@ -37,20 +37,23 @@
                                     <p class="my-10 font-size-16 font-weight-bold">
                                         Your Current BMI is 25
                                     </p>
-                                    <p class="my-10 font-size-16 font-weight-bold">
-                                        Set your weight loss goal
-                                    </p>
+                                    @if (session()->get("bmi") > 25 )
+                                        <p class="my-10 font-size-16 font-weight-bold">
+                                            Set your weight loss goal
+                                        </p>
 
-                                    <form action="" class="form" id="form-set-goals">
-                                        <div class="form-group col-lg-4 col-sm-12 ">
-                                            <label>How much weight you want to lose per week</label>
-                                            <input type="text" class="form-control"
-                                                placeholder="Enter between 0.1 to 1.5 KG" size="10"
-                                                id="weight_goal_input">
+                                        <form action="" class="form" id="form-set-goals">
+                                            <div class="form-group col-lg-4 col-sm-12 ">
+                                                <label>How much weight you want to lose per week</label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter between 0.1 to 1.5 KG" size="10"
+                                                    id="weight_goal_input">
 
-                                        </div>
+                                            </div>
 
-                                    </form>
+                                        </form>
+                                    @endif
+                                    
                                 </div>
                             </div>
                         </div>
@@ -60,44 +63,7 @@
 
                 </div>
 
-                <div class="row">
-
-                    <div class="col-12">
-                        <div class="card bg-viedial-theme">
-                            <div class="card-header">
-                                <h4 class="card-title">
-                                    Our Recommedations
-                                </h4>
-                            </div>
-                            <div class="card-body">
-
-
-                                <div class="box pull-up ">
-                                    <div class="box-body ">
-                                        <h4 class="box-title">Physical
-                                            <p class="subtitle font-size-14 mb-0">
-                                                You Should do
-                                            </p>
-                                        </h4>
-                                    </div>
-                                </div>
-
-                                <div class="box pull-up ">
-                                    <div class="box-body ">
-                                        <h4 class="box-title">Diet
-                                            <p class="subtitle font-size-14 mb-0">
-                                                You Should do
-                                            </p>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                  
-
-                </div>
+               @include('dashboard.goal-settings.recommendation')
             </section>
             <!-- /.content -->
         </div>
