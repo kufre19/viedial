@@ -33,6 +33,7 @@ class GoalSettingController extends Controller
 
         $goal_setting_model = new GoalSettings();
         $goal_setting_model->user_id = Auth::user()->id;
+        $goal_setting_model->weight_loss_goal = $weight_goal;
 
         return redirect()->back();
     }
