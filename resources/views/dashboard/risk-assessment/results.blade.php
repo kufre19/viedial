@@ -39,7 +39,7 @@
                     </div>
                     <div class="p-40">
                         <div class="box-shadowed">
-                           
+
 
                             <div class="box-body">
                                 <b>Risk Score: {{ $risk_score ?? $risk_score_diabete }}</b>
@@ -51,10 +51,11 @@
                                 {{ $risk_recommendation }}
                                 <hr class="mb-2">
                                 First:
-                                <a href="{{ $recommendation_link }}" target="_blank" class="btn btn-viedial">Get Our Recommendation</a>
+                                <a href="{{ $recommendation_link }}" target="_blank" class="btn btn-viedial">Get Our
+                                    Recommendation</a>
                                 <hr class="mb-2">
                                 Next:
-                                <a href="#" class="btn btn-viedial">Set Your Goals</a>
+                                <a href="{{ url('set-your-goals') }}" class="btn btn-viedial">Set Your Goals</a>
                                 <hr class="mb-2">
                                 @if (isset($second_result))
                                     <a href="#" class="btn btn-viedial" id="hide-diabetes">See Next Result</a>
@@ -76,7 +77,7 @@
                         </div>
                         <div class="p-40">
                             <div class="box-shadowed">
-                               
+
                                 <div class="box-body">
                                     <b>Risk Score: {{ $risk_score_cvd }}</b>
 
@@ -86,8 +87,13 @@
                                     <b>Recommendation:</b>
                                     {{ $risk_recommendation_cvd }}
                                     <hr class="mb-2">
+                                    First:
                                     <a href="{{ $recommendation_link_cvd }}" target="_blank" class="btn btn-viedial">Get Our
                                         Recommendation</a>
+                                    
+                                    <hr class="mb-2">
+                                    Next:
+                                    <a href="{{ url('set-your-goals') }}" class="btn btn-viedial">Set Your Goals</a>
                                     <hr class="mb-2">
                                     @if (isset($second_result))
                                         <a href="#" class="btn btn-viedial" id="hide-cvd">See Next Result</a>
@@ -103,8 +109,6 @@
                 @endif
 
             </div>
-
-
 
         </div>
     </div>

@@ -27,43 +27,7 @@
 </div>
 <!-- /.modal -->
 
-<!-- Modal -->
-<div class="modal center-modal fade" id="modal-goal-setting-warning" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Goal Settings</h5>
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>
-                <ul>
-                    <li>
-                        Your healthy weight should be xxxx
-                    </li>
-                    <li>
-                        We encourage you to lose at least 10% of your current weight to reduce your cardiovascular 
-                        risk factors as soon as possible. Losing at least 10% of your current weight will reduce your 
-                        blood pressure, your blood sugar, and your blood cholesterol. 
-                        It will also improve your chances of living longer in good health. 
-                    </li>
-                    <li>
-                        As soon as you achieve this, we encourage you to work hard to achieve your healthy weight to 
-                        further reduce these risk factors and stay healthier for a long time. 
-                    </li>
-                </ul>
-                </p>
-               
-            </div>
-            <div class="modal-footer modal-footer-uniform">
-                <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Ok</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /.modal -->
+
 
 
 

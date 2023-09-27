@@ -40,13 +40,13 @@
                         </a>
                     </li>
 
-                    <li>
+                    {{-- <li>
                         <a href="{{ url('risk-assessment/result') }}">
                             <i class="fa fa-heart"><span class="path1">
                                 </span><span class="path2"></span></i>
                             Your Scores
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li>
                         <a href="{{ url('tele-monitoring') }}">

@@ -37,7 +37,7 @@
                                     <p class="my-10 font-size-16 font-weight-bold">
                                         Your Current BMI is 25
                                     </p>
-                                     @include('dashboard.goal-settings.set-goal-form')
+                                    @include('dashboard.goal-settings.set-goal-form')
 
                                 </div>
                             </div>
@@ -47,6 +47,65 @@
 
 
                 </div>
+
+                @if (session()->get('bmi') > 25)
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card bg-viedial-theme">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        Your Goal !
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+
+
+                                    <div class="box pull-up ">
+                                        <div class="box-body ">
+                                            <h4 class="box-title">Desired state
+                                                <p class="subtitle font-size-14 mb-0">
+                                                    Your healthy weight should be xxxx
+
+                                                </p>
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="box pull-up ">
+                                        <div class="box-body ">
+                                            <h4 class="box-title">What we recommend
+                                                <p class="subtitle font-size-14 mb-0">
+                                                    We encourage you to lose at least 10% of your current weight to reduce
+                                                    your cardiovascular
+                                                    risk factors as soon as possible. Losing at least 10% of your current
+                                                    weight will reduce your
+                                                    blood pressure, your blood sugar, and your blood cholesterol.
+                                                    It will also improve your chances of living longer in good health.
+
+                                                </p>
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="box pull-up ">
+                                        <div class="box-body ">
+                                            <h4 class="box-title">What we recommend
+                                                <p class="subtitle font-size-14 mb-0">
+                                                    As soon as you achieve this, we encourage you to work hard to achieve your healthy
+                                                    weight to
+                                                    further reduce these risk factors and stay healthier for a long time.
+
+                                                </p>
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
 
                 @include('dashboard.goal-settings.recommendation')
             </section>
@@ -58,9 +117,6 @@
 
 @section('modals')
     @include('dashboard.goal-settings.modals.weight-goal-alert')
-    @if (session()->get("bmi") > 25)
-        @include('dashboard.goal-settings.modals.goal-setting-warning')
-    @endif
 @endsection
 
 @section('extra_js')
