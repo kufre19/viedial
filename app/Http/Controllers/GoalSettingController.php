@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GoalSettings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GoalSettingController extends Controller
 {
@@ -28,6 +30,11 @@ class GoalSettingController extends Controller
         {
             return redirect()->back();
         }
+
+        $goal_setting_model = new GoalSettings();
+        $goal_setting_model->user_id = Auth::user()->id;
+
+        return redirect()->back();
     }
 
     public function getInfo(Request $request)
