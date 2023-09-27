@@ -8,7 +8,10 @@ class GoalSettingController extends Controller
 {
     public function home()
     {
-        $ideal_weight = 85;
+        $urrent_weight = 85;
+        $heigt = 176;
+        $ideal_weight = 24.9 * ($heigt/100) * ($heigt/100);
+
         return view("dashboard.goal-settings.index",compact("ideal_weight"));
     }
 
@@ -24,8 +27,6 @@ class GoalSettingController extends Controller
         {
             return redirect()->back();
         }
-
-        
     }
 
     public function getInfo(Request $request)
