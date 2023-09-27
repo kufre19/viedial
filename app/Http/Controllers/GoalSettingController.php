@@ -30,11 +30,21 @@ class GoalSettingController extends Controller
         {
             return redirect()->back();
         }
+        $heigt = 176;
+        $current_weight = 85;
+        $ideal_weight = 24.9 * ($heigt/100) * ($heigt/100);
+        $time_for_goal = $this->getGoalTime($current_weight,$weight_goal,$ideal_weight);
+
 
         $goal_setting_model = new GoalSettings();
         $goal_setting_model->user_id = Auth::user()->id;
         $goal_setting_model->weight_loss_goal = $weight_goal;
+        $goal_setting_model->ideal_weight =  $ideal_weight;
+        $goal_setting_model->time_for_ten_percent_weight = $time_for_goal[1];
+        $goal_setting_model->time_for_healthy_weight = $time_for_goal[0];
+        $goal_setting_model->starting_weight = $current_weight;
 
+        $goal_setting_model->save();
         return redirect()->back();
     }
 
