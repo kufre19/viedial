@@ -114,6 +114,8 @@ Route::group(["middleware" => "auth"], function () {
     Route::get("set-your-goals",[GoalSettingController::class,"home"]);
     Route::get("set-your-goals/start",[GoalSettingController::class,"set_goal_form"]);
     Route::post("set-your-goals/save",[GoalSettingController::class,"saveGoal"]);
+    Route::post("set-your-goals/get-info",[GoalSettingController::class,"getInfo"]);
+
 
 
     // TELE MONITORING

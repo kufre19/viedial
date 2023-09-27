@@ -64,10 +64,10 @@
                                         <div class="box-body ">
                                             <h4 class="box-title">Desired state
                                                 <p class="subtitle font-size-14 mb-0">
-                                                    Your healthy weight should be xxxx
+                                                    Your healthy weight should be {{$ideal_weight}} KG
 
                                                 </p>
-                                            </h4>
+                                            </h4> 
                                         </div>
                                     </div>
 
@@ -141,6 +141,7 @@
                     $(this).val("");
                     return true;
                 } else {
+                     getGoalSetInfo(weight);
                     $('#modal-weight-goal-notice').modal("show");
                 }
             });
@@ -148,6 +149,32 @@
             $("#submit-goal-btn").on("click", function() {
                 $("#form-set-goals").submit();
             });
+
+
+            function getGoalSetInfo(weight_goal)
+            {
+                var csrfToken = "{{csrf_token()}}";
+                    // Make an Ajax request using the extracted 'foodId'
+                    $.ajax({
+                    url: "{{ url('set-your-goals/get-info') }}", // Replace with your actual URL
+                    type: 'POST', // Use 'POST' or 'GET' as needed
+                    data: {
+                        weight_goal: weight_goal,
+                        _token: csrfToken
+                    }, // Send the 'foodId' as data
+                    success: function(response) {
+                        // Handle the success response here
+                        console.log('Ajax request successful:', response.data);
+                        $("span#time-holder_1").text(response.data);
+                        $("span#time-holder_2").text(response.data);
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle any errors that occur during the Ajax request
+                        console.error('Ajax request error:', status, error);
+                        return response.data;
+                    }
+                });
+            }
         
 
         });

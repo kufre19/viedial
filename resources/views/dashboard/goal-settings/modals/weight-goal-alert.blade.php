@@ -41,12 +41,12 @@
                   <p>
                   <ul>
                       <li>
-                          It will take you xxxx weeks to lose 10% of your body weight. At this time, you may start
+                          It will take you <span id="time-holder_1">xxxx</span>  weeks to lose 10% of your body weight. At this time, you may start
                           observing
                           reduced blood pressure, reduced blood sugar and reduced blood cholesterol levels.
                       </li>
                       <li>
-                        It will take you xxx weeks to achieve a healthy body weight. 
+                        It will take you <span id="time-holder_2">xxxx</span> weeks to achieve a healthy body weight. 
                         At this time, you may have developed healthy habits that will help you achieve sustained r
                         eduction in your blood pressure, blood sugar and blood cholesterol. 
 
