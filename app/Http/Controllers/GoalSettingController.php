@@ -15,4 +15,10 @@ class GoalSettingController extends Controller
     {
         return view("dashboard.goal-settings.set-goal-form");
     }
+
+    public function saveGoal(Request $request)
+    {
+
+        
+    }
 }

@@ -59,7 +59,7 @@
 
               </div>
               <div class="modal-footer modal-footer-uniform">
-                  <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Ok, Set This Goal!🏆</button>
+                  <button type="button" class="btn btn-secondary float-right" id="submit-goal-btn">Ok, Set This Goal!🏆</button>
               </div>
           </div>
       </div>

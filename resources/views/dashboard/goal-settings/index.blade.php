@@ -91,7 +91,8 @@
                                         <div class="box-body ">
                                             <h4 class="box-title">What we recommend
                                                 <p class="subtitle font-size-14 mb-0">
-                                                    As soon as you achieve this, we encourage you to work hard to achieve your healthy
+                                                    As soon as you achieve this, we encourage you to work hard to achieve
+                                                    your healthy
                                                     weight to
                                                     further reduce these risk factors and stay healthier for a long time.
 
@@ -100,7 +101,7 @@
                                         </div>
                                     </div>
 
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -122,20 +123,32 @@
 @section('extra_js')
     <script>
         $(document).ready(function() {
-            $("#form-set-goals").on("submit", function(event) {
-                event.preventDefault();
+           
+            $(window).keydown(function(event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
             });
+
             $("#weight_goal_input").on("change", function() {
                 var weight = $(this).val();
-                if (weight < 0.1 || weight > 1.5) {
+
+                if (weight > 1.5) {
+                    $(this).val("");
                     $('#modal-weight-goal-error').modal("show");
+                } else if (weight < 1 || weight == null) {
+                    $(this).val("");
+                    return true;
                 } else {
                     $('#modal-weight-goal-notice').modal("show");
                 }
             });
 
-            // $('#modal-weight-goal').modal("show");
-
+            $("#submit-goal-btn").on("click", function() {
+                $("#form-set-goals").submit();
+            });
+        
 
         });
     </script>
