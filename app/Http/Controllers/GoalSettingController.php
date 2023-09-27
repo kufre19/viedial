@@ -49,8 +49,8 @@ class GoalSettingController extends Controller
         $time_for_ten_percent = $ten_percent_loss / $target_weight;
         $time_for_healthy_weight = ($current_weight - $ideal_weight) / $target_weight;
 
-        $time_for_healthy_weight  = floor($time_for_healthy_weight);
-        $time_for_ten_percent  = floor($time_for_ten_percent);
+        $time_for_healthy_weight  = ceil($time_for_healthy_weight);
+        $time_for_ten_percent  = ceil($time_for_ten_percent);
 
 
         return [$time_for_ten_percent, $time_for_healthy_weight];
