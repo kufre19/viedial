@@ -165,8 +165,8 @@
                     success: function(response) {
                         // Handle the success response here
                         console.log('Ajax request successful:', response.data);
-                        $("span#time-holder_1").text(response.data);
-                        $("span#time-holder_2").text(response.data);
+                        $("span#time-holder_1").text(response.time_for_ten_percent);
+                        $("span#time-holder_2").text(response.time_for_healthy_weight);
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request
