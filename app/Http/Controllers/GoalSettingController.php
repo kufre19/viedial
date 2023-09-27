@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\GoalSettings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class GoalSettingController extends Controller
 {
@@ -25,11 +26,15 @@ class GoalSettingController extends Controller
 
     public function saveGoal(Request $request)
     {
-        $weight_goal = $request->input("weight_goal");
-        if($weight_goal > 1.5 || $weight_goal < 1)
+        $validate = Validator::make($request->all(),[
+            "weight_goal"=> 'numeric|required|min:1|max:1.5'
+        ]);
+        if($validate->fails())
         {
             return redirect()->back();
         }
+
+        $weight_goal = $request->input("weight_goal");
         $heigt = 176;
         $current_weight = 85;
         $ideal_weight = 24.9 * ($heigt/100) * ($heigt/100);

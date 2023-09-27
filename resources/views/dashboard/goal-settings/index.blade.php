@@ -144,6 +144,7 @@
                     getGoalSetInfo(weight);
                     $('#modal-weight-goal-notice').modal("show");
                 }
+                
             });
 
             $("#submit-goal-btn").on("click", function() {
