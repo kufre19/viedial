@@ -52,33 +52,38 @@ class GoalSettingController extends Controller
         $goal_setting_model->starting_weight = $current_weight;
 
         $goal_setting_model->save();
+        $this->userHasGoalSet();
         return redirect()->back();
     }
 
-    public function getInfo(Request $request)
+    public function getSetGoalInfo(Request $request)
     {
-        $current_weight = 85;
-        $heigt = 176;
-        $ideal_weight = 24.9 * ($heigt / 100) * ($heigt / 100);
-        $time_for_goal = $this->getGoalTime($current_weight, $request->input("weight_goal"), $ideal_weight);
+        $health_data = $this->getHealthData();
+        $starting_weight = $health_data->weight;
+        $height = $health_data->height;
+        $healthy_weight = $this->userHealthyWeight($height);
+
+      
+        $time_for_goal = $this->getGoalTime($starting_weight, $request->input("weight_goal"), $healthy_weight);
         return response()->json(
             [
-                "time_for_ten_percent" => $time_for_goal[0],
-                "time_for_healthy_weight" => $time_for_goal[1]
+                "time_for_ten_percent" => $time_for_goal["time_for_ten_percent"],
+                "time_for_healthy_weight" => $time_for_goal["time_for_healthy_weight"]
             ]
         );
     }
 
-    public function getGoalTime($current_weight, $target_weight, $ideal_weight)
+    public function getGoalTime($starting_weight, $target_weight, $healthy_weight)
     {
-        $ten_percent_loss = 0.1 * $current_weight;
+        $ten_percent_loss = 0.1 * $starting_weight;
+
         $time_for_ten_percent = $ten_percent_loss / $target_weight;
-        $time_for_healthy_weight = ($current_weight - $ideal_weight) / $target_weight;
+        $time_for_healthy_weight = ($starting_weight - $healthy_weight) / $target_weight;
 
         $time_for_healthy_weight  = ceil($time_for_healthy_weight);
         $time_for_ten_percent  = ceil($time_for_ten_percent);
 
 
-        return [$time_for_ten_percent, $time_for_healthy_weight];
+        return ["time_for_ten_percent"=>$time_for_ten_percent, "time_for_healthy_weight"=>$time_for_healthy_weight];
     }
 }

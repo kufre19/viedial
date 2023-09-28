@@ -8,13 +8,13 @@
             @csrf
             <div class="form-group col-lg-4 col-sm-12 ">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-12">
                         <label>How much weight do you want to lose per week</label>
                         <input type="text" class="form-control" name="weight_goal" placeholder="Enter between 0.1 to 1.5 KG" size="10"
                             id="weight_goal_input">
                     </div>
-                    <div class="col-4n mt-5">
-                        <button type="btn" class="btn btn-primary ">SET</button>
+                    <div class="col-12 mt-2">
+                        <button type="button" id="check-goal" class="btn btn-primary ">Set</button>
                     </div>
                 </div>
                 

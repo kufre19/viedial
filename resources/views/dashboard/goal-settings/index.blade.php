@@ -130,14 +130,14 @@
                 }
             });
 
-            $("#weight_goal_input").on("input", function() {
-                var weight = $(this).val();
+            $("#check-goal").on("click", function() {
+                var weight = $("#weight_goal_input").val();
 
                 if (weight > 1.5) {
-                    $(this).val("");
+                    $("#weight_goal_input").val("");
                     $('#modal-weight-goal-error').modal("show");
-                } else if (weight < 1 || weight == null) {
-                    $(this).val("");
+                } else if (weight < 0 || weight == null) {
+                    $("#weight_goal_input").val("");
                     return true;
                 } else {
                     getGoalSetInfo(weight);
