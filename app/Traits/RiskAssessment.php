@@ -375,8 +375,6 @@ trait RiskAssessment
        
         // Calculate BMI
         $bmi = $weight / ($height * $height);
-
-        // Return BMI (you can also return it as part of a view or JSON response)
         return $bmi;
     }
 
@@ -555,6 +553,13 @@ trait RiskAssessment
             
         }
        return $risk_score_percentage;
+    }
+
+
+    public function getHealthData()
+    {
+        $health_data = ModelsRiskAssessment::where("user_id", Auth::user()->id)->latest()->first();
+        return $health_data;
     }
 
 

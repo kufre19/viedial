@@ -26,8 +26,8 @@ class WebsiteContorller extends Controller
 
         if($login)
         {
-           $this->getUserBmi();
-           $this->getGoalSet();
+           $this->userHasBmi();
+           $this->userHasGoalSet();
            return redirect()->intended("/");
         }
 

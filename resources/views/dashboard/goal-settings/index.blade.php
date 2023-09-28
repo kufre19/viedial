@@ -25,25 +25,25 @@
             <!-- Main content -->
             <section class="content">
                 <div class="row d-flex justify-content-center">
+                    @if (session()->get('set-goal'))
+                        <div class="col">
 
-                    <div class="col">
+                            <div class="box pull-up">
+                                <div class="box-body d-flex p-0">
+                                    <div class="flex-grow-1 bg-viedial-theme px-30 pt-50 pb-100 bg-img min-h-350"
+                                        style="background-position: right bottom; background-size: 30% auto; background-image: url({{ asset('view_assets/images/bmi-icon.svg') }})">
+                                        <h3 class="font-weight-400">Your BMI</h3>
 
-                        <div class="box pull-up">
-                            <div class="box-body d-flex p-0">
-                                <div class="flex-grow-1 bg-viedial-theme px-30 pt-50 pb-100 bg-img min-h-350"
-                                    style="background-position: right bottom; background-size: 30% auto; background-image: url({{ asset('view_assets/images/bmi-icon.svg') }})">
-                                    <h3 class="font-weight-400">Your BMI</h3>
+                                        <p class="my-10 font-size-16 font-weight-bold">
+                                            Your Current BMI is {{ session()->get('bmi') }}
+                                        </p>
+                                        @include('dashboard.goal-settings.set-goal-form')
 
-                                    <p class="my-10 font-size-16 font-weight-bold">
-                                        Your Current BMI is 25
-                                    </p>
-                                    @include('dashboard.goal-settings.set-goal-form')
-
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </div>
+                        </div>
 
 
                 </div>
@@ -64,10 +64,10 @@
                                         <div class="box-body ">
                                             <h4 class="box-title">Desired state
                                                 <p class="subtitle font-size-14 mb-0">
-                                                    Your healthy weight should be {{$ideal_weight}} KG
+                                                    Your healthy weight should be {{ $healthy_weight }} KG
 
                                                 </p>
-                                            </h4> 
+                                            </h4>
                                         </div>
                                     </div>
 
@@ -83,13 +83,6 @@
                                                     It will also improve your chances of living longer in good health.
 
                                                 </p>
-                                            </h4>
-                                        </div>
-                                    </div>
-
-                                    <div class="box pull-up ">
-                                        <div class="box-body ">
-                                            <h4 class="box-title">What we recommend
                                                 <p class="subtitle font-size-14 mb-0">
                                                     As soon as you achieve this, we encourage you to work hard to achieve
                                                     your healthy
@@ -100,8 +93,6 @@
                                             </h4>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -109,6 +100,34 @@
                 @endif
 
                 @include('dashboard.goal-settings.recommendation')
+            @else
+                <div class="col-lg-8 col-12">
+                    <div class="box pull-up">
+                        <div class="box-body bg-img"
+                            style="background-image: url({{ asset('view_assets/images/bg-5.png') }});"
+                            data-overlay-light="9">
+                            <div class="d-lg-flex align-items-center justify-content-between">
+                                <div class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
+                                    <img src="{{ asset('view_assets/images/svg-icon/color-svg/risk-assessment.svg') }}"
+                                        class="img-fluid max-w-150" alt="" />
+                                    <div class="ml-30">
+                                        <h4 class="mb-10">First take our advance risk assesment!</h4>
+                                        <p class="mb-0 text-fade">Check if you are at risk of having a heart attack,
+                                            stroke, kidney failure etc. </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="{{ route('risk.assessment.start') }}"
+                                        class="waves-effect waves-light btn-block btn btn-dark"
+                                        style="white-space: nowrap;">Start
+                                        Now!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+
             </section>
             <!-- /.content -->
         </div>
@@ -123,7 +142,7 @@
 @section('extra_js')
     <script>
         $(document).ready(function() {
-           
+
             $(window).keydown(function(event) {
                 if (event.keyCode == 13) {
                     event.preventDefault();
@@ -131,7 +150,7 @@
                 }
             });
 
-            $("#weight_goal_input").on("change", function() {
+            $("#weight_goal_input").on("input", function() {
                 var weight = $(this).val();
 
                 if (weight > 1.5) {
@@ -144,7 +163,7 @@
                     getGoalSetInfo(weight);
                     $('#modal-weight-goal-notice').modal("show");
                 }
-                
+
             });
 
             $("#submit-goal-btn").on("click", function() {
@@ -152,11 +171,10 @@
             });
 
 
-            function getGoalSetInfo(weight_goal)
-            {
-                var csrfToken = "{{csrf_token()}}";
-                    // Make an Ajax request using the extracted 'foodId'
-                    $.ajax({
+            function getGoalSetInfo(weight_goal) {
+                var csrfToken = "{{ csrf_token() }}";
+                // Make an Ajax request using the extracted 'foodId'
+                $.ajax({
                     url: "{{ url('set-your-goals/get-info') }}", // Replace with your actual URL
                     type: 'POST', // Use 'POST' or 'GET' as needed
                     data: {
@@ -176,7 +194,7 @@
                     }
                 });
             }
-        
+
 
         });
     </script>
