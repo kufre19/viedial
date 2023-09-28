@@ -46,8 +46,9 @@
                             <div class="box-header with-border">
                                 <h4 class="box-title"><strong>Your score for test type</strong> </h4>
                             </div>
-                            <div class="box-body">
-                                <p>Age: 30</p>
+                            <div class="box-body ml-5">
+                                <h4>Age: 30</h4>
+                                <h4>Score: 18</h4>
                             </div>
                         </div>
                     </div>
