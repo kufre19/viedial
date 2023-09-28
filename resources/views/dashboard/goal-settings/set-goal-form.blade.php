@@ -28,7 +28,7 @@
         </p>
 
         <p class="my-10 font-size-16 font-weight-bold">
-            Weight loss goal per week for you is: 1.5 KG
+            Weight loss goal per week for you is: {{$goalSetData->weight_loss_goal}} KG
         </p>
 
     @endif

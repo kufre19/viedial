@@ -16,7 +16,7 @@
                             <div class="box-body ">
                                 <h4 class="box-title">How Long ?
                                     <p class="subtitle font-size-14 mb-0">
-                                        It will take you xxxx weeks to lose 10% of your body weight. At this time, you
+                                        It will take you {{$goalSetData->time_for_ten_percent_weight}} weeks to lose 10% of your body weight. At this time, you
                                         may start
                                         observing reduced blood pressure, reduced blood sugar and reduced blood
                                         cholesterol levels.
@@ -30,7 +30,7 @@
                             <div class="box-body ">
                                 <h4 class="box-title">What You Gain !
                                     <p class="subtitle font-size-14 mb-0">
-                                        It will take you xxx weeks to achieve a healthy body weight. At this time, you
+                                        It will take you {{$goalSetData->time_for_healthy_weight}} weeks to achieve a healthy body weight. At this time, you
                                         may have developed healthy habits that will help you achieve sustained
                                         reduction in your blood pressure, blood sugar and blood cholesterol.
 

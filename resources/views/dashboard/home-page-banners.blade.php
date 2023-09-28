@@ -1,5 +1,5 @@
 @if (session()->get('bmi') != false)
-    @if (session()->get('goal-set') == false)
+    @if (session()->get('set-goal') == false)
         <div class="col-lg-8 col-12">
             <div class="box pull-up">
                 <div class="box-body bg-img" style="background-image: url({{ asset('view_assets/images/bg-5.png') }});"
