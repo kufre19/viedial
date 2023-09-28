@@ -7,7 +7,7 @@
             <div class="content-header">
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
-                        <h3 class="page-title">Welcome, {{Auth::user()->name}}</h3>
+                        <h3 class="page-title">Welcome, {{ Auth::user()->name }}</h3>
                         {{-- <div class="d-inline-block align-items-center">
                             <nav>
                                 <ol class="breadcrumb">
@@ -27,6 +27,38 @@
                 <div class="row fx-element-overlay">
                     @include('dashboard.home-page-banners')
 
+                </div>
+
+                {{-- risk score div --}}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box no-shadow mb-0 bg-transparent">
+                            <div class="box-header no-border px-0">
+                                <h4 class="box-title">Your Score</h4>
+                                <ul class="box-controls pull-right d-md-flex d-none">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-sm-12">
+                        <div class="box box-bordered border-viedial pull-up">
+                            <div class="box-header with-border">
+                                <h4 class="box-title"><strong>Your score for test type</strong> </h4>
+                            </div>
+                            <div class="box-body">
+                                <p>Age: 30</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
+                </div>
+
+                {{-- course div --}}
+                <div class="row fx-element-overlay">
                     <div class="col-12">
                         <div class="box no-shadow mb-0 bg-transparent">
                             <div class="box-header no-border px-0">
@@ -64,14 +96,17 @@
 
                         </div>
                     @endforeach
-
-
-
-
                 </div>
 
             </section>
             <!-- /.content -->
         </div>
     </div>
+@endsection
+
+
+@section('extra_js')
+    <script>
+        
+    </script>
 @endsection
