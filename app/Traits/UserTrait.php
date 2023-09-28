@@ -51,7 +51,8 @@ trait  UserTrait
 
     public function userHealthyWeight($heigt)
     {
-      
+        // convert height to cm first
+        $heigt = $heigt * 100;
         $ideal_weight = 24.9 * ($heigt/100) * ($heigt/100);
         $ideal_weight = number_format($ideal_weight,2);
         return $ideal_weight;

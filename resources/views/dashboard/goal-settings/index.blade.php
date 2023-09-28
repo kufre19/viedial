@@ -24,8 +24,8 @@
             </div>
             <!-- Main content -->
             <section class="content">
-                <div class="row d-flex justify-content-center">
-                    @if (session()->get('set-goal'))
+                @if (session()->get('bmi') != false)
+                    <div class="row d-flex justify-content-center">
                         <div class="col">
 
                             <div class="box pull-up">
@@ -46,86 +46,66 @@
                         </div>
 
 
-                </div>
+                    </div>
 
-                @if (session()->get('bmi') > 25)
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card bg-viedial-theme">
-                                <div class="card-header">
-                                    <h4 class="card-title">
-                                        Your Goal !
-                                    </h4>
-                                </div>
-                                <div class="card-body">
-
-
-                                    <div class="box pull-up ">
-                                        <div class="box-body ">
-                                            <h4 class="box-title">Desired state
-                                                <p class="subtitle font-size-14 mb-0">
-                                                    Your healthy weight should be {{ $healthy_weight }} KG
-
-                                                </p>
-                                            </h4>
-                                        </div>
+                    @if (session()->get('bmi') > 25)
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card bg-viedial-theme">
+                                    <div class="card-header">
+                                        <h4 class="card-title">
+                                            Your Goal !
+                                        </h4>
                                     </div>
+                                    <div class="card-body">
 
-                                    <div class="box pull-up ">
-                                        <div class="box-body ">
-                                            <h4 class="box-title">What we recommend
-                                                <p class="subtitle font-size-14 mb-0">
-                                                    We encourage you to lose at least 10% of your current weight to reduce
-                                                    your cardiovascular
-                                                    risk factors as soon as possible. Losing at least 10% of your current
-                                                    weight will reduce your
-                                                    blood pressure, your blood sugar, and your blood cholesterol.
-                                                    It will also improve your chances of living longer in good health.
 
-                                                </p>
-                                                <p class="subtitle font-size-14 mb-0">
-                                                    As soon as you achieve this, we encourage you to work hard to achieve
-                                                    your healthy
-                                                    weight to
-                                                    further reduce these risk factors and stay healthier for a long time.
+                                        <div class="box pull-up ">
+                                            <div class="box-body ">
+                                                <h4 class="box-title">Desired state
+                                                    <p class="subtitle font-size-14 mb-0">
+                                                        Your healthy weight should be {{ $healthy_weight }} KG
 
-                                                </p>
-                                            </h4>
+                                                    </p>
+                                                </h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="box pull-up ">
+                                            <div class="box-body ">
+                                                <h4 class="box-title">What we recommend
+                                                    <p class="subtitle font-size-14 mb-0">
+                                                        We encourage you to lose at least 10% of your current weight to
+                                                        reduce
+                                                        your cardiovascular
+                                                        risk factors as soon as possible. Losing at least 10% of your
+                                                        current
+                                                        weight will reduce your
+                                                        blood pressure, your blood sugar, and your blood cholesterol.
+                                                        It will also improve your chances of living longer in good health.
+
+                                                    </p>
+                                                    <p class="subtitle font-size-14 mb-0">
+                                                        As soon as you achieve this, we encourage you to work hard to
+                                                        achieve
+                                                        your healthy
+                                                        weight to
+                                                        further reduce these risk factors and stay healthier for a long
+                                                        time.
+
+                                                    </p>
+                                                </h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endif
+                    @endif
 
-                @include('dashboard.goal-settings.recommendation')
-            @else
-                <div class="col-lg-8 col-12">
-                    <div class="box pull-up">
-                        <div class="box-body bg-img"
-                            style="background-image: url({{ asset('view_assets/images/bg-5.png') }});"
-                            data-overlay-light="9">
-                            <div class="d-lg-flex align-items-center justify-content-between">
-                                <div class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
-                                    <img src="{{ asset('view_assets/images/svg-icon/color-svg/risk-assessment.svg') }}"
-                                        class="img-fluid max-w-150" alt="" />
-                                    <div class="ml-30">
-                                        <h4 class="mb-10">First take our advance risk assesment!</h4>
-                                        <p class="mb-0 text-fade">Check if you are at risk of having a heart attack,
-                                            stroke, kidney failure etc. </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <a href="{{ route('risk.assessment.start') }}"
-                                        class="waves-effect waves-light btn-block btn btn-dark"
-                                        style="white-space: nowrap;">Start
-                                        Now!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @include('dashboard.goal-settings.recommendation')
+                @else
+                    @include('dashboard.home-page-banners')
                 @endif
 
             </section>

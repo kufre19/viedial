@@ -14,7 +14,7 @@ class GoalSettingController extends Controller
     use UserTrait, RiskAssessment;
     public function home()
     {
-        if (session()->get("set-goal")) {
+        if (session()->get("bmi") != false) {
             $health_data = $this->getHealthData();
             $healthy_weight = $this->userHealthyWeight($health_data->height);
             return view("dashboard.goal-settings.index", compact("healthy_weight"));
