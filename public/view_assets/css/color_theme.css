@@ -446,8 +446,11 @@ a.text-white:hover, a.text-white:focus {
 /**************************************
 Theme Primary Color
 **************************************/
-.bg-gradient-primary, .theme-primary .bg-gradient-primary, .theme-primary .art-bg {
+.bg-gradient-primary, .theme-primary .bg-gradient-viedial, .theme-primary .art-bg {
   background: linear-gradient(45deg, #0052cc, #00baff); }
+
+  .bg-gradient-viedial, .theme-primary .bg-gradient-viedial, .theme-primary .art-bg {
+    background: linear-gradient(45deg, #800020, #ee6b8b); }
 
 .bg-light-body {
   background: transparent; }
@@ -462,6 +465,9 @@ Theme Primary Color
 
 .bg-gradient-primary-dark, .dark-skin.theme-primary .bg-gradient-primary, .dark-skin.theme-primary .art-bg {
   background-image: linear-gradient(45deg, #002966, #007099); }
+
+.bg-gradient-primary-dark, .dark-skin.theme-primary .bg-gradient-viedial, .dark-skin.theme-primary .art-bg {
+  background-image: linear-gradient(45deg, #800020, #ee6b8b); }
 
 .bg-dark-body {
   background: #0c1a32; }

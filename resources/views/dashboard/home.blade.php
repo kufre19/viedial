@@ -58,6 +58,135 @@
 
                 </div>
 
+                  {{-- set goal div --}}
+                  <div class="row">
+                    <div class="col-12">
+                        <div class="box no-shadow mb-0 bg-transparent">
+                            <div class="box-header no-border px-0">
+                                <h4 class="box-title">Your Goals</h4>
+                                <ul class="box-controls pull-right d-md-flex d-none">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4 col-lg-4">
+                        <div class="box bg-gradient-viedial pull-up">		
+                            <div class="box-header">
+                                <h4 class="box-title text-white">Started With</h4>
+                              
+                            </div>
+                            <div class="box-body">						
+                                <div class="px-10 py-30 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">BMI</h5>
+                                   <div class=" d-flex justify-content-center">
+                                    
+                                    <h2 class="mb-0 text-bold">25</h2>
+                                      
+                                   </div>						
+                                </div>						
+                                <div class="px-10 py-30 my-20 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">Weight</h5>
+                                    <div class=" d-flex justify-content-center">
+                                    
+                                        <h2 class="mb-0 text-bold">85.2 KG</h2>
+                                          
+                                       </div>		
+                                </div>	
+                                
+                                <div class="px-10 py-30 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">Healthy Weight/Ideal Weight</h5>
+                                    <div class=" d-flex justify-content-center">
+                                    
+                                        <h2 class="mb-0 text-bold">77.6 KG</h2>
+                                          
+                                       </div>			
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>  
+
+                    <div class="col-12 col-xl-4 col-lg-4">
+                        <div class="box bg-gradient-viedial pull-up">		
+                            <div class="box-header">
+                                <h4 class="box-title text-white">Your Goal</h4>
+                              
+                            </div>
+                            <div class="box-body">						
+                                <div class="px-10 py-30 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">Weight To Lose Per Week</h5>
+                                   <div class=" d-flex justify-content-center">
+                                    
+                                    <h2 class="mb-0 text-bold">1.5 KG</h2>
+                                      
+                                   </div>						
+                                </div>						
+                                <div class="px-10 py-30 my-20 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">Time To Loss 10% Of Weight</h5>
+                                    <div class=" d-flex justify-content-center">
+                                    
+                                        <h2 class="mb-0 text-bold">8 Weeks</h2>
+                                          
+                                       </div>		
+                                </div>						
+                                <div class="px-10 py-30 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">Time To Acheive Healthy Weight</h5>
+                                    <div class=" d-flex justify-content-center">
+                                    
+                                        <h2 class="mb-0 text-bold">10 Weeks</h2>
+                                          
+                                       </div>			
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div> 
+                    
+                    <div class="col-12 col-xl-4 col-lg-4">
+                        <div class="box bg-gradient-viedial pull-up">		
+                            <div class="box-header">
+                                <h4 class="box-title text-white">Currently At</h4>
+                              
+                            </div>
+                            <div class="box-body">						
+                                <div class="px-10 py-30 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">BMI</h5>
+                                   <div class=" d-flex justify-content-center">
+                                    
+                                    <h2 class="mb-0 text-bold">24</h2>
+                                      
+                                   </div>						
+                                </div>						
+                                <div class="px-10 py-30 my-20 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">Weight</h5>
+                                    <div class=" d-flex justify-content-center">
+                                    
+                                        <h2 class="mb-0 text-bold">82.2 KG</h2>
+                                          
+                                       </div>		
+                                </div>	
+                                
+                                <div class="px-10 py-30 bg-white text-dark">
+                                    <h5 class="px-10 mb-15 font-weight-700">Healthy Weight/Ideal Weight</h5>
+                                    <div class=" d-flex justify-content-center">
+                                    
+                                        <h2 class="mb-0 text-bold">77.6 KG</h2>
+                                          
+                                       </div>			
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>  
+                   
+                    
+
+
+                </div>
+
                 {{-- course div --}}
                 <div class="row fx-element-overlay">
                     <div class="col-12">
