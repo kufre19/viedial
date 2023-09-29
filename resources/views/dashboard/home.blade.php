@@ -46,11 +46,11 @@
                         <div class="col-xl-4 col-lg-6 col-sm-12">
                             <div class="box box-bordered border-viedial pull-up">
                                 <div class="box-header with-border">
-                                    <h4 class="box-title"><strong>Your score for test type</strong> </h4>
+                                    <h4 class="box-title"><strong>Your score for {{$assessment_result[0]["score_for"]}}</strong> </h4>
                                 </div>
                                 <div class="box-body ml-5">
                                     <h4>Age: {{$health_data_from_assement->age}}</h4>
-                                    <h4>Score: {{$risk_score}} </h4>
+                                    <h4>Score: {{$assessment_result[0]["risk_score"]}} </h4>
                                 </div>
                             </div>
                         </div>

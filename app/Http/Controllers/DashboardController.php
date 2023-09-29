@@ -25,8 +25,9 @@ class DashboardController extends Controller
             $user_healthy_weight = $this->userHealthyWeight($health_data_from_assement->height);
          
 
-            $risk_score = $this->get_user_single_assessment_result($health_data_from_assement)[0]["risk_score"];
-            return view("dashboard.home",compact("subscriptions","bmi_from_assessment","health_data_from_assement","user_healthy_weight","user_set_goal","risk_score"));
+            $assessment_result = $this->get_user_single_assessment_result($health_data_from_assement);
+            
+            return view("dashboard.home",compact("subscriptions","bmi_from_assessment","health_data_from_assement","user_healthy_weight","assessment_result"));
 
         }
         
