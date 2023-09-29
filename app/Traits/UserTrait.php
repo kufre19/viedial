@@ -11,6 +11,7 @@ trait  UserTrait
 {
     use TraitsRiskAssessment, GoalSettingsTrait;
 
+    // checks if user had done risk assessment and save the bmi data to session
     public function userHasBmi()
     {
         $this->loadHealthData();

@@ -564,6 +564,45 @@ trait RiskAssessment
 
 
 
+    public static function get_user_results()
+    {
+        $risk_model = new ModelsRiskAssessment();
+        $entires = $risk_model->where('user_id', Auth::user()->id)->get();
+        $result_list = [];
+        foreach ($entires as $key => $value) {
+            $start_qs_1 = $value['have_hypertension'];
+            $start_qs_2 = $value['have_diabetes'];
+
+            if ($start_qs_1 == "yes" && $start_qs_2 == "yes") {
+                // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+                $result = $this->result_cvd($value);
+            }
+
+
+            if ($start_qs_1 == "no" && $start_qs_2 == "yes") {
+                // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+                $result = $this->result_cvd($value);
+            }
+            if ($start_qs_1 == "no" && $start_qs_2 == "no") {
+                // ACTION: SCREEN FOR RISK OF DEVELOPING TYPE 2 DIABETES
+                $result = $this->result_diabetes($value);
+
+            }
+
+            if ($start_qs_1 == "yes" && $start_qs_2 == "no") {
+                // ACTION SCREEN FOR RISK OF TWO THINGS
+                // RISK OF  HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE  
+                // RISK OF DEVELOPNG TYPE 2 DIABETES
+                $result_1 = $this->result_cvd($value);
+                $result = $this->result_diabetes($value);
+
+            array_push($result_list,$result);
+                
+            }
+            array_push($result_list,$result);
+        }
+        return view("dashboard.assessment_results",compact("result_list"));
+    }
 
 
 
