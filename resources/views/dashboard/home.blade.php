@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="box-body ml-5">
                                     <h4>Age: {{$health_data_from_assement->age}}</h4>
-                                    <h4>Score: </h4>
+                                    <h4>Score: {{$risk_score}} </h4>
                                 </div>
                             </div>
                         </div>

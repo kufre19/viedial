@@ -18,16 +18,23 @@ class DashboardController extends Controller
         $subscription_model = new Subscription();
         $subscriptions = $subscription_model->where("user_id",Auth::user()->id)->get();
 
-        $bmi_from_assessment = session()->get("bmi");
-        $health_data_from_assement = $this->getHealthData();
-        $user_healthy_weight = $this->userHealthyWeight($health_data_from_assement->height);
+        if(session()->get("bmi"))
+        {
+            $bmi_from_assessment = session()->get("bmi");
+            $health_data_from_assement = $this->getHealthData();
+            $user_healthy_weight = $this->userHealthyWeight($health_data_from_assement->height);
+         
+
+            $risk_score = $this->get_user_single_assessment_result($health_data_from_assement)[0]["risk_score"];
+        }
+        
 
         if(session()->get("set-goal") != false)
         {
             $user_set_goal  = $this->getGoalSetted();
         }
 
-        return view("dashboard.home",compact("subscriptions","bmi_from_assessment","health_data_from_assement","user_healthy_weight","user_set_goal"));
+        return view("dashboard.home",compact("subscriptions","bmi_from_assessment","health_data_from_assement","user_healthy_weight","user_set_goal","risk_score"));
         
     }
 }
