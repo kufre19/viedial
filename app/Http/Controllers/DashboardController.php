@@ -26,8 +26,11 @@ class DashboardController extends Controller
          
 
             $assessment_result = $this->get_user_single_assessment_result($health_data_from_assement);
-            
-            return view("dashboard.home",compact("subscriptions","bmi_from_assessment","health_data_from_assement","user_healthy_weight","assessment_result"));
+
+            if(session()->get("set-goal") == false)
+            {
+                return view("dashboard.home",compact("subscriptions","bmi_from_assessment","health_data_from_assement","user_healthy_weight","assessment_result"));
+            }
 
         }
         
@@ -35,7 +38,7 @@ class DashboardController extends Controller
         if(session()->get("set-goal") != false)
         {
             $user_set_goal  = $this->getGoalSetted();
-            return view("dashboard.home",compact("subscriptions","bmi_from_assessment","health_data_from_assement","user_healthy_weight","user_set_goal","risk_score"));
+            return view("dashboard.home",compact("subscriptions","bmi_from_assessment","health_data_from_assement","user_healthy_weight","user_set_goal","assessment_result"));
 
         }
 
