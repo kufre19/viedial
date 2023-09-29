@@ -34,7 +34,7 @@
                     <div class="col-12">
                         <div class="box no-shadow mb-0 bg-transparent">
                             <div class="box-header no-border px-0">
-                                <h4 class="box-title">Your Score</h4>
+                                <h4 class="box-title">Heart Scores</h4>
                                 <ul class="box-controls pull-right d-md-flex d-none">
 
                                 </ul>
