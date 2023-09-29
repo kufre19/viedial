@@ -70,7 +70,7 @@
                                    
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button type="button" class="btn btn-rounded btn-info btn-sm dropdown-toggle bsl-unit-selector"
+                                            <button type="button" class="btn btn-rounded btn-viedial btn-sm dropdown-toggle bsl-unit-selector"
                                                 data-toggle="dropdown">mmol/l</button>
                                             <div class="dropdown-menu">
                                                 <a href="#" class="dropdown-item">mmol/l </a>
@@ -100,7 +100,7 @@
                                     
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button type="button" class="btn btn-rounded btn-info btn-sm dropdown-toggle bsl-unit-selector"
+                                            <button type="button" class="btn btn-rounded btn-viedial btn-sm dropdown-toggle bsl-unit-selector"
                                                 data-toggle="dropdown">mmol/l</button>
                                             <div class="dropdown-menu">
                                                 <a href="#" class="dropdown-item">mmol/l </a>
@@ -130,7 +130,7 @@
                                    
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button type="button" class="btn btn-rounded btn-info btn-sm dropdown-toggle bsl-unit-selector"
+                                            <button type="button" class="btn btn-rounded btn-viedial btn-sm dropdown-toggle bsl-unit-selector"
                                                 data-toggle="dropdown">mmol/l</button>
                                             <div class="dropdown-menu">
                                                 <a href="#" class="dropdown-item">mmol/l </a>
