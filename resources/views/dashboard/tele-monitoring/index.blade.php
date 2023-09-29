@@ -28,7 +28,7 @@
                     <div class="col-lg-6 col-12 mt-5">
                         <div class="box">
                             <div class="box-header with-border">
-                                <h4 class="box-title">Enter Your Daily Readings</h4>
+                                <h4 class="box-title">Enter systolic blood pressure readings</h4>
                             </div>
                             <!-- /.box-header -->
                             <form action="{{ route('tele-monitoring.save') }}" class="form" id="monitoring"
@@ -37,9 +37,36 @@
                                 <div class="box-body">
 
                                     <div class="form-group">
-                                        <label>What's Your Blood Pressure</label>
-                                        <input type="text" class="form-control" placeholder="Enter Your Blood Pressure"
-                                            name="bp">
+                                        <label>What's Your Systolic Blood Pressure</label>
+                                        <input type="text" class="form-control" placeholder="Enter Your Systolic Blood Pressure In mmgh"
+                                            name="bp_systolic">
+
+                                    </div>
+
+                                </div>
+                                <!-- /.box-body -->
+                                <div class="box-footer">
+
+
+                                </div>
+
+                        </div>
+                        <!-- /.box -->
+                    </div>
+
+                    <div class="col-lg-6 col-12 mt-5">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h4 class="box-title">Enter diastolic blood pressure readings</h4>
+                            </div>
+                            <!-- /.box-header -->
+                            
+                                <div class="box-body">
+
+                                    <div class="form-group">
+                                        <label>What's Your Diastolic Blood Pressure</label>
+                                        <input type="text" class="form-control" placeholder="Enter Your Diastolic Blood Pressure In mmgh"
+                                            name="bp_diastolic">
 
                                     </div>
 
