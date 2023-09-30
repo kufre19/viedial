@@ -93,7 +93,7 @@
 
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label>What's your blood sugar level before breakfast</label>
+                                    <label>What's your blood sugar level (fasting)</label>
                                    
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -153,7 +153,7 @@
 
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label>What's your blood sugar level before you sleep</label>
+                                    <label>What's your blood sugar level (random test)</label>
                                    
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -166,7 +166,7 @@
                                         </div>
                                         <input type="text" class="form-control" name="sugar_level_bf"
                                             placeholder="Blood sugar level before you sleep">
-                                        <input type="hidden" name="unit_bsl_sleep" class="bsl_unit" value="mmol/l ">
+                                        <input type="hidden" name="unit_bsl_random" class="bsl_unit" value="mmol/l ">
                                     </div>
                                 </div>
                             </div>

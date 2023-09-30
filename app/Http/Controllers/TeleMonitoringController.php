@@ -17,4 +17,6 @@ class TeleMonitoringController extends Controller
     {
        return redirect()->to(route("tele-monitoring.index"))->with("numbers-saved","numbers saved");
     }
+
+    
 }

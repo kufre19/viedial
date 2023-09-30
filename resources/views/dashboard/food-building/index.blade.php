@@ -24,66 +24,66 @@
             </div>
             <!-- Main content -->
             <section class="content">
-                <div class="col-xl-8">
-                    <div class="box no-shadow mb-0 bg-transparent">
-                        <div class="box-header no-border px-0">
-                            <h4 class="box-title">Your Build History</h4>
-                            <div class="box-controls pull-right d-md-flex d-none">
-                                <a href="{{url('build-food/history')}}">View all</a>
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="box no-shadow mb-0 bg-transparent">
+                            <div class="box-header no-border px-0">
+                                <h4 class="box-title">Your Build History</h4>
+                                <div class="box-controls pull-right d-md-flex d-none">
+                                    <a href="{{url('build-food/history')}}">View all</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        {{-- history card --}}
-                        @if (count($meals) > 0)
-                            @foreach ($meals as $meal)
-                                <div class="col-12">
-                                    <a href="#" class="box pull-up">
-                                        <div class="box-body">
-                                            <h4 class="box-title">{{$meal->name}}
-                                                <p class="subtitle font-size-14 mb-0">
-                                                    Built: {{$meal->created_at->diffForHumans()}} <br>
-                                                    {{-- Calories: {{$meal->calories}} <br> --}}
-                                                    Meal Type: {{$meal->meal_type}}
-                                                </p>
-                                            </h4>
-                                        </div>
+    
+                        <div class="row">
+                            {{-- history card --}}
+                            @if (count($meals) > 0)
+                                @foreach ($meals as $meal)
+                                    <div class="col-12">
+                                        <a href="#" class="box pull-up">
+                                            <div class="box-body">
+                                                <h4 class="box-title">{{$meal->name}}
+                                                    <p class="subtitle font-size-14 mb-0">
+                                                        Built: {{$meal->created_at->diffForHumans()}} <br>
+                                                        {{-- Calories: {{$meal->calories}} <br> --}}
+                                                        Meal Type: {{$meal->meal_type}}
+                                                    </p>
+                                                </h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="col-12 d-flex justify-content-center">
+                                    <p>You have no build history, 😃 you can get started by clicking the Build button below.
+                                    </p>
+                                </div>
+                            @endif
+    
+                        </div>
+    
+    
+                        {{-- build btn --}}
+                        <div class="row" class=" d-flex justify-content-center">
+                            <div class="col">
+                                <a href="#" class="btn btn-viedial pull-up" data-toggle="modal"
+                                    data-target="#modal-select-season-notification">Start Building Food</a>
+                            </div>
+                            @if ($continue_building != false)             
+                                <div class="col">
+                                    <a href="{{route('continue-building',['shopping_list_id'=>$continue_building])}}" class="btn btn-primary pull-up">
+                                        Continue Build Food
                                     </a>
                                 </div>
-                            @endforeach
-                        @else
-                            <div class="col-12 d-flex justify-content-center">
-                                <p>You have no build history, 😃 you can get started by clicking the Build button below.
-                                </p>
-                            </div>
-                        @endif
-
-
-
-
-
-                    </div>
-
-
-                    {{-- build btn --}}
-                    <div class="row" class=" d-flex justify-content-center">
-                        <div class="col">
-                            <a href="#" class="btn btn-viedial pull-up" data-toggle="modal"
-                                data-target="#modal-select-season-notification">Start Building Food</a>
+                            @endif
                         </div>
-                        @if ($continue_building != false)             
-                            <div class="col">
-                                <a href="{{route('continue-building',['shopping_list_id'=>$continue_building])}}" class="btn btn-primary pull-up">
-                                    Continue Build Food
-                                </a>
-                            </div>
-                        @endif
-
-
+    
                     </div>
-
                 </div>
+               
 
 
             </section>
