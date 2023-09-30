@@ -27,9 +27,22 @@ class TeleMonitoringController extends Controller
         
         if($field_name == "bp_systolic")
         {
-            if($value > 121 || $value <= 140)
+            if($value >= 121 && $value <= 140)
             {
                 $message = "⚠️ Your blood pressure is slightly high. You need to watch it";
+            }
+            if($value >= 141 && $value <= 150)
+            {
+                $message = "⚠️ Your blood pressure is really high. You need to talk to your doctor about starting or changing your treatment";
+            }
+
+            if($value >= 151 && $value <= 160)
+            {
+                $message = "⚠️ Your blood pressure is dangerously high. You need urgent treatment to prevent it from increasing";
+            }
+            if( $value >= 160)
+            {
+                $message = "⚠️ Your blood pressure has reached very dangerous levels. This can cause a complication that will lead to significant health problems or death. You need to see a doctor immediately";
             }
         }
 
