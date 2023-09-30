@@ -22,10 +22,20 @@ class TeleMonitoringController extends Controller
     {
         $field_name = $request->input('fieldName');
         $value = $request->input('value');
+        $unit = $request->input('unit');
+        $message = "";
+        
+        if($field_name == "bp_systolic")
+        {
+            if($value > 121 || $value <= 140)
+            {
+                $message = "⚠️ Your blood pressure is slightly high. You need to watch it";
+            }
+        }
 
 
 
-        return response()->json(["message"=>$field_name]);
+        return response()->json(["message"=>$message]);
 
 
     }
