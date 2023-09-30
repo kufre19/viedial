@@ -38,11 +38,11 @@ class TeleMonitoringController extends Controller
 
             if($value >= 151 && $value <= 160)
             {
-                $message = "⚠️ Your blood pressure is dangerously high. You need urgent treatment to prevent it from increasing";
+                $message = "🚫 Your blood pressure is dangerously high. You need urgent treatment to prevent it from increasing";
             }
             if( $value >= 160)
             {
-                $message = "⚠️ Your blood pressure has reached very dangerous levels. This can cause a complication that will lead to significant health problems or death. You need to see a doctor immediately";
+                $message = "🚨🚫 Your blood pressure has reached very dangerous levels. This can cause a complication that will lead to significant health problems or death. You need to see a doctor immediately";
             }
         }
 
