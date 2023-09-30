@@ -18,5 +18,16 @@ class TeleMonitoringController extends Controller
        return redirect()->to(route("tele-monitoring.index"))->with("numbers-saved","numbers saved");
     }
 
-    
+    public function getInputNotification(Request $request)
+    {
+        $field_name = $request->input('fieldName');
+        $value = $request->input('value');
+
+
+
+        return response()->json(["message"=>$field_name]);
+
+
+    }
+
 }

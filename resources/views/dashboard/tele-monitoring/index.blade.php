@@ -38,7 +38,7 @@
 
                                     <div class="form-group">
                                         <label>What's Your Systolic Blood Pressure</label>
-                                        <input type="text" class="form-control" placeholder="Enter Your Systolic Blood Pressure In mmgh"
+                                        <input type="text" class="form-control" id="bp_systolic" placeholder="Enter Your Systolic Blood Pressure In mmgh"
                                             name="bp_systolic">
 
                                     </div>
@@ -65,7 +65,7 @@
 
                                     <div class="form-group">
                                         <label>What's Your Diastolic Blood Pressure</label>
-                                        <input type="text" class="form-control" placeholder="Enter Your Diastolic Blood Pressure In mmgh"
+                                        <input type="text" id="bp_diastolic" class="form-control" placeholder="Enter Your Diastolic Blood Pressure In mmgh"
                                             name="bp_diastolic">
 
                                     </div>
@@ -104,9 +104,9 @@
                                                 <a href="#" class="dropdown-item">mg/dl</a>
                                             </div>
                                         </div>
-                                        <input type="text" class="form-control" name="sugar_level_bf"
+                                        <input type="text" class="form-control" name="sugar_level_bf" id="sugar_level_bf"
                                             placeholder="Blood sugar level before breakfast">
-                                        <input type="hidden" name="unit_bsl_bf" class="bsl_unit" value="mmol/l ">
+                                        <input type="hidden" name="unit_bsl_bf" id="unit_bsl_bf" class="bsl_unit" value="mmol/l ">
                                     </div>
                                 </div>
                             </div>
@@ -134,9 +134,10 @@
                                                 <a href="#" class="dropdown-item">mg/dl</a>
                                             </div>
                                         </div>
-                                        <input type="text" class="form-control" name="sugar_level_bf"
-                                            placeholder="Blood sugar level 2 hours after meal">
-                                        <input type="hidden" name="unit_bsl_afm" class="bsl_unit" value="mmol/l ">
+                                        <input type="text" class="form-control" name="sugar_level_afm"
+                                            placeholder="Blood sugar level 2 hours after meal" id="sugar_level_afm">
+
+                                        <input type="hidden" name="unit_bsl_afm" id="unit_bsl_afm" class="bsl_unit" value="mmol/l ">
                                     </div>
                                 </div>
                             </div>
@@ -164,9 +165,9 @@
                                                 <a href="#" class="dropdown-item">mg/dl</a>
                                             </div>
                                         </div>
-                                        <input type="text" class="form-control" name="sugar_level_bf"
-                                            placeholder="Blood sugar level before you sleep">
-                                        <input type="hidden" name="unit_bsl_random" class="bsl_unit" value="mmol/l ">
+                                        <input type="text" class="form-control" name="sugar_level_random"
+                                            placeholder="Blood sugar level before you sleep" id="sugar_level_random">
+                                        <input type="hidden" name="unit_bsl_random" id="unit_bsl_random" class="bsl_unit" value="mmol/l ">
                                     </div>
                                 </div>
                             </div>
@@ -203,14 +204,13 @@
 
 @section('modals')
     @include('dashboard.tele-monitoring.modals.numbers-entered')
+    @include('dashboard.tele-monitoring.modals.entry-notification')
+
 @endsection
 
 @section('extra_js')
     <script>
         $(document).ready(function() {
-
-
-
 
 
             // Handle dropdown item click event for all dropdowns with class 'dropdown-item'
@@ -231,17 +231,81 @@
             });
 
 
+            $("#bp_systolic").on("change", function(){
+                var field_name = $(this).attr("name");
+                var value = $(this).val();
+                getInputNotification(field_name,value);
+                
+            });
+
+            $("#bp_diastolic").on("change", function(){
+                var field_name = $(this).attr("name");
+                var value = $(this).val();
+                getInputNotification(field_name,value);
+                
+            });
+
+            $("#sugar_level_bf").on("change", function(){
+                var field_name = $(this).attr("name");
+                var value = $(this).val();
+                var unit = $("#unit_bsl_bf").val();
+
+                getInputNotification(field_name,value,unit);
+                
+            });
+
+            $("#sugar_level_afm").on("change", function(){
+                var field_name = $(this).attr("name");
+                var value = $(this).val();
+                var unit = $("#unit_bsl_afm").val();
+
+                getInputNotification(field_name,value,unit);
+                
+            });
+
+            $("#sugar_level_random").on("change", function(){
+                var field_name = $(this).attr("name");
+                var value = $(this).val();
+                var unit = $("#unit_bsl_random").val();
+
+                getInputNotification(field_name,value,unit);
+                
+            });
+           
+
+            function getInputNotification(field_name,value,unit="")
+            {
+                var csrfToken = "{{ csrf_token() }}";
+                // Make an Ajax request using the extracted 'foodId'
+                $.ajax({
+                    url: "{{ url('tele-monitoring/get-input-notification') }}", // Replace with your actual URL
+                    type: 'POST', // Use 'POST' or 'GET' as needed
+                    data: {
+                        fieldName: field_name,
+                        value: value,
+                        unit: unit,
+                        _token: csrfToken
+                    }, // Send the 'foodId' as data
+                    success: function(response) {
+                        // Handle the success response here
+                        console.log('Ajax request successful:', response.message);
+                        $("#notification-message").text(response.message);
+                        $("#modal-input-notification").modal("show");
+                       
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle any errors that occur during the Ajax request
+                        console.error('Ajax request error:', status, error);
+                        return response.data;
+                    }
+                });
+            }
 
 
 
 
 
-
-
-
-
-
-
+            // submit the form 
             $("#submit-numbers").on("click", function(event) {
 
                 $("#submit-numbers").hide();
