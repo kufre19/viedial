@@ -50,11 +50,11 @@
                                 <b>Recommendation:</b>
                                 {{ $risk_recommendation }}
                                 <hr class="mb-2">
-                                First:
+                                {{-- First:
                                 <a href="{{ $recommendation_link }}" target="_blank" class="btn btn-viedial">Get Our
                                     Recommendation</a>
-                                <hr class="mb-2">
-                                Next:
+                                <hr class="mb-2"> --}}
+                           
                                 <a href="{{ url('set-your-goals') }}" class="btn btn-viedial">Set Your Goals</a>
                                 <hr class="mb-2">
                                 @if (isset($second_result))
@@ -87,12 +87,12 @@
                                     <b>Recommendation:</b>
                                     {{ $risk_recommendation_cvd }}
                                     <hr class="mb-2">
-                                    First:
+                                    {{-- First:
                                     <a href="{{ $recommendation_link_cvd }}" target="_blank" class="btn btn-viedial">Get Our
                                         Recommendation</a>
                                     
-                                    <hr class="mb-2">
-                                    Next:
+                                    <hr class="mb-2"> --}}
+                                  
                                     <a href="{{ url('set-your-goals') }}" class="btn btn-viedial">Set Your Goals</a>
                                     <hr class="mb-2">
                                     @if (isset($second_result))
