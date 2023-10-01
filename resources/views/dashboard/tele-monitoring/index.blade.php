@@ -106,7 +106,7 @@
                                         </div>
                                         <input type="text" class="form-control" name="sugar_level_bf" id="sugar_level_bf"
                                             placeholder="Blood sugar level before breakfast">
-                                        <input type="hidden" name="unit_bsl_bf" id="unit_bsl_bf" class="bsl_unit" value="mmol/l ">
+                                        <input type="hidden" name="unit_bsl_bf" id="unit_bsl_bf" class="bsl_unit" value="mmol/l">
                                     </div>
                                 </div>
                             </div>
@@ -288,9 +288,15 @@
                     }, // Send the 'foodId' as data
                     success: function(response) {
                         // Handle the success response here
-                        console.log('Ajax request successful:', response.message);
-                        $("#notification-message").text(response.message);
-                        $("#modal-input-notification").modal("show");
+                        var message = response.message;
+                        if(message != ""){
+                            console.log('Ajax request successful:', );
+                            $("#notification-message").text(message);
+                            $("#modal-input-notification").modal("show");
+                        }else{
+                            return true;
+                        }
+                       
                        
                     },
                     error: function(xhr, status, error) {

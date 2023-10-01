@@ -31,18 +31,20 @@ class TeleMonitoringController extends Controller
             {
                 $message = "⚠️ Your blood pressure is slightly high. You need to watch it";
             }
-            if($value >= 141 && $value <= 150)
+            elseif($value >= 141 && $value <= 150)
             {
                 $message = "⚠️ Your blood pressure is really high. You need to talk to your doctor about starting or changing your treatment";
             }
 
-            if($value >= 151 && $value <= 160)
+            elseif($value >= 151 && $value <= 160)
             {
                 $message = "🚫 Your blood pressure is dangerously high. You need urgent treatment to prevent it from increasing";
             }
-            if( $value > 160)
+            elseif( $value > 160)
             {
                 $message = "🚨🚫 Your blood pressure has reached very dangerous levels. This can cause a complication that will lead to significant health problems or death. You need to see a doctor immediately";
+            }else{
+                $message = "😊🎉 Great your blood pressure is normal";
             }
         }
 
@@ -52,20 +54,41 @@ class TeleMonitoringController extends Controller
             {
                 $message = "⚠️ Your blood pressure is slightly high. You need to watch it";
             }
-            if($value >= 91 && $value <= 100)
+            elseif($value >= 91 && $value <= 100)
             {
                 $message = "⚠️ Your blood pressure is really high. You need to talk to your doctor about starting or changing your treatment";
             }
 
-            if($value >= 100 && $value <= 110)
+            elseif($value >= 100 && $value <= 110)
             {
                 $message = "🚫 Your blood pressure is dangerously high. You need urgent treatment to prevent it from increasing";
             }
-            if( $value > 110)
+            elseif( $value > 110)
             {
                 $message = "🚨🚫 Your blood pressure has reached very dangerous levels. This can cause a complication that will lead to significant health problems or death. You need to see a doctor immediately";
+            }else{
+                $message = "😊🎉 Great your blood pressure is normal";
             }
         }
+
+        if($field_name == "sugar_level_random")
+        {
+
+            if($unit == "mmol/l")
+            {
+
+                if($value < 4.2 )
+                {
+                    $message = "⚠️ Your blood sugar is getting low. You may need to eat or adjust your medication to prevent it from getting lower";
+                }
+            }
+
+            if($unit == "mg/dl")
+            {
+                
+            }
+        }
+
 
 
 
