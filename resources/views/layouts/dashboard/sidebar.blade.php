@@ -6,43 +6,62 @@
                 <!-- sidebar menu-->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Dashboard & Apps</li>
+                    <li><a href="{{ url('/') }}"><i class="icon-Layout-4-blocks"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Dashboard</a>
+                    </li>
+
                     <li class="treeview">
                         <a href="#">
-                            <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
-                            <span>Dashboard</span>
+                            <i class="fa fa-utensils"><span class="path1"></span><span class="path2"></span></i> Build
+                            Meals
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ url('/') }}"><i class="icon-Commit"><span class="path1">
-                                        </span><span class="path2"></span></i>
-                                    Dashboard</a>
-                            </li>
+                            <li><a href="{{ url('build-food') }}"><i class="fa fa-utensils"><span
+                                            class="path1"></span><span class="path2"></span></i> Build
+                                    Meals</a></li>
+                                    <li><a href="{{ url('build-food') }}"><i class="fa fa-shopping-cart"><span
+                                        class="path1"></span><span class="path2"></span></i>My Shopping
+                                List</a></li>
+                            <li><a href="{{ url('build-food') }}"><i class="fa fa-search"><span
+                                            class="path1"></span><span class="path2"></span></i> Meal
+                                    History</a></li>
 
-                            <li>
-                                <a href="{{ url('risk-assessment/result') }}">
-                                    <i class="icon-Commit"><span class="path1">
-                                    </span><span class="path2"></span></i>
-                                    Heart Age
-                                </a>
-                            </li>
                         </ul>
                     </li>
-                    {{-- <li class="treeview">
-                        <a href="#">
-                            <i span class="icon-Layout-grid"><span class="path1"></span><span
-                                    class="path2"></span></i>
-                            <span>Apps</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </span>
+                    <li>
+                        <a href="{{ url('set-your-goals') }}">
+                            <i class="fa fa-trophy"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Set Your Goals
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="extra_calendar.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Calendar</a></li>
-                          
-                        </ul>
+                    </li>
+
+                    {{-- <li>
+                        <a href="{{ url('risk-assessment/result') }}">
+                            <i class="fa fa-heart"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Your Scores
+                        </a>
+                    </li> --}}
+
+                    <li>
+                        <a href="{{ url('tele-monitoring') }}">
+                            <i class="fa fa-tv"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Tele-Monitoring
+                        </a>
+                    </li>
+{{-- 
+                    <li>
+                        <a href="{{ url('set-your-goals') }}">
+                            <i class="fa fa-dumbbell"><span class="path1">
+                                </span><span class="path2"></span></i>
+                            Physical Activities
+                        </a>
                     </li> --}}
 
                 </ul>

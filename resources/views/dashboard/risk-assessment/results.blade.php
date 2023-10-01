@@ -35,11 +35,11 @@
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="bg-white rounded30 shadow-lg visible" id="diabetes" style="display: block">
                     <div class="content-top-agile p-20 pb-0">
-                        <h2 class="text-primary">Assessment Result</h2>
+                        <h2 class="text-viedial">Your risk score</h2>
                     </div>
                     <div class="p-40">
                         <div class="box-shadowed">
-                           
+
 
                             <div class="box-body">
                                 <b>Risk Score: {{ $risk_score ?? $risk_score_diabete }}</b>
@@ -50,7 +50,12 @@
                                 <b>Recommendation:</b>
                                 {{ $risk_recommendation }}
                                 <hr class="mb-2">
-                                <a href="{{ $recommendation_link }}" target="_blank" class="btn btn-primary">Get Our Recommendation</a>
+                                {{-- First:
+                                <a href="{{ $recommendation_link }}" target="_blank" class="btn btn-viedial">Get Our
+                                    Recommendation</a>
+                                <hr class="mb-2"> --}}
+                           
+                                <a href="{{ url('set-your-goals') }}" class="btn btn-viedial">Set Your Goals</a>
                                 <hr class="mb-2">
                                 @if (isset($second_result))
                                     <a href="#" class="btn btn-viedial" id="hide-diabetes">See Next Result</a>
@@ -68,11 +73,11 @@
                 @if (isset($second_result))
                     <div class="bg-white rounded30 shadow-lg" id="cvd" style="display: none">
                         <div class="content-top-agile p-20 pb-0">
-                            <h2 class="text-primary">Assessment Result</h2>
+                            <h2 class="text-viedial"> Your risk score</h2>
                         </div>
                         <div class="p-40">
                             <div class="box-shadowed">
-                               
+
                                 <div class="box-body">
                                     <b>Risk Score: {{ $risk_score_cvd }}</b>
 
@@ -82,8 +87,13 @@
                                     <b>Recommendation:</b>
                                     {{ $risk_recommendation_cvd }}
                                     <hr class="mb-2">
-                                    <a href="{{ $recommendation_link_cvd }}" target="_blank" class="btn btn-primary">Get Our
+                                    {{-- First:
+                                    <a href="{{ $recommendation_link_cvd }}" target="_blank" class="btn btn-viedial">Get Our
                                         Recommendation</a>
+                                    
+                                    <hr class="mb-2"> --}}
+                                  
+                                    <a href="{{ url('set-your-goals') }}" class="btn btn-viedial">Set Your Goals</a>
                                     <hr class="mb-2">
                                     @if (isset($second_result))
                                         <a href="#" class="btn btn-viedial" id="hide-cvd">See Next Result</a>
@@ -99,8 +109,6 @@
                 @endif
 
             </div>
-
-
 
         </div>
     </div>

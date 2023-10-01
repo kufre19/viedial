@@ -36,8 +36,8 @@ trait RiskAssessment
 
     public function result_diabetes($data)
     {
-        
-        
+
+
         $age = $data['age'];
         $gender = $data['gender'];
         $weight = $data['weight'];
@@ -51,7 +51,7 @@ trait RiskAssessment
 
 
 
-       
+
         // start collecting points
         $agecat = $this->ageCatHbp($age);
         $bmi = $this->calculateBMI($weight, $height);
@@ -132,29 +132,29 @@ trait RiskAssessment
 
 
         return [
-            "risk_score"=>$risk_score,
-            "risk_implication"=>$risk_implication,
-            "recommendation_link"=>$recommendation_link,
-            "risk_recommendation"=>$risk_recommendation,
-            "score_for"=>"Diabetes",
-            "age"=>$age
+            "risk_score" => $risk_score,
+            "risk_implication" => $risk_implication,
+            "recommendation_link" => $recommendation_link,
+            "risk_recommendation" => $risk_recommendation,
+            "score_for" => "Diabetes",
+            "age" => $age
 
         ];
     }
 
     public function result_cvd($data)
     {
-        
-        
-       
+
+
+
         $age = $data['age'];
         $gender = $data['gender'];
         $weight = $data['weight'];
         $height = $data['height'];
         $treating_cvd = $data['treating_hbp'];
         $systolic_pressure = $data['systolic_bp'];
-        $smoking =$data['smoking'];
-        $fam_cvd =$data['fam_cvd'];
+        $smoking = $data['smoking'];
+        $fam_cvd = $data['fam_cvd'];
         $bmi = $this->calculateBMI($weight, $height);
 
 
@@ -201,43 +201,41 @@ trait RiskAssessment
 
 
         return [
-            "risk_score"=>$risk_score,
-            "risk_implication"=>$risk_implication,
-            "recommendation_link"=>$recommendation_link,
-            "risk_recommendation"=>$risk_recommendation,
-            "score_for"=>"CVD",
-            "age"=>$age
+            "risk_score" => $risk_score,
+            "risk_implication" => $risk_implication,
+            "recommendation_link" => $recommendation_link,
+            "risk_recommendation" => $risk_recommendation,
+            "score_for" => "CVD",
+            "age" => $age
 
         ];
     }
 
     // to meters
-    public function convert_height($height_m,$height_ft,$heigh_in)
+    public function convert_height($height_m, $height_ft, $heigh_in)
     {
 
         $new_height = "";
-        if($heigh_in != "" || $height_ft !="")
-        {
-            
+        if ($heigh_in != "" || $height_ft != "") {
+
             $new_height = ($height_ft * 12 + $heigh_in) * 0.0254;
             return $new_height;
-        }else{
+        } else {
             return $height_m;
         }
-       
     }
 
     /** 
-    * convert to KG 
-    */
-    public function convert_weight($weight,$unit)
+     * convert to KG 
+     */
+    public function convert_weight($weight, $unit)
     {
         $new_weight = "";
         switch ($unit) {
             case 'lbs':
                 $new_weight = $weight * 0.45359237;
                 break;
-            
+
             default:
                 $new_weight = $weight;
                 break;
@@ -246,14 +244,14 @@ trait RiskAssessment
     }
 
     // to centimeters
-    public function convert_waistWidth($waist_width,$unit)
+    public function convert_waistWidth($waist_width, $unit)
     {
         $new_waist_width = "";
         switch ($unit) {
             case 'inches':
                 $new_waist_width  = $waist_width * 2.54;
                 break;
-            
+
             default:
                 $new_waist_width = $waist_width;
                 break;
@@ -281,12 +279,13 @@ trait RiskAssessment
         return $agecat;
     }
 
-    public function ageCatCvd($age, $gender) {
+    public function ageCatCvd($age, $gender)
+    {
         // Ensure age is an integer
         $age = intval($age);
-    
+
         $AGECVD = 0;
-    
+
         if ($age >= 30 && $age <= 34) {
             $AGECVD = 0;
         } elseif ($age >= 35 && $age <= 39) {
@@ -308,10 +307,10 @@ trait RiskAssessment
         } elseif ($age >= 75) {
             $AGECVD = 15;
         }
-    
+
         return $AGECVD;
     }
-    
+
 
 
 
@@ -321,24 +320,23 @@ trait RiskAssessment
      * @param  mixed  $bmi
      * @return int
      */
-    private function categorizeBMI($bmi,$cat_for=""): int
+    private function categorizeBMI($bmi, $cat_for = ""): int
     {
         if ($bmi < 25) {
             return 0;
         } elseif ($bmi >= 25 && $bmi < 30) {
             return 1;
         } else { // >= 30
-            if($cat_for == "cvd")
-            {
+            if ($cat_for == "cvd") {
                 return 2;
-            }else {
+            } else {
                 return 3;
             }
         }
     }
 
 
-     /**
+    /**
      * Categorize waist circumference into WAISTCAT based on sex.
      *
      * @param  mixed  $waistCircumference
@@ -372,21 +370,20 @@ trait RiskAssessment
 
     public function calculateBMI($weight, $height)
     {
-       
+
         // Calculate BMI
         $bmi = $weight / ($height * $height);
-
-        // Return BMI (you can also return it as part of a view or JSON response)
         return $bmi;
     }
 
 
-    public function getSysCat($gender, $treatCvd, $systolicBp) {
+    public function getSysCat($gender, $treatCvd, $systolicBp)
+    {
         // Ensure the systolicBp is a float with two decimal places
         $systolicBp = round(floatval($systolicBp), 2);
-    
+
         $SYSCAT = 0;
-    
+
         if ($gender == 'male' && $treatCvd == 0) {
             if ($systolicBp < 120) {
                 $SYSCAT = -2;
@@ -440,15 +437,14 @@ trait RiskAssessment
                 $SYSCAT = 8;
             }
         }
-    
+
         return $SYSCAT;
     }
 
-    public function getRiskPercentage($gender,$risk_score)
+    public function getRiskPercentage($gender, $risk_score)
     {
-        $risk_score_percentage = 0 ;
-        if($gender == "male")
-        {
+        $risk_score_percentage = 0;
+        if ($gender == "male") {
             if ($risk_score <= -5) {
                 $risk_score_percentage = 0;
             } elseif ($risk_score == -4) {
@@ -481,7 +477,7 @@ trait RiskAssessment
                 $risk_score_percentage = 11.2;
             } elseif ($risk_score == 10) {
                 $risk_score_percentage = 13.3;
-            }elseif ($risk_score == 11) {
+            } elseif ($risk_score == 11) {
                 $risk_score_percentage = 15.7;
             } elseif ($risk_score == 12) {
                 $risk_score_percentage = 18.5;
@@ -495,9 +491,8 @@ trait RiskAssessment
                 $risk_score_percentage = 'Above 30%';
             } else {
                 $risk_score_percentage = 1;
-
-            }            
-        }else {
+            }
+        } else {
             if ($risk_score <= -2) {
                 $risk_score_percentage = 0;
             } elseif ($risk_score == -1) {
@@ -530,7 +525,7 @@ trait RiskAssessment
                 $risk_score_percentage = 8.6;
             } elseif ($risk_score == 13) {
                 $risk_score_percentage = 10.0;
-            }elseif ($risk_score == 14) {
+            } elseif ($risk_score == 14) {
                 $risk_score_percentage = 11.6;
             } elseif ($risk_score == 15) {
                 $risk_score_percentage = 13.5;
@@ -550,16 +545,59 @@ trait RiskAssessment
                 // Handle cases where the risk score is not among the provided ones 
                 // You can choose to set a default value or take other actions
                 $risk_score_percentage = 1;
-
             }
-            
         }
-       return $risk_score_percentage;
+        return $risk_score_percentage;
+    }
+
+
+    public function getHealthData()
+    {
+        $health_data = ModelsRiskAssessment::where("user_id", Auth::user()->id)->latest()->first();
+        return $health_data;
     }
 
 
 
+    public  function get_user_single_assessment_result($health_data)
+    {
+
+        $entires = $health_data;
+        $result_list = [];
+
+        $start_qs_1 = $health_data->have_hypertension;
+        $start_qs_2 = $health_data->have_diabetes;
+
+        $value = $health_data->toArray();
 
 
 
+        if ($start_qs_1 == "yes" && $start_qs_2 == "yes") {
+            // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+            $result = $this->result_cvd($value);
+        }
+
+
+        if ($start_qs_1 == "no" && $start_qs_2 == "yes") {
+            // ACTION SCREEN FOR RISK OF ONLY CVD (HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE)
+            $result = $this->result_cvd($value);
+        }
+        if ($start_qs_1 == "no" && $start_qs_2 == "no") {
+            // ACTION: SCREEN FOR RISK OF DEVELOPING TYPE 2 DIABETES
+            $result = $this->result_diabetes($value);
+        }
+
+        if ($start_qs_1 == "yes" && $start_qs_2 == "no") {
+            // ACTION SCREEN FOR RISK OF TWO THINGS
+            // RISK OF  HAVING A HEART ATTACK OR STROKE OR KIDNEY FAILURE  
+            // RISK OF DEVELOPNG TYPE 2 DIABETES
+            $result_1 = $this->result_cvd($value);
+            $result = $this->result_diabetes($value);
+
+            array_push($result_list, $result);
+        }
+        array_push($result_list, $result);
+
+       return $result_list;
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\RiskAssessment as ModelsRiskAssessment;
 use App\Traits\RiskAssessment;
+use App\Traits\UserTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Session;
 
 class RiskAssessmentController extends Controller
 {
-    use RiskAssessment;
+    use RiskAssessment, UserTrait;
 
     public function start(Request $request)
     {
@@ -194,6 +195,7 @@ class RiskAssessmentController extends Controller
             ];
         }
 
+        $this->userHasBmi();
         return view('dashboard.risk-assessment.results', compact("risk_score", "risk_implication", "recommendation_link", "risk_recommendation"));
     }
 
@@ -313,6 +315,7 @@ class RiskAssessmentController extends Controller
                 "risk_recommendation" => $risk_recommendation
             ];
         }
+        $this->userHasBmi();
         return view('dashboard.risk-assessment.results', compact("chart_color", "risk_score", "risk_implication", "recommendation_link", "risk_recommendation"));
     }
 
@@ -334,6 +337,7 @@ class RiskAssessmentController extends Controller
         $risk_recommendation_cvd = $load_score_cvd['risk_recommendation'];
         $second_result = true;
 
+        $this->userHasBmi();
         return view('dashboard.risk-assessment.results', compact("second_result", "risk_score_diabete", "risk_score_cvd", "risk_implication", "risk_implication_cvd", "recommendation_link", "risk_recommendation", "risk_recommendation_cvd", "recommendation_link_cvd"));
     }
 

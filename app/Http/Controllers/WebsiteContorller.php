@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Traits\UserTrait;
+use Carbon\Traits\Units;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -10,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class WebsiteContorller extends Controller
 {
+    use UserTrait;
     public function login_page()
     {
         return view("login");
@@ -23,6 +26,8 @@ class WebsiteContorller extends Controller
 
         if($login)
         {
+           $this->userHasBmi();
+           $this->userHasGoalSet();
            return redirect()->intended("/");
         }
 
@@ -49,7 +54,7 @@ class WebsiteContorller extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'whatsapp_number' => 'string',
+            // 'whatsapp_number' => 'string',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'terms' => 'accepted',
@@ -61,7 +66,7 @@ class WebsiteContorller extends Controller
     
         $user = new User([
             'name' => $request->name,
-            'whatsapp_number' => $request->whatsapp_number, 
+            // 'whatsapp_number' => $request->whatsapp_number, 
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

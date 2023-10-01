@@ -292,6 +292,7 @@ h3 {
   margin-top: 42px;
 }
 
+
 .actions ul.mt-7 {
   margin-top: 7px;
 }
@@ -304,14 +305,14 @@ h3 {
   align-items: center;
   color: #fff;
   cursor: pointer;
-  background: #3377c0;
+  background: #800020;
   text-transform: uppercase;
   justify-content: center;
   letter-spacing: 1px;
 }
 
 .actions li a:hover {
-  background: #3b87d9;
+  background: #F35050;
 }
 
 .actions li:first-child a {

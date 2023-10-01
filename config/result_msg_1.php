@@ -19,7 +19,7 @@ return [
     ],
     [
         "risk_implication"=>"You have a high risk of developing type 2 diabetes within 10 years. It is estimated that 1 in 3 will develop type 2 diabetes.",
-        "risk_recommendation"=>"Recommendation: Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.",
+        "risk_recommendation"=>" Sign up for Viedial’s type 2 diabetes prevention program to reduce your risk of developing type 2 diabetes. This program will teach you how to lower the chance of developing type 2 diabetes by as much as 80%.",
         "recommendation_link"=>"#"
     ],
     [

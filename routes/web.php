@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\BuildFoodController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GoalSettingController;
 use App\Http\Controllers\RiskAssessmentController;
+use App\Http\Controllers\SecreteAdminController;
+use App\Http\Controllers\TeleMonitoringController;
 use App\Http\Controllers\WebsiteContorller;
 use App\Models\RiskAssessment;
 use Illuminate\Support\Facades\Route;
@@ -27,11 +31,15 @@ Route::get('/link-storage', function () {
     return 'Storage link has been created.';
 });
 
+Route::get("unknown/upload/path",[SecreteAdminController::class,"upload_food_page"]);
+Route::post("unknown/upload/path",[SecreteAdminController::class,"upload_food"]);
+
+
 
 
 
 Route::get('/test-page', function () {
-    return view('dashboard.risk-assessment.results');
+    return view('dashboard.food-building.select-food-to-cook');
 });
 
 // Auth Routes
@@ -82,4 +90,41 @@ Route::group(["middleware" => "auth"], function () {
 
 
     });
+    // RISK ASSESSMENT ENDS
+
+    // BUILDING FOOD
+    Route::get("build-food",[BuildFoodController::class,"home"]);
+    Route::get("build-food/start/food-seasons/{season_id}",[BuildFoodController::class,"store_food_build_season"]);
+    Route::get("build-food/continue/shopping-list/{shopping_list_id?}",[BuildFoodController::class,"continue_building"])->name("continue-building");
+    Route::get("build-food/start/shopping-list/food-categories/",[BuildFoodController::class,"select_food_cat"])->name("list.food-cat");
+    Route::get("build-food/start/shopping-list/select-food/{food_cat}",[BuildFoodController::class,"food_selecting_page"])->name("list.food-items");
+    Route::post("build-food/food-cart/add",[BuildFoodController::class,"add_food_to_cart"]);
+    Route::post("build-food/food-cart/remove",[BuildFoodController::class,"remove_food_from_cart"]);
+    Route::get("build-food/shopping-list/view",[BuildFoodController::class,"view_cart"]);
+    Route::get("build-food/use-shopping-list/{food_to_cook_id}",[BuildFoodController::class,"use_shopping_list"])->name("use-shopping-list");
+    Route::get("build-food/build-now/",[BuildFoodController::class,"buildNow"])->name("build-now");
+    Route::get("build-food/build-later/",[BuildFoodController::class,"buildLater"])->name("build-later");
+    Route::get("build-food/food-to-cook/",[BuildFoodController::class,"select_food_to_cook"]);
+    Route::post("build-food/use-shopping-list/enter-serving-number",[BuildFoodController::class,"enter_serving_number"])->name("use-shopping-list.enter-serving-number");
+    Route::post("build-food/use-shopping-list/enter-meal-type",[BuildFoodController::class,"saveMealType"])->name("use-shopping-list.enter-meal-type");
+    Route::get("build-food/complete-build",[BuildFoodController::class,"completeBuild"]);
+
+
+    // GOAL SETTING
+    Route::get("set-your-goals",[GoalSettingController::class,"home"]);
+    Route::get("set-your-goals/start",[GoalSettingController::class,"set_goal_form"]);
+    Route::post("set-your-goals/save",[GoalSettingController::class,"saveGoal"]);
+    Route::post("set-your-goals/get-info",[GoalSettingController::class,"getSetGoalInfo"]);
+
+
+
+    // TELE MONITORING
+    Route::get("tele-monitoring", [TeleMonitoringController::class,"index"])->name("tele-monitoring.index");
+    Route::post("tele-monitoring/save", [TeleMonitoringController::class,"save_numbers"])->name("tele-monitoring.save");
+    Route::post("tele-monitoring/get-input-notification", [TeleMonitoringController::class,"getInputNotification"]);
+
+
+
+
+
 });

@@ -58,9 +58,8 @@
 	
 	
 		
-	
-
     @include('layouts.dashboard.scripts')
+    @yield('modals')
     @yield('extra_js')
 	
 </body>
