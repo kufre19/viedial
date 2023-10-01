@@ -99,6 +99,70 @@ class TeleMonitoringController extends Controller
             }
         }
 
+        if($field_name == "sugar_level_bf")
+        {
+
+            if($unit == "mmol/l")
+            {
+
+                if($value >= 4.2 && $value <= 5.6  )
+                {
+                    $message = "😊🎉 Your blood sugar is within normal range. Keep it up";
+                    // $message = "⚠️ Your blood sugar is getting low. You may need to eat or adjust your medication to prevent it from getting lower";
+                }elseif ($value >= 5.7 && $value <= 6.9 ) {
+                   $message = "🚫 Your blood sugar is slightly high and we will work with you to keep it at normal level";
+                }elseif($value > 6.9){
+                    $message = "🚨🚫 Your blood sugar is really high and we suggest starting or changing your medications and also make needed changes in your diet and physical activity. We are happy to keep working with you until we get to a normal level";
+                }
+            }
+
+            if($unit == "mg/dl")
+            {
+                
+                if($value >= 75.6 && $value <= 100.8  )
+                {
+                    $message = "😊🎉 Your blood sugar is within normal range. Keep it up";
+                    // $message = "⚠️ Your blood sugar is getting low. You may need to eat or adjust your medication to prevent it from getting lower";
+                }elseif ($value >= 102.6 && $value <= 124.2 ) {
+                   $message = "🚫 Your blood sugar is slightly high and we will work with you to keep it at normal level";
+                }elseif($value > 124.2){
+                    $message = "🚨🚫 Your blood sugar is really high and we suggest starting or changing your medications and also make needed changes in your diet and physical activity. We are happy to keep working with you until we get to a normal level";
+                }
+            }
+        }
+
+        if($field_name == "sugar_level_afm")
+        {
+
+            if($unit == "mmol/l")
+            {
+
+                if($value >= 4.2 && $value <= 7.8  )
+                {
+                    $message = "😊🎉 You had no blood sugar spike after the meal. Keep it up";
+                    // $message = "⚠️ Your blood sugar is getting low. You may need to eat or adjust your medication to prevent it from getting lower";
+                }elseif ($value >= 7.9 && $value <= 8.5 ) {
+                   $message = "🚫 There is a slight spike after the meal. We will work with you to avoid this from happening all the time";
+                }elseif($value > 8.5){
+                    $message = "🚨🚫 There is a high spike after the meal. We will work with you to prevent this from happening again";
+                }
+            }
+
+            if($unit == "mg/dl")
+            {
+                
+                if($value >= 75.6 && $value <= 140.4 )
+                {
+                    $message = "😊🎉 You had no blood sugar spike after the meal. Keep it up";
+                    // $message = "⚠️ Your blood sugar is getting low. You may need to eat or adjust your medication to prevent it from getting lower";
+                }elseif ($value >= 142.2 && $value <= 153 ) {
+                    $message = "🚫 There is a slight spike after the meal. We will work with you to avoid this from happening all the time";
+                }elseif($value > 153){
+                    $message = "🚨🚫 There is a high spike after the meal. We will work with you to prevent this from happening again";
+                }
+            }
+        }
+
 
 
 
