@@ -80,12 +80,22 @@ class TeleMonitoringController extends Controller
                 if($value < 4.2 )
                 {
                     $message = "⚠️ Your blood sugar is getting low. You may need to eat or adjust your medication to prevent it from getting lower";
+                }elseif ($value < 3.5) {
+                   $message = "🚨🚫 Your blood sugar is getting dangerously low. you will need to take a glass of juice or another sugary drink and adjust your medication to prevent it from getting low";
+                }else{
+                    $message = "😊🎉 Your blood sugar is within normal range. Keep it up";
                 }
             }
 
             if($unit == "mg/dl")
             {
                 
+                if($value < 75.6 )
+                {
+                    $message = "⚠️ Your blood sugar is getting low. You may need to eat or adjust your medication to prevent it from getting lower";
+                }elseif ($value < 63) {
+                    $message = "🚨🚫 Your blood sugar is getting dangerously low. you will need to take a glass of juice or another sugary drink and adjust your medication to prevent it from getting low";
+                 }
             }
         }
 
