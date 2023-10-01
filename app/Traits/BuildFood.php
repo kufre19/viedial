@@ -27,9 +27,13 @@ trait BuildFood {
     {
         $last_shopping_list = ShoppingList::latest()->first();
         // dd($last_shopping_list);
-        if($last_shopping_list->used == "no")
+        if($last_shopping_list)
         {
-            return $last_shopping_list->id;
+            if($last_shopping_list->used == "no")
+            {
+                return $last_shopping_list->id;
+
+            }
         }
         // elseif (count($last_shopping_list) < 1) {
         //     return false;
