@@ -25,9 +25,9 @@
             <!-- Main content -->
             <section class="content">
                 <div class="row">
-                    <div class="col-lg-6 col-12">
+                    {{-- <div class="col-lg-6 col-12">
 
-                    </div>
+                    </div> --}}
                     <div class="col-lg-6 col-12">
                         <div class="box no-shadow mb-0 bg-transparent">
                             <div class="box-header no-border px-0">
