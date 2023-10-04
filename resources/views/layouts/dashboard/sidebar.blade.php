@@ -13,8 +13,7 @@
 
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-utensils"><span class="path1"></span><span class="path2"></span></i> Build
-                            Meals
+                            <i class="fa fa-utensils"><span class="path1"></span><span class="path2"></span></i> Eat 2 Heal
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -52,7 +51,7 @@
                         <a href="{{ url('tele-monitoring') }}">
                             <i class="fa fa-tv"><span class="path1">
                                 </span><span class="path2"></span></i>
-                            Tele-Monitoring
+                            Track Progress
                         </a>
                     </li>
 {{-- 
