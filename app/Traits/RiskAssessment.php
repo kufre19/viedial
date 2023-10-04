@@ -559,7 +559,7 @@ trait RiskAssessment
 
 
 
-    public  function get_user_assessment_result_score_Card($health_data)
+    public  function get_user_assessment_result_score_Card()
     {
         $risk_model = new ModelsRiskAssessment();
         $entires = $risk_model->where('user_id', Auth::user()->id)->get();

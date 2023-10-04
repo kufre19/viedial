@@ -12,7 +12,7 @@
                 <div class="modal-body">
 
                     <p id="notification-message">
-                        ok
+                        
                     </p>
 
                 </div>

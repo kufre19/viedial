@@ -25,9 +25,7 @@
             <!-- Main content -->
             <section class="content">
                 <div class="row">
-                    {{-- <div class="col-lg-6 col-12">
-
-                    </div> --}}
+                   
                     <div class="col-lg-6 col-12">
                         <div class="box no-shadow mb-0 bg-transparent">
                             <div class="box-header no-border px-0">
@@ -82,6 +80,46 @@
                         </div>
     
                     </div>
+
+                     {{-- @if (session()->get('started-tele-monitoring'))
+                    @endif --}}
+                    <div class="col-lg-6 col-12">
+                        <div class="card bg-viedial-theme">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Your Calories Requirement
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Calories to eat
+                                            <p class=" text-bold mb-0">
+                                                {{$calories_requirment["calories_eat"]}} Calories
+
+                                            </p>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Calorie to burn through exercise
+                                           
+                                            <p class="text-bold mb-0">
+                                                {{$calories_requirment["calores_exercise"]}} Calories
+
+
+                                            </p>
+                                        </h4>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                
 

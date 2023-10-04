@@ -8,7 +8,7 @@
             <div class="content-header">
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
-                        <h3 class="page-title"> Tele-Monitoring</h3>
+                        <h3 class="page-title"> Track Your Progress</h3>
                         {{-- <div class="d-inline-block align-items-center">
                             <nav>
                                 <ol class="breadcrumb">

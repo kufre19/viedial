@@ -7,20 +7,22 @@ use App\Models\FoodItems;
 use App\Models\FoodSeason;
 use App\Models\FoodToBeCooked;
 use App\Traits\BuildFood;
+use App\Traits\TeleMonitoringTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class BuildFoodController extends Controller
 {
-    use BuildFood;
+    use BuildFood, TeleMonitoringTrait;
 
     public function home()
     {
         $meals = $this->fetchHistoryHome();
         $seasons = $this->getSeasons();
         $continue_building = $this->continue_building_btn();
+        $calories_requirment = $this->getUserCaloriesReqs();
         
-        return view("dashboard.food-building.index",compact("meals","seasons","continue_building"));
+        return view("dashboard.food-building.index",compact("meals","seasons","continue_building","calories_requirment"));
     }
 
     public function continue_building($shopping_list_id="")

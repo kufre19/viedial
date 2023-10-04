@@ -25,7 +25,7 @@ class DashboardController extends Controller
             $user_healthy_weight = $this->userHealthyWeight($health_data_from_assement->height);
          
 
-            $assessment_result = $this->get_user_assessment_result_score_Card($health_data_from_assement);
+            $assessment_result = $this->get_user_assessment_result_score_Card();
 
             if(session()->get("set-goal") == false)
             {
