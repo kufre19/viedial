@@ -128,7 +128,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="box pull-up ">
+                                    {{-- <div class="box pull-up ">
                                         <div class="box-body ">
                                             <h4 class="box-title">Required amount of fat
 
@@ -140,7 +140,7 @@
                                             </h4>
 
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="box pull-up ">
                                         <div class="box-body ">
                                             <h4 class="box-title">Recommended table spoons of olive oil for meals per day
