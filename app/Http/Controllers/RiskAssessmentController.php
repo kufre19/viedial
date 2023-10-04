@@ -379,6 +379,7 @@ class RiskAssessmentController extends Controller
             }
             array_push($result_list,$result);
         }
-        return view("dashboard.assessment_results",compact("result_list"));
+        // return view("dashboard.assessment_results",compact("result_list"));
+        return $result_list;
     }
 }
