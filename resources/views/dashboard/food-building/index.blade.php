@@ -25,17 +25,17 @@
             <!-- Main content -->
             <section class="content">
                 <div class="row">
-                   
+
                     <div class="col-lg-6 col-12">
                         <div class="box no-shadow mb-0 bg-transparent">
                             <div class="box-header no-border px-0">
                                 <h4 class="box-title">Your Build History</h4>
                                 <div class="box-controls pull-right d-md-flex d-none">
-                                    <a href="{{url('build-food/history')}}">View all</a>
+                                    <a href="{{ url('build-food/history') }}">View all</a>
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="row">
                             {{-- history card --}}
                             @if (count($meals) > 0)
@@ -43,11 +43,11 @@
                                     <div class="col-12">
                                         <a href="#" class="box pull-up">
                                             <div class="box-body">
-                                                <h4 class="box-title">{{$meal->name}}
+                                                <h4 class="box-title">{{ $meal->name }}
                                                     <p class="subtitle font-size-14 mb-0">
-                                                        Built: {{$meal->created_at->diffForHumans()}} <br>
+                                                        Built: {{ $meal->created_at->diffForHumans() }} <br>
                                                         {{-- Calories: {{$meal->calories}} <br> --}}
-                                                        Meal Type: {{$meal->meal_type}}
+                                                        Meal Type: {{ $meal->meal_type }}
                                                     </p>
                                                 </h4>
                                             </div>
@@ -60,68 +60,108 @@
                                     </p>
                                 </div>
                             @endif
-    
+
                         </div>
-    
-    
+
+
                         {{-- build btn --}}
                         <div class="row" class=" d-flex justify-content-center">
                             <div class="col">
                                 <a href="#" class="btn btn-viedial pull-up" data-toggle="modal"
                                     data-target="#modal-select-season-notification">Start Building Food</a>
                             </div>
-                            @if ($continue_building != false)             
+                            @if ($continue_building != false)
                                 <div class="col">
-                                    <a href="{{route('continue-building',['shopping_list_id'=>$continue_building])}}" class="btn btn-primary pull-up">
+                                    <a href="{{ route('continue-building', ['shopping_list_id' => $continue_building]) }}"
+                                        class="btn btn-primary pull-up">
                                         Continue Build Food
                                     </a>
                                 </div>
                             @endif
                         </div>
-    
+
                     </div>
 
-                     {{-- @if (session()->get('started-tele-monitoring'))
-                    @endif --}}
-                    <div class="col-lg-6 col-12">
-                        <div class="card bg-viedial-theme">
-                            <div class="card-header">
-                                <h4 class="card-title">
-                                    Your Calories Requirement
-                                </h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="box pull-up ">
-                                    <div class="box-body ">
-                                        <h4 class="box-title">Calories to eat
-                                            <p class=" text-bold mb-0">
-                                                {{$calories_requirment["calories_eat"]}} Calories
-
-                                            </p>
-                                        </h4>
-                                    </div>
+                    @if (session()->get('set-goal') != false)
+                        <div class="col-lg-6 col-12 mt-3">
+                            <div class="card bg-viedial-theme">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        Your Calories Requirement
+                                    </h4>
                                 </div>
+                                <div class="card-body">
+                                    <div class="box pull-up ">
+                                        <div class="box-body ">
+                                            <h4 class="box-title">Calories to eat
+                                                <p class=" text-bold mb-0">
+                                                    {{ $calories_requirment['calories_eat'] }} Calories
 
-                                <div class="box pull-up ">
-                                    <div class="box-body ">
-                                        <h4 class="box-title">Calorie to burn through exercise
-                                           
-                                            <p class="text-bold mb-0">
-                                                {{$calories_requirment["calores_exercise"]}} Calories
-
-
-                                            </p>
-                                        </h4>
-                                        
+                                                </p>
+                                            </h4>
+                                        </div>
                                     </div>
-                                </div>
 
+                                    <div class="box pull-up ">
+                                        <div class="box-body ">
+                                            <h4 class="box-title">Calorie to burn through exercise
+
+                                                <p class="text-bold mb-0">
+                                                    {{ $calories_requirment['calores_exercise'] }} Calories
+
+
+                                                </p>
+                                            </h4>
+
+                                        </div>
+                                    </div>
+                                    <div class="box pull-up ">
+                                        <div class="box-body ">
+                                            <h4 class="box-title">Required amount of protein
+
+                                                <p class="text-bold mb-0">
+                                                    {{ $calories_requirment['reqs_protein_oil']['amount_of_protein'] }} grams
+
+
+                                                </p>
+                                            </h4>
+
+                                        </div>
+                                    </div>
+                                    <div class="box pull-up ">
+                                        <div class="box-body ">
+                                            <h4 class="box-title">Required amount of fat
+
+                                                <p class="text-bold mb-0">
+                                                    {{ $calories_requirment['reqs_protein_oil']['amount_of_fat'] }} grams
+
+
+                                                </p>
+                                            </h4>
+
+                                        </div>
+                                    </div>
+                                    <div class="box pull-up ">
+                                        <div class="box-body ">
+                                            <h4 class="box-title">Recommended table spoons of olive oil for meals per day
+                                                <p class="text-bold mb-0">
+                                                    {{ $calories_requirment['reqs_protein_oil']['recomm_spoon_of_olive_oil'] }} Spoons
+
+
+                                                </p>
+                                            </h4>
+
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
+
 
                 </div>
-               
+
 
 
             </section>
@@ -135,7 +175,4 @@
     @include('dashboard.food-building.modals.select-season')
     @include('dashboard.food-building.modals.shopping-cart-saved')
     @include('dashboard.food-building.modals.meal-built')
-
 @endsection
-
-

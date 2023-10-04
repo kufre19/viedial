@@ -20,8 +20,15 @@ class BuildFoodController extends Controller
         $meals = $this->fetchHistoryHome();
         $seasons = $this->getSeasons();
         $continue_building = $this->continue_building_btn();
-        $calories_requirment = $this->getUserCaloriesReqs();
         
+        if(session()->get("set-goal") != false)
+        {
+            $calories_requirment = $this->getUserCaloriesReqs();
+        }else {
+             $calories_requirment ="";
+        }
+        
+        // dd($calories_requirment);
         return view("dashboard.food-building.index",compact("meals","seasons","continue_building","calories_requirment"));
     }
 
