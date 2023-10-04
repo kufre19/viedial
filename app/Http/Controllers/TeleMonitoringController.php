@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TeleMonitoring;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Monolog\Handler\TelegramBotHandler;
 
 class TeleMonitoringController extends Controller
@@ -15,7 +17,36 @@ class TeleMonitoringController extends Controller
 
     public function save_numbers(Request $request)
     {
+        $sugar_level_afm = $this->convertSugarLevelToMmol($request->input("sugar_level_afm"),$request->input("unit_bsl_afm"));
+        $sugar_level_fasting = $this->convertSugarLevelToMmol($request->input("sugar_level_bf"),$request->input("unit_bsl_bf"));
+        $sugar_level_random =$this->convertSugarLevelToMmol($request->input("sugar_level_random"),$request->input("unit_bsl_random"));
+
+        // convert sugar level to mmol/L
+
+
+        $bp_systolic = $request->input("bp_systolic");
+        $bp_diastolic = $request->input("bp_diastolic");
+
+        $tele_monitoring_model = new TeleMonitoring();
+        $tele_monitoring_model->user_id  = Auth::user()->id;
+        $tele_monitoring_model->blood_pressure_systolic = $bp_systolic;
+        $tele_monitoring_model->blood_pressure_diastolic = $bp_diastolic;
+        $tele_monitoring_model->blood_sugar_level_fasting = $sugar_level_fasting;
+        $tele_monitoring_model->blood_sugar_level_afm = $sugar_level_afm;
+        $tele_monitoring_model->blood_sugar_level_random = $sugar_level_random;
+        $tele_monitoring_model->save();
+
        return redirect()->to(route("tele-monitoring.index"))->with("numbers-saved","numbers saved");
+    }
+
+    public function convertSugarLevelToMmol($value,$unit)
+    {
+
+        if($unit != "mmol/l")
+        {
+            $value = $value / 18;
+        }
+        return $value;
     }
 
     public function getInputNotification(Request $request)

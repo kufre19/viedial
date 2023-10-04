@@ -16,10 +16,12 @@ class CreateTeleMonitoringsTable extends Migration
         Schema::create('tele_monitorings', function (Blueprint $table) {
             $table->id();
             $table->string("user_id");
-            $table->float("current_weight");
-            $table->float("blood_pressure");
-            $table->float("blood_sugar_level");
-            $table->float("waist_circumfrence");
+            $table->float("blood_pressure_systolic");
+            $table->float("blood_pressure_diastolic");
+            $table->float("blood_sugar_level_fasting");
+            $table->float("blood_sugar_level_afm");
+            $table->float("blood_sugar_level_random");
+
             $table->timestamps();
         });
     }
