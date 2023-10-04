@@ -15,6 +15,10 @@ class WebsiteContorller extends Controller
     use UserTrait;
     public function login_page()
     {
+        if(Auth::check())
+        {
+            return redirect()->back();
+        }
         return view("login");
     }
 
