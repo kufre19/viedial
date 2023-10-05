@@ -45,7 +45,7 @@
             
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
-                    <a href="{{ route('list.food-cat') }}"
+                    <a href="{{ route('list.create.food-cat') }}"
                         class="btn btn-primary pull-up">Back To Food Categories</a>
                 </div>
             </section>

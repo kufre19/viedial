@@ -56,7 +56,7 @@
                 </div>
                 <div class="row  mt-5">
                     <div class="col-12 d-flex justify-content-center">
-                        <a href="{{ route('list.food-cat') }}" class="btn btn-primary pull-up">Keep Adding To List</a>
+                        <a href="{{ route('list.create.food-cat') }}" class="btn btn-primary pull-up">Keep Adding To List</a>
                     </div>
 
                     <div class="col-12 mt-2 d-flex justify-content-center">

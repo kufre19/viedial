@@ -19,19 +19,20 @@ trait BuildFood {
 
     public function fetchHistoryHome()
     {
-        $meals = MealBuilt::where('user_id',Auth::user()->id)->orderBy('created_at', 'desc')->take(3)->get();
+        $meals = MealBuilt::where('user_id',Auth::user()->id)->where('status','complete')->orderBy('created_at', 'desc')->take(3)->get();
         return $meals;
     }
 
     public function continue_building_btn()
     {
         $last_shopping_list = ShoppingList::latest()->first();
+        $meal_built = MealBuilt::latest()->first();
         // dd($last_shopping_list);
-        if($last_shopping_list)
+        if($last_shopping_list && $meal_built)
         {
-            if($last_shopping_list->used == "no")
+            if($last_shopping_list->used == "no" && $meal_built->status == 'pending')
             {
-                return $last_shopping_list->id;
+                return ["last_shopping_list_id"=>$last_shopping_list->id,"last_meal_built_id"=>$meal_built->id];
 
             }
         }
@@ -55,7 +56,7 @@ trait BuildFood {
     {
         $data = [
         "season"=>"","shopping_list"=>[],"shopping_list_id"=>"",
-        "food_to_cook"=>"","meal_type"=>""
+        "food_to_cook"=>"","meal_type"=>"","meal_built_id"=>""
         ];
         Session::put($this->food_build_session,$data);
     }
@@ -128,6 +129,12 @@ trait BuildFood {
        
     }
 
+    /**
+     * Loads shopping list items by id given into session
+     * @param int $shopping_list_id
+    
+    */
+
     public function loadShoppingList($shopping_list_id)
     {
         $shopping_list = ShoppingList::where("id",$shopping_list_id)->with("ShoppingListItems")->first();
@@ -142,20 +149,47 @@ trait BuildFood {
 
     public function saveBuild()
     {
+
+        $build_session = Session::get($this->food_build_session);
+        $food_cooked = FoodToBeCooked::find($build_session['food_to_cook']);
+        $meal_built_id = $build_session['meal_built_id'];
+
+        if($meal_built_id != "")
+        {
+            MealBuilt::where("id",$meal_built_id)->update([
+                "meal_type"=>$build_session['meal_type'],
+                "status"=>"complete"
+            ]);
+        }else {
+            $build_session = Session::get($this->food_build_session);
+            $food_cooked = FoodToBeCooked::find($build_session['food_to_cook']);
+            $meal_built_model = new MealBuilt();
+            $meal_built_model->user_id = Auth::user()->id;
+            $meal_built_model->name = $food_cooked->name;
+            $meal_built_model->food_to_be_cooked_id = $build_session['food_to_cook'];
+            $meal_built_model->shopping_list_id = $build_session['shopping_list_id'];
+            $meal_built_model->meal_type =$build_session['meal_type'];
+            $meal_built_model->status ="complete";
+            
+            $meal_built_model->save();
+        }
+       
+        ShoppingList::where("id",$build_session['shopping_list_id'])->update([
+            'used'=>"yes"
+        ]);
+    }
+
+    public function saveBuildForLater()
+    {
         $build_session = Session::get($this->food_build_session);
         $food_cooked = FoodToBeCooked::find($build_session['food_to_cook']);
         $meal_built_model = new MealBuilt();
         $meal_built_model->user_id = Auth::user()->id;
         $meal_built_model->name = $food_cooked->name;
-        $meal_built_model->meal_type = $build_session['meal_type'];
         $meal_built_model->food_to_be_cooked_id = $build_session['food_to_cook'];
         $meal_built_model->shopping_list_id = $build_session['shopping_list_id'];
+        $meal_built_model->status ="pending";
         $meal_built_model->save();
-
-      
-        ShoppingList::where("id",$build_session['shopping_list_id'])->update([
-            'used'=>"yes"
-        ]);
     }
 
 

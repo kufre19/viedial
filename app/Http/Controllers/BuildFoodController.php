@@ -32,15 +32,20 @@ class BuildFoodController extends Controller
         return view("dashboard.food-building.index",compact("meals","seasons","continue_building","calories_requirment"));
     }
 
-    public function continue_building($shopping_list_id="")
+    public function continue_building($shopping_list_id="",$last_meal_built_id="")
     {
 
-        if($shopping_list_id != "")
+        if($shopping_list_id != "" )
         {
+            // this loads shopping list into session
             $this->loadShoppingList($shopping_list_id);
         }
-        $food_to_be_cooked = FoodToBeCooked::get();
-        return view('dashboard.food-building.select-food-to-cook',compact("food_to_be_cooked"));
+        if($last_meal_built_id !="")
+        {
+            $this->updateFoodBuildSession("meal_built_id",$last_meal_built_id);
+        }
+       
+        return redirect()->to(route("use-shopping-list",["food_to_cook_id"=>session()->get($this->food_build_session)['food_to_cook']])) ;
 
     }
 
@@ -53,15 +58,21 @@ class BuildFoodController extends Controller
         if(!$season)
         {
             // return with error of something went wrong
+            return redirect()->back();
         }else{
            $this->updateFoodBuildSession("season",$season_id);
         }
-        return redirect()->to(route("list.food-cat"));
+        return redirect()->to(route("food-to-cook"));
     }
 
-    public function select_food_cat()
+    public function select_food_cat(Request $request)
     {
 
+        // YOU SHOULD CHECK FOR THIS ID LATER ON...
+        if($request->has("food_to_cook"))
+        {
+           $this->updateFoodBuildSession("food_to_cook",$request->input("food_to_cook"));
+        }
         $food_categories = FoodCategories::get();
         return view("dashboard.food-building.select-food-cat",compact("food_categories"));
 
@@ -113,7 +124,10 @@ class BuildFoodController extends Controller
 
     public function buildLater()
     {
-        $this->saveShoppingList();
+        $shopping_list_id = $this->saveShoppingList();
+        $this->updateFoodBuildSession("shopping_list_id",$shopping_list_id);
+        $this->saveBuildForLater();
+
         $alert_txt = "Wonderful 🍾 You shopping List has been saved you can use it later to build your meals🎉";
         // this should be change to redirect to a shopping list history page 
         return redirect()->to("build-food")->with("shopping-list-saved",$alert_txt);
@@ -158,7 +172,8 @@ class BuildFoodController extends Controller
 
     public function select_food_to_cook()
     {
-        return view('dashboard.food-building.select-food-to-cook');
+        $food_to_be_cooked = FoodToBeCooked::get();
+        return view('dashboard.food-building.select-food-to-cook',compact("food_to_be_cooked"));
         // return redirect()->to("build-food")->with("shopping-list-saved",$alert_txt);
 
     }
