@@ -45,6 +45,7 @@ class BuildFoodController extends Controller
             $this->updateFoodBuildSession("meal_built_id",$last_meal_built_id);
         }
        
+       
         return redirect()->to(route("use-shopping-list",["food_to_cook_id"=>session()->get($this->food_build_session)['food_to_cook']])) ;
 
     }

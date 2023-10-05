@@ -112,6 +112,7 @@ trait BuildFood {
     {
         $data = Session::get($this->food_build_session);
         $shopping_list = $data['shopping_list'];
+        // dd($shopping_list);
 
         $shopping_list_model = new ShoppingList();
         $currentDate = Carbon::now()->toDateString();
@@ -119,8 +120,8 @@ trait BuildFood {
         $shopping_list_model->user_id = Auth::user()->id;
         $shopping_list_model->save();
 
-        $shopping_list_items_model = new ShoppingListItem();
         foreach ($shopping_list as $key => $item) {
+            $shopping_list_items_model = new ShoppingListItem();
             $shopping_list_items_model->shopping_list_id = $shopping_list_model->id;
             $shopping_list_items_model->food_item_id = $item;
             $shopping_list_items_model->save();
@@ -144,6 +145,8 @@ trait BuildFood {
         foreach ($shopping_list->ShoppingListItems as $key => $shopping_items) {
             $this->add_food_to_shopping_list($shopping_items->food_item_id);
         }
+           
+       
     }
 
 
