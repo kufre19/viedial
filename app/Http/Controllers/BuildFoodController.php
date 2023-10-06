@@ -161,8 +161,15 @@ class BuildFoodController extends Controller
         $this->updateMealServings($food_item_id,$num_of_serving);
         $this->updateMealCaloriesCount();
 
-        $meal_calories =Session::get($this->food_build_session)['meal_calories'];
-        return response()->json(["data"=>"added $num_of_serving servings to $food_name","meal_calories"=>$meal_calories]);
+        $food_item_calories = $this->getFoodItem($food_item_id)->calories * $num_of_serving;
+
+        $meal_calories =number_format(Session::get($this->food_build_session)['meal_calories'],2);
+        return response()->json([
+            "data"=>"added $num_of_serving servings to $food_name",
+            "meal_calories"=>$meal_calories,
+            "food_item_calories"=>$food_item_calories,
+            "food_item_id"=>$food_item_id
+        ]);
     }
 
     public function saveMealType(Request $request)

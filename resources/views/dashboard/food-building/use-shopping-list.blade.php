@@ -44,7 +44,7 @@
                                     <h4 class="card-title">{{$item->name}}</h4>
                                     <p>
                                         Cabs: {{$item->carbs}} <br>
-                                        Calories: {{$item->calories}} <br>
+                                        Calories: <span id="food_calories_counter_{{$item->id}}"> {{$item->calories}}</span>  <br>
                                     </p>
 
                                 </div>
@@ -158,6 +158,10 @@
                             stack: 6
                         });
                         $("#meal_calories_counter").text(response.meal_calories);
+                        var counter_span = "#food_calories_counter_" +response.food_item_id;
+                        console.log(counter_span);
+                        $(counter_span).text(response.food_item_calories);
+                        
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request

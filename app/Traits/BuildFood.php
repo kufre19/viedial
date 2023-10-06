@@ -109,6 +109,13 @@ trait BuildFood {
         return $food_items;
     }
 
+    public function getFoodItem($food_item_id)
+    {
+        $food_item = FoodItems::where('id',$food_item_id)->first();
+        return $food_item;
+
+    }
+
     public function saveShoppingList()
     {
         $data = Session::get($this->food_build_session);
@@ -234,6 +241,8 @@ trait BuildFood {
 
 
     }
+
+
 
     
 }
