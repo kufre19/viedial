@@ -171,6 +171,8 @@ trait BuildFood {
         {
             MealBuilt::where("id",$meal_built_id)->update([
                 "meal_type"=>$build_session['meal_type'],
+                "meal_calories"=>$build_session['meal_calories'],
+                "serving_info"=>json_encode($build_session['servings']),
                 "status"=>"complete"
             ]);
         }else {
@@ -182,6 +184,9 @@ trait BuildFood {
             $meal_built_model->food_to_be_cooked_id = $build_session['food_to_cook'];
             $meal_built_model->shopping_list_id = $build_session['shopping_list_id'];
             $meal_built_model->meal_type =$build_session['meal_type'];
+            $meal_built_model->meal_calories =$build_session['meal_calories'];
+            $meal_built_model->serving_info =json_encode($build_session['servings']);
+
             $meal_built_model->status ="complete";
             
             $meal_built_model->save();

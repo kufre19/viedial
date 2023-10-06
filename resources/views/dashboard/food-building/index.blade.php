@@ -47,7 +47,8 @@
                                                     <p class="subtitle font-size-14 mb-0">
                                                         Built: {{ $meal->updated_at->diffForHumans() }} <br>
                                                         {{-- Calories: {{$meal->calories}} <br> --}}
-                                                        Meal Type: {{ $meal->meal_type }}
+                                                        Meal Type: {{ $meal->meal_type }}<br>
+                                                        Calories: {{number_format($meal->meal_calories,2) }}
                                                     </p>
                                                 </h4>
                                             </div>
