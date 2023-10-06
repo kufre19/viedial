@@ -38,7 +38,10 @@ class BuildFoodController extends Controller
         if($shopping_list_id != "" )
         {
             // this loads shopping list into session
+            // and update the calories count for the whole meal
             $this->loadShoppingList($shopping_list_id);
+            $this->updateMealCaloriesCount();
+
         }
         if($last_meal_built_id !="")
         {
@@ -153,7 +156,13 @@ class BuildFoodController extends Controller
     {
         $num_of_serving = $request->input("num_of_serving");
         $food_name = $request->input("food_name");
-        return response()->json(["data"=>"added $num_of_serving servings to $food_name"]);
+        $food_item_id = $request->input("food_id");
+
+        $this->updateMealServings($food_item_id,$num_of_serving);
+        $this->updateMealCaloriesCount();
+
+        $meal_calories =Session::get($this->food_build_session)['meal_calories'];
+        return response()->json(["data"=>"added $num_of_serving servings to $food_name","meal_calories"=>$meal_calories]);
     }
 
     public function saveMealType(Request $request)

@@ -24,6 +24,13 @@
             </div>
             <!-- Main content -->
             <section class="content">
+                <div class="row d-flex justify-content-right text-right">
+                    <div class="col">
+                        <h3 class="text-viedial text-bold">
+                            This meal contains <span id="meal_calories_counter">{{session()->get('buildFoodSession')['meal_calories']}}</span> calories
+                        </h3>
+                    </div>
+                </div>
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
 
                     @foreach ($shopping_list_items as $item)
@@ -141,7 +148,6 @@
                     }, // Send the 'foodId' as data
                     success: function(response) {
                         // Handle the success response here
-                        console.log('Ajax request successful:', response.data);
                         $.toast({
                             heading: 'Shopping List',
                             text: response.data,
@@ -151,6 +157,7 @@
                             hideAfter: 3500,
                             stack: 6
                         });
+                        $("#meal_calories_counter").text(response.meal_calories);
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request

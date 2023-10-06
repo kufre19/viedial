@@ -56,7 +56,8 @@ trait BuildFood {
     {
         $data = [
         "season"=>"","shopping_list"=>[],"shopping_list_id"=>"",
-        "food_to_cook"=>"","meal_type"=>"","meal_built_id"=>""
+        "food_to_cook"=>"","meal_type"=>"","meal_built_id"=>"",
+        "meal_calories"=>"","servings"=>[]
         ];
         Session::put($this->food_build_session,$data);
     }
@@ -143,7 +144,9 @@ trait BuildFood {
 
         $this->updateFoodBuildSession("shopping_list",[]);
         foreach ($shopping_list->ShoppingListItems as $key => $shopping_items) {
+            
             $this->add_food_to_shopping_list($shopping_items->food_item_id);
+            $this->updateMealServings($shopping_items->food_item_id,1);
         }
            
        
@@ -195,6 +198,42 @@ trait BuildFood {
         $meal_built_model->save();
     }
 
+    public function updateMealServings($food_item_id,$num_of_servings)
+    {
+
+        $build_session = Session::get($this->food_build_session);
+        $servings = $build_session["servings"] ;
+        $servings[$food_item_id] = $num_of_servings;
+        $this->updateFoodBuildSession("servings",$servings);
+
+    }
+
+    /**
+     * update the whole meal calories count by mulyiplying the food item calories by number of servings of
+     * the food item. using their IDs to identify them
+     * @returns void 
+     */
+    public function updateMealCaloriesCount()
+    {
+        $meal_calories = 0;
+        $build_session = Session::get($this->food_build_session);
+        $servings = $build_session["servings"] ;
+        $food_items = $this->getShoppingListItems();
+
+        foreach($food_items as $key => $value)
+        {
+           $serving_num = $servings[$value->id];
+           $food_item_calories = $value->calories;
+
+           $food_total_calories = $food_item_calories * $serving_num;
+           $meal_calories += $food_total_calories;
+            
+        }
+
+        $this->updateFoodBuildSession("meal_calories",$meal_calories);
+
+
+    }
 
     
 }
