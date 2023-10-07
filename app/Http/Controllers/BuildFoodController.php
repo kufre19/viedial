@@ -6,9 +6,11 @@ use App\Models\FoodCategories;
 use App\Models\FoodItems;
 use App\Models\FoodSeason;
 use App\Models\FoodToBeCooked;
+use App\Models\ShoppingList;
 use App\Traits\BuildFood;
 use App\Traits\TeleMonitoringTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class BuildFoodController extends Controller
@@ -193,5 +195,11 @@ class BuildFoodController extends Controller
         return view('dashboard.food-building.select-food-to-cook',compact("food_to_be_cooked"));
         // return redirect()->to("build-food")->with("shopping-list-saved",$alert_txt);
 
+    }
+
+    public function showShoppingListHistory()
+    {
+        $shopping_list = ShoppingList::where("user_id",Auth::user()->id)->latest()->paginate(10);
+        return view("dashboard.food-building.shopping-list-history",compact("shopping_list"));
     }
 }

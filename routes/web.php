@@ -108,6 +108,7 @@ Route::group(["middleware" => "auth"], function () {
     Route::post("build-food/use-shopping-list/enter-serving-number",[BuildFoodController::class,"enter_serving_number"])->name("use-shopping-list.enter-serving-number");
     Route::post("build-food/use-shopping-list/enter-meal-type",[BuildFoodController::class,"saveMealType"])->name("use-shopping-list.enter-meal-type");
     Route::get("build-food/complete-build",[BuildFoodController::class,"completeBuild"]);
+    Route::get("build-food/my-shopping-list",[BuildFoodController::class,"showShoppingListHistory"]);
 
 
     // GOAL SETTING

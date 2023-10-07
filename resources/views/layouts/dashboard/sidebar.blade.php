@@ -22,7 +22,7 @@
                             <li><a href="{{ url('build-food') }}"><i class="fa fa-utensils"><span
                                             class="path1"></span><span class="path2"></span></i> Build
                                     Meals</a></li>
-                                    <li><a href="{{ url('build-food') }}"><i class="fa fa-shopping-cart"><span
+                                    <li><a href="{{ url('build-food/my-shopping-list') }}"><i class="fa fa-shopping-cart"><span
                                         class="path1"></span><span class="path2"></span></i>My Shopping
                                 List</a></li>
                             <li><a href="{{ url('build-food') }}"><i class="fa fa-search"><span
