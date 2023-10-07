@@ -44,7 +44,7 @@
                                     <h4 class="card-title">{{$item->name}}</h4>
                                     <p>
                                         Cabs: {{$item->carbs}} <br>
-                                        Calories: <span id="food_calories_counter_{{$item->id}}"> {{$item->calories}}</span>  <br>
+                                        Calories: <span id="food_calories_counter_{{$item->id}}"> {{session()->get('buildFoodSession')['servings'][$item->id]*$item->calories}}</span>  <br>
                                     </p>
 
                                 </div>
@@ -86,7 +86,7 @@
 
 
 @section('modals')
-    @include('dashboard.food-building.modals.save-shopping-list')
+    {{-- @include('dashboard.food-building.modals.save-shopping-list') --}}
     @include('dashboard.food-building.modals.complete-build')
 @endsection
 
