@@ -65,6 +65,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label>Potassium</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" name="potassium" class="form-control" placeholder="Potassium">
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label>Image</label>
                                 <div class="input-group mb-3">
                                     <input type="file" name="food_image" class="form-control">
