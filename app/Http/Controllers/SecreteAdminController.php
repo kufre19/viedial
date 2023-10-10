@@ -18,7 +18,7 @@ class SecreteAdminController extends Controller
 
     public function upload_food_cat_page()
     {
-        return view("secreteAdmin.upload_food");
+        return view("secreteAdmin.upload_food_cat");
 
     }
 
@@ -34,6 +34,8 @@ class SecreteAdminController extends Controller
         $foodItem->protein = $request->input("protein");
         $foodItem->fat_oil = $request->input("fat_oil");
         $foodItem->sodium = $request->input("sodium");
+        $foodItem->potassium = $request->input("potassium");
+
         $foodItem->extras = "more info";
 
        
@@ -48,6 +50,31 @@ class SecreteAdminController extends Controller
 
         // Save the model to the database
         $foodItem->save();
+        return redirect()->back();
+
+    }
+
+    public function upload_food_category(Request $request)
+    {
+
+        // dd( $request->input('food_image'));
+        $food_cat_model = new FoodCategories();
+        $food_cat_model->name = $request->input("name");
+        
+
+      
+       
+
+        // Handle file upload (if you have an image field)
+        if ($request->hasFile('category_image')) {
+            $image = $request->file('category_image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('view_assets/images/food-cats'), $imageName);
+            $food_cat_model->image = $imageName;
+        }
+
+        // Save the model to the database
+        $food_cat_model->save();
         return redirect()->back();
 
     }
