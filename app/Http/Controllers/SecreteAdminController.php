@@ -16,11 +16,14 @@ class SecreteAdminController extends Controller
         return view("secreteAdmin.upload_food",compact("food_cats"));
     }
 
+    public function upload_food_cat_page()
+    {
+        return view("secreteAdmin.upload_food");
+
+    }
+
     public function upload_food(Request $request)
     {
-
-
-      
 
         // dd( $request->input('food_image'));
         $foodItem = new FoodItems();
@@ -28,6 +31,9 @@ class SecreteAdminController extends Controller
         $foodItem->food_category_id = $request->input("food_category_id");
         $foodItem->calories = $request->input("calories");
         $foodItem->carbs = $request->input("carbs");
+        $foodItem->protein = $request->input("protein");
+        $foodItem->fat_oil = $request->input("fat_oil");
+        $foodItem->sodium = $request->input("sodium");
         $foodItem->extras = "more info";
 
        

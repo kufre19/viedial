@@ -45,26 +45,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Protein</label>
-                                <div class="input-group mb-3">
-                                    
-                                    <input type="text" name="protein" class="form-control" placeholder="Protein">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Fat and Oil</label>
-                                <div class="input-group mb-3">
-                                    
-                                    <input type="text" name="fat_oil" class="form-control" placeholder="Fat and Oil">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Sodium</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" name="sodium" class="form-control" placeholder="Sodium">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label>Image</label>
                                 <div class="input-group mb-3">
                                     <input type="file" name="food_image" class="form-control">
