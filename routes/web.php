@@ -34,6 +34,8 @@ Route::get('/link-storage', function () {
 Route::get("unknown/upload/path",[SecreteAdminController::class,"upload_food_page"]);
 Route::post("unknown/upload/path",[SecreteAdminController::class,"upload_food"]);
 
+Route::get("unknown/upload/path/food-cat",[SecreteAdminController::class,"upload_food_cat_page"]);
+
 
 
 
