@@ -30,7 +30,7 @@
                    
                     @foreach ($food_categories as $food_category)
                     <div class="col-lg-3 col-md-6 col-12">
-                        <a href="{{ route('list.food-items',['food_cat'=>$food_category->id])  }}">
+                        <a href="{{ route('list.create.food-items',['food_cat'=>$food_category->id])  }}">
                             <div class="card pull-up">
                                 <img class="card-img-top"
                                     src="{{ asset('view_assets/images/food-cats/') ."/". $food_category->image }}"
@@ -50,7 +50,7 @@
 
                 </div>
                 <div class="row d-flex justify-content-center mt-5">
-                    <a href="{{url('build-food/shopping-list/view')}}" class="btn btn-primary pull-up">Continue Building</a>
+                    <a href="{{route('build-now')}}" class="btn btn-viedial pull-up">Continue Building</a>
                 </div>
             </section>
             <!-- /.content -->

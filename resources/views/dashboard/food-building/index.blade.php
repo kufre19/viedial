@@ -45,9 +45,10 @@
                                             <div class="box-body">
                                                 <h4 class="box-title">{{ $meal->name }}
                                                     <p class="subtitle font-size-14 mb-0">
-                                                        Built: {{ $meal->created_at->diffForHumans() }} <br>
+                                                        Built: {{ $meal->updated_at->diffForHumans() }} <br>
                                                         {{-- Calories: {{$meal->calories}} <br> --}}
-                                                        Meal Type: {{ $meal->meal_type }}
+                                                        Meal Type: {{ $meal->meal_type }}<br>
+                                                        Calories: {{number_format($meal->meal_calories,2) }}
                                                     </p>
                                                 </h4>
                                             </div>
@@ -72,7 +73,7 @@
                             </div>
                             @if ($continue_building != false)
                                 <div class="col">
-                                    <a href="{{ route('continue-building', ['shopping_list_id' => $continue_building]) }}"
+                                    <a href="{{ route('continue-building', ['last_meal_built_id'=>$continue_building['last_meal_built_id'],'shopping_list_id' => $continue_building['last_shopping_list_id']]) }}"
                                         class="btn btn-primary pull-up">
                                         Continue Build Food
                                     </a>

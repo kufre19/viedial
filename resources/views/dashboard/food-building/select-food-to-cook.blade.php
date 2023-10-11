@@ -29,7 +29,7 @@
 
                     @foreach ($food_to_be_cooked as $food)
                         <div class="col-lg-3 col-md-6 col-12">
-                            <a href="{{ route("use-shopping-list",["food_to_cook_id"=>$food->id]) }}" class="">
+                            <a href="{{ route("list.create.food-cat",['food_to_cook'=>$food->id]) }}" class="">
                                 <div class="card pull-up">
                                     <img class="card-img-top"
                                         src="{{ asset('view_assets/images/food-to-cook') ."/". $food->image  }}"

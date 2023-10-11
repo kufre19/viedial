@@ -24,6 +24,13 @@
             </div>
             <!-- Main content -->
             <section class="content">
+                <div class="row d-flex justify-content-right text-right">
+                    <div class="col">
+                        <h3 class="text-viedial text-bold">
+                            This meal contains <span id="meal_calories_counter">{{session()->get('buildFoodSession')['meal_calories']}}</span> calories
+                        </h3>
+                    </div>
+                </div>
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
 
                     @foreach ($shopping_list_items as $item)
@@ -37,7 +44,7 @@
                                     <h4 class="card-title">{{$item->name}}</h4>
                                     <p>
                                         Cabs: {{$item->carbs}} <br>
-                                        Calories: {{$item->calories}} <br>
+                                        Calories: <span id="food_calories_counter_{{$item->id}}"> {{session()->get('buildFoodSession')['servings'][$item->id]*$item->calories}}</span>  <br>
                                     </p>
 
                                 </div>
@@ -79,7 +86,7 @@
 
 
 @section('modals')
-    @include('dashboard.food-building.modals.save-shopping-list')
+    {{-- @include('dashboard.food-building.modals.save-shopping-list') --}}
     @include('dashboard.food-building.modals.complete-build')
 @endsection
 
@@ -141,7 +148,6 @@
                     }, // Send the 'foodId' as data
                     success: function(response) {
                         // Handle the success response here
-                        console.log('Ajax request successful:', response.data);
                         $.toast({
                             heading: 'Shopping List',
                             text: response.data,
@@ -151,6 +157,11 @@
                             hideAfter: 3500,
                             stack: 6
                         });
+                        $("#meal_calories_counter").text(response.meal_calories);
+                        var counter_span = "#food_calories_counter_" +response.food_item_id;
+                        console.log(counter_span);
+                        $(counter_span).text(response.food_item_calories);
+                        
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request
