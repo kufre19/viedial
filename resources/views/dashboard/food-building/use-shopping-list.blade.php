@@ -24,27 +24,22 @@
             </div>
             <!-- Main content -->
             <section class="content">
-                <div class="row d-flex justify-content-right text-right">
-                    <div class="col">
-                        <h3 class="text-viedial text-bold">
-                            This meal contains <span id="meal_calories_counter">{{session()->get('buildFoodSession')['meal_calories']}}</span> calories
-                        </h3>
-                    </div>
-                </div>
+
                 <div class="row d-flex justify-content-center text-center fx-element-overlay">
 
                     @foreach ($shopping_list_items as $item)
                         <div class="col-lg-3 col-md-6 col-12">
 
                             <div class="card pull-up">
-                                <img class="card-img-top"
-                                    src="{{ asset('view_assets/images/food'). "/". $item->image }}"
+                                <img class="card-img-top" src="{{ asset('view_assets/images/food') . '/' . $item->image }}"
                                     alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">{{$item->name}}</h4>
+                                    <h4 class="card-title">{{ $item->name }}</h4>
                                     <p>
-                                        Cabs: {{$item->carbs}} <br>
-                                        Calories: <span id="food_calories_counter_{{$item->id}}"> {{session()->get('buildFoodSession')['servings'][$item->id]*$item->calories}}</span>  <br>
+                                        Carbs: {{ $item->carbs }} <br>
+                                        Calories: <span id="food_calories_counter_{{ $item->id }}">
+                                            {{ session()->get('buildFoodSession')['servings'][$item->id] * $item->calories }}</span>
+                                        <br>
                                     </p>
 
                                 </div>
@@ -53,8 +48,9 @@
 
                                     <div width="70">
                                         <label for="serving-number">Number of Serving</label>
-                                        <input type="text" class="form-control food-serving-number" placeholder="1" min="0"
-                                            max="5" data-food-id="{{$item->id}}" data-food-name="{{$item->name}}" >
+                                        <input type="text" class="form-control food-serving-number" placeholder="1"
+                                            min="0" max="5" data-food-id="{{ $item->id }}"
+                                            data-food-name="{{ $item->name }}">
                                     </div>
 
 
@@ -68,6 +64,62 @@
 
 
 
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+
+                        <div class="card bg-viedial-theme">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    This meal contains
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Calories
+                                            <p class=" text-bold mb-0">
+                                                <span
+                                                    id="meal_calories_counter">{{ session()->get('buildFoodSession')['meal_calories'] }}</span>
+                                            </p>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                {{-- <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Calorie to burn through exercise
+
+                                            <p class="text-bold mb-0">
+
+
+
+                                            </p>
+                                        </h4>
+
+                                    </div>
+                                </div>
+                                 --}}
+                                {{-- <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Required amount of fat
+
+                                            <p class="text-bold mb-0">
+                                               
+
+
+                                            </p>
+                                        </h4>
+
+                                    </div>
+                                </div> --}}
+                                
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row  mt-5">
                     <div class="col-12 d-flex justify-content-center">
@@ -95,12 +147,12 @@
         $(document).ready(function() {
 
             // update meal type and show complete btn
-            $('#meal_type_select').on("change", function(event){
+            $('#meal_type_select').on("change", function(event) {
                 var mealType = $(this).val();
                 var csrfToken = "{{ csrf_token() }}";
 
                 $.ajax({
-                    url: "{{ route('use-shopping-list.enter-meal-type') }}", 
+                    url: "{{ route('use-shopping-list.enter-meal-type') }}",
                     type: 'POST',
                     data: {
                         mealType: mealType,
@@ -111,7 +163,7 @@
                         console.log('Ajax request successful:', response.data);
                         $("#complete-build").show();
 
-                        
+
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request
@@ -130,20 +182,20 @@
             });
 
 
-        // write script to check for decimal entry in serving number
-            $('.food-serving-number').on("change", function(event){
+            // write script to check for decimal entry in serving number
+            $('.food-serving-number').on("change", function(event) {
                 var num_of_serving = $(this).val();
                 var food_id = $(this).data('food-id');
                 var food_name = $(this).data('food-name');
                 var csrfToken = "{{ csrf_token() }}";
 
                 $.ajax({
-                    url: "{{ route('use-shopping-list.enter-serving-number') }}", 
+                    url: "{{ route('use-shopping-list.enter-serving-number') }}",
                     type: 'POST',
                     data: {
                         num_of_serving: num_of_serving,
-                        food_id:food_id,
-                        food_name:food_name,
+                        food_id: food_id,
+                        food_name: food_name,
                         _token: csrfToken
                     }, // Send the 'foodId' as data
                     success: function(response) {
@@ -158,10 +210,10 @@
                             stack: 6
                         });
                         $("#meal_calories_counter").text(response.meal_calories);
-                        var counter_span = "#food_calories_counter_" +response.food_item_id;
+                        var counter_span = "#food_calories_counter_" + response.food_item_id;
                         console.log(counter_span);
                         $(counter_span).text(response.food_item_calories);
-                        
+
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request

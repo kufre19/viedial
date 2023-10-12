@@ -57,7 +57,7 @@ trait BuildFood {
         $data = [
         "season"=>"","shopping_list"=>[],"shopping_list_id"=>"",
         "food_to_cook"=>"","meal_type"=>"","meal_built_id"=>"",
-        "meal_calories"=>"","servings"=>[]
+        "meal_calories"=>"","servings"=>[],"meal_nutrients"=>[]
         ];
         Session::put($this->food_build_session,$data);
     }
@@ -231,6 +231,7 @@ trait BuildFood {
         $build_session = Session::get($this->food_build_session);
         $servings = $build_session["servings"] ;
         $food_items = $this->getShoppingListItems();
+        $meal_nutrients = $build_session["meal_nutrients"] ;
 
         foreach($food_items as $key => $value)
         {
@@ -239,8 +240,25 @@ trait BuildFood {
 
            $food_total_calories = $food_item_calories * $serving_num;
            $meal_calories += $food_total_calories;
+
+            // add others to be added to count of food nutrient
+            // $food_protein = $value->protein ?? 0 ;
+            // $food_potassium = $value->potassium  ?? 0 ;
+            // $food_sodium = $value->soduim ?? 0 ;
+            // $food_carbs = $value->carbs ?? 0 ;
+            // $food_fat_oil = $value->fat_oil ?? 0 ;
+        
+
+            // $food_potassium_total = $food_potassium * $serving_num;
+            // $food_protein_total = $food_protein * $serving_num;
+            // $food_fat_oil_total = $food_fat_oil * $serving_num;
+            // $food_carbs_total = $food_carbs * $serving_num;
+            // $food_sodium_total = $food_sodium * $serving_num;
+            // $meal_nutrients[""]
+            
             
         }
+
 
         $this->updateFoodBuildSession("meal_calories",$meal_calories);
 
