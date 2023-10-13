@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FoodCategories;
 use App\Models\FoodItems;
+use App\Models\FoodToBeCooked;
 use Illuminate\Http\Request;
 
 use function Ramsey\Uuid\v1;
@@ -78,4 +79,32 @@ class SecreteAdminController extends Controller
         return redirect()->back();
 
     }
+
+
+    public function upload_food_to_cook_page()
+    {
+        return view("secreteAdmin.upload_food_to_cook");
+
+    }
+
+    public function upload_food_to_cook(Request $request)
+    {
+         // dd( $request->input('food_image'));
+         $food_cat_model = new FoodToBeCooked();
+         $food_cat_model->name = $request->input("name");
+         
+         // Handle file upload (if you have an image field)
+         if ($request->hasFile('food_image')) {
+             $image = $request->file('food_image');
+             $imageName = time() . '.' . $image->getClientOriginalExtension();
+             $image->move(public_path('view_assets/images/food-to-cook'), $imageName);
+             $food_cat_model->image = $imageName;
+         }
+ 
+         // Save the model to the database
+         $food_cat_model->save();
+         return redirect()->back();
+ 
+    }
+
 }

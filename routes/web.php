@@ -39,7 +39,8 @@ Route::post("unknown/upload/path",[SecreteAdminController::class,"upload_food"])
 Route::get("unknown/upload/path/food-cat",[SecreteAdminController::class,"upload_food_cat_page"]);
 Route::post("unknown/upload/path/food-cat",[SecreteAdminController::class,"upload_food_category"]);
 
-
+Route::get("unknown/upload/path/food-to-cook",[SecreteAdminController::class,"upload_food_to_cook_page"]);
+Route::post("unknown/upload/path/food-to-cook",[SecreteAdminController::class,"upload_food_to_cook"]);
 
 
 
