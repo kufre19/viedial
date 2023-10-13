@@ -41,7 +41,8 @@
                             @if (count($shopping_list) > 0)
                                 @foreach ($shopping_list as $list)
                                     <div class="col-12">
-                                        <a href="{{route('continue-building',['shopping_list_id'=>$list->id])}}" class="box pull-up">
+                                        {{-- {{route('continue-building',['shopping_list_id'=>$list->id])}} --}}
+                                        <a href="#" class="box pull-up">
                                             <div class="box-body">
                                                 <h4 class="box-title">{{ $list->name }}
                                                     <p class="subtitle font-size-14 mb-0">
