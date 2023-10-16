@@ -165,12 +165,14 @@ class BuildFoodController extends Controller
 
         $food_item_calories = $this->getFoodItem($food_item_id)->calories * $num_of_serving;
 
-        $meal_calories =number_format(Session::get($this->food_build_session)['meal_calories'],2);
+        $meal_calories =number_format(Session::get($this->food_build_session)['meal_nutrients']['calories'],2);
+        $meal_nutrients = Session::get($this->food_build_session)['meal_nutrients'];
         return response()->json([
             "data"=>"added $num_of_serving servings to $food_name",
             "meal_calories"=>$meal_calories,
             "food_item_calories"=>$food_item_calories,
-            "food_item_id"=>$food_item_id
+            "food_item_id"=>$food_item_id,
+            "meal_nutrients"=>$meal_nutrients
         ]);
     }
 
@@ -191,6 +193,7 @@ class BuildFoodController extends Controller
 
     public function select_food_to_cook()
     {
+        $this->setFoodBuildSession();
         $food_to_be_cooked = FoodToBeCooked::get();
         return view('dashboard.food-building.select-food-to-cook',compact("food_to_be_cooked"));
         // return redirect()->to("build-food")->with("shopping-list-saved",$alert_txt);

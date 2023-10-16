@@ -17,7 +17,7 @@
 
               </div>
               <div class="modal-footer modal-footer-uniform">
-                  <button type="button" class="btn btn-secondary float-right" id="show-seasons">Next</button>
+                  <a href="{{route("food-to-cook")}}" class="btn btn-secondary float-right">Next</a>
               </div>
           </div>
       </div>

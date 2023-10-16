@@ -113,7 +113,7 @@
                     },
                     error: function(xhr, status, error) {
                         // Handle any errors that occur during the Ajax request
-                        console.error('Ajax request error:', status, error);
+                        console.log(error );
                         $.toast({
                             heading: 'Shopping List',
                             text: response.data,

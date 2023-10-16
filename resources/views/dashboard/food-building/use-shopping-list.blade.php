@@ -82,39 +82,74 @@
                                         <h4 class="box-title">Calories
                                             <p class=" text-bold mb-0">
                                                 <span
-                                                    id="meal_calories_counter">{{ session()->get('buildFoodSession')['meal_calories'] }}</span>
+                                                    id="meal_calories_counter">{{ session()->get('buildFoodSession')['meal_nutrients']['calories'] }}</span>
                                             </p>
                                         </h4>
                                     </div>
                                 </div>
 
-                                {{-- <div class="box pull-up ">
+                                <div class="box pull-up ">
                                     <div class="box-body ">
-                                        <h4 class="box-title">Calorie to burn through exercise
+                                        <h4 class="box-title">Protein 
 
-                                            <p class="text-bold mb-0">
-
-
-
+                                            <p class=" text-bold mb-0">
+                                                <span
+                                                    id="meal_protein_counter">{{ session()->get('buildFoodSession')['meal_nutrients']['protein'] }}</span>
                                             </p>
                                         </h4>
 
                                     </div>
                                 </div>
-                                 --}}
-                                {{-- <div class="box pull-up ">
+                                <div class="box pull-up ">
                                     <div class="box-body ">
-                                        <h4 class="box-title">Required amount of fat
+                                        <h4 class="box-title">Carbs 
 
-                                            <p class="text-bold mb-0">
-                                               
-
-
+                                            <p class=" text-bold mb-0">
+                                                <span
+                                                    id="meal_carbs_counter">{{ session()->get('buildFoodSession')['meal_nutrients']['carbs'] }}</span>
                                             </p>
                                         </h4>
 
                                     </div>
-                                </div> --}}
+                                </div>
+                                <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Potassium 
+
+                                            <p class=" text-bold mb-0">
+                                                <span
+                                                    id="meal_potassium_counter">{{ session()->get('buildFoodSession')['meal_nutrients']['potassium'] }}</span>
+                                            </p>
+                                        </h4>
+
+                                    </div>
+                                </div>
+                                <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Sodium 
+
+                                            <p class=" text-bold mb-0">
+                                                <span
+                                                    id="meal_sodium_counter">{{ session()->get('buildFoodSession')['meal_nutrients']['sodium'] }}</span>
+                                            </p>
+                                        </h4>
+
+                                    </div>
+                                </div>
+                                <div class="box pull-up ">
+                                    <div class="box-body ">
+                                        <h4 class="box-title">Fat and Oil 
+
+                                            <p class=" text-bold mb-0">
+                                                <span
+                                                    id="meal_fat_oil_counter">{{ session()->get('buildFoodSession')['meal_nutrients']['fat_oil'] }}</span>
+                                            </p>
+                                        </h4>
+
+                                    </div>
+                                </div>
+                                
+                              
                                 
 
                             </div>
@@ -210,6 +245,12 @@
                             stack: 6
                         });
                         $("#meal_calories_counter").text(response.meal_calories);
+                        $("#meal_protein_counter").text(response.meal_nutrients.protein);
+                        $("#meal_carbs_counter").text(response.meal_nutrients.carbs);
+                        $("#meal_sodium_counter").text(response.meal_nutrients.sodium);
+                        $("#meal_potassium_counter").text(response.meal_nutrients.potassium);
+                        $("#meal_fat_oil_counter").text(response.meal_nutrients.fat_oil);
+
                         var counter_span = "#food_calories_counter_" + response.food_item_id;
                         console.log(counter_span);
                         $(counter_span).text(response.food_item_calories);

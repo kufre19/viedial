@@ -228,6 +228,12 @@ trait BuildFood {
     public function updateMealCaloriesCount()
     {
         $meal_calories = 0;
+        $meal_protein = 0;
+        $meal_potassium = 0;
+        $meal_sodium = 0;
+        $meal_carbs = 0;
+        $meal_fat_oil = 0;
+
         $build_session = Session::get($this->food_build_session);
         $servings = $build_session["servings"] ;
         $food_items = $this->getShoppingListItems();
@@ -242,25 +248,39 @@ trait BuildFood {
            $meal_calories += $food_total_calories;
 
             // add others to be added to count of food nutrient
-            // $food_protein = $value->protein ?? 0 ;
-            // $food_potassium = $value->potassium  ?? 0 ;
-            // $food_sodium = $value->soduim ?? 0 ;
-            // $food_carbs = $value->carbs ?? 0 ;
-            // $food_fat_oil = $value->fat_oil ?? 0 ;
+            $food_protein = $value->protein ?? 0 ;
+            $food_potassium = $value->potassium  ?? 0 ;
+            $food_sodium = $value->soduim ?? 0 ;
+            $food_carbs = $value->carbs ?? 0 ;
+            $food_fat_oil = $value->fat_oil ?? 0 ;
         
 
-            // $food_potassium_total = $food_potassium * $serving_num;
-            // $food_protein_total = $food_protein * $serving_num;
-            // $food_fat_oil_total = $food_fat_oil * $serving_num;
-            // $food_carbs_total = $food_carbs * $serving_num;
-            // $food_sodium_total = $food_sodium * $serving_num;
-            // $meal_nutrients[""]
+            $food_potassium = $food_potassium * $serving_num;
+            $food_protein = $food_protein * $serving_num;
+            $food_fat_oil = $food_fat_oil * $serving_num;
+            $food_carbs = $food_carbs * $serving_num;
+            $food_sodium = $food_sodium * $serving_num;
+
+            $meal_potassium += $food_potassium ;
+            $meal_protein += $food_protein;
+            $meal_fat_oil += $food_fat_oil;
+            $meal_carbs += $food_carbs;
+            $meal_sodium += $food_sodium;
+            $meal_nutrients["protein"] = $meal_protein;
+            $meal_nutrients['fat_oil'] = $meal_fat_oil ;
+            $meal_nutrients['potassium'] = $meal_potassium;
+            $meal_nutrients['carbs'] = $meal_carbs ;
+            $meal_nutrients['sodium'] = $meal_sodium ;
+            $meal_nutrients['calories'] = $meal_calories ;
+
             
             
         }
 
 
-        $this->updateFoodBuildSession("meal_calories",$meal_calories);
+        // $this->updateFoodBuildSession("meal_calories",$meal_calories);
+        $this->updateFoodBuildSession("meal_nutrients",$meal_nutrients);
+
 
 
     }
