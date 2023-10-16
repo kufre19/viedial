@@ -250,7 +250,7 @@ trait BuildFood {
             // add others to be added to count of food nutrient
             $food_protein = $value->protein ?? 0 ;
             $food_potassium = $value->potassium  ?? 0 ;
-            $food_sodium = $value->soduim ?? 0 ;
+            $food_sodium = $value->sodium ?? 0 ;
             $food_carbs = $value->carbs ?? 0 ;
             $food_fat_oil = $value->fat_oil ?? 0 ;
         
