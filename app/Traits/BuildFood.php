@@ -266,12 +266,12 @@ trait BuildFood {
             $meal_fat_oil += $food_fat_oil;
             $meal_carbs += $food_carbs;
             $meal_sodium += $food_sodium;
-            $meal_nutrients["protein"] = $meal_protein;
-            $meal_nutrients['fat_oil'] = $meal_fat_oil ;
-            $meal_nutrients['potassium'] = $meal_potassium;
-            $meal_nutrients['carbs'] = $meal_carbs ;
-            $meal_nutrients['sodium'] = $meal_sodium ;
-            $meal_nutrients['calories'] = $meal_calories ;
+            $meal_nutrients["protein"] = number_format($meal_protein,0) ;
+            $meal_nutrients['fat_oil'] =  number_format($meal_fat_oil,0)  ;
+            $meal_nutrients['potassium'] = number_format($$meal_potassium,0);
+            $meal_nutrients['carbs'] = number_format($meal_carbs,0) ;
+            $meal_nutrients['sodium'] = number_format($meal_sodium,0) ;
+            $meal_nutrients['calories'] = number_format($meal_calories,0) ;
 
             
             

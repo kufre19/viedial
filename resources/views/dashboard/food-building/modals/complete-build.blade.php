@@ -17,7 +17,7 @@
                 <select class="selectpicker" id="meal_type_select">
                     <option value="Breakfast">Select Meal Type</option>
                     <option value="BreakFast">BreakFast</option>
-                    <option value="Launch">Lunch</option>
+                    <option value="Lunch">Lunch</option>
                     <option value="Dinner">Dinner</option>
                 </select>
 

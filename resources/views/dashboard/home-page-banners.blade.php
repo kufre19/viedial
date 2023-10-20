@@ -34,7 +34,7 @@
                         <img src="{{ asset('view_assets/images/svg-icon/color-svg/risk-assessment.svg') }}"
                             class="img-fluid max-w-150" alt="" />
                         <div class="ml-30">
-                            <h4 class="mb-10">First take our advance risk assesment!</h4>
+                            <h4 class="mb-10">First take our advanced risk assesment!</h4>
                             <p class="mb-0 text-fade">Check if you are at risk of having a heart attack,
                                 stroke, kidney failure etc. </p>
                         </div>
