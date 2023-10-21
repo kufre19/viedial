@@ -165,7 +165,7 @@ class BuildFoodController extends Controller
 
         $food_item_calories = $this->getFoodItem($food_item_id)->calories * $num_of_serving;
 
-        $meal_calories =number_format(Session::get($this->food_build_session)['meal_nutrients']['calories'],2);
+        $meal_calories =ceil(Session::get($this->food_build_session)['meal_nutrients']['calories']);
         $meal_nutrients = Session::get($this->food_build_session)['meal_nutrients'];
         return response()->json([
             "data"=>"added $num_of_serving servings to $food_name",
