@@ -26,7 +26,7 @@ trait TeleMonitoringTrait{
             $age = $health_data_from_assement->age;
             $calories_required = $PA *($constant_num +($conversion_weight * $weight) + ($height_cm * $conversion_height)-($age * $conversion_age));
             $calories_to_eat = $calories_required - ($calories_to_remove * 0.75);
-            $calories_to_burn = $calories_required/4;
+            $calories_to_burn = $calories_required/8;
         }else {
             $calories_to_remove = 1 * 1000;
             $PA = 1.2;
@@ -40,7 +40,7 @@ trait TeleMonitoringTrait{
             $calories_required = $PA *($constant_num +($conversion_weight * $weight) + ($height_cm * $conversion_height)-($age * $conversion_age));
     
             $calories_to_eat = $calories_required - ($calories_to_remove * 0.75);
-            $calories_to_burn = $calories_required/4;
+            $calories_to_burn = $calories_required/8;
         }
        
 
