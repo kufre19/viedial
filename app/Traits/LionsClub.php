@@ -49,6 +49,11 @@ trait LionsClub  {
 
     public function save_assessment_entry_visitor(array $data)
     {
+        $existing_data = VisitorRiskAssessment::where('wa_phone',Session::get("whatsapp_contact"))->exists();
+        if($existing_data)
+        {
+            return true;
+        }
         $risk_model = new VisitorRiskAssessment();
         
         $risk_model->name = Session::get("full_name");
