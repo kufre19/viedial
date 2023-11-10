@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RiskAssessment as ModelsRiskAssessment;
+use App\Traits\LionsClub;
 use App\Traits\RiskAssessment;
 use App\Traits\UserTrait;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 
 class RiskAssessmentController extends Controller
 {
-    use RiskAssessment, UserTrait;
+    use RiskAssessment, UserTrait, LionsClub;
 
     public function start(Request $request)
     {
@@ -45,7 +46,7 @@ class RiskAssessmentController extends Controller
         }
     }
 
-    public function scenario_one(Request $request, $skip_view = false)
+    public function scenario_one(Request $request, $skip_view = false, $save_data = true)
     {
         // dd($request->all());
         $messages = [
@@ -108,8 +109,10 @@ class RiskAssessmentController extends Controller
             "fam_diabetes" => $fam_diabetes,
 
         ];
-        $this->save_assessment_entry($data);
 
+        if ($save_data) {
+            $this->save_assessment_entry($data);
+        }
 
         // start collecting points
         $agecat = $this->ageCatHbp($age);
@@ -191,7 +194,8 @@ class RiskAssessmentController extends Controller
                 "risk_score" => $risk_score,
                 "risk_implication" => $risk_implication,
                 "recommendation_link" => $recommendation_link,
-                "risk_recommendation" => $risk_recommendation
+                "risk_recommendation" => $risk_recommendation,
+                "data"=>$data
             ];
         }
 
@@ -364,7 +368,6 @@ class RiskAssessmentController extends Controller
             if ($start_qs_1 == "no" && $start_qs_2 == "no") {
                 // ACTION: SCREEN FOR RISK OF DEVELOPING TYPE 2 DIABETES
                 $result = $this->result_diabetes($value);
-
             }
 
             if ($start_qs_1 == "yes" && $start_qs_2 == "no") {
@@ -374,10 +377,9 @@ class RiskAssessmentController extends Controller
                 $result_1 = $this->result_cvd($value);
                 $result = $this->result_diabetes($value);
 
-            array_push($result_list,$result);
-                
+                array_push($result_list, $result);
             }
-            array_push($result_list,$result);
+            array_push($result_list, $result);
         }
         // return view("dashboard.assessment_results",compact("result_list"));
         return $result_list;

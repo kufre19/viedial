@@ -135,3 +135,19 @@ Route::group(["middleware" => "auth"], function () {
 
 
 });
+
+
+// substandard tenants route
+Route::group(["prefix"=>"lions-club"], function(){
+
+    Route::get("risk-assessment/start",[RiskAssessmentController::class,"lions_club_home"]);
+    Route::post("risk-assessment/start",[RiskAssessmentController::class,"lions_start"]);
+    Route::get("risk-assessment/type-2-diabetes", function () {
+        return view('dashboard.risk-assessment.lions.scenario_one');
+    });
+    Route::post("risk-assessment/type-2-diabetes",[RiskAssessmentController::class,"lions_scenario_one"]);
+    Route::get("risk-assessment/result",[RiskAssessmentController::class,"get_user_results"])->name("lions.risk.assessment.result");
+
+
+
+});
