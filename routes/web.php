@@ -140,6 +140,10 @@ Route::group(["middleware" => "auth"], function () {
 // substandard tenants route
 Route::group(["prefix"=>"lions-club"], function(){
 
+    Route::get("/", function(){
+        return redirect()->to("lions-club/risk-assessment/start");
+    });
+
     Route::get("risk-assessment/start",[RiskAssessmentController::class,"lions_club_home"]);
     Route::post("risk-assessment/start",[RiskAssessmentController::class,"lions_start"]);
     Route::get("risk-assessment/type-2-diabetes", function () {
