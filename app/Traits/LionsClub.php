@@ -5,9 +5,12 @@ namespace App\Traits;
 use App\Models\VisitorRiskAssessment;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 
-trait LionsClub  {
+
+trait LionsClub
+{
 
     public function lions_club_home()
     {
@@ -16,7 +19,7 @@ trait LionsClub  {
 
     public function lions_start(Request $request)
     {
-     
+
         $validatedData = $request->validate([
             'full_name' => 'required|string|max:255',
             'whatsapp_contact' => 'required|string|max:255',
@@ -40,22 +43,20 @@ trait LionsClub  {
         if ($start_qs_1 == "no" && $start_qs_2 == "no") {
             // ACTION: SCREEN FOR RISK OF DEVELOPING TYPE 2 DIABETES
             return redirect()->to("lions-club/risk-assessment/type-2-diabetes");
-        }else {
-            return abort(404,"something went wrong");
+        } else {
+            return abort(404, "something went wrong");
         }
-
     }
 
 
     public function save_assessment_entry_visitor(array $data)
     {
-        $existing_data = VisitorRiskAssessment::where('wa_phone',Session::get("whatsapp_contact"))->exists();
-        if($existing_data)
-        {
+        $existing_data = VisitorRiskAssessment::where('wa_phone', Session::get("whatsapp_contact"))->exists();
+        if ($existing_data) {
             return true;
         }
         $risk_model = new VisitorRiskAssessment();
-        
+
         $risk_model->name = Session::get("full_name");
         $risk_model->wa_phone = Session::get("whatsapp_contact");
         $risk_model->by_tenant_id = 1;
@@ -77,19 +78,28 @@ trait LionsClub  {
         $risk_model->save();
     }
 
-    public function lions_scenario_one(Request $request, $skip_view = false){
+    public function lions_scenario_one(Request $request, $skip_view = false)
+    {
 
-        $data = $this->scenario_one($request,true,false);
+        $data = $this->scenario_one($request, true, false);
         $risk_score = $data['risk_score'];
         $risk_implication = $data['risk_implication'];
         $recommendation_link = $data['recommendation_link'];
         $risk_recommendation = $data['risk_recommendation'];
         $this->save_assessment_entry_visitor($data['data']);
 
+        $bot_sub_data = ["name"=>Session::get("full_name"),"phone"=>Session::get("whatsapp_contact"),"bot_type"=>"diabetes"];
+
+        $this->sendPostRequest($bot_sub_data);
+
 
         return view('dashboard.risk-assessment.lions.results', compact("risk_score", "risk_implication", "recommendation_link", "risk_recommendation"));
-
-
     }
 
+    public function sendPostRequest($data)
+    {
+        $response = Http::post('https://wa-botapp.viedial.ca/api/subscribe-user/diabetes', $data);
+
+        
+    }
 }

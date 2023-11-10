@@ -49,6 +49,29 @@
                                 placeholder="Your Full Name">
                         </div>
                     </div>
+
+                    <div class="form-col">
+                        <div class="form-holder">
+                            <!-- Whatsapp Contact Input -->
+                            <label for="whatsapp_contact">Enter Your Whatsapp Contact</label>
+                            <input type="text" name="whatsapp_contact" id="whatsapp_contact" class="form-control"
+                                placeholder="Country code format i.e 234....">
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+
+                {{-- <div class="form-row">
+                    
+                    <div class="form-col">
+                        <div class="form-holder">
+                            <label for="country_code">Country Code</label>
+                            <select name="country_code" id="country_code" class="form-control">
+                                <!-- Country options will be loaded here -->
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-col">
                         <div class="form-holder">
                             <!-- Whatsapp Contact Input -->
@@ -57,7 +80,8 @@
                                 placeholder="Your Whatsapp Contact">
                         </div>
                     </div>
-                </div>
+                </div> --}}
+
 
                 <!-- Hidden Fields -->
                 <input type="hidden" name="start_qs_1" value="no">
@@ -80,8 +104,29 @@
     <script src="{{ asset('view_assets/risk_assessment/vendor/date-picker/js/datepicker.en.js') }}"></script>
 
     <script src="{{ asset('view_assets/risk_assessment/js/main.js') }}"></script>
+    {{-- <script>
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(countries => {
+                const countryCodeSelect = document.getElementById('country_code');
+                countries.forEach(country => {
+                    if (country.idd && country.idd.root && country.idd.suffixes && country.idd.suffixes.length > 0) {
+                        const dialCode = country.idd.root + country.idd.suffixes[0];
+                        const option = document.createElement('option');
+                        option.value = dialCode;
+                        option.textContent = `${country.name.common} (${dialCode})`;
+                        countryCodeSelect.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching country data:', error);
+                // Handle the error appropriately
+            });
+    </script>
+     --}}
+        
 
-    <!-- Template created and distributed by Colorlib -->
 </body>
 
 </html>
