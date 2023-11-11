@@ -34,7 +34,7 @@ trait LionsClub
 
         $full_name = $request->input("full_name");
         $whatsapp_contact = $request->input("whatsapp_contact");
-
+        $whatsapp_contact = str_replace("+", "", $whatsapp_contact);
         Session::put("have_hypertension", $start_qs_1);
         Session::put("have_diabetes", $start_qs_2);
 
