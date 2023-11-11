@@ -105,7 +105,7 @@ trait LionsClub
         {
             return abort(401);
         }
-        $data = VisitorRiskAssessment::where("by_tenant_id",1)->paginate(10);
+        $data = VisitorRiskAssessment::where("by_tenant_id",1)->paginate(20);
 
         return view("dashboard.risk-assessment.lions.admin",compact("data"));
 

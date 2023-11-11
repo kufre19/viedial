@@ -27,9 +27,15 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $counter = 0;
+                @endphp
                 @foreach ($data as $item)
+                    @php
+                        $counter++;
+                    @endphp
                     <tr>
-                        <th scope="row">{{ $item->id }}</th>
+                        <th scope="row">{{ $counter }}</th>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->wa_phone }}</td>
                         <td>Abuja Emerald</td>
