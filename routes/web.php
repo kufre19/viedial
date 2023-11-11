@@ -130,10 +130,6 @@ Route::group(["middleware" => "auth"], function () {
     Route::post("tele-monitoring/save", [TeleMonitoringController::class,"save_numbers"])->name("tele-monitoring.save");
     Route::post("tele-monitoring/get-input-notification", [TeleMonitoringController::class,"getInputNotification"]);
 
-
-
-
-
 });
 
 

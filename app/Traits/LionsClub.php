@@ -80,26 +80,19 @@ trait LionsClub
 
     public function lions_scenario_one(Request $request, $skip_view = false)
     {
-
         $data = $this->scenario_one($request, true, false);
         $risk_score = $data['risk_score'];
         $risk_implication = $data['risk_implication'];
         $recommendation_link = $data['recommendation_link'];
         $risk_recommendation = $data['risk_recommendation'];
         $this->save_assessment_entry_visitor($data['data']);
-
         $bot_sub_data = ["name"=>Session::get("full_name"),"phone"=>Session::get("whatsapp_contact"),"bot_type"=>"diabetes"];
-
         $this->sendPostRequest($bot_sub_data);
-
-
         return view('dashboard.risk-assessment.lions.results', compact("risk_score", "risk_implication", "recommendation_link", "risk_recommendation"));
     }
 
     public function sendPostRequest($data)
     {
-        $response = Http::post('https://wa-botapp.viedial.ca/api/subscribe-user/diabetes', $data);
-
-        
+        $response = Http::post('https://wa-botapp.viedial.ca/api/subscribe-user/diabetes', $data);        
     }
 }
