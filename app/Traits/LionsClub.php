@@ -89,7 +89,7 @@ trait LionsClub
         $risk_recommendation = $data['risk_recommendation'];
         $this->save_assessment_entry_visitor($data['data']);
         $bot_sub_data = ["name"=>Session::get("full_name"),"phone"=>Session::get("whatsapp_contact"),"bot_type"=>"diabetes"];
-        // $this->sendPostRequest($bot_sub_data);
+        $this->sendPostRequest($bot_sub_data);
         return view('dashboard.risk-assessment.lions.results', compact("risk_score", "risk_implication", "recommendation_link", "risk_recommendation"));
     }
 
