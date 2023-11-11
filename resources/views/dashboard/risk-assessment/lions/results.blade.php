@@ -61,6 +61,13 @@
 
                             </div>
 
+                            <div class="box-footer">
+                                <p class="font-weight-bold font-italic">
+                                    This Type 2 Diabetes risk assessment is brought to you by the generous support from Abuja Emerald Lions 
+                                    Club and Abuja Central Lions Club and powered by Viedial Health
+                                </p>
+                            </div>
+
                         </div>
                         <div class="text-center">
 
@@ -103,10 +110,12 @@
                         </div>
                     </div>
                 @endif
-
+               
             </div>
+           
 
         </div>
+        
     </div>
 @endsection
 
