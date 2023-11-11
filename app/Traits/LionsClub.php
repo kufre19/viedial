@@ -83,6 +83,8 @@ trait LionsClub
         $data = $this->scenario_one($request, true, false);
         $risk_score = $data['risk_score'];
         $risk_implication = $data['risk_implication'];
+        $data['recommendation_link'] = "https://wa.me/2348090217775?text=hi";
+        $data['risk_recommendation'] = "Get started with our chatbot and learn more about diabetes!";
         $recommendation_link = $data['recommendation_link'];
         $risk_recommendation = $data['risk_recommendation'];
         $this->save_assessment_entry_visitor($data['data']);
