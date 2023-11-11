@@ -9,9 +9,11 @@ use App\Http\Controllers\SecreteAdminController;
 use App\Http\Controllers\TeleMonitoringController;
 use App\Http\Controllers\WebsiteContorller;
 use App\Models\RiskAssessment;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -147,6 +149,26 @@ Route::group(["prefix"=>"lions-club"], function(){
     });
     Route::post("risk-assessment/type-2-diabetes",[RiskAssessmentController::class,"lions_scenario_one"]);
     Route::get("risk-assessment/result",[RiskAssessmentController::class,"get_user_results"])->name("lions.risk.assessment.result");
+
+    // admin pages
+    Route::get("/login", function(){
+        return view("dashboard.risk-assessment.lions.login");
+    });
+
+    Route::post("/login", function(Request $request){
+        $password = $request->input("password");
+        if($password == "ASzFE%U*(")
+        {
+            Session::put("lion_admin",true);
+            return redirect()->to("lions-club/admin");
+        }else {
+            Session::put("lion_admin",false);
+            return redirect()->back();
+
+        }
+    });
+
+    Route::get("/admin",[RiskAssessmentController::class,"admin_page"]);
 
 
 

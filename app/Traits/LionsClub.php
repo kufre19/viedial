@@ -98,4 +98,16 @@ trait LionsClub
     {
         $response = Http::post('https://wa-botapp.viedial.ca/api/subscribe-user/diabetes', $data);        
     }
+
+    public function admin_page()
+    {
+        if(!Session::get("lion_admin"))
+        {
+            return abort(401);
+        }
+        $data = VisitorRiskAssessment::where("by_tenant_id",1)->paginate(10);
+
+        return view("dashboard.risk-assessment.lions.admin",compact("data"));
+
+    }
 }
