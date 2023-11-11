@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Traits\LionsClub;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,25 +12,18 @@ use Illuminate\Queue\SerializesModels;
 
 class RegisterNewUserToBot implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels,LionsClub;
 
-    /**
-     * Create a new job instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    protected $data;
+
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
     public function handle()
     {
-        //
+        $this->sendPostRequest($this->data);
+       
     }
 }
