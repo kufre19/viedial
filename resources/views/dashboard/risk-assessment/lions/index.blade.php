@@ -24,64 +24,77 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            gap: 20px; /* Space between logos and form */
+            gap: 20px;
+            /* Space between logos and form */
         }
-    
-        .logo-left, .logo-right {
-            width: 30%; /*Adjust the size as needed */
-            height: auto; /* Maintain aspect ratio */
+
+        .logo-left,
+        .logo-right {
+            width: 30%;
+            /*Adjust the size as needed */
+            height: auto;
+            /* Maintain aspect ratio */
             display: flex;
             justify-content: center;
             align-items: center;
         }
-    
-        .logo-left img, .logo-right img {
+
+        .logo-left img,
+        .logo-right img {
             width: 100%;
             height: auto;
         }
-    
+
+        .logo-mobile {
+            display: none;
+            /* Hide by default */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-mobile img {
+            width: 150px;
+            /* Adjust size as needed */
+            height: auto;
+        }
+
         .wrapper {
             /* Adjust wrapper styles if necessary */
         }
-    
+
         @media screen and (max-width: 768px) {
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+            .logo-mobile {
+                display: block;
+                /* Show only on mobile */
+            }
 
-        .logo-left, .logo-right {
-            display: none; /* Hide both logos */
-        }
+            .logo-left,
+            .logo-right {
+                display: none;
+                /* Hide both logos */
+            }
 
-        #wizard {
-            /* width: 100%; */
-            /* position: relative; */
-            background: url('{{asset("view_assets/lions_asset/lions-logo-2.jpeg")}}') no-repeat center center;
-            background-size: cover;
-            /* opacity: 0.1; Make the background image faint */
-        }
 
-        .form-holder {
-            background-color: rgba(255, 255, 255, 0.9);
-            position: relative; /* Ensure form content is visible on top of the background */
+            .form-holder {
+                background-color: rgba(255, 255, 255, 0.9);
+                position: relative;
+                /* Ensure form content is visible on top of the background */
+            }
         }
-    }
     </style>
-    
-    
-    
+
+
+
 </head>
 
 <body>
 
     <div class="logo-left">
-        <img src="{{asset("view_assets/lions_asset/lions-logo-2.jpeg")}}" alt="Right Logo">
+        <img src="{{ asset('view_assets/lions_asset/lions-logo-2.jpeg') }}" alt="Right Logo">
 
     </div>
     <div class="wrapper">
-        
+
 
         <form action="{{ url('lions-club/risk-assessment/start') }}" id="wizard" method="POST">
             @if ($errors->any())
@@ -98,6 +111,10 @@
             <h4></h4>
             <section>
                 <h3>Let's Get Started</h3>
+                <!-- Logo for mobile view -->
+                <div class="logo-mobile">
+                    <img src="{{ asset('view_assets/lions_asset/lions-logo-2.jpeg') }}" alt="Logo" style="">
+                </div>
                 {{-- <textarea class="form-control" name="" readonly></textarea> --}}
 
 
@@ -154,11 +171,11 @@
 
         </form>
 
-       
+
     </div>
 
     <div class="logo-right">
-        <img src="{{asset("view_assets/lions_asset/lions-logo-1.jpeg")}}" alt="Left Logo">
+        <img src="{{ asset('view_assets/lions_asset/lions-logo-1.jpeg') }}" alt="Left Logo">
 
     </div>
 
