@@ -4,6 +4,7 @@ use App\Http\Controllers\BuildFoodController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoalSettingController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RiskAssessmentController;
 use App\Http\Controllers\SecreteAdminController;
 use App\Http\Controllers\TeleMonitoringController;
@@ -131,6 +132,12 @@ Route::group(["middleware" => "auth"], function () {
     Route::get("tele-monitoring", [TeleMonitoringController::class,"index"])->name("tele-monitoring.index");
     Route::post("tele-monitoring/save", [TeleMonitoringController::class,"save_numbers"])->name("tele-monitoring.save");
     Route::post("tele-monitoring/get-input-notification", [TeleMonitoringController::class,"getInputNotification"]);
+
+    // USER PROFILE
+    Route::get("profile", [ProfileController::class,"index"])->name("profile.index");
+    Route::post("profile/settings/change-password", [ProfileController::class,"changePassword"])->name("profile.change-password");
+
+
 
 });
 
