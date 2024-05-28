@@ -39,13 +39,13 @@
                         </a>
                     </li>
 
-                    {{-- <li>
-                        <a href="{{ url('risk-assessment/result') }}">
+                    <li>
+                        <a href="{{ url('/trackers') }}">
                             <i class="fa fa-heart"><span class="path1">
-                                </span><span class="path2"></span></i>
-                            Your Scores
+                            </span><span class="path2"></span></i>
+                            Connect Tracker
                         </a>
-                    </li> --}}
+                    </li>
 
                     <li>
                         <a href="{{ url('tele-monitoring') }}">

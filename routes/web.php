@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RiskAssessmentController;
 use App\Http\Controllers\SecreteAdminController;
 use App\Http\Controllers\TeleMonitoringController;
+use App\Http\Controllers\TrackerController;
 use App\Http\Controllers\WebsiteContorller;
 use App\Models\RiskAssessment;
 use Illuminate\Http\Request;
@@ -137,6 +138,8 @@ Route::group(["middleware" => "auth"], function () {
     Route::get("profile", [ProfileController::class,"index"])->name("profile.index");
     Route::post("profile/settings/change-password", [ProfileController::class,"changePassword"])->name("profile.change-password");
 
+
+    Route::get('/trackers', [TrackerController::class,"index"]);
 
 
 });
