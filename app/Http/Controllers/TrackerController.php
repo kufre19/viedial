@@ -41,4 +41,6 @@ class TrackerController extends Controller
         // Handle the callback from Fitbit
         return $this->connectFitbit($request);
     }
+
+    
 }
