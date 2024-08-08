@@ -165,6 +165,7 @@ return [
         Filament\FilamentServiceProvider::class,
         App\Providers\FilamentServiceProvider::class,
         Livewire\LivewireServiceProvider::class,
+        Filament\Forms\FormsServiceProvider::class,
 
 
 
