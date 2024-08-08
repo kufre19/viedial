@@ -164,6 +164,8 @@ return [
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
         Filament\FilamentServiceProvider::class,
         App\Providers\FilamentServiceProvider::class,
+        Livewire\LivewireServiceProvider::class,
+
 
 
 
@@ -234,6 +236,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Livewire' => Livewire\Livewire::class,
 
     ],
 
