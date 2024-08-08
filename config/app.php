@@ -162,7 +162,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
+        Filament\FilamentServiceProvider::class,
         App\Providers\FilamentServiceProvider::class,
+
 
 
         /*
