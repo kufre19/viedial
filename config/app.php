@@ -162,14 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
-        Filament\FilamentServiceProvider::class,
-        App\Providers\FilamentServiceProvider::class,
-        Livewire\LivewireServiceProvider::class,
-        Filament\Forms\FormsServiceProvider::class,
 
-
-
-
+        
         /*
          * Package Service Providers...
          */
@@ -237,7 +231,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Livewire' => Livewire\Livewire::class,
 
     ],
 

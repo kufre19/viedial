@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Admin\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -181,5 +183,15 @@ Route::group(["prefix"=>"lions-club"], function(){
     Route::get("/admin",[RiskAssessmentController::class,"admin_page"]);
 
 
+
+});
+
+
+Route::get('admin/login', [AdminController::class, 'loginPage'])->name('admin.login.page');
+Route::post('admin/login', [AdminController::class, 'loginPage'])->name('admin.login');
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
 
 });

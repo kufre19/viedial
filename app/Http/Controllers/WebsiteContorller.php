@@ -15,8 +15,7 @@ class WebsiteContorller extends Controller
     use UserTrait;
     public function login_page()
     {
-        if(Auth::check())
-        {
+        if (Auth::check()) {
             return redirect()->back();
         }
         return view("login");
@@ -26,35 +25,36 @@ class WebsiteContorller extends Controller
     {
         $email = $request->input("email");
         $password =  $request->input("password");
-        $login = Auth::attempt(["email"=>$email,"password"=>$password]);
+        $login = Auth::attempt(["email" => $email, "password" => $password]);
 
-        if($login)
-        {
-           $this->userHasBmi();
-           $this->userHasGoalSet();
-           return redirect()->intended("/");
+        if ($login) {
+            $this->userHasBmi();
+            $this->userHasGoalSet();
+
+            if (Auth::user()->is_admin) {
+                return redirect(route("admin.dashboard"));
+            }
+            return redirect()->intended("/");
         }
 
         return redirect()->back()->withErrors([
             'email' => 'These credentials do not match our records.',
         ]);
-       
     }
 
     public function logout()
     {
         Auth::logout();
-       return redirect()->to("login");
+        return redirect()->to("login");
     }
 
 
     public function signup_page()
     {
         return view("register");
-
     }
 
-    public function signup(Request $request )
+    public function signup(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -63,26 +63,24 @@ class WebsiteContorller extends Controller
             'password' => 'required|string|min:8|confirmed',
             'terms' => 'accepted',
         ]);
-    
+
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-    
+
         $user = new User([
             'name' => $request->name,
             // 'whatsapp_number' => $request->whatsapp_number, 
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-    
+
         $user->save();
-    
+
         // Log the user in
         auth()->login($user);
-    
+
         // Redirect them to a welcome or dashboard page
         return redirect()->to('/')->with('status', 'Registration successful. Welcome!');
-    
-
     }
 }

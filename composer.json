@@ -8,7 +8,6 @@
         "php": "^7.3|^8.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.3",
         "djchen/oauth2-fitbit": "^1.1",
-        "filament/filament": "^2.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
