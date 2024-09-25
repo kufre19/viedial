@@ -37,6 +37,14 @@ Route::get('/link-storage', function () {
     return 'Storage link has been created.';
 });
 
+Route::get('/clear-app', function () {
+    Artisan::call('cache:clear');
+     Artisan::call('view:clear');
+     Artisan::call('route:clear');
+     Artisan::call('config:clear');
+    return 'App cleaned ';
+});
+
 // SECRETE ADMIN PANEL
 
 Route::get("unknown/upload/path",[SecreteAdminController::class,"upload_food_page"]);
