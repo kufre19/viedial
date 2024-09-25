@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Admin\AdminController;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,15 +55,17 @@ Route::get('/test-page', function () {
 });
 
 // Auth Routes
-Route::get("login", [WebsiteContorller::class, "login_page"])->name("login");
-Route::get("signup", [WebsiteContorller::class, "signup_page"])->name("signup");
-Route::post("signup", [WebsiteContorller::class, "signup"]);
-Route::post("login", [WebsiteContorller::class, "login"]);
-Route::get("logout", [WebsiteContorller::class, "logout"]);
+// Route::get("login", [WebsiteContorller::class, "login_page"])->name("login");
+// Route::get("signup", [WebsiteContorller::class, "signup_page"])->name("signup");
+// Route::post("signup", [WebsiteContorller::class, "signup"]);
+// Route::post("login", [WebsiteContorller::class, "login"]);
+// Route::get("logout", [WebsiteContorller::class, "logout"]);
+
+Auth::routes(['verify' => true]);
 
 
 // PROTECTED ROUTES
-Route::group(["middleware" => "auth"], function () {
+Route::group(["middleware" => ["auth","verified"]], function () {
     // DASHBOARD
     Route::get('/', [DashboardController::class, "dashboard"]);
     Route::get("courses/{id}", [CourseController::class, "load_course"]);
@@ -187,11 +189,7 @@ Route::group(["prefix"=>"lions-club"], function(){
 });
 
 
-Route::get('admin/login', [AdminController::class, 'loginPage'])->name('admin.login.page');
-Route::post('admin/login', [AdminController::class, 'loginPage'])->name('admin.login');
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
+Auth::routes();
 
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

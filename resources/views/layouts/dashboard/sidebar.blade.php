@@ -69,11 +69,15 @@
     </section>
     <div class="sidebar-footer">
         <a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings"
-            aria-describedby="tooltip92529"><span class="icon-Settings-2"></span></a>
+          aria-describedby="tooltip92529"><span class="icon-Settings-2"></span></a>
         <a href="mailbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><span
-                class="icon-Mail"></span></a>
-        <a href="{{ url('logout') }}" class="link" data-toggle="tooltip" title=""
-            data-original-title="Logout"><span class="icon-Lock-overturning"><span class="path1"></span><span
-                    class="path2"></span></span></a>
-    </div>
+          class="icon-Mail"></span></a>
+        <form action="{{ route('logout') }}" method="POST" id="logout-form-sidebar" style="display: inline;">
+          @csrf
+          <a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Logout"
+            onclick="event.preventDefault(); document.getElementById('logout-form-sidebar').submit();">
+            <span class="icon-Lock-overturning"><span class="path1"></span><span class="path2"></span></span>
+          </a>
+        </form>
+      </div>
 </aside>

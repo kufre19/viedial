@@ -76,11 +76,15 @@ class WebsiteContorller extends Controller
         ]);
 
         $user->save();
+        $user->sendEmailVerificationNotification();
+
 
         // Log the user in
         auth()->login($user);
 
         // Redirect them to a welcome or dashboard page
-        return redirect()->to('/')->with('status', 'Registration successful. Welcome!');
+        // return redirect()->to('/')->with('status', 'Registration successful. Welcome!');
+        return redirect()->to('/email/verify')->with('status', 'Registration successful. Please verify your email.');
+
     }
 }
