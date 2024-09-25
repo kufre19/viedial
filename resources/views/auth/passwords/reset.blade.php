@@ -1,6 +1,3 @@
-
-
-
 @extends('layouts.reg_and_login.app')
 
 @section('main-content')
@@ -17,6 +14,8 @@
                         <form method="POST" action="{{  route('password.update') }}">
                             @csrf
                             
+                            <input type="hidden" name="token" value="{{ $token }}">
+
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
