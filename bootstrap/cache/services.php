@@ -37,20 +37,22 @@
     33 => 'Kirschbaum\\PowerJoins\\PowerJoinsServiceProvider',
     34 => 'Laravel\\Sail\\SailServiceProvider',
     35 => 'Laravel\\Sanctum\\SanctumServiceProvider',
-    36 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    37 => 'Laravel\\Ui\\UiServiceProvider',
-    38 => 'Livewire\\LivewireServiceProvider',
-    39 => 'Carbon\\Laravel\\ServiceProvider',
-    40 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    41 => 'Termwind\\Laravel\\TermwindServiceProvider',
-    42 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
-    43 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
-    44 => 'DaveJamesMiller\\Breadcrumbs\\BreadcrumbsServiceProvider',
-    45 => 'App\\Providers\\AppServiceProvider',
-    46 => 'App\\Providers\\AuthServiceProvider',
-    47 => 'App\\Providers\\EventServiceProvider',
-    48 => 'App\\Providers\\Filament\\AdminPanelProvider',
-    49 => 'App\\Providers\\RouteServiceProvider',
+    36 => 'Laravel\\Socialite\\SocialiteServiceProvider',
+    37 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    38 => 'Laravel\\Ui\\UiServiceProvider',
+    39 => 'Livewire\\LivewireServiceProvider',
+    40 => 'Carbon\\Laravel\\ServiceProvider',
+    41 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    42 => 'Termwind\\Laravel\\TermwindServiceProvider',
+    43 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
+    44 => 'SocialiteProviders\\Manager\\ServiceProvider',
+    45 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
+    46 => 'DaveJamesMiller\\Breadcrumbs\\BreadcrumbsServiceProvider',
+    47 => 'App\\Providers\\AppServiceProvider',
+    48 => 'App\\Providers\\AuthServiceProvider',
+    49 => 'App\\Providers\\EventServiceProvider',
+    50 => 'App\\Providers\\Filament\\AdminPanelProvider',
+    51 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -233,6 +235,7 @@
     'DaveJamesMiller\\Breadcrumbs\\BreadcrumbsManager' => 'DaveJamesMiller\\Breadcrumbs\\BreadcrumbsServiceProvider',
     'Laravel\\Sail\\Console\\InstallCommand' => 'Laravel\\Sail\\SailServiceProvider',
     'Laravel\\Sail\\Console\\PublishCommand' => 'Laravel\\Sail\\SailServiceProvider',
+    'Laravel\\Socialite\\Contracts\\Factory' => 'SocialiteProviders\\Manager\\ServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
   ),
   'when' => 
@@ -279,7 +282,13 @@
     'Laravel\\Sail\\SailServiceProvider' => 
     array (
     ),
+    'Laravel\\Socialite\\SocialiteServiceProvider' => 
+    array (
+    ),
     'Laravel\\Tinker\\TinkerServiceProvider' => 
+    array (
+    ),
+    'SocialiteProviders\\Manager\\ServiceProvider' => 
     array (
     ),
   ),
